@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../scripts/prism.js"></script>
+  <script src="../scripts/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Использование комбинаторов">
+          <h2 id="Использование комбинаторов">Использование комбинаторов</h2>
+          <div class="section-content">
+            <p>Вы можете соединять с помощью комбинаторов любые селекторы, которые мы изучали в предыдущих уроках, чтобы
+              выбрать часть вашего документа. Например, если мы хотим выбрать пункты списка с классом "a", которые
+              являются прямыми потомками <code>&lt;ul&gt;</code>, можно использовать следующую комбинацию:</p>
+            <pre><code class="language-css">ul &gt; li[class="a"]  {  }</code></pre>
+            <p>Однако будьте осторожны при создании больших списков селекторов, которые выделяют очень конкретные части
+              вашего документа. Будет трудно повторно использовать правила CSS, так как вы сделали селектор очень
+              специфичным для определения местоположения этого элемента в разметке.</p>
+            <p>Часто бывает лучше создать простой класс и применить его к рассматриваемому элементу. Тем не менее, ваши
+              знания о комбинаторах будут очень полезны, если вам нужно добраться до чего-то в вашем документе и вы не
+              можете получить доступ к HTML, возможно, из-за того, что он генерируется CMS.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

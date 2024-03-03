@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../scripts/prism.js"></script>
+  <script src="../scripts/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Объединение псевдоклассов и псевдоэлементов">
+          <h2 id="Объединение псевдоклассов и псевдоэлементов">Объединение псевдоклассов и псевдоэлементов</h2>
+          <div class="section-content">
+            <p>Если вы хотите сделать шрифт первой строки первого абзаца жирным, вы можете связать вместе селекторы
+          <code><span class="meaning" data-tooltip="Находит любой элемент, являющийся первым в своём родителе.<p></p>Выбирает любой <code>&amp;lt;p&amp;gt;</code>,
+          который является первым элементом среди своих братьев и сестёр
+        <p></p><code>p:first-child</code>">:first-child</span></code> и
+        <code><span class="meaning" data-tooltip="CSS псевдоэлемент <code>::first-line</code> применяет стили к
+        первой строке блочного элемента. Обратите внимание, что длина первой строки зависит от многих факторов,
+        включая ширину элемента, ширину документа и размер шрифта текста.">::first-line</span></code>. Попробуйте
+        отредактировать предыдущий живой пример, чтобы использовалась следующая CSS. Мы говорим, что хотим выбрать
+        первую строку первого элемента <code>&lt;p&gt;</code>, который находится внутри элемента
+        <code><span class="meaning" data-tooltip="Если элементов <code>article</code> несколько, то у всех <code>article</code> будет выбрана первая строка первого элемента <code>&amp;lt;p&amp;gt;</code>">&lt;article&gt;</span></code>.</p>
+            <pre><code class="language-css">article p:first-child::first-line {
+font-size: 120%;
+font-weight: bold;
+}</code></pre>
+<pre><code class="language-html">&lt;article&gt;
+&lt;p&gt;Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&lt;/p&gt;
+&lt;p&gt;Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&lt;/p&gt;
+&lt;/article&gt;
+</code></pre>
+
+<img style="width:70%" src="firstchild-first-line.png">
+
+
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
