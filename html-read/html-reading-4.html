@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../scripts/prism.js"></script>
+  <script src="../scripts/project.js"></script>
+</head>
+
+<body>
+<div class="main-wrapper">	            	  	  
+  <main id="content" class="main_content" role="main">
+    <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->          
+		  <section aria-labelledby="Особенности и детали">
+        <h3 id="Особенности и детали"><a href="#Особенности и детали"><span id="hint13" class="hint" data-tooltip="Че то сложно, надо изучать.">Особенности и детали</span></a></h3>
+        <div class="section-content">
+          <p>Помимо адреса электронной почты, вы можете предоставить другую информацию. Фактически, любые стандартные поля для отправки почты могут быть добавлены к указанному вами адресу <code>mailto</code>. Часто используемыми из них являются «subject», «cc» и «body» (которые не являются истинным полем заголовка, но позволяют указать дополнительную информацию для нового сообщения электронной почты). Каждое поле и его значение задаются в качестве условия запроса.</p>
+          <p>Вот пример который включает cc(кому отправить копию сообщения, все получатели письма видят список тех кто это письмо получит), bcc(скрытый адрес получателя, никто из получателей не будет видеть полный список получателей письма), subject(тема письма) и body(текст сообщения):</p>
+          <pre><code class="language-html">&lt;a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&amp;bcc=name3@rapidtables.com&amp;amp;subject=The%20subject%20of%20the%20email &amp;amp;body=The%20body%20of%20the%20email"&gt;
+Send mail with cc, bcc, subject and body
+&lt;/a&gt;</code></pre>
+    <div class="note notecard" id="sect4">
+          <p><strong>Примечание</strong>: Значение каждого поля должно быть написано в URL-кодировке (то есть с непечатаемыми символами и пробелами <a href="https://en.wikipedia.org/wiki/Percent-encoding">percent-escaped</a>). Обратите внимание на знак вопроса (?) для разделения основного адреса и дополнительных полей, амперсанд (&amp;) для разделения каждого поля <code>mailto</code>: URL. Для этого используется стандартное описание URL запроса. Прочтите <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data#the_get_method"><span class="hint" data-tooltip="Не забыть законспектить">о методе GET</span></a>, чтобы лучше понимать описание URL запроса.</p>
+
+          </div>
+    <p>Вот несколько примеров использования <code>mailto</code> URLs:</p>
+    <ul>
+            <li><a href="mailto:">mailto</a>:</li>
+            <li><a href="mailto:nowhere@mozilla.org">mailto:nowhere@mozilla.org</a></li>
+            <li><a href="mailto:nowhere@mozilla.org,nobody@mozilla.org">mailto:nowhere@mozilla.org,nobody@mozilla.org</a></li>
+            <li><a href="mailto:nowhere@mozilla.org?cc=nobody@mozilla.org">mailto:nowhere@mozilla.org?cc=nobody@mozilla.org</a></li>
+            <li><a href="mailto:nowhere@mozilla.org?cc=nobody@mozilla.org&amp;subject=This%20is%20the%20subject">mailto:nowhere@mozilla.org?cc=nobody@mozilla.org&amp;subject=This%20is%20the%20subject</a></li>
+          </ul>
+        </div>
+      </section>  
+	</article>
+  </main>	  
+</div>
+</body>
+
+
+
+
