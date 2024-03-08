@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Всегда ли нужно использовать «use strict»?">
+          <h2 id="Всегда ли нужно использовать «use strict»?">Всегда ли нужно использовать «use strict»?</h2>
+          <div class="section-content">
+            <p>Вопрос кажется риторическим, но это не так.</p>
+            <p>Кто-то посоветует начинать каждый скрипт с <code>"use strict"</code>… Но есть способ покруче.</p>
+            <p>Современный JavaScript поддерживает «классы» и «модули» — продвинутые структуры языка (и мы, конечно,
+              до них доберёмся), которые автоматически включают строгий режим. Поэтому в них нет нужды добавлять
+              директиву <code>"use strict"</code>.</p>
+            <p>Подытожим: пока очень желательно добавлять <code>"use strict";</code> в начале ваших скриптов. Позже,
+              когда весь ваш код будет состоять из классов и модулей, директиву можно будет опускать.</p>
+            <p>Пока мы узнали о <code>use strict</code> только в общих чертах.</p>
+            <p>В следующих главах, по мере расширения знаний о возможностях языка, мы яснее увидим отличия между
+              строгим и стандартным режимом. К счастью, их не так много, и все они делают жизнь разработчика лучше.
+            </p>
+            <p>Все примеры в этом учебнике подразумевают исполнение в строгом режиме, за исключением случаев (очень
+              редких), когда оговорено иное.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
