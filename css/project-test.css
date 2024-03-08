@@ -226,7 +226,7 @@ section section h3 { // зачем я это правило сдесь зада�
   .main_content p, 
   .main_content dl { 
     margin-bottom: 1.1rem;  
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: lighter;
     color: #1b1b1b;
     line-height: 1.9rem;  
@@ -259,7 +259,7 @@ section section h3 { // зачем я это правило сдесь зада�
   .main_content ol {
     margin-top: 0;
     margin-bottom: 0;  
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: lighter;
     color: #1b1b1b;
     line-height: 1.8rem;
@@ -359,7 +359,7 @@ section section h3 { // зачем я это правило сдесь зада�
 .main dl { 
   margin-top: 1rem;
   margin-bottom: 1rem;  
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: lighter;
   color: #1b1b1b;
   line-height: 1.8rem;  
@@ -369,7 +369,7 @@ section section h3 { // зачем я это правило сдесь зада�
 .main ol {
   margin-top: 0;
   margin-bottom: 0;  
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: lighter;
   color: #1b1b1b;
   line-height: 1.8rem;
@@ -774,7 +774,7 @@ kbd {
   border-radius: 0.25rem;
   box-shadow: #cdcdcd;
   box-shadow: inset 0 -1px 0 0 #cdcdcd;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: .25rem;
 }
 
