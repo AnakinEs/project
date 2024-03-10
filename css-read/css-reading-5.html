@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Простой пример псевдокласса">
+          <h3 id="Простой пример псевдокласса">Простой пример псевдокласса</h3>
+          <div class="section-content">
+            <p>Давайте рассмотрим простой пример. Если бы мы хотели сделать шрифт первого абзаца статьи более крупным и жирным, мы могли бы добавить класс к этому абзацу, а затем добавить CSS к этому классу, как показано в первом примере ниже:</p>
+            <iframe style="height:60rem" src="../getting-started/started26.html"></iframe>
+    <p>Однако поддержка может оказаться утомительной — что если новый абзац будет добавлен в верхнюю часть документа? Тогда нам нужно будет передвинуть класс к новому абзацу. Вместо добавления класса мы могли бы использовать селектор псевдокласса <code>:first-child</code> — он всегда будет нацелен на первый дочерний элемент в статье, и нам больше не нужно будет редактировать HTML (к тому же это не всегда возможно, например, в случае если он генерируется <span class="hint" data-tooltip="Надо будет узнать">CMS</span>.)</p>
+
+            <iframe style="height:60rem" src="../getting-started/started27.html"></iframe>
+    <p>Все псевдоклассы ведут себя подобным образом. Они нацелены на какой-то фрагмент вашего документа, находящийся в определённом состоянии, и ведут себя так, как если бы вы добавили класс в свой HTML. Рассмотрим некоторые другие примеры в MDN:</p>
+            <ul>
+              <li><code>:last-child</code></li>
+              <li><code>:only-child</code></li>
+              <li><code>:invalid</code></li>
+            </ul>
+    <div class="note notecard" id="sect4">
+            <p><strong>Примечание</strong>: Правильно писать псевдоклассы и элементы без какого бы то ни было предшествующего им селектора элемента. В примере выше вы могли бы написать <code><span class="meaning" data-tooltip="т.е без абзаца: p">:first-child</span></code> и правило было бы применено к любому элементу, оказавшемуся первым дочерним для <code>&lt;article&gt;</code>, не только к первому дочернему абзацу — <code>:first-child</code> равнозначно <code>*:first-child</code>. Однако обычно вы хотите большего контроля, поэтому вам нужен более специфичный селектор.</p>
+
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
