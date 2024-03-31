@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Подключение CSS и JavaScript">
+          <h2 id="Подключение CSS и JavaScript">Подключение CSS и JavaScript</h2>
+          <div class="section-content">
+            <p>Современные сайты используют <a href="https://developer.mozilla.org/ru/docs/Glossary/CSS">CSS</a>, чтобы
+              выглядеть привлекательнее, и добавляют интерактивные функции через <a
+                href="https://developer.mozilla.org/ru/docs/Glossary/JavaScript">JavaScript</a>: видеоплееры, карты,
+              игры. Обычно связанные стили добавляют на страницу через элемент <code>&lt;link&gt;</code>, а скрипты —
+              через элемент <code>&lt;script&gt;</code>.</p>
+            <ul>
+              <li>Элемент <code>&lt;link&gt;</code> помещают в заголовок документа. У него есть два атрибута:
+                <code>rel="stylesheet"</code> показывает, что мы указываем стиль документа, а в <code>href</code> указан
+                путь к файлу:</li>
+              <pre><code class="language-html">&lt;link rel="stylesheet" href="my-css-file.css"&gt;</code></pre>
+              <li>Элемент <code>&lt;script&gt;</code> не обязательно находится в заголовке — на самом деле лучше
+                поместить его в самом конце страницы, прямо перед закрывающем тегом . Так браузер сначала отобразит саму
+                страницу, а уже затем загрузит и запустит скрипт — иначе скрипт может обратиться к ещё не созданному
+                элементу страницы и сломаться.</li>
+              <pre><code class="language-html">&lt;script src="my-js-file.js"&gt;&lt;/script&gt;</code></pre>
+              <div class="note notecard" id="sect4">
+                <p><strong>Примечание</strong>: Элемент <code>&lt;script&gt;</code> кажется пустым, но это не всегда
+                  так, и указывать закрывающий тег обязательно. Вместо того чтобы ссылаться на внешний скрипт, код можно
+                  писать прямо внутри этого элемента — так можно не тратить время на загрузку отдельного скрипта, но
+                  зато не выйдет сослаться на один js-файл с нескольких страниц.</p>
+              </div>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
