@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Акцент и важность">
+          <h2 id="Акцент и важность">Акцент и важность</h2>
+          <div class="section-content">
+            <p>В обиходе мы часто подчёркиваем определённые слова, чтобы изменить смысл предложения и мы часто хотим отметить некоторые слова как важные или разные в некотором роде. HTML предоставляет различные семантические элементы, позволяющие нам добавлять текстовые материалы с такими эффектами, и в этом разделе мы рассмотрим несколько наиболее распространённых.</p>
+            <p></p>
+          </div>
+        </section>		  
+    
+    <section aria-labelledby="Акцент">
+          <h3 id="Акцент">Акцент</h3>
+          <div class="section-content">
+            <p>Когда мы хотим добавить акцент в разговорный язык, мы подчёркиваем определённые слова, тонко изменяя смысл того, что мы говорим. Точно так же на письменном языке мы склонны подчёркивать слова, выделяя их курсивом. Например, следующие два предложения имеют разные значения.</p>
+            <p>Я рад, что ты не опоздал.</p>
+            <p>Я рад, что ты не <em>опоздал</em>.</p>
+            <p>В первом предложении звучит искреннее облегчение, что человек не опоздал. Во втором, напротив, звучит сарказм или пассивная агрессия: так выражена досада от того, что человек немного опоздал.</p>
+            <p>В таких случаях в HTML используется элемент <code>&lt;em&gt;</code> (выделение). Кроме того, чтобы сделать документ более интересным для чтения, они распознаются программами, считывающими с экрана, и произносятся другим тоном. Браузеры стилизуют это по умолчанию курсивом, но вы можете не использовать этот тег, чтобы получить курсив. Для выделения курсивом вы можете использовать элемент <code>&lt;span&gt;</code> и CSS, или, возможно, элемент <code>&lt;i&gt;</code> (смотрите ниже).</p>
+            <pre><code class="language-html">&lt;p&gt;Я &lt;em&gt;рад&lt;/em&gt;, что ты не &lt;em&gt;опоздал&lt;/em&gt;.&lt;/p&gt;</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
