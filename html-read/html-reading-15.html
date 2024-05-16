@@ -19,6 +19,70 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        
+        <section aria-labelledby="Художественное оформление">
+          <h3 id="Художественное оформление">Художественное оформление</h3>
+          <div class="section-content">
+    <p>Подводя итоги, <strong>проблема художественного оформления</strong> заключается в желании изменить отображаемое
+      изображение чтобы оно соответствовало разным размерам отображения изображения. Например, если на веб-сайте
+      отображается большой пейзажный снимок с человеком посередине при просмотре в браузере на настольном компьютере,
+      то при просмотре веб-сайта в мобильном браузере он уменьшается; он будет выглядеть плохо так как человек будет
+      очень меленьким и его будет тяжело разглядеть. Вероятно будет лучше показать меньшую портретную картинку в
+      мобильной версии на которой человек отображается в увеличении (в приближении). Элемент
+      <code>&lt;picture&gt;</code> позволяет нам применять именно такое решение.</p>
+    <p>Возвращаясь к нашему оригинальному примеру <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/not-responsive.html">not-responsive.html</a>,
+      мы имеем изображение которое очень нуждается в художественном оформлении:</p>
+    <pre><code class="language-html">&lt;img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva"&gt;</code></pre>
+    <p>Давайте исправим это при помощи элемента <code>&lt;picture&gt;</code>! Так же как <code>&lt;video&gt;</code> и
+      <code>&lt;audio&gt;</code>, элемент <code>&lt;picture&gt;</code> это обёртка содержащая некоторое количество
+      элементов <code>&lt;source&gt;</code> которые предоставляют браузеру выбор нескольких разных источников, в
+      сопровождении крайне важного элемента <code>&lt;img&gt;</code>. Код <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/responsive.html">responsive.html</a>
+      выглядит так:</p>
+    <pre><code class="language-html">&lt;picture&gt;
+&lt;source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg"&gt;
+&lt;source media="(min-width: 800px)" srcset="elva-800w.jpg"&gt;
+&lt;img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva"&gt;
+&lt;/picture&gt;</code></pre>
+    <ul>
+      <li>Элемент <code>&lt;source&gt;</code> принимает атрибут <code>media</code>, который содержит медиа-условие;
+        при помощи этих условий определяется, какое изображение будет выведено. В данном случае, если ширина
+        viewport'a составит 799px или меньше, будет выведено изображение первого элемента <code>&lt;source&gt;</code>.
+        Если ширина составит 800px и более — второго.</li>
+      <li>Атрибут <code>srcset</code> содержит путь изображения, которое будет выведено. Обратите внимание, что, как и
+        в примере с <code>&lt;img&gt;</code> выше, <code>&lt;source&gt;</code> может принимать атрибуты
+        <code>srcset</code> и <code><span class="meaning" data-tooltip="<p><strong><code>sizes</code></strong> определяет перечень медиавыражений (например, ширину экрана) и указывает
+          предпочтительную ширину изображения, когда определённое медиавыражение истинно — это то, о чём мы говорили выше.
+          В нашем случае, перед каждой запятой мы пишем:</p>
+        <ol>
+          <li><strong>Медиа-условие</strong> (<code>(max-width:480px)</code>) — вы можете больше узнать об этом в <a
+              href=&quot;https://developer.mozilla.org/en-US/docs/Learn/CSS&quot;>CSS topic</a>, но сейчас давайте скажем, что
+            медиа-условие описывает возможное состояние экрана. В этом случае, мы говорим &quot;когда <span class=&quot;meaning&quot;
+              data-tooltip=&quot;Ширина области просмотра&quot;>viewport width</span> меньше или равен 480 пикселям&quot;.</li>
+          <li>Пробел.</li>
+          <li><strong>Ширину слота</strong> (в оригинале &quot;width of the slot&quot;), занимаемую изображением, когда
+            медиа-условие истинно. (<code>440px</code>)</li>
+        </ol>">sizes</span></code> с несколько предопределёнными изображениями. Так вы можете не только
+        поместить группу изображений внутри элемента <code>&lt;picture&gt;</code>, но и задать группу предписаний для
+        каждого из них. <span class="meaning" data-tooltip="В подзаголовке выше это все объясняется">В реальности вы вряд ли
+          захотите заниматься этим очень часто.</span></li>
+      <li>Вы всегда должны использовать элемент <code>&lt;img&gt;</code>, с <code>src</code> и <code>alt</code>, прямо
+        перед <code>&lt;/picture&gt;</code>, иначе изображения не появятся. Это нужно на тот случай, когда ни одно из
+        медиа-условий не удовлетворено (например, если бы вы убрали второй элемент <code>&lt;source&gt;</code>) или
+        браузер не поддерживает элемент <code>&lt;picture&gt;</code>.</li>
+    </ul>
+    <p>Этот код позволяет нам выводить отзывчивое изображение и на широких, и на узких экранах, как показано ниже:</p>
+    <img alt="" src="https://anakines.github.io/uchebnik.github.io/images/picture-element-wide%20(1).png" loading="lazy">
+    <img alt="" style="width:40%" src="https://anakines.github.io/uchebnik.github.io/images/picture-element-narrow.png" loading="lazy">
+    <div class="note notecard" id="sect4">
+      <p><strong>Примечание</strong>: вам следует использовать атрибут <code>media</code> только при художественном
+        оформлении; когда вы используете <code>media</code>, не применяйте медиа-условия с атрибутом
+        <code><span id="hint23" class="meaning" data-tooltip="Т.е <code>source</code> может принимать атрибуты
+        <code>srcset</code> и <code>sizes</code> с несколько предопределёнными изображениями. Но нельзя одновременно
+        использовать <code>media</code> и <code>sizes</code>">sizes</span></code>.</p>
+    </div>
+  </div>
+        </section>
+        
         <section aria-labelledby="Почему это нельзя сделать посредством CSS и JavaScript?">
           <h3 id="Почему это нельзя сделать посредством CSS и JavaScript?">Почему это нельзя сделать посредством CSS и JavaScript?</h3>
           <div class="section-content">
