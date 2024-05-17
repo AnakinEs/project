@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Селекторы вхождения подстроки">
+          <h2 id="Селекторы вхождения подстроки">Селекторы вхождения подстроки</h2>
+          <div class="section-content">
+            <p>Эти селекторы предоставляют более широкие возможности для выявления вхождения подстроки в значение атрибута. Например, если у вас есть классы <code>box-warning</code> и <code>box-error</code> и вы хотите выбрать всё, что начинается со строки "box-", вы можете использовать <code>[class^="box-"]</code>, чтобы выбрать оба класса (или <code>[class<span class="meaning" data-tooltip="Выбирает элементы с атрибутом <code>attr</code>, значение которого в точности равно <code>value</code> или начинается с <code>value</code>, за которым сразу следует дефис.<p></p><code>[attr|=value]</code><p></p><code>div[lang|=&quot;zh&quot;]</code>">|=</span>"box"]</code> как описано в предыдущем разделе).</p>
+          <div class="table-scroll">
+    <table>
+            <thead>
+              <tr>
+                <th>Селектор</th>
+                <th>Пример</th>
+                <th>Описание</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>[attr^=value]</code></td>
+                <td><code>li[class^="box-"]</code></td>
+                <td>Выбирает элементы с атрибутом attr (его имя — это значение в квадратных скобках), значение которого начинается с value.</td>
+              </tr>
+      <tr>
+                <td><code>[attr$=value]</code></td>
+                <td><code>li[class$="-box"]</code></td>
+                <td>Выбирает элементы с атрибутом attr, значение которого заканчивается на value.</td>
+              </tr>
+      <tr>
+                <td><code>[attr*= ]</code></td>
+                <td><code>li[class*="box"]</code></td>
+                <td>Выбирает элементы с атрибутом attr, значение которого содержит value, независимо от его положения внутри строки.</td>
+              </tr>				  
+            </tbody>
+          </table>
+    </div>
+    <p>(Отступление: возможно, будет полезным заметить, что <code>^</code> и <code>$</code> давно используются как якоря в так называемых регулярных выражениях и обозначают начинается с и заканчивается на.)</p>
+            <p>Следующий пример показывает, как используются эти селекторы:</p>
+            <ul>
+              <li><code>li[class^="a"]</code> выбирает все значения атрибута, которые начинаются с <code>a</code>, что соответствует первым двум элементам списка.</li>
+              <li><code>li[class$="a"]</code> выбирает все значения атрибута, которые заканчиваются на <code>a</code>, что соответствует первому и третьему элементу списка.</li>
+              <li><code>li[class*="a"]</code> выбирает все значения атрибута, где появляется <code>a</code>, независимо от положения в строке, что соответствует всем элементам нашего списка.</li>
+            </ul>
+    <iframe style="height:72rem" src="https://anakines.github.io/project/getting-started/started24.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
