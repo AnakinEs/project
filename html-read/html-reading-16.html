@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Упорядоченные">
+          <h3 id="Упорядоченные"><a href="#Упорядоченные">Упорядоченные</a></h3>
+          <div class="section-content">
+            <p>Упорядоченные списки — это списки, в которых порядок элементов имеет значение, — возьмём в качестве примера маршрут следования:</p>
+            <pre><code class="language-html">Двигайтесь до конца дороги
+Поверните направо
+Езжайте прямо через первые два перекрёстка с круговым движением
+Поверните налево на третьем перекрёстке
+Школа справа от вас, 300 метров вверх по дороге</code></pre>
+      <p>Структура разметки такая же, как для неупорядоченных списков, за исключением того, что вы должны обернуть элементы списка в элемент <code>&lt;ol&gt;</code> (ordered list), а не <code>&lt;ul&gt;</code>:</p>
+            <pre><code class="language-html">&lt;ol&gt;
+ &lt;li&gt;Двигайтесь до конца дороги&lt;/li&gt;
+ &lt;li&gt;Поверните направо&lt;/li&gt;
+ &lt;li&gt;Езжайте прямо через первые два перекрёстка с круговым движением&lt;/li&gt;
+ &lt;li&gt;Поверните налево на третьем перекрёстке&lt;/li&gt;
+ &lt;li&gt;Школа справа от вас, в 300 метрах вверх по дороге&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
