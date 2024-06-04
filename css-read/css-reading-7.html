@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление CSS в DOM">
+          <h2 id="Добавление CSS в DOM">Добавление CSS в DOM</h2>
+          <div class="section-content">
+            <p>Допустим, мы добавили таблицу стилей к нашему примеру:</p>
+            <pre><code class="language-html">&lt;p&gt;
+Let's use:
+&lt;span&gt;Cascading&lt;/span&gt;
+&lt;span&gt;Style&lt;/span&gt;
+&lt;span&gt;Sheets&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+            <p>А вот CSS-код:</p>
+            <pre><code class="language-css">span {
+border: 1px solid black;
+background-color: lime;
+}</code></pre>
+            <p>Браузер загрузит HTML-код, преобразует его в DOM и только потом загрузит CSS. Так как у нас всего одно
+              правило, браузер загрузит CSS очень быстро! Это правило будет добавлено к каждому из трёх элементов
+              <code>&lt;span&gt;</code>. После этого информация будет отображена на экране.</p>
+            <p>Новый результат:</p>
+            <iframe style="height:6.5rem" src="https://https://anakines.github.io/project/getting-started/started5.html"></iframe>
+            <p>В статье Отладка <a
+                href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Debugging_CSS">CSS</a> мы будем
+              использовать браузер DevTools для отладки CSS.</p>
+            <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
