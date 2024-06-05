@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Используйте HTTPS">
+          <h3 id="Используйте HTTPS"><span id="hint16" class="hint" data-tooltip="Не все понял">Используйте HTTPS</span></h3>
+          <div class="section-content">
+            <p><code>HTTPS</code> это зашифрованная версия <code>HTTP</code>. Вы должны обслуживать свои веб-сайты, используя <code>HTTPS</code>, всегда, когда это возможно :</p>
+            <ol>
+              <li>HTTPS уменьшает вероятность того, что контент был изменён по пути;</li>
+              <li>HTTPS запрещает доступ внедрённого контента к контенту в вашем исходном документе и наоборот.</li>
+            </ol> 
+      <p>Использование <code>HTTPS</code> требует сертификат безопасности, что может обходиться в копеечку (хотя есть <a href="https://letsencrypt.org/">Let's Encrypt</a>, что облегчает задачу). Если вы не можете его получить, вы можете отдавать свой родительский документ с помощью <code>HTTP</code>. Однако, из-за второго преимущества HTTPS во что бы то ни стало вы не должны внедрять сторонний контент с <code>HTTP</code>. (В лучшем случае ваш браузер выдаст угрожающее предупреждение.) Все уважаемые компании, которые делают контент доступным для внедрения через <code>&lt;iframe&gt;</code>, доступны через HTTPS - посмотрите URL-адреса внутри <code>&lt;iframe&gt;</code> <code>src</code> при встраивании, например, содержимого из Карт Google или Youtube.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Using_Github_pages">Github pages</a> позволяют предоставлять контент через HTTPS по умолчанию, поэтому это полезно для размещения контента. Если вы используете другой хостинг и не уверены, спросите хостинг-провайдера об этом.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+<iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/html-read/html-reading-17.html"></iframe>
