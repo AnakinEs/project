@@ -204,7 +204,7 @@ section section h3 { // зачем я это правило сдесь зада�
 
 /* Основное содержание */
 
-@media screen and (max-width: 799px) { /* 799px или меньше */ 
+@media screen and (max-width: 799px) { /* 799px или меньше */
   
   .main_content p, 
   .main_content dl { 
@@ -217,7 +217,7 @@ section section h3 { // зачем я это правило сдесь зада�
 
   .main_content{
     width: 100%;
-    height: 2000px;
+    height: 3000px;
   }
 }
 
