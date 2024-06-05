@@ -220,6 +220,10 @@ section section h3 { // зачем я это правило сдесь зада�
     height: 3000px;
     
   }
+
+  html{
+    overflow: hidden;
+  }
 }
 
 @media screen and (min-width: 800px) {  /* 800px или  больше*/ 
