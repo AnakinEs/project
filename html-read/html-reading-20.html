@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Изображения">
+          <h2 id="Изображения2"><span style="font-weight: normal;">Изображения</span></h2>
+          <div class="section-content">
+            <p>Давайте снова обратим наше внимание на элемент <a
+                href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img">изображения</a>:</p>
+            <pre><code class="language-html">&lt;img src="images/firefox-icon.png" alt="Mоё тестовое изображение"&gt;</code></pre>
+            <p>Как было сказано раньше, код встраивает изображение на нашу страницу в нужном месте. Это делается с
+              помощью атрибута <code>src</code> (source, источник), который содержит путь к нашему файлу изображения.
+            </p>
+            <p>Мы также включили атрибут <code>alt</code> (alternative, альтернатива). В этом атрибуте, вы указываете
+              поясняющий текст для пользователей, которые не могут увидеть изображение, возможно, по следующим причинам:
+            </p>
+            <ol>
+              <li>У них присутствуют нарушения зрения. Пользователи со значительным нарушением зрения часто используют
+                инструменты, называемые Screen Readers (экранные дикторы), которые читают для них альтернативный текст.
+              </li>
+              <li>Что-то пошло не так, в результате чего изображение не отобразилось. Например, попробуйте намеренно
+                изменить путь в вашем атрибуте <code>src</code>, сделав его неверным. Если вы сохраните и перезагрузите
+                страницу, то вы должны увидеть что-то подобное вместо изображения:</li>
+              <img class="alt-text-example" src="https://anakines.github.io/project/images/alt-text-example.png">
+            </ol>
+
+            <p>Альтернативный текст - это "пояснительный текст". Он должен предоставить читателю достаточно информации,
+              чтобы иметь представление о том, что передаёт изображение. В этом примере наш текст "My test image" ("Моё
+              тестовое изображение") не годится. Намного лучшей альтернативой для нашего логотипа Firefox будет "The
+              Firefox logo: a flaming fox surrounding the Earth" ("Логотип Firefox: огненный Лис вокруг Земли").</p>
+            <p>Сейчас попробуйте придумать более подходящий альтернативный текст для вашего изображения.</p>
+            <div class="note notecard" id="sect4">
+              <p>Примечание: Узнайте больше о <a href="https://developer.mozilla.org/ru/docs/Web/Accessibility">специальных возможностях</a>.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
