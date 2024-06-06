@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Селекторы ID">
+          <h2 id="Селекторы ID">Селекторы ID</h2>
+          <div class="section-content">
+            <p>Селектор ID начинается с <code>#</code>, а не с точки, но используется так же, как и селектор класса. Однако ID может быть использован единожды на странице, и к элементу может быть применён только один <code>id</code>. Можно выбрать элемент, которому присвоен <code>id</code>, а также вы можете предварить ID селектором типа для нацеливания на элемент, имеющий соответствующее сочетание элемента и ID. Вы можете увидеть оба варианта использования в следующем примере:</p>
+            <iframe style="height:65rem" src="https://anakines.github.io/uchebnik.github.io/getting-started/started22.html"></iframe>
+    <div class="note notecard" id="red_background">
+              <p><strong>Предупреждение</strong>: Может показаться, что неоднократное использование в документе одного и того же ID выполняет задачи стилизования, но не стоит этого делать. Результатом будет неверный код, который приведёт к многочисленным странностям в поведении.</p>
+            </div>
+    <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Как мы знаем из урока по специфичности, ID имеет высокую специфичность. Он будет брать верх над большинством других селекторов. В большинстве случаев предпочтительнее добавить элементу класс, чем ID. Однако, если использование ID это единственный способ нацелиться на элемент — возможно, потому вы не имеете доступа к разметке и, следовательно, возможности её редактировать — это будет работать.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
