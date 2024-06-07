@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Аббревиатуры">
+          <h2 id="Аббревиатуры">Аббревиатуры</h2>
+          <div class="section-content">
+            <p>Другой довольно часто встречающийся элемент, который вы будете часто встречать в Интернете, — это <code>&lt;abbr&gt;</code>, используемый для обёртывания аббревиатур или акронимов и обеспечивающий полную расшифровку сокращения (с помощью атрибута <code>title</code>.)</p>
+            <p>Давайте рассмотрим несколько примеров:</p> 
+      <pre><code class="language-html">&lt;p&gt;Мы используем &lt;abbr title="Hypertext Markup Language"&gt;HTML&lt;/abbr&gt; для структурирования наших веб-документов.&lt;/p&gt;
+
+&lt;p&gt;Я думаю, &lt;abbr title="Почтенный"&gt;Почт.&lt;/abbr&gt; Грин сделал это на кухне с бензопилой.&lt;/p&gt;</code></pre>
+      <p>Они будут выглядеть примерно так (расшифровка появится в подсказке при наведении курсора мыши на сокращение):</p>
+            <div class="note notecard" id="transparent">
+              <p>Мы используем <abbr title="Hypertext Markup Language">HTML</abbr> для структурирования наших веб-документов.</p>
+              <p>Я думаю, <abbr title="Почтенный">Почт.</abbr> Грин сделал это на кухне с бензопилой.</p>
+            </div>
+            <div class="note notecard" id="sect4">
+              <p><strong>Применение</strong>: Существует ещё один элемент <code>&lt;acronym&gt;</code>, который в основном делает то же самое, что и <code>&lt;abbr&gt;</code>, но предназначен специально для акронимов (тип аббревиатур). Это, однако, было излишним, — он не поддерживается в браузерах на том же уровне, что <code>&lt;abbr&gt;</code>, и имеет такую же функциональность, поэтому считается бессмысленным иметь оба. Просто используйте <code>&lt;abbr&gt;</code>.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
