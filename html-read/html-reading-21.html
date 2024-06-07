@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Списки">
+          <h2 id="Списки3">Списки</h2>
+          <div class="section-content">
+            <p>Теперь обратим наше внимание на списки. Списки есть везде вокруг нас — от вашего списка покупок до списка направлений, которым вы подсознательно следуете, чтобы каждый день добраться домой, и списка инструкций, которые вы выполняете в этом руководстве! Списки используются всюду в Интернете, и мы рассмотрим три разных типа списков.</p>
+          </div>
+        </section>		  
+    
+    <section aria-labelledby="Неупорядоченные">
+          <h3 id="Неупорядоченные">Неупорядоченные</h3>
+          <div class="section-content">
+            <p>Неупорядоченные списки используются для элементов, для которых порядок не имеет значения, — возьмём, к примеру, список покупок:</p>
+            <pre><code class="language-html">молоко
+яйца
+хлеб
+хумус</code></pre>
+      <p>Каждый неупорядоченный список начинается с элемента <code>&lt;ul&gt;</code> (unordered list) — он обёртывает все элементы списка: молоко, яйца, хлеб, хумус.</p>
+      <p>Последний шаг состоит в том, чтобы обернуть каждый элемент списка в элемент <code>&lt;li&gt;</code> (элемент списка):</p>
+      <pre><code class="language-html">&lt;ul&gt;
+&lt;li&gt;молоко&lt;/li&gt;
+&lt;li&gt;яйца&lt;/li&gt;
+&lt;li&gt;хлеб&lt;/li&gt;
+&lt;li&gt;хумус&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
