@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Ссылки электронной почты">
+          <h2 id="Ссылки электронной почты">Ссылки электронной почты</h2>
+          <div class="section-content">
+            <p>Можно создавать ссылки или кнопки, которые при нажатии открывают новое исходящее сообщение электронной почты, а не ссылку на ресурс или страницу. Для этого используется элемент <code>&lt;a&gt;</code> и <code>mailto</code>: — <em>адрес почты</em>.</p>
+            <p>Самыми простыми и часто используемыми формами <code>mailto</code>: являются <em>subject</em>, <em>cc</em>, <em>bcc</em> и <em>body</em>; дальше прописываем адрес электронной почты. Например:</p>
+            <pre><code class="language-html">&lt;a href="mailto:nowhere@mozilla.org"&gt;Отправить письмо для nowhere&lt;/a&gt;</code></pre>
+      <p>В результате получим ссылку вида: <a href="mailto:nowhere@mozilla.org">Отправить письмо для nowhere</a>.</p>
+            <p>Сам адрес электронной почты не является обязательным для заполнения. Если оставить это поле пустым (в поле <code>href</code> оставить только "<code>mailto</code>:"), откроется новое исходящее сообщение почтовой программой, в поле получателя будет пусто. Это можно использовать для кнопки "Поделиться".</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
