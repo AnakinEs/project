@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Что такое HTML?">
+          <h2 id="Что такое HTML?"><a href="#Что такое HTML?">Что такое HTML?</a></h2>
+          <div class="section-content">
+            <p><a href="https://developer.mozilla.org/ru/docs/Glossary/HTML">HTML</a> (HyperText Markup Language - язык гипертекстовой разметки) не является языком программирования; это язык разметки, используемый для определения структуры веб-страниц, посещаемых пользователями. Они могут иметь сложную или простую структуру, всё зависит от замысла и желания веб-разработчика. HTML состоит из ряда <a href="https://developer.mozilla.org/ru/docs/Glossary/Element">элементов</a>, которые вы используете для того, чтобы охватить, обернуть или разметить различные части содержимого, чтобы оно имело определённый вид или срабатывало определённым способом. Встроенные <a href="https://developer.mozilla.org/ru/docs/Glossary/Tag">тэги</a> могут преобразовать часть содержимого в гиперссылку, по которой можно перейти на другую веб-страницу, выделить курсивом слова и так далее. Например, рассмотрим следующую строку:</p>
+            <pre><code class="language-html">Мой кот очень сердитый</code></pre>
+      <p>Если мы хотим, чтобы строка отобразилась в таком же виде, мы можем определить её, как "параграф", заключив её в теги элемента "параграф" (<code>&lt;p&gt;</code>), например:</p>
+      <pre><code class="language-html">&lt;p&gt;Мой кот очень сердитый&lt;/p&gt;</code></pre>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Метки в HTML нечувствительны к регистру, то есть они могут быть 
+      записаны в верхнем или нижнем регистре. Например, тег <code>&lt;title&gt;</code> может быть записан 
+      как <code>&lt;title&gt;</code>, <code>&lt;TITLE&gt;</code>, <code>&lt;Title&gt;</code>, <code>&lt;TiTlE&gt;</code>, и т.д., и он будет работать нормально. Лучшей практикой, 
+      однако, является запись всех тегов в нижнем регистре для обеспечения согласованности, 
+      удобочитаемости и других причин.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
