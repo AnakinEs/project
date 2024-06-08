@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Загрузка ваших файлов на GitHub">
+          <h3 id="Загрузка ваших файлов на GitHub">Загрузка ваших файлов на GitHub</h3>
+          <div class="section-content">
+            <p>Здесь у нас будет использоваться командная строка чтобы отправить наш репозиторий на GitHub. Командная строка - это окно где вы вводите команды для быстрого выполнения таких вещей, как создание файла или запуск программы, без использования пользовательского интерфейса. Командная строка выглядит примерно так:</p>
+            <img src="https://anakines.github.io/project/images/command-line.png">
+          </div>          		  		 
+          
+    <div class="note notecard" id="sect4">
+            <p><strong>Примечание</strong>: вы также можете использовать графический пользовательский интерфейс <a target="_blank" href="http://git-scm.com/downloads/guis">Git</a> для этих же целей, если вам не удобно работать с командной строкой.</p>
+          </div>
+    <p>У всех операционных систем есть командная строка:</p>
+          <ul>
+            <li><strong>Windows: Командная строка.</strong> Чтобы открыть её нажмите клавишу Windows, затем введите Командная строка в поле поиска, и выберите её в появившемся списке. Заметьте, что Windows имеет свои собственные соглашения команд, отличные от Linux и OS X, поэтому приведённые ниже команды могут отличаться на вашем компьютере.</li>
+            <li><strong>OS X: Terminal</strong> можно найти в Приложения &gt; Утилиты.</li>
+            <li><strong>Linux</strong>: Обычно вы можете вытащить <strong>терминал</strong> с помощью Ctrl + Alt + T. Если это не сработает, найдите Терминал в панели приложений или меню.</li>
+          </ul>
+    <p>Сначала это может показаться немного страшным, но не волнуйтесь - вы скоро освоите основы. Вы говорите компьютеру сделать что-то в терминале, введя команду и нажав Enter.</p>
+    <ol>
+            <li>Укажите в командной строке каталог <code>test-site</code> (или другое название каталога, содержащего ваш сайт). Для этого используйте команду <code>cd</code> (т.е. «change directory»). Вот то, что вы наберёте, если разместили свой веб-сайт в каталоге под названием <code>test-site</code> на рабочем столе:</li>
+            <pre><code class="language-css">cd Desktop/test-site</code></pre>
+    <li>Когда командная строка указывает внутрь вашего каталога веб-сайта, введите следующую команду, которая сообщает инструменту <code>git</code>, чтобы он превратил каталог в репозиторий git:</li>
+            <pre><code class="language-css">git init</code></pre>
+       <li>Далее вернёмся к сайту GitHub. На текущей странице вас интересует раздел "…or push an existing repository from the command line". Вы должны увидеть две строки кода в этом разделе. Скопируйте всю первую строку, вставьте её в командную строку и нажмите Enter. Команда должна выглядеть примерно так:</li>
+            <pre><code class="language-css">git remote add origin https://github.com/bobsmith/bobsmith.github.io.git</code></pre>
+    <li>Далее введите следующие две команды, нажимая Enter после каждой. Это подготовит код к загрузке на GitHub, и укажет Git управлять этими файлами.</li>
+            <pre><code class="language-css">git add --all
+git commit -m 'adding my files to my repository'</code></pre>
+    <li>Наконец, загрузите код на GitHub - вернитесь на веб-страницу GitHub, на которой вы находились, и введите в терминал команду:</li>
+            <pre><code class="language-css">git push -u origin master</code></pre>
+    <li>Теперь, когда вы перейдёте по веб-адресу, созданному в GitHub, в новом окне браузера (username.github.io), вы увидите ваш сайт онлайн! Разошлите ссылку вашим друзьям, пусть оценят ваше мастерство.</li>
+          </ol>
+    <div class="note notecard" id="sect4">
+            <p><strong>Примечание</strong>: Если вы застряли, <a target="_blank" href="https://pages.github.com/">GitHub Pages homepage</a> будет очень полезна для вас.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
