@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Что такое SVG?">
+          <h2 id="Что такое SVG?">Что такое SVG?</h2>
+          <div class="section-content">
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG</a> это язык на базе <a href="https://developer.mozilla.org/ru/docs/Glossary/XML">XML</a> для описания векторных изображений. По сути это язык разметки, как и HTML, только содержащий множество различных элементов для определения фигур вашего изображения, а также параметров их отображения. SVG предназначен для разметки графики, а не содержимого. В простейшем случае,  вы можете использовать элементы для создания простых фигур, таких как <code>&lt;circle&gt;</code>(круг) и <code>&lt;rect&gt;</code>(прямоугольник). Более сложные SVG элементы включают <code>&lt;feColorMatrix&gt;</code> (разложение цвета с использованием матрицы), <code>&lt;animate&gt;</code> (анимация частей вашего векторного изображения) и <code>&lt;mask&gt;</code> (применение маски к изображению.)</p>
+            <p>В качестве простого примера, следующий код создаёт круг и прямоугольник:</p>
+            <pre><code class="language-html">&lt;svg version="1.1"
+   baseProfile="full"
+   width="300" height="200"
+   xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;rect width="100%" height="100%" fill="black" /&gt;
+&lt;circle cx="150" cy="100" r="90" fill="blue" /&gt;
+&lt;/svg&gt;</code></pre>
+      <p>В результате получается следующее:</p>
+            <svg version="1.1" baseProfile="full" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="black"></rect>
+              <circle cx="150" cy="100" r="90" fill="blue"></circle>
+            </svg>
+      <p>Исходя из примера выше, может показаться, что SVG легко создавать вручную. Да, простые SVG можно создавать, используя текстовый редактор, но в случае сложного изображения это становится сложным. Для создания SVG изображений используются редакторы векторной графики, такие как <a href="https://inkscape.org/">Inkscape</a> или <a href="https://en.wikipedia.org/wiki/Adobe_Illustrator">Illustrator</a>. Данные приложения позволяют создавать различные изображения, используя множество графических инструментов, и создавать приближения фотографий (например опция Trace Bitmap feature приложения Inkscape.)</p>
+            <p>Дополнительные преимущества SVG:</p>
+            <ul>
+              <li>Текст в векторном изображении остаётся машинописным (то есть доступным для поисковика, что улучшает SEO).</li>
+              <li>SVG легко поддаются стилизации/программированию (scripting), потому что каждый компонент изображения может быть стилизован с помощью CSS или запрограммирован с помощью JavaScript.</li>
+            </ul>
+      <p>Так почему же тогда вообще используют растровые изображения, а не только SVG? Дело в том, что SVG имеет ряд недостатков:</p>
+            <ul>
+              <li>SVG может очень быстро стать сложным в том смысле, что размер файла увеличивается; сложные SVG-изображения также создают большую вычислительную нагрузку на браузер.</li>
+              <li>SVG может быть сложнее создать, нежели растровое изображение, в зависимости от того, какое изображение необходимо создать.</li>
+              <li>не поддерживается старыми версиями браузеров, то есть не подойдёт для сайтов, поддерживающих Internet Explorer 8 или старее.</li>
+            </ul>
+      <p>В целом, растровая графика лучше подходит для сложных изображений, например, фотографий.</p>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: В приложении Inkscape сохраняйте файлы как Plain SVG, для экономии места. Также, пожалуйста перейдите на <a href="http://tavmjong.free.fr/INKSCAPE/MANUAL/html/Web-Inkscape.html">статью, описывающую как подготовить SVG изображение для веб-документа</a>.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
