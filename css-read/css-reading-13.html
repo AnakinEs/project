@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Чувствительность к регистру">
+          <h2 id="Чувствительность к регистру">Чувствительность к регистру</h2>
+          <div class="section-content">
+            <p>Если вы хотите выбрать значения атрибута без учёта регистра, вы можете использовать значение
+              <code>i</code> перед закрывающей скобкой. Этот признак говорит браузеру, что символы <span class="meaning"
+                data-tooltip="ASCII (англ. American standard code for information interchange, [ˈæs.ki][1]) — название таблицы (кодировки, набора), в которой некоторым распространённым печатным и непечатным символам сопоставлены числовые коды. Таблица была разработана и стандартизирована в США, в 1963 году.">ASCII</span>
+              должны сопоставляться без учёта регистра. Без этого признака значения будут сопоставлены в соответствии с
+              чувствительностью к регистру языка документа — в случае HTML такая чувствительность присутствует.</p>
+
+            <p>В примере ниже первый селектор выберет значение, начинающееся с <code>a</code> — это соответствует только
+              первому элементу списка, потому что два других элемента списка начинаются с заглавной буквы A. Второй
+              селектор использует признак нечувствительности к регистру и поэтому выберет все элементы списка.</p>
+            <iframe style="height:65rem"
+              src="https://anakines.github.io/project/getting-started/started25.html"></iframe>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Существует также более новое значение <code>s</code>, которое вызывает
+                сопоставление с учётом регистра в контекстах, где сопоставление обычно не учитывает регистр, однако это
+                не так хорошо поддерживается в браузерах и не очень полезно в контексте HTML.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
