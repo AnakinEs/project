@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Стилизация HTML-элементов">
+          <h2 id="Стилизация HTML-элементов">Стилизация HTML-элементов</h2>
+          <div class="section-content">
+            <p>Делая наш заголовок красным, мы уже продемонстрировали, что можем нацеливать и стилизовать элемент HTML. Мы делаем это путём нацеливания на элемент selector — это селектор, который напрямую соответствует имени элемента HTML. Чтобы нацелиться на все абзацы в документе, вы должны использовать селектор <code>p</code>. Чтобы сделать все абзацы зелёными, вы должны использовать:</p>
+            <pre><code class="language-css">p {
+color: green;
+}</code></pre>
+    <p>Вы можете выбрать несколько селекторов одновременно, разделив их запятыми. Если я хочу, чтобы все параграфы и все элементы списка были зелёными, моё правило выглядит так:</p>         
+    <pre><code class="language-css">p, li {
+color: green;
+}
+</code></pre>
+            <p>Попробуйте это в интерактивном редакторе ниже (отредактируйте поля кода) или в своём локальном документе CSS.</p>
+            <iframe style="height:76rem" src="https://anakines.github.io/project/getting-started/started2.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
