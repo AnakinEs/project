@@ -234,7 +234,7 @@ section section h3 { // зачем я это правило сдесь зада�
   
   .main_content p, 
   .main_content dl { 
-    margin-bottom: 1.1rem;  
+    margin-bottom: 0.9rem;  
     font-size: 1.1rem;
     font-weight: lighter;
     color: #1b1b1b;
@@ -260,9 +260,10 @@ section section h3 { // зачем я это правило сдесь зада�
     margin-bottom: 1rem;
   }
   
-  article :last-child {
+  /*Если че то сломалось здесь менял*/
+  /* article :last-child {
     margin-bottom: 0;
-  }
+  } */
   
   .main_content ul,
   .main_content ol {
