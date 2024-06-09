@@ -20,14 +20,21 @@ document.onmouseover = function(event) {
 
   let elem = document.getElementById('content');
 
+ let left; 
+
+  if(+elem.offsetWidth.toFixed(2) <= 500){
+    left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+  } else {
+    left = 0;
+  }
+
   
-  let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
   let right = elem.offsetWidth - tooltipCoords.right;
   
   
   if (left <= 0) left = 0; // не заезжать за левый край окна
 
-  if (right <= 0) left = 0; // если заезжает за правый край окна, то сдвигать на левый край
+  // if (right <= 0) left = 0; // если заезжает за правый край окна, то сдвигать на левый край
   
     
   
