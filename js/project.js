@@ -19,10 +19,14 @@ document.onmouseover = function(event) {
 
   let elem = document.getElementById('content');
 
-  // let right = elem.offsetWidth - tooltipElem.offsetWidth;
+  
   let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+  let right = elem.offsetHeight;
   if (left < 0) left = 0; // не заезжать за левый край окна
-  if (tooltipElem.right == 0) left = (elem.offsetWidth - tooltipElem.offsetWidth)-8; // не заезжать за правый край окна
+
+  if (right == 0) left = 0; // не заезжать за правый край окна
+  
+    
 
   
 
