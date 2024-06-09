@@ -16,18 +16,19 @@ document.onmouseover = function(event) {
 
   // спозиционируем его сверху от аннотируемого элемента (top-center)
   let coords = target.getBoundingClientRect();
+  let tooltipCoords = tooltipElem.getBoundingClientRect();
 
   let elem = document.getElementById('content');
 
   
   let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
-  let right = elem.offsetHeight;
-  if (left < 0) left = 0; // не заезжать за левый край окна
+  let right = elem.offsetWidth - tooltipCoords.right;
+  
+  if (left <= 0) left = 0; // не заезжать за левый край окна
 
-  if (right == 0) left = 0; // не заезжать за правый край окна
+  if (right <= 0) left = 0; // если заезжает за правый край окна, то сдвигать на левый край
   
     
-
   
 
    
