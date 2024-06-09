@@ -22,7 +22,7 @@ document.onmouseover = function(event) {
 
  let left; 
 
-  if(+elem.offsetWidth.toFixed(2) <= 500){
+  if(elem.offsetWidth <= 500){
     left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
   } else {
     left = 0;
