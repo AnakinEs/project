@@ -566,7 +566,7 @@ details {
 @media screen and (max-width: 799px) {
   .tooltip {
     position: fixed;
-    padding: 1rem 1rem;
+    padding: 1rem 1rem; 
     border: 0.1rem solid #b3c9ce;
     border-radius: 0.50rem;
     text-align: left;
@@ -579,7 +579,7 @@ details {
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 500px) {
   .tooltip {
     max-width: 100%;  
   }
