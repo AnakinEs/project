@@ -545,19 +545,40 @@ details {
 
 /* Комментарии */
 
-.tooltip {
-  position: fixed;
-  padding: 1rem 1rem;
-  border: 0.1rem solid #b3c9ce;
-  border-radius: 0.50rem;
-  text-align: left;
-  font: normal 0.9rem/1.3 sans-serif;
-  color: #333;
-  background: #fff;
-  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, .3);
-  max-width: 30%;  
-  font-size: 1rem;  
-  line-height: 1.5rem;
+
+
+@media screen and (min-width: 800px) {
+  .tooltip {
+    position: fixed;
+    padding: 1rem 1rem;
+    border: 0.1rem solid #b3c9ce;
+    border-radius: 0.50rem;
+    text-align: left;
+    font: normal 0.9rem/1.3 sans-serif;
+    color: #333;
+    background: #fff;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, .3);
+    max-width: 30%;  
+    font-size: 1rem;  
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .tooltip {
+    position: fixed;
+    padding: 1rem 1rem;
+    border: 0.1rem solid #b3c9ce;
+    border-radius: 0.50rem;
+    text-align: left;
+    font: normal 0.5rem/1.3 sans-serif;
+    color: #333;
+    background: #fff;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, .3);
+    max-width: 30%;  
+    font-size: 1rem;  
+    line-height: 1.5rem;
+  }
 }
 
 .hint {
@@ -570,7 +591,9 @@ details {
   background-color: #fcc934;
 } 
 
-
+.blue {
+  background-color: rgb(153, 192, 255);
+}
 
 code .meaning, code .hint {
   padding: 0; 
