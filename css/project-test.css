@@ -265,15 +265,26 @@ section section h3 { // зачем я это правило сдесь зада�
     margin-bottom: 0;
   } */
   
-  .main_content ul,
-  .main_content ol {
-    margin-top: 0;
-    margin-bottom: 0;  
-    font-size: 1.1rem;
-    font-weight: lighter;
-    color: #1b1b1b;
-    line-height: 1.8rem;
-    padding-left: 1.5rem;
+  
+
+  @media screen and (min-width: 800px) {
+    .main_content ul,
+    .main_content ol {
+      margin-top: 0;
+      margin-bottom: 0;  
+      font-size: 1.1rem;
+      font-weight: lighter;
+      color: #1b1b1b;
+      line-height: 1.8rem;
+      padding-left: 1.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 799px) {
+    .main_content ul,
+    .main_content ol {
+      font-size: 0.95rem;
+    }
   }
   
   .main_content a:hover {
@@ -527,6 +538,12 @@ details {
 
 .main_content details ol ul, .main_content ul{
   list-style-type: none; 	
+}
+
+@media screen and (max-width: 799px) {
+  .main_content details ol ul, .main_content ul{
+    list-style-type: disc; 	
+  }
 }
 
 .main_content details ol ul {
