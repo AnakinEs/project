@@ -24,6 +24,7 @@ document.onmouseover = function(event) {
   let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
   let right = elem.offsetWidth - tooltipCoords.right;
   
+  
   if (left <= 0) left = 0; // не заезжать за левый край окна
 
   if (right <= 0) left = 0; // если заезжает за правый край окна, то сдвигать на левый край
