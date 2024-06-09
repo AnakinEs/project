@@ -514,12 +514,9 @@ section section h3 { // зачем я это правило сдесь зада�
 
 @media screen and (max-width: 799px) {
   ul>li:before {
-    content: "\25CF";
-    float: left;
-    margin-left: -20px;
-    font-size: 1px;
+    font-size: 7px;
   }
-}
+  }
 
 dt{
   margin-top: 1.5rem;
@@ -538,12 +535,6 @@ details {
 
 .main_content details ol ul, .main_content ul{
   list-style-type: none; 	
-}
-
-@media screen and (max-width: 799px) {
-  .main_content details ol ul, .main_content ul{
-    list-style-type: disc; 	
-  }
 }
 
 .main_content details ol ul {
