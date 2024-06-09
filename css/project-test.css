@@ -503,19 +503,12 @@ section section h3 { // зачем я это правило сдесь зада�
 
 /* список описаний основного содержимого */
 
-@media screen and (min-width: 800px) {
+
   ul>li:before {
     content: "\25CF";
     float: left;
     margin-left: -20px;
     font-size: 11.3px;
-  }
-}
-
-@media screen and (max-width: 799px) {
-  ul>li:before {
-    font-size: 7px;
-  }
   }
 
 dt{
