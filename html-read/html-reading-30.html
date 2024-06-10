@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Как работает таблица?">
+          <h3 id="Как работает таблица?"><a href="#Как работает таблица?">Как работает таблица?</a></h3>
+          <div class="section-content">
+            <p>Смысл таблицы в том, что она жёсткая. Информацию легко интерпретировать, визуально сопоставляя заголовки строк и столбцов. Например, посмотрите на приведённую ниже таблицу и найдите единственное личное местоимение, используемое в третьем лице , с полом ♀, выступающее в качестве объекта в предложении. Ответ можно найти, сопоставив соответствующие заголовки столбцов и строк.</p>                          			 
+                     
+            <table>
+              <caption>Personal pronouns</caption>
+              <tbody>
+                <tr>
+                  <th colspan="3"></th>
+                  <th scope="col">Субъект</th>
+                  <th scope="col">Объект</th>
+                </tr>
+                <tr>
+                  <th rowspan="5" scope="rowgroup">Единствен. числ.</th>
+                  <th colspan="2" scope="row">1 Лицо</th>
+                  <td>Я</td>
+                  <td>меня</td>
+                </tr>
+                <tr>
+                  <th colspan="2" scope="row">2 Лицо</th>
+                  <td>ты</td>
+                  <td>тебя</td>
+                </tr>
+                <tr>
+                  <th rowspan="3" scope="rowgroup">3 Лицо</th>
+                  <th class="symbol" scope="row">♂</th>
+                  <td>он</td>
+                  <td>его</td>
+                </tr>
+                <tr>
+                  <th class="symbol" scope="row">♀</th>
+                  <td>она</td>
+                  <td>её</td>
+                </tr>
+                <tr>
+                  <th class="symbol" scope="row">o</th>
+                  <td>оно</td>
+                  <td>его</td>
+                </tr>
+                <tr>
+                  <th rowspan="3" scope="rowgroup">Множ.числ.</th>
+                  <th colspan="2" scope="row">1 Лицо</th>
+                  <td>мы</td>
+                  <td>нас</td>
+                </tr>
+                <tr>
+                  <th colspan="2" scope="row">2 Лицо</th>
+                  <td>вы</td>
+                  <td>вас</td>
+                </tr>
+                <tr>
+                  <th colspan="2" scope="row">2 Лицо</th>
+                  <td>они</td>
+                  <td>их</td>
+                </tr>
+              </tbody>
+            </table>                          			 
+      <p>Если правильно представить таблицу HTML, интерпретировать её данные смогут даже люди, имеющие проблемы со зрением.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+<iframe style="height:1500px; width:100%; border:none;" src="https://anakines.github.io/project/html-read/html-reading-1.html"></iframe>
