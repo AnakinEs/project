@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Экскурс: внутренний и внешний типы отображения">
+          <h2 id="Экскурс: внутренний и внешний типы отображения">Экскурс: внутренний и внешний типы отображения
+          </h2>
+          <div class="section-content">
+            <p>Здесь следует объяснить, что такое <strong>внутренние</strong> и <strong>внешние</strong> типы
+              отображения. Как уже говорилось выше, каждый блок в CSS имеет внешний тип отображения, который определяет,
+              блочный он или строчный.</p>
+            <p>Элементы также имеют внутренний тип отображения, который определяет расположение элементов внутри них. По
+              умолчанию элементы внутри блока располагаются в <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Normal_Flow">нормальном потоке</a>: они
+              ведут себя так же, как и любые другие блочные или строчные элементы (как описано выше).</p>
+            <p>Однако мы можем изменить внутренний тип отображения, используя такие значения <code>display</code> как
+              <code>flex</code>. Если мы установим <code>display:flex</code>; для элемента, внешний тип отображения
+              примет значение <code>block</code>, но внутренний тип изменится на <code>flex</code>. Любые прямые
+              дочерние элементы этого блока станут flex-объектами и будут размещены в соответствии с правилами,
+              изложенными в спецификации <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">Flexbox</a>, о которой вы
+              узнаете позже.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Чтобы узнать больше о значениях display, и о том, как работают элементы
+                при блочном или строчном расположении, посмотрите руководство MDN <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow">Блочное
+                  и срочное расположение</a>.</p>
+            </div>
+            <p>Когда вы перейдёте к более подробному изучению CSS вёрстки, вы встретите <code>flex</code> и другие
+              внутренние значения, которые могут быть у ваших элементов, например <code>grid</code>.</p>
+            <p>Тем не менее, блочное и строчное расположение — это поведение web-элементов по умолчанию. Как было
+              сказано выше, это иногда называют нормальным потоком (normal flow), потому что при отсутствии какой-либо
+              другой инструкции элементы имеют блочное или строчное расположение.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
