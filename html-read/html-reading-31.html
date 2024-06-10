@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Основной язык HTML страницы">
+          <h2 id="Основной язык HTML страницы">Основной язык HTML страницы</h2>
+          <div class="section-content">
+            <p>Наконец, стоит отметить, что вы можете (и действительно должны) установить язык для своей страницы. Это можно сделать, добавив <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">атрибут lang</a> в открывающий HTML-тег (как в примере <a href="https://github.com/mdn/learning-area/blob/main/html/introduction-to-html/the-html-head/meta-example.html">meta-example.html</a>: и как показано ниже):</p>
+            <pre><code class="language-html">&lt;html lang="en-US"&gt;</code></pre>
+      <pre><code class="language-html">&lt;html lang="ru"&gt;</code></pre>
+      <p>Это полезно во многих случаях. Ваш HTML-документ будет более эффективно индексироваться поисковыми системами, если его язык установлен (что позволяет ему правильно отображаться в языковых результатах), и он полезен людям с нарушением зрения, которые используют программы, читающие страницы вслух (например, слово "шесть" пишется одинаково как на французском, так и на английском языках, но произносится по-разному.).</p>
+            <p>Можно также указать язык для части документа. Например, мы могли бы установить язык для части страницы на японском:</p>
+            <pre><code class="language-html">&lt;p&gt;Пример на японском: &lt;span lang="jp"&gt;ご飯が熱い。&lt;/span&gt;.&lt;/p&gt;</code></pre>
+      <p>Коды языков определены в стандарте <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</a>. Подробнее о работе с языками можно узнать в <a href="https://www.w3.org/International/articles/language-tags/">Языковые тэги в HTML и XML</a>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
