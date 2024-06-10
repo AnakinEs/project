@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Схлопывание внешних отступов">
+          <h3 id="Схлопывание внешних отступов">Схлопывание внешних отступов
+          </h3>
+          <div class="section-content">
+            <p>Ключевой момент, который нужно понимать в отношении внешних отступов (margin), это концепция схлопывания.
+              Если у вас есть два элемента, внешние отступы которых соприкасаются, и оба значения <code>margin</code>
+              положительные, то эти значения будут объединены в одно, равное большему из двух значений. А если одно или
+              оба значения отрицательны, то сумма отрицательных значений будет вычтена из общей суммы.</p>
+            <p>В примере ниже есть два абзаца. Первому абзацу задан <code>margin-bottom</code> 50 пикселей. У второго
+              абзаца <code>margin-top</code> 30 пикселей. Отступы схлопываются так, что в результате <code>margin</code>
+              между двумя блоками составляет 50 пикселей, а не сумму отдельных значений <code>margin</code>.</p>
+            <p>Вы можете проверить это, установив второму абзацу <code>margin-top</code> равный 0. Видимое расстояние
+              между двумя абзацами не изменится — отступ остаётся равен 50 пикселям, заданным в
+              <code>margin-bottom</code> первого абзаца. Если вы установите значение -10px, то увидите, что margin
+              становится 40px — происходит вычитание из положительного значения 50px у первого абзаца.</p>
+            <iframe style="height:64rem" src="https://anakines.github.io/project/getting-started/started41.html"></iframe>
+            <p>Существует ряд правил, которые определяют, когда внешние отступы схлопываются, а когда нет. Для получения
+              подробной информации см. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">margin
+                collapsing</a>. Главное, что нужно сейчас помнить, — это то, что схлопывание отступов существует. Если
+              вы создаёте пространство с внешними отступами и не получаете ожидаемого результата, вероятно, именно это и
+              происходит.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
