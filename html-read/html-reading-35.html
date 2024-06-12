@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Адаптивные изображения">
+          <h1 id="Адаптивные изображения">Адаптивные изображения</h1>
+          <div class="section-content">
+            <p>В данной статье мы изучим концепцию гибких (responsive) изображений — таких, которые отображаются хорошо на устройствах с сильно отличающимися размерами экрана, разрешением, и другими характеристиками — и рассмотрим инструменты, которые  имеются в HTML для их реализации. Responsive images - только одна часть (и хорошее начало) гибкого веб-дизайна, темы, которая будет рассмотрена подробнее в будущем модуле на тему CSS.</p>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Почему адаптивные изображения?">
+          <h2 id="Почему адаптивные изображения?">Почему адаптивные изображения?</h2>
+          <div class="section-content">
+            <p>Какую проблему мы пытаемся решить адаптивными изображениями? Давайте рассмотрим типичный сценарий. Обычный веб-сайт может содержать изображение в заголовке, для улучшения визуального восприятия пользователем, а также несколько изображений в контенте под ним. Вы, вероятно, захотите, чтобы изображение в заголовке занимало всю ширину окна, а изображения в контенте размещались где-то внутри колонки с контентом. Давайте посмотрим на следующий простой пример:</p>
+            <img src="https://anakines.github.io/project/images/picture-element-wide.png">
+            <p>Такая вёрстка хорошо выглядит на широкоформатных экранах ноутбуков и настольных ПК, (вы можете посмотреть <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/not-responsive.html">посмотреть демо-пример</a> и найти <a href="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/responsive-images/not-responsive.html">исходный код</a> на Github.) Мы не будем подробно рассматривать CSS, скажем только следующее:</p>
+            <ul>
+        <li>Содержимому тега <code>main</code> задана максимальная ширина 1200 пикселей. Если окно браузера выше этой ширины, то содержимое сайта остаётся на 1200 пикселей и <span class="meaning" data-tooltip="При помощи: <code>margin: 0 auto;</code>">центрирует себя</span> в доступном пространстве. Если окно браузера ниже этой ширины, содержимое устанавливается в <span class="meaning" data-tooltip="Если экран будет уменьшаться, то атоматически будет уменьшаться например текст, в 100% от ширины">100%</span> от ширины экрана.</li>
+        <li>Изображение в шапке всегда будет оставаться <span class="meaning" data-tooltip="Вроде при помощи: <code>background-position: center;</code>">в центре</span> тега header вне зависимости от ширины браузера. Если сайт будет просматриваться на узких экранах, то важные детали в центре изображения (люди) всё равно будут видны. Все, что выходит за пределы ширины экрана будет скрыто. Высота шапки 200 пикселей.</li>
+        <li>Изображения в содержимом заданы так, что если ширина body становится меньше чем ширина изображения, то изображения начинают <span class="meaning" data-tooltip="<code>max-width: 100%;</code><p></p>Только не пойму зачем нужен <code>max</code>, без него тоже работает">сжиматься</span> и остаются всегда внутри body и не выступают за его пределы.</li>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width"&gt;
+  &lt;title&gt;Not responsive demo&lt;/title&gt;
+  &lt;style&gt;
+    html {
+      font-family: sans-serif;
+      background-color: gray;
+    }
+
+    body {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+    }
+
+    header {
+      background: url(header.jpg) no-repeat center;
+      height: 200px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h1&gt;My website&lt;/h1&gt;
+
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget venenatis ligula. Ut lacinia at dolor vitae pulvinar. Aliquam pretium dignissim eros. Integer faucibus, dui non aliquet bibendum, lectus orci lobortis odio, ornare porttitor est tellus eget velit. Nulla eros elit, malesuada id neque vel, viverra vehicula neque. Nullam auctor turpis non leo iaculis finibus. Quisque blandit arcu venenatis libero tempor, ac pulvinar ligula dapibus.&lt;/p&gt;
+
+      &lt;img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva"&gt;
+
+      &lt;p&gt;Suspendisse potenti. Ut in luctus eros. Mauris pulvinar vehicula aliquet. Etiam imperdiet eleifend luctus. Duis ut justo nec eros ornare consectetur. Vestibulum convallis condimentum varius. Maecenas rutrum porta varius. Phasellus volutpat sem id sagittis luctus. Morbi vitae quam vitae nisi iaculis dignissim.&lt;/p&gt;
+
+      &lt;img src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy"&gt;
+
+      &lt;p&gt;Header image originally by &lt;a href="https://www.flickr.com/photos/miwok/17086751527/"&gt;Miwok&lt;/a&gt;.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </ul>
+      <p>Всё хорошо, однако проблемы начинаются, когда вы просматриваете сайт на устройстве с небольшим экраном – шапка внизу выглядит нормально, но теперь она занимает значительную высоту экрана; первое изображение в контенте напротив, выглядит ужасно – при таком размере едва можно рассмотреть людей!</p>
+      <img style="width:40%" src="https://anakines.github.io/project/images/non-responsive-narrow.png">
+      <p>Было бы намного лучше показывать обрезанную версию изображения, на котором видны важные детали снимка, когда сайт отображается на узком экране, и, возможно, что-то среднее между обрезанным и оригинальным изображениями для экранов средней ширины, таких как планшеты – это известно как <strong>art direction problem</strong>.</p>
+      <p>Кроме того, нет нужды встраивать такие большие изображения на страницу, если она просматривается на маленьком экране мобильного устройства; это называется <strong>resolution switching problem</strong> — растровое изображение представляет собой точно-заданное количество пикселей по ширине и высоте; как мы успели заметить, когда рассматривали <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web">векторную графику</a>, растровое изображение становится зернистым и выглядит ужасно, если оно отображается в размере большем, чем оригинальный (тогда как векторное изображение нет). В то же время, если изображение отображается в гораздо меньшем размере, чем оригинальный, это приведёт к напрасной трате трафика — пользователи мобильных устройств будут грузить большое изображение для компьютера, вместо маленького для их устройства. Идеально было бы иметь несколько файлов в разных разрешениях, и отображать нужный размер в зависимости от устройства, обращающегося к веб-сайту.</p>
+      <p>Сложность в том, что для некоторых устройств с большим разрешением экрана нужны изображения большего чем ожидается размера, чтобы чётче отображалось. По сути это всё одна задача в разных условиях.</p>
+      <p>Можно предположить, что векторные изображения могли бы решить эти проблемы. В какой-то степени это так. У них небольшой вес и размер, поэтому их можно использовать почти в любом случае. Они хороши для простой графики, узоров, элементов интерфейса и т. д. Сложнее создать векторное изображение с большим количеством деталей, как, например, на фото. Растровые изображения (JPEG) для нашего примера подходят больше. </p>
+      <p>Такого рода проблемы не было в начале существования веба, в первой половине 90-х годов – тогда единственными устройствами для просмотра веб-страниц были настольные компьютеры и ноутбуки, так что создатели браузеров и авторы спецификаций даже не задумывались о создании решения. Технологии отзывчивых изображений были реализованы недавно для решения проблем, указанных выше. Они позволяют вам предоставить браузеру несколько изображений, каждое из которых отображает одно и то же, но содержит разное количество пикселей (resolution switching), или разные изображения с отдельными областями основного изображения (art direction).</p>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Новые возможности обсуждаются в статье — <code>srcset</code>/<code>sizes</code>/<code>&lt;picture&gt;</code> — все они поддерживаются последними версиями современных настольных и мобильных браузеров (включая Microsoft Edge, но не Internet Explorer).</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
