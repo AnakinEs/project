@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Перенос строки и горизонтальный разделитель">
+          <h3 id="Перенос строки и горизонтальный разделитель">Перенос строки и горизонтальный разделитель</h3>
+          <div class="section-content">
+            <p>Два элемента, которые вы будете периодически использовать или захотите узнать о них: <code>&lt;br&gt;</code> и <code>&lt;hr&gt;</code>:</p>
+            <p><code>&lt;br&gt;</code> создаёт разрыв строки в абзаце, и это единственный способ изменить жёсткую структуру в ситуации, когда вам нужна серия фиксированных коротких строк, например, в почтовом адресе или стихотворении. Пример:</p>
+            <pre><code class="language-html">&lt;p&gt;Жила-была девчушка Нелл,&lt;br&gt;
+Любившая писать HTML:&lt;br&gt;
+Её семантика ужасна была — &lt;br&gt;
+Она и сама прочитать ничего не могла.&lt;/p&gt;</code></pre>
+    <p>Без элемента <code>&lt;br&gt;</code> абзац  разместится в одну длинную линию (как было сказано ранее, <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#whitespace_in_html">HTML игнорирует переносы строк</a>), а с ним в коде — разметка будет выглядеть следующим образом:</p>
+            <div class="note notecard" id="transparent">
+              <p>Жила-была девчушка Нелл,<br>
+              Любившая писать HTML:<br>
+              Её семантика ужасна была — <br>
+              Она и сама прочитать ничего не могла.</p>
+            </div>
+    <p><code>&lt;hr&gt;</code> создаёт горизонтальный разделитель в документе, это означает тематическое изменение текста (например, изменение темы или сцены). Визуально он просто похож на горизонтальную линию. В качестве примера:</p>
+            <pre><code class="language-html">&lt;p&gt;Рон был зажат в углу адскими тварями. Он боялся, но твёрдо решил защитить своих друзей, поднял свою волшебную палочку и приготовился к битве, надеясь, что справится со своим несчастьем.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Тем временем Гарри сидел дома с раскрытым указом и размышлял о том, когда выйдут новые серии спин-оффов; в это время зачарованное письмо пархнуло в окно и приземлилось у него на коленях. Он прочитал его и подскочил на ноги; он подумал: "Думаю, самое время вернуться к работе".&lt;/p&gt;</code></pre>
+    <p>Будет выглядеть примерно так:</p>
+    <div class="note notecard" id="transparent">
+              <p>Рон был зажат в углу адскими тварями. Он боялся, но твёрдо решил защитить своих друзей, поднял свою волшебную палочку и приготовился к битве, надеясь, что справится со своим несчастьем.</p>
+<hr>
+<p>Тем временем Гарри сидел дома с раскрытым указом и размышлял о том, когда выйдут новые серии спин-оффов; в это время зачарованное письмо пархнуло в окно и приземлилось у него на коленях. Он прочитал его и подскочил на ноги; он подумал: "Думаю, самое время вернуться к работе".</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
