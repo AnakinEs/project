@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление заголовков с помощью элементов <th>">
+          <h2 id="Добавление заголовков с помощью элементов <th>"><a href="#Добавление заголовков с помощью элементов <th>">Добавление заголовков с помощью элементов &lt;th&gt;</a></h2>
+          <div class="section-content">
+            <p>Теперь обратимся к табличным заголовкам — особым ячейкам, которые идут вначале строки или столбца и определяют тип данных, которые содержит данная строка или столбец (как "Person" и "Age" в первом примере данной статьи). Чтобы показать, для чего они нужны, возьмём следующий пример. Сначала исходный код:</p>
+            <pre><code class="language-html">&lt;table&gt;
+ &lt;tr&gt;
+   &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;td&gt;Knocky&lt;/td&gt;
+   &lt;td&gt;Flor&lt;/td&gt;
+   &lt;td&gt;Ella&lt;/td&gt;
+   &lt;td&gt;Juan&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;Breed&lt;/td&gt;
+   &lt;td&gt;Jack Russell&lt;/td&gt;
+   &lt;td&gt;Poodle&lt;/td&gt;
+   &lt;td&gt;Streetdog&lt;/td&gt;
+   &lt;td&gt;Cocker Spaniel&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;Age&lt;/td&gt;
+   &lt;td&gt;16&lt;/td&gt;
+   &lt;td&gt;9&lt;/td&gt;
+   &lt;td&gt;10&lt;/td&gt;
+   &lt;td&gt;5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;Owner&lt;/td&gt;
+   &lt;td&gt;Mother-in-law&lt;/td&gt;
+   &lt;td&gt;Me&lt;/td&gt;
+   &lt;td&gt;Me&lt;/td&gt;
+   &lt;td&gt;Sister-in-law&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;Eating Habits&lt;/td&gt;
+   &lt;td&gt;Eats everyone's leftovers&lt;/td&gt;
+   &lt;td&gt;Nibbles at food&lt;/td&gt;
+   &lt;td&gt;Hearty eater&lt;/td&gt;
+   &lt;td&gt;Will eat till he explodes&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      <p>Теперь как выглядит таблица:</p>
+            <table>
+              <tbody><tr>
+                <td>&nbsp;</td>
+                <td>Knocky</td>
+                <td>Flor</td>
+                <td>Ella</td>
+                <td>Juan</td>
+              </tr>
+              <tr>
+                <td>Breed</td>
+                <td>Jack Russell</td>
+                <td>Poodle</td>
+                <td>Streetdog</td>
+                <td>Cocker Spaniel</td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td>16</td>
+                <td>9</td>
+                <td>10</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Owner</td>
+                <td>Mother-in-law</td>
+                <td>Me</td>
+                <td>Me</td>
+                <td>Sister-in-law</td>
+              </tr>
+              <tr>
+                <td>Eating Habits</td>
+                <td>Eats everyone's leftovers</td>
+                <td>Nibbles at food</td>
+                <td>Hearty eater</td>
+                <td>Will eat till he explodes</td>
+              </tr>
+            </tbody></table>
+      <p>Проблема в том, что, хотя вы и можете представить, о чем идёт речь, ссылаться на эти данные не так легко, как хотелось бы. Лучше, чтобы строка и столбец с заголовками как-то выделялись.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
