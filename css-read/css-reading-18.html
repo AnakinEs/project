@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Общий родственный комбинатор">
+          <h2 id="Общий родственный комбинатор">Общий родственный комбинатор</h2>
+          <div class="section-content">
+            <p>Если вы хотите выбрать родственные элементы, даже если они не являются непосредственными соседями, то вы можете использовать общий родственный комбинатор (<code>~</code>). Чтобы выбрать все элементы <code>&lt;img&gt;</code>, которые находятся в любом месте после элементов <code>&lt;p&gt;</code>, надо указать так:</p>
+            <pre><code class="language-css">p ~ img</code></pre>
+    <p>В приведённом ниже примере мы выбираем все элементы <code>&lt;p&gt;</code>, которые идут после <code>&lt;h1&gt;</code>, и хотя в документе есть также <code>&lt;div&gt;</code>, тем не менее <code>&lt;p&gt;</code>, который идёт после него, будет выбран.</p>
+            <iframe style="height:60rem" src="https://anakines.github.io/project/getting-started/started36.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
