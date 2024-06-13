@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Синтаксис CSS">
+          <h2 id="Синтаксис CSS">Синтаксис CSS</h2>
+          <div class="section-content">
+            <p>CSS — это язык на основе правил: вы задаёте правила, определяющие группы стилей, которые должны применяться к определённым элементам или группам элементов на вашей веб-странице. Например:</p>
+            <p>«Я хочу, чтобы основной заголовок на моей странице отображался крупным красным текстом».</p>
+            <p>В следующем коде показано очень простое правило CSS, которое будет соответствовать стилю, описанному выше:</p>
+            <pre><code class="language-css">h1 {
+color: red;
+font-size: 5em;
+}</code></pre>
+    <p>Правило открывается с помощью селектора . Этот селектор выбирает HTML-элемент, который мы собираемся стилизовать. В этом случае мы используем заголовки первого уровня — (<code>&lt;h1&gt;</code>).</p>
+            <p>Затем у нас есть набор фигурных скобок <code>{ }</code>. Внутри них будет один или несколько <strong>объявлений</strong>, которые принимают форму пары <strong>свойства</strong> и его <strong>значения</strong>. Каждая пара указывает свойство элемента(-ов), который(-е) мы выбираем, а затем значение, которое мы хотели бы присвоить свойству.</p>
+            <p>Перед двоеточием у нас есть свойство, а после двоеточия — значение. CSS-свойства (en-US) имеют разные допустимые значения в зависимости от того, какое свойство указывается. В нашем примере мы имеем свойство <code>color</code>, которое может принимать различные цветовые значения. У нас также есть свойство <code>font-size</code>. Это свойство может принимать различные значения размера, как и свойства.</p>
+            <p>Таблица стилей CSS будет содержать много таких правил, написанных одно за другим.</p>
+            <pre><code class="language-css">h1 {
+color: red;
+font-size: 5em;
+}
+
+p {
+color: black;
+}</code></pre>
+    <p>Вы обнаружите, что вы быстро изучаете некоторые значения, тогда как другие вам нужно искать. Страницы отдельных свойств в MDN дают вам быстрый способ поиска свойств и их значений, когда вы забыли или хотите узнать, что ещё вы можете использовать в качестве значения.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: вы можете найти ссылки на все страницы свойств CSS (вместе с другими функциями CSS), перечисленные в MDN <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Руководстве по CSS</a>. Кроме того, вы должны привыкнуть к поиску "MDN css-feature-name" в вашем браузере, когда вам нужно узнать больше информации о функции CSS. Например, попробуйте поискать «mdn color» и «mdn font-size»!</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
