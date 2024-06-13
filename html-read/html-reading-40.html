@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Фоновые изображения CSS">
+          <h2 id="Фоновые изображения CSS">Фоновые изображения CSS</h2>
+          <div class="section-content">
+            <p>Вы можете использовать CSS для встраивания изображений в веб-страницы (или JavaScript, но это совсем другая история). Параметры CSS <code><a href="https://developer.mozilla.org/ru/docs/Web/CSS/background-image">background-image</a></code> и другие <code>background-*</code> применяются для контроля размещения фонового изображения. К примеру, чтобы залить фон каждого параграфа страницы, необходимо сделать следующее:</p>
+            <pre><code class="language-css">p {
+background-image: url("images/dinosaur.jpg");
+}</code></pre>
+    <p>Получившееся в конечном итоге изображение можно легко позиционировать и контролировать, в отличие от его HTML аналога. Так зачем же возиться с HTML изображениями? Как указано выше, фоновые изображения CSS предназначены только для украшения. Если вы просто хотите добавить что-то красивое на свою страницу, чтобы улучшить визуальные эффекты, это нормально. Тем не менее, такого рода изображения не имеют семантического смысла вообще. Они не могут иметь каких-то текстовых эквивалентов, видимых посетителю, они невидимы для программ чтения с экрана. Вот где блистают HTML-изображения!</p>
+    <p>Итог: если изображение имеет важность, в контексте содержимого вашей страницы, вам следует использовать HTML изображения. Если же картинка является банальной декорацией, используйте фоновые изображения CSS.</p>
+    <div class="note notecard" id="sect4">
+              <p><strong>Замечание</strong>: вы можете узнать больше о <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders">фоновых изображениях CSS</a> в нашей теме о <a href="https://developer.mozilla.org/ru/docs/Learn/CSS">CSS</a>.</p>
+            </div>
+          </div>
+    
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
