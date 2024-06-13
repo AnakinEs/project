@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Комментарии">
+          <h2 id="Комментарии"><a href="#Комментарии">Комментарии</a></h2>
+          <div class="section-content">
+            <p>Как и в HTML, вы можете делать комментарии, чтобы прояснить тот или иной отрывок кода.</p>
+            <p>Комментарии в CSS начинаются с <code>/*</code> и окачиваются с <code>*/</code>. В примере ниже я отметил комментариями различные разделы кода. Это очень полезно для навигации — комментарии легче искать.</p>
+            <pre><code class="language-css">/* Работаю над основными элементами */
+/* -------------------------------------------------------------------------------------------- */
+body {
+ font: 1em/150% Helvetica, Arial, sans-serif;
+ padding: 1em;
+ margin: 0 auto;
+ max-width: 33em;
+}
+
+@media (min-width: 70em) {
+ /* Позволяет определить размер шрифта. На широких экранах
+  больше размер шрифта для удобства чтения */
+ body {
+  font-size: 130%;
+ }
+}
+
+h1 {font-size: 1.5em;}
+
+/* Работаю над элементами, вложенными в DOM  */
+/* -------------------------------------------------------------------------------------------- */
+div p, #id:first-line {
+ background-color: red;
+ background-style: none
+}
+
+div p{
+ margin: 0;
+ padding: 1em;
+}
+
+div p + p {
+ padding-top: 0;
+}</code></pre>
+    <p>Отделяя комментариями участки кода, не нуждающиеся в проверке, вы можете выискивать ошибку (если такая есть). Ниже я отделил правило для селектора <code>.special</code>.</p>
+            <pre><code class="language-css">/*.special {
+color: red;
+}*/
+
+p {
+ color: blue;
+}</code></pre>
+    <p><strong>Добавьте комментарии в ваш CSS-код, чтобы приноровиться к ним.</strong></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
