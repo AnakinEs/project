@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление структуры с помощью <thead>, <tfoot> и <tbody>">
+          <h2 id="Добавление структуры с помощью <thead>, <tfoot> и <tbody>">Добавление структуры с помощью &lt;thead&gt;, &lt;tfoot&gt; и &lt;tbody&gt;</h2>
+          <div class="section-content">
+            <p>Когда таблицы становятся более сложными по структуре полезно дать им более структурированное определение. Отличный способ  сделать это используя <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code> и <code>&lt;tbody&gt;</code>, которые позволяют вам разметить header, footer и body секции таблицы.</p>
+            <p>Эти элементы не создают дополнительной доступности для пользователей со скринридерами и не приводят к какому-то визуальному улучшению при их использовании. Зато они очень полезны при стилизации и разметке, как точки для добавления CSS к вашей таблице. Вот несколько интересных примеров, в случае длинной таблицы вы можете сделать header и footer таблицы повторяемый на каждой печатной странице, или вы можете сделать body таблицы отображаемое на одной странице и иметь доступ ко всему содержимому контенту прокручивая вверх и вниз.</p>
+            <p>Использование:</p>            
+      <ul>
+              <li>Элементом <code>&lt;thead&gt;</code> нужно обернуть часть таблицы которая относится к заголовку — обычно это первая строка содержащая заголовки колонок, но это не обязательно всегда такой случай. Если вы используете <code>&lt;col&gt;</code>/<code>&lt;colgroup&gt;</code> (en-US) элемент, тогда заголовок должен находиться ниже его.</li>
+              <li>Элементом <code>&lt;tfoot&gt;</code> нужно обернуть ту часть, которая относится к footer таблицы — например, это может быть последняя строка в которой отражаются суммы по столбцам таблицы. Вы можете включить сюда footer таблицы, как и следовало ожидать, или чуть ниже заголовка таблицы (браузер всё равно отобразит его внизу таблицы).</li>
+              <li>Элементом <code>&lt;tbody&gt;</code> необходимо обернуть остальную часть содержимого таблицы которая не находится в header или footer таблицы. Этот блок располагают ниже заголовка таблицы или иногда footer таблицы, зависит от того какую структуру вы решите использовать (читать выше по тексту).</li>
+            </ul>			 			 				
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: <code>&lt;tbody&gt;</code> всегда включён в каждой таблице, неявно если не укажете его в коде. Проверьте это, открыв один из предыдущих примеров в котором не используется <code>&lt;tbody&gt;</code> и посмотрите HTML код в <a href="https://developer.mozilla.org/ru/docs/Learn/Common_questions/What_are_browser_developer_tools">browser developer tools</a> — вы увидите, что браузер добавил этот тег самостоятельно. Вы могли бы задаться вопросом почему мы должны волноваться о его включении, но вы должны, потому что это даёт больше контроля над структурой таблицы и стилем.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
