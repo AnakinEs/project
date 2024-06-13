@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Создавая ссылки на не HTML ресурсы — добавляйте описание">
+          <h3 id="Создавая ссылки на не HTML ресурсы — добавляйте описание">Создавая ссылки на не HTML ресурсы — добавляйте описание</h3>
+          <div class="section-content">
+            <p>Когда вы создаёте ссылку на файл, нажав на который можно загрузить документ PDF или Word или открыть просмотр видео, прослушивание аудио файла или перейти на страницу с другим, неожиданным для пользователя результатом (всплывающее окно или загрузка Flash-фильма), добавляйте чёткую формулировку, чтобы уменьшить путаницу. Отсутствие описания может раздражать пользователя. Приведём пример:</p>
+            <ul>
+              <li>Если вы используете соединение с низкой пропускной способностью и вдруг нажмёте на ссылку без описания, начнётся загрузка большого файла.</li>
+              <li>Если у вас нет установленного Flash-плеера и вы нажмёте ссылку, то внезапно перейдёте на страницу с Flash-контентом.</li>
+            </ul>
+      <p>Посмотрите на примеры, чтобы увидеть, как добавить описание:</p>
+      <pre><code class="language-html">&lt;p&gt;&lt;a href="http://www.example.com/large-report.pdf"&gt;
+Скачать отчёт о продажах (PDF, 10MB)
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.example.com/video-stream/"&gt;
+Посмотреть видео (видео откроется в отдельном окне, HD качество)
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.example.com/car-game"&gt;
+Играть в гонки (необходим Flash)
+&lt;/a&gt;&lt;/p&gt;</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
