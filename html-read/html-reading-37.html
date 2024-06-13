@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="HTML комментарии">
+          <h2 id="HTML комментарии"><a href="#HTML комментарии">HTML комментарии</a></h2>
+          <div class="section-content">
+            <p>В HTML, как и в большинстве языков программирования, есть возможность писать комментарии в коде. Комментарии игнорируются обозревателем и не видны пользователю, их добавляют для того, чтобы пояснить, как работает написанный код, что делают отдельные его части и т. д. Такая практика полезна, если вы возвращаетесь к коду, который давно не видели или когда хотите передать его кому-то другому.</p>
+            <p>Чтобы превратить часть содержимого HTML-файла в комментарий, нужно поместить её в специальные маркеры <code>&lt;!--</code> и <code>--&gt;</code>, например:</p>
+            <pre><code class="language-html">&lt;p&gt; Меня нет в комментариях( &lt;/p&gt;
+
+&lt;!-- &lt;p&gt;А теперь есть!&lt;/p&gt; --&gt;</code></pre>
+      <p>Как вы увидите ниже, первый параграф будет отображён на экране, а второй нет.</p>
+            <div class="note notecard" id="transparent">
+              <p> Меня нет в комментариях( </p> <!-- <p>А теперь есть!</p> -->               
+      </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
