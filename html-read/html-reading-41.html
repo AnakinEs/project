@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Активное изучение: как поисковые системы используют описание">
+          <h3 id="Активное изучение: как поисковые системы используют описание">Активное изучение: как поисковые системы используют описание</h3>
+          <div class="section-content">
+            <p>Описание из <code>&lt;meta name="description"&gt;</code> используется на страницах поисковой выдачи. Проведём небольшое исследование такого сценария.</p>
+            <ol>
+              <li>Перейдите на главную страницу <a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a>.</li>
+              <li>Откройте исходный код страницы (кликните правой кнопкой мыши и выберите Просмотреть код в контекстном меню.)</li>
+              <li>Найдите тег meta с описанием. Он выглядит так:</li>
+              <pre><code class="language-html">&lt;meta name="description" content="Веб-документация на MDN
+предоставляет собой информацию об открытых веб-технологиях,
+включая HTML, CSS и различные API для веб-сайтов и
+прогрессивных веб-приложений. Также на сайте содержатся материалы
+для разработчиков о таких продуктах Mozilla, как Инструменты разработчика Firefox."&gt;</code></pre>
+              <li>Теперь найдите "Mozilla Developer Network" в своём поисковике (мы использовали Google). Обратите внимание, что описание и название из <code>&lt;meta&gt;</code> и <code>&lt;title&gt;</code> используется в результатах поиска, — мы не зря указали их!</li>
+            <img src="https://anakines.github.io/project/images/Updated_search_result__ru.jpg">
+            </ol>
+              
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Google также показывает важные страницы MDN под ссылкой на главную страницу. Такие ссылки называются sitelinks, и их можно настроить через <a href="https://search.google.com/search-console/welcome?hl=ru&amp;utm_source=wmx&amp;utm_medium=deprecation-pane&amp;utm_content=home">Google Search Console</a>, чтобы пользователи могли сразу перейти к ним со страницы поиска.</p>
+            </div>
+      
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Многие типы <code>&lt;meta&gt;</code> больше не используются. Так, поисковые системы больше не используют данные из элемента <code>&lt;meta type="keywords" content="ваши, ключевые, слова, введите, здесь"&gt;</code>, в котором указывали ключевые слова, по которым можно найти страницу: спамеры засовывали туда все слова, какие могли придумать, чтобы их сайты почаще появлялись в поиске.</p>
+            </div>			  
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
