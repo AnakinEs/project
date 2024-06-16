@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Сочетание селекторов и комбинаторов">
+          <h2 id="Сочетание селекторов и комбинаторов">Сочетание селекторов и комбинаторов</h2>
+          <div class="section-content">
+            <p>Стоит отметить, что вы можете комбинировать несколько селекторов и комбинаторов вместе. Вот пример:</p>
+            <pre><code class="language-css">/* выбирает любой &lt;span&gt; внутри &lt;p&gt;, который находится внутри &lt;article&gt;  */
+article p span { ... }
+
+/* выбирает любой &lt;p&gt;, который идёт сразу после &lt;ul&gt;, который идёт сразу после &lt;h1&gt;  */
+h1 + ul + p { ... }</code></pre>
+    <p>Вы также можете комбинировать несколько типов вместе. Попробуйте добавить следующее в ваш код:</p>
+    <pre><code class="language-css">body h1 + p .special {
+color: yellow;
+background-color: black;
+padding: 5px;
+}</code></pre>
+    <p>Это будет стиль любого элемента с классом <code>special</code>, который находится внутри <code>&lt;p&gt;</code>, который приходит сразу после <code>&lt;h1&gt;</code>, который находится внутри <code>&lt;body&gt;</code>. Уф!</p>
+    <p>В оригинальном HTML, который мы предоставили, единственный элемент в стиле <code>&lt;span class="special"&gt;</code>.</p>
+    <p>Не беспокойтесь, если это покажется сложным — вы скоро начнёте понимать это, когда будете писать больше на CSS.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
