@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Используйте относительные ссылки, где это возможно">
+          <h3 id="Используйте относительные ссылки, где это возможно">Используйте относительные ссылки, где это возможно</h3>
+          <div class="section-content">
+            <p>Из прочитанного выше, вы можете подумать, что всё время использовать абсолютные ссылки — хорошая идея; в конце концов, они не ломаются, когда страница перемещается. Тем не менее, лучше использовать относительные ссылки везде, где это возможно, в пределах одного сайта  (при ссылке на другие сайты необходимо использовать абсолютную ссылку):</p>
+            <ul>
+              <li>Во-первых, гораздо проще прописать в коде относительные URL-адреса, как правило, они намного короче абсолютных URL-адресов, что значительно упрощает чтение кода</li>
+              <li>Во-вторых, использование относительных URL-адресов эффективней по следующей причине. Когда вы используете абсолютный URL-адрес, браузер начинает поиск реального местоположения сервера запрашивая адрес у Domain Name System (<a href="https://developer.mozilla.org/ru/docs/Glossary/DNS">DNS</a>; также прочтите <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works">Как работает web</a>), затем он переходит на этот сервер и находит файл, который запрашивается. С относительным URL-адресом проще: браузер просто ищет файл, который запрашивается на том же сервере. Используя абсолютные URL-адреса вместо относительных, вы постоянно нагружаете свой браузер дополнительной работой.</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
