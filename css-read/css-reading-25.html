@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Дочерний комбинатор">
+          <h2 id="Дочерний комбинатор">Дочерний комбинатор</h2>
+          <div class="section-content">
+            <p><strong>Дочерний комбинатор</strong> (<code>&gt;</code>) помещается между двумя селекторами CSS. При этом будут выбраны только те элементы, соответствующие второму селектору, которые являются прямыми потомками элементов, соответствующих первому селектору. Все элементы-потомки на более низких уровнях иерархии будут пропущены. Например, чтобы выбрать только те элементы <code>&lt;p&gt;</code>, которые являются дочерними элементами <code>&lt;article&gt;</code>, селектор пишется так:</p>
+            <pre><code class="language-css">article &gt; p</code></pre>
+    <p>Другой пример. Имеется неупорядоченный список, заключающий в себе другой, упорядоченный список. Дочерний комбинатор используется для того, чтобы выбрать только те элементы <code>&lt;li&gt;</code>, которые являются прямыми потомками <code>&lt;ul&gt;</code>, и присвоить им верхнюю границу красного цвета.</p>
+            <p>Если вы уберёте символ <code>&gt;</code>, указывающий на то, что это селектор с дочерним комбинатором, селектор превратится в селектор всех потомков (комбинатор - пробел) и все элементы <code>&lt;li&gt;</code> получат верхнюю границу красного цвета.</p>
+            <iframe style="height:53rem" src="../getting-started/started34.html"></iframe>
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
