@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Изменение поведения элементов по умолчанию">
+          <h2 id="Изменение поведения элементов по умолчанию">Изменение поведения элементов по умолчанию</h2>
+          <div class="section-content">
+            <p>Когда мы смотрим на хорошо размеченный HTML-документ, даже такой простой, как наш пример, мы можем увидеть, как браузер делает HTML читаемым, добавив некоторые стили по умолчанию. Заголовки большие и жирные, в нашем списке есть маркеры. Это происходит потому, что в браузерах есть внутренние таблицы стилей, содержащие стили по умолчанию, которые по умолчанию применяются ко всем страницам; без них весь текст работал бы вместе, и мы должны были бы стилизовать всё с нуля. Все современные браузеры по умолчанию отображают HTML-контент практически одинаково.</p>
+            <p>Однако вам часто захочется что-то другое, кроме выбора, сделанного браузером. Это можно сделать, просто выбрав элемент HTML, который вы хотите изменить, и используя правило CSS, чтобы изменить его внешний вид. Хорошим примером является наш <code>&lt;ul&gt;</code> — неупорядоченный список. Он добавляет маркеры, и если я решу, что я не хочу эти маркеры, я могу удалить их вот так:</p>
+            <pre><code class="language-css">li {
+list-style-type: none;
+}</code></pre>
+    <p>Попробуйте добавить это в свой CSS сейчас.</p>
+            <p>Свойство <code>list-style-type</code> — это хорошее свойство, информацию о котором можно найти на MDN, чтобы увидеть, какие значения поддерживаются. Взгляните на страницу для <code>list-style-type</code> и вы найдёте интерактивный пример в верхней части страницы, чтобы опробовать некоторые другие значения, затем все допустимые значения будут подробно описаны ниже.</p>
+            <p>Глядя на эту страницу, вы обнаружите, что помимо удаления маркеров списка вы можете изменить их — попробуйте изменить их на квадратные маркеры, используя значение <code>square</code>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
