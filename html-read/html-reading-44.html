@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление векторной графики в веб-документ">
+          <h1 id="Добавление векторной графики в веб-документ">Добавление векторной графики в веб-документ</h1>
+          <div class="section-content">
+            <p>Векторная графика очень полезна во многих случаях. Она имеет малые размеры файла и высокую масштабируемость – при увеличении масштаба пиксели не увеличиваются вместе с графикой. В данной статье мы покажем, как встраивать векторную графику на Вашу страницу.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Данная статья не научит вас векторной графике, а даст понимание что это и как её использовать в веб-документах.</p>
+            </div>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Что такое векторная графика?">
+          <h2 id="Что такое векторная графика?">Что такое векторная графика?</h2>
+          <div class="section-content">
+            <p>В веб-разработке вы будете сталкиваться с двумя типами изображений - растровым и векторным:</p>
+            <ul>
+              <li>Растровое изображение задаётся сеткой пикселей — файл растрового изображения содержит информацию о расположении и цвете каждого пикселя. Среди популярных форматов изображений данного типа числятся Bitmap (.bmp), PNG (.png), JPEG (.jpg) и GIF (.gif)</li>
+              <li>Векторное изображение  определяется алгоритмом — файл векторного изображения содержит фигуры и правила, по которым компьютер  может вычислить как должно выглядеть изображение, когда выводится на экран. <a href="https://developer.mozilla.org/ru/docs/Glossary/SVG">SVG</a> формат позволяет нам создавать векторную графику для использования в веб-документах.</li>
+            </ul>
+      <p>Для демонстрации различий между типами изображений, давайте взглянем на пример. Вы можете найти данный пример на Github как <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html">vector-versus-raster.html</a> — в нем демонстрируются два, на первый взгляд, одинаковых изображения, расположенных рядом друг с другом. Каждое из изображений представляет собой красную звезду с тенью. Различие их в том, что левое изображение имеет формат PNG, а правое - SVG.</p>
+            <p>Различия становятся заметны, когда вы изменяете масштаб страницы — PNG изображение становится неровным (становятся видны пиксели), потому что оно содержит информацию о положении и цвете каждого пикселя. При увеличении каждый пиксель также увеличивается, охватывая несколько пикселей дисплея, поэтому становятся заметны "кирпичики". Векторное изображение продолжает выглядеть ровным и красивым, потому что фигуры, масштабируются совместно с ним. </p>
+            <img style="width:15rem;" src="../images/raster-vector-default-size.png">
+            <img src="../images/raster-vector-zoomed.png"><div class="note notecard" id="sect4">
+                <p><strong>Примечание</strong>: Оба изображения сверху имеют формат PNG — слева показано растровое изображение, справа условно показано векторное изображение. Напоминаем, что пример с реальными растровым и векторными изображениями находится по ссылке: <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html">vector-versus-raster.html</a> !</p>
+              </div>
+      <p>Более того, файлы векторных изображений намного меньше растровых, т.к. в них содержится алгоритмы построения вместо информации о каждом пикселе.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+<iframe style="height:1500px; width:100%; border:none;" src="https://anakines.github.io/project/html-read/html-reading-44.html"></iframe>
