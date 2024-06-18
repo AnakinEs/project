@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Указываем автора и описание">
+          <h3 id="Указываем автора и описание">Указываем автора и описание</h3>
+          <div class="section-content">
+            <p>У элементов <code>&lt;meta&gt;</code> часто есть атрибуты <code>name</code> и <code>content</code>:</p>
+            <ol>
+              <li><code>name</code> — тип элемента, то есть какие именно метаданные он содержит.</li>
+              <li><code>content</code> — сами метаданные.</li>
+            </ol>
+      <p>Два полезных элемента метаданных — указание автора страницы и краткое описание её содержимого. Рассмотрим эти элементы на примере:</p>
+            <pre><code class="language-html">&lt;meta name="author" content="Крис Миллс"&gt;
+&lt;meta name="description" content="Задача MDN — в том, чтобы обучить
+новичков всему тому, что нужно им для разработки веб-сайтов и приложений."&gt;</code></pre>
+      <p>По указанному имени автора (author) можно найти человека, который написал страницу, и связаться с ним. Некоторые системы управления содержимым (CMS) автоматически обрабатывают эту информацию и делают её доступной для таких целей.</p>
+            <p>Краткое описание (description) содержимого страницы учитывается поисковыми системами при совпадении ключевых слов. Такое называют <a href="https://developer.mozilla.org/en-US/docs/Glossary/SEO">поисковой оптимизацией</a>, или <a href="https://developer.mozilla.org/ru/docs/Glossary/SEO">SEO</a>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
