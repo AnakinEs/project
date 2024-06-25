@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Списки">
+          <h3 id="Списки">Списки</h3>
+          <div class="section-content">
+            <p>Большая часть веб-контента является списками и HTML имеет специальные элементы для них. Разметка списка всегда состоит по меньшей мере из двух элементов. Наиболее распространёнными типами списков являются нумерованные и ненумерованные списки:</p>
+            <ol>
+              <li><strong>Ненумерованные списки</strong> - это списки, где порядок пунктов не имеет значения, как в списке покупок. Они оборачиваются в элемент <code>&lt;ul&gt;</code>.</li>
+              <li><strong>Нумерованные списки</strong> - это списки, где порядок пунктов имеет значение, как в рецепте. Они оборачиваются в элемент <code>&lt;ol&gt;</code>.</li>
+            </ol>
+      <p>Каждый пункт внутри списков располагается внутри элемента <code>&lt;li&gt;</code> (list item, элемент списка).</p>
+            <p>Например, если мы хотим включить часть следующего фрагмента абзаца в список:</p>
+            <pre><code class="language-html">&lt;p&gt;Mozilla, мы являемся мировым сообществом технологов, мыслителей и строителей, работающих вместе ... &lt;/p&gt;</code></pre>
+      <p>Мы могли бы изменить разметку на эту:</p>
+            <pre><code class="language-html">&lt;p&gt;Mozilla, мы являемся мировым сообществом&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;технологов&lt;/li&gt;
+&lt;li&gt;мыслителей&lt;/li&gt;
+&lt;li&gt;строителей&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;работающих вместе ... &lt;/p&gt;</code></pre>
+      <div class="note notecard" id="transparent">
+<p>Mozilla, мы являемся мировым сообществом</p>
+
+<ul>
+  <li>технологов</li>
+  <li>мыслителей</li>
+  <li>строителей</li>
+</ul>
+
+<p>работающих вместе ... </p>
+</div>
+
+            <p>Попробуйте добавить упорядоченный или неупорядоченный список на свою страницу.</p>              
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
