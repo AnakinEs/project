@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Нацеливание классов на отдельные элементы">
+          <h3 id="Нацеливание классов на отдельные элементы">Нацеливание классов на отдельные элементы</h3>
+          <div class="section-content">
+            <p>Вы можете создать селектор, нацеленный на конкретные элементы, к которым применён класс. В следующем примере мы подсветим 
+              <code>&lt;span&gt;</code> с классом <code>highlight</code> иначе, чем заголовок <code>&lt;h1&gt;</code> с классом <code>highlight</code>. 
+              Мы сделаем это, используя селектор типа для элемента, на который нацелены, с классом, добавленным с помощью точки, без пробела между ними.</p>
+            <iframe style="height:65rem" src="https://anakines.github.io/project/getting-started/started20.html"></iframe>				
+    <p>Этот подход сужает границы правила. Правило будет применяться только к этой конкретной комбинации элемента и класса. Вам нужно 
+      будет добавить другой селектор, если вы решили, что правило должно применяться и к другим элементам.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
