@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Отладка HTML">
+          <h1 id="Отладка HTML">Отладка HTML</h1>
+          <div class="section-content">
+            <p>Написать HTML — здорово, но как понять, где ошибка, когда что-то не работает? В этой статье описаны несколько инструментов, которые 
+              помогают искать и исправлять ошибки в HTML.</p>
+          </div>
+        </section>         
+  
+    <section aria-labelledby="Отладка — это не страшно">
+          <h2 id="Отладка — это не страшно">Отладка — это не страшно</h2>
+          <div class="section-content">
+            <p>Во время написания какого-нибудь кода, обычно все идёт хорошо, пока не появляется тот момент, когда вы совершаете ошибку. Итак, ваш 
+              код не работает, или работает не так, как вы задумывали. Если вы попытаетесь скомпилировать неработающую программу на 
+              языке <a href="https://www.rust-lang.org/">Rust</a>, компилятор укажет на ошибку:</p>
+            <img src="https://anakines.github.io/project/images/error-message.png">
+            <p>В данном случае, сообщение об ошибке понять относительно просто — "unterminated double quote string". 
+              Если вы внимательно посмотрите на <code>println!(Hello, world!");</code> , то заметите, что здесь отсутствует двойная кавычка. 
+              Разумеется, сообщения об ошибках могут становиться куда более сложными для понимания по мере роста вашего кода, и даже самые 
+              простые случаи могут показаться пугающими для тех, кто ничего не знает о Rust.</p>
+    <p>Но не бойтесь отладки! Чтобы комфортно писать и отлаживать любой код, нужно понимать язык и его инструменты.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
