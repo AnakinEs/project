@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Опускание кавычек вокруг значений атрибутов">
+          <h3 id="Опускание кавычек вокруг значений атрибутов">Опускание кавычек вокруг значений атрибутов</h3>
+          <div class="section-content">
+            <p>Осматриваясь во всемирной сети, вы будете встречать различные незнакомые способы написания разметки, включая написание значений 
+              атрибутов без кавычек. Это допустимо при определённых условиях, но разрушит вашу разметку при других. Например, возвращаясь к нашему 
+              упражнению с гиперссылкой, мы можем написать основной вариант только с атрибутом <code>href</code> так:</p>
+            <pre><code class="language-html">&lt;a href=https://www.mozilla.org/&gt;любимый веб-сайт&lt;/a&gt;</code></pre>
+      <p>Однако, как только мы добавим атрибут <code>title</code> в таком же стиле, мы поступим неверно:</p>
+            <pre><code class="language-html">&lt;a href=https://www.mozilla.org/ title=The Mozilla homepage&gt;favorite website&lt;/a&gt;</code></pre>
+      <p>В этом месте браузер неверно истолкует вашу разметку, думая, что атрибут <code>title</code> — это на самом деле три разных атрибута — 
+        атрибут <code>title</code> со значением "The" и два булевых атрибута: <code>Mozilla</code> и <code>homepage</code>. Это, очевидно, не то, 
+        что имелось в виду, и приведёт к ошибке или неожиданному поведению кода, как это показано в живом примере ниже. Попробуйте навести курсор 
+        на ссылку, чтобы увидеть, на что похож текст title!</p>
+            <div class="note notecard" id="transparent-js">
+              <p><a href="https://www.mozilla.org/" title="The" mozilla="" homepage="">favorite website</a></p>
+            </div>
+           
+      <p>Наш совет: всегда используйте кавычки в атрибутах — это позволит избежать подобных проблем, и, следовательно, код будет более читабельным.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
