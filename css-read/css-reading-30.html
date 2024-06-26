@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Встроенные стили">
+          <h3 id="Встроенные стили">Встроенные стили</h3>
+          <div class="section-content">
+            <p>Встроенные стили являются правилами CSS, которые влияют только на один элемент, содержащиеся в атрибуте <code>style</code>:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Я пробую писать CSS&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 style="color: blue;background-color: yellow;border: 1px solid black;"&gt;Привет!&lt;/h1&gt;
+&lt;p style="color:red;"&gt;Это мой первый опыт в CSS&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p><strong>Пожалуйста, не делайте этого!</strong> Это очень плохо для технического обслуживания (вам, возможно, придётся обновить одну и ту же информацию несколько раз в одном документе), а также смешивает ваши презентационные данные CSS с структурной информацией HTML, что делает код трудным для чтения и понимания. Хранение различных типов кода отделено делает работу гораздо более лёгкой для всех, кто работает над кодом.</p>
+            <p>Есть несколько мест, где встроенные стили являются более распространёнными или даже желательными. Вам, возможно, придётся прибегнуть к использованию их, если ваша рабочая среда сильно ограничена (возможно, ваша CMS позволяет редактировать только HTML-тело). Вы также увидите, как они использовали много в HTML электронной почте, чтобы получить совместимость с таким количеством почтовых клиентов, со скольким это возможно.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
