@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Файловые пути">
+          <h2 id="Файловые пути">Файловые пути</h2>
+          <div class="section-content">
+            <p>Для того, чтобы файлы общались друг с другом, вы должны указать файлам путь друг к другу - обычно один файл знает, где находится другой. 
+      Чтобы продемонстрировать это, мы вставим немного HTML в наш файл <code>index.html</code> и научим его отображать изображение, которое вы выбрали в статье 
+      <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/What_will_your_website_look_like">"Каким должен быть ваш веб-сайт?"</a></p>
+            <ol>
+              <li>Скопируйте изображение, которое вы выбрали ранее, в папку <code>images</code>.</li>
+              <li>Откройте ваш файл <code>index.html</code> и вставьте следующий код в файл именно в таком виде. Не беспокойтесь о том, что все это значит - позже в 
+      этом руководстве мы рассмотрим структуры более подробно.</li>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Моя тестовая страница&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;img src="" alt="Моё тестовое изображение"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+              <li>Строка <code>&lt;img src="" alt="Моё тестовое изображение"&gt;</code> - это HTML код, который вставляет изображение на страницу. Мы должны 
+      сказать HTML, где находится изображение. Изображение находится внутри папки images, которая находится в той же директории что и <code>index.html</code>. 
+      Чтобы спуститься вниз по нашей файловой структуре от <code>index.html</code> до нашего изображения, путь к файлу должен выглядеть так <code>images/your-image-filename</code>. 
+      Например наше изображение, названное 
+      <code>firefox-icon.png</code>, имеет такой путь к файлу: <code>images/firefox-icon.png</code>.</li>
+              <li>Вставьте путь к файлу в ваш HTML код между двойными кавычками <code>src=""</code>.</li>
+              <li>Сохраните ваш HTML файл, а затем загрузите его в вашем браузере (двойной щелчок по файлу). Вы должны увидеть вашу новую веб-страницу, 
+      отображающую ваше изображение!</li>
+      
+            </ol><img src="website-screenshot.png"><br> 
+            <p>Некоторые общие правила о путях к файлам:</p>	
+            <ul>
+              <li>Для ссылки на целевой файл в той же директории, что и вызывающий HTML файл, просто используйте имя файла, например, <code>my-image.jpg</code>.</li>
+              <li>Для ссылки на файл в поддиректории, напишите имя директории в начале пути, плюс косую черту (forwardslash, слеш), например: <code>subdirectory/my-image.jpg</code>.</li>
+              <li>Для ссылки на целевой файл в директории выше вызывающего HTML файла, напишите две точки. 
+      Например, если <code>index.html</code> находится внутри подпапки <code>test-site</code>, а <code>my-image.png</code> - внутри <code>test-site</code>, вы 
+      можете обратиться к <code>my-image.png</code> из <code>index.html</code>, используя <code>../my-image.png</code>.</li>
+              <li>Вы можете комбинировать их так, как вам нравится, например <code>../subdirectory/another-subdirectory/my-image.png</code>.</li>               
+            </ul> 
+            <p>На данный момент это все, что вам нужно знать</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Файловая система Windows стремится использовать обратный слеш (backslash), 
+        а не косую черту (forwardslash), например <code>C:\windows</code>. Это не имеет значения, даже если вы 
+        разрабатываете веб-сайт на Windows, вы всё равно должны использовать обычные слеши в вашем коде.</p>
+            </div>			  
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
