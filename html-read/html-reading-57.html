@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление SVG на страницы">
+          <h2 id="Добавление SVG на страницы">Добавление SVG на страницы</h2>
+          <div class="section-content">
+            <p>В данном разделе мы рассмотрим различные варианты, с помощью которых можно добавить SVG векторную графику на веб-страницу.</p>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Быстрый путь: <img>">
+          <h3 id="Быстрый путь: <img>">Быстрый путь: &lt;img&gt;</h3>
+          <div class="section-content">
+            <p>Чтобы встроить SVG используя элемент <code>&lt;img&gt;</code>, вам просто нужно сослаться на него в атрибуте <code>src</code>, как и 
+              следовало ожидать. Вам понадобится атрибут <code>height</code> или <code>width</code> (или оба, если ваш SVG не имеет собственного 
+              соотношения сторон). Если вы ещё этого не делали, пожалуйста, прочтите 
+              <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML">Изображения в HTML</a>.</p>
+            <pre><code class="language-html">&lt;img
+  src="equilateral.svg"
+  alt="triangle with all three sides equal"
+  height="87px"
+  width="100px" /&gt;</code></pre>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Плюсы">
+          <h4 id="Плюсы">Плюсы</h4>
+          <div class="section-content">
+            <ul>
+              <li>Быстрый, знакомый синтаксис изображения со встроенным текстовым эквивалентом, доступным в атрибуте <code>alt</code></li>
+              <li>Вы можете легко превратить изображение в гиперссылку, поместив <code>&lt;image&gt;</code> в элемент <code>&lt;a&gt;</code>.</li>
+            </ul>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Минусы">
+          <h4 id="Минусы">Минусы</h4>
+          <div class="section-content">
+            <ul>
+              <li>Вы не можете изменять изображение с помощью JavaScript.</li>
+              <li>Если вы хотите управлять содержимым SVG с помощью CSS, вы должны использовать встроенные CSS стили в своём SVG коде. 
+                (Внешние таблицы стилей, вызываемые из файла SVG, не действуют.)</li>
+              <li>Вы не можете изменить стиль изображения с помощью псевдоклассов CSS (например <code>:focus</code>).</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
