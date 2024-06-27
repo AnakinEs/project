@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Важное значение">
+          <h3 id="Важное значение">Важное значение</h3>
+          <div class="section-content">
+            <p>Чтобы подчеркнуть важные слова, мы склонны подчёркивать их в устной речи и <strong>выделять жирным</strong> на письменном языке. 
+              Например:</p>            
+      <p>Эта жидкость <strong>очень токсична</strong>.</p>
+      <p>Я рассчитываю на вас.<strong>Не опаздывай</strong>!</p>
+      <p>В таких случаях в HTML используется элемент <code>&lt;strong&gt;</code> (важное значение). Помимо того, что документ становится более полезным, 
+        они распознаются программами, считывающими с экрана, и говорят другим тоном. Браузеры стилизуют это как полужирный текст по умолчанию, но вы 
+        можете не использовать этот тег, чтобы получить жирный шрифт. Для получения жирного шрифта вы можете использовать элемент <code>&lt;span&gt;</code> 
+        и CSS, или, возможно, элемент <code>&lt;b&gt;</code> (смотрите ниже).</p>
+      <pre><code class="language-html">&lt;p&gt;Эта жидкость &lt;strong&gt;очень токсична&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Я рассчитываю на тебя. &lt;strong&gt;Не &lt;/strong&gt;опаздывай!&lt;/p&gt;</code></pre>
+      <p>При желании вы можете вложить важные и акцентированные слова друг в друга:</p>
+      <pre><code class="language-html">&lt;p&gt;Эта жидкость &lt;strong&gt;очень токсична&lt;/strong&gt; —
+если ты выпьешь её, &lt;strong&gt;то можешь&lt;em&gt;умереть&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;</code></pre>
+      <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
