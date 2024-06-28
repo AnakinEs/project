@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Точка с запятой">
+          <h2 id="Точка с запятой">Точка с запятой</h2>
+          <div class="section-content">
+            <p>В большинстве случаев точку с запятой можно не ставить, если есть переход на новую строку.</p>
+            <p>Так тоже будет работать:</p>
+            <pre><code class="language-js">alert('Привет')
+  alert('Мир')</code></pre>
+            <p>В этом случае JavaScript интерпретирует перенос строки как «неявную» точку с запятой. Это называется <a href="https://tc39.es/ecma262/#sec-automatic-semicolon-insertion">автоматическая вставка точки с
+                запятой</a>.</p>
+            <p><strong>В большинстве случаев новая строка подразумевает точку с запятой. Но «в большинстве случаев» не
+                значит «всегда»!</strong></p>
+            <p>В некоторых ситуациях новая строка всё же не означает точку с запятой. Например:</p>
+            <pre><code class="language-js">alert(3 +
+  1
+  + 2);</code></pre>
+            <p>Код выведет <code>6</code>, потому что JavaScript не вставляет здесь точку с запятой. Интуитивно
+              очевидно, что, если строка заканчивается знаком <code>"+"</code>, значит, это «незавершённое выражение»,
+              поэтому точка с запятой не требуется. И в этом случае всё работает, как задумано.</p>
+            <p><strong>Но есть ситуации, где JavaScript «забывает» вставить точку с запятой там, где она
+                нужна.</strong></p>
+            <p>Ошибки, которые при этом появляются, достаточно сложно обнаруживать и исправлять.</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Пример ошибки</div>
+              <p>Если вы хотите увидеть конкретный пример такой ошибки, обратите внимание на этот код:</p>
+              <pre><code class="language-js">alert('Hello');
+  
+  [1, 2].forEach(alert);</code></pre>
+              <p>Пока нет необходимости знать значение скобок <code>[]</code> и <code>forEach</code>. Мы изучим их
+                позже. Пока что просто запомните результат выполнения этого кода: выводится <code>Hello</code>, затем
+                <code>1</code>, затем <code>2</code>.</p>
+              <p>А теперь давайте уберем точку с запятой после <code>alert</code>:</p>
+              <pre><code class="language-js">alert('Hello')
+  
+  [1, 2].forEach(alert);</code></pre>
+              <p>Этот код отличается от кода, приведенного выше, только в одном: пропала точка с запятой в конце
+                первой строки.</p>
+              <p>Если мы запустим этот код, выведется только первый <code>alert</code>, а затем мы получим ошибку (вам
+                может потребоваться открыть консоль, чтобы увидеть её)!</p>
+              <p>Это потому что JavaScript не вставляет точку с запятой перед квадратными скобками <code>[...]</code>.
+                И поэтому код в последнем примере выполняется, как одна инструкция.</p>
+              <p>Вот как движок видит его:</p>
+              <pre><code class="language-js">alert('Hello')[1, 2].forEach(alert);</code></pre>
+              <p>Выглядит странно, правда? Такое слияние в данном случае неправильное. Мы должны поставить точку с
+                запятой после <code>alert</code>, чтобы код работал правильно.</p>
+              <p>Это может произойти и в некоторых других ситуациях.</p>
+            </div>
+            <p>Мы рекомендуем ставить точку с запятой между инструкциями, даже если они отделены переносами строк. Это
+              правило широко используется в сообществе разработчиков. Стоит отметить ещё раз – в большинстве случаев
+              можно не ставить точку с запятой. Но безопаснее, особенно для новичка, ставить её.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
