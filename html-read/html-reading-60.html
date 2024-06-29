@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Элемент <video>">
+          <h3 id="Элемент <video>">Элемент &lt;video&gt;</h3>
+          <div class="section-content">
+            <p>Элемент <code>&lt;video&gt;</code>  позволяет вам вставлять видео достаточно легко. Очень простой пример выглядит так:</p>
+            <pre><code class="language-html">&lt;video src="rabbit320.webm" controls&gt;
+&lt;p&gt;Ваш браузер не поддерживает HTML5 видео. Используйте &lt;a href="rabbit320.webm"&gt;ссылку на видео&lt;/a&gt; для доступа.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+    <p>Описание параметров:</p>
+            <dl>
+              <dt><code><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/video#attr-src">src</a></code></dt>
+              <dd>Точно так же, как для элемента <code>&lt;img&gt;</code> , атрибут <code>src</code> (source — источник) содержит путь к видео, которое вы хотите внедрить. Он работает точно так же.</dd>
+      <dt><a href="">controls</a></dt>
+              <dd>Пользователи должны иметь возможность контролировать воспроизведение видео и аудио (особенно это важно для людей, которые больны  <a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BF%D0%B8%D0%BB%D0%B5%D0%BF%D1%81%D0%B8%D1%8F">эпилепсией</a>). Вы должны либо использовать атрибут <code>controls</code>, чтобы использовать встроенный в браузер интерфейс управления или создать собственный интерфейс, используя соответствующие <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">JavaScript API</a>. Как минимум, интерфейс должен включать способ запуска и остановки медиа-носителя и регулировки громкости.</dd>
+              <dt>Параграф внутри тегов <code>&lt;video&gt;</code></dt>
+      <dd>Это называют <strong>резервный контент</strong> — он будет отображаться, если браузер, показывающий страницу, не поддерживает элемент <code>&lt;video&gt;</code>, позволяя нам обеспечить поддержку для старых версий браузеров. Это может быть все, что вы захотите; в нашем примере мы предоставили прямую ссылку на видеофайл, поэтому пользователь может хотя бы получить к нему доступ, независимо от того, какой браузер он используют.</dd>
+    </dl>
+    <p>Встроенное видео будет выглядеть примерно так:</p>
+            <img src="../images/simple-video.png">
+            <p>Вы можете <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/simple-video.html">посмотреть живой пример</a> (взгляните также на <a href="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/video-and-audio-content/simple-video.html">исходный код</a>).</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
