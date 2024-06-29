@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Переключения разрешений: Одинаковый размер, разные разрешения">
+          <h3 id="Переключения разрешений: Одинаковый размер, разные разрешения"><a href="#Переключения разрешений: Одинаковый размер, разные разрешения"><span id="hint20" class="hint" data-tooltip="Чет тоже не все понятно. И на практике пробовал запускать код, на своих примерах, изображение не меняет картинку при высоком разрешении">Переключения разрешений: Одинаковый размер, разные разрешения</span></a></h3>
+
+            <div class="section-content">
+              <p>Если вы поддерживаете несколько разрешений экрана, но все видят ваше изображение в одном и том же размере на экране, вы можете позволить браузеру выбирать изображение с подходящим разрешением используя <code>srcset</code> с x-дескриптором и без <code><span class="blue" data-tooltip="<code>sizes</code> определяет перечень медиавыражений (например, ширину экрана) и указывает предпочтительную ширину изображения, когда определённое медиавыражение истинно">sizes</span></code> — более простой синтаксис! Найти пример как это выглядит можно здесь <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/srcset-resolutions.html">srcset-resolutions.html</a> (смотрите также <a href="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/responsive-images/srcset-resolutions.html">the source code</a>):</p>
+              <pre><code class="language-html">&lt;img srcset="elva-fairy-320w.jpg,
+             elva-fairy-480w.jpg 1.5x,
+             elva-fairy-640w.jpg 2x"
+     src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy"&gt;</code></pre><img src="../images/resolution-example.png"><p>В данном примере, к изображению применяется CSS таким образом, что оно имеет ширину в 320 пикселей на экране (также называемое CSS-пикселями):</p>
+			  <pre><code class="language-css">img {
+  width: 320px;
+}</code></pre>
+			  <p>В этом случае, нет необходимости в <code>sizes</code> — браузер просто определяет в каком разрешении отображает дисплей и выводит наиболее подходящее изображение в соответствии с <code>srcset</code>. Таким образом, если устройство, подключаемое к странице, имеет дисплей стандартного/низкого разрешения, когда один пиксель устройства представляет (соответствует) каждый CSS-пиксель, то будет загружено изображение <code>elva-fairy-320w.jpg</code> (применён x1, то есть вам не надо включать его). Если устройство имеет высокое разрешение, в два пикселя устройства на каждый CSS-пиксель или более, то будет загружено изображение <code>elva-fairy-640w.jpg</code>. 640px изображение имеет размер 93KB, тогда так 320px изображение - всего 39KB.</p>
+            </div>
+          </section>
+      </article>
+    </main>
+  </div>
+</body>
