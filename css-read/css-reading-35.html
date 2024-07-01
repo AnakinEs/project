@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Справка о селекторах">
+          <h2 id="Справка о селекторах">Справка о селекторах</h2>
+          <div class="section-content">
+            <p>В таблице ниже — доступные сейчас селекторы, а также ссылки к страницам, где рассказывается, как использовать каждый из них. Я также добавил ссылки на страницы MDN для каждого селектора, чтобы вы могли проверить, поддерживаются ли они браузерами.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Селектор</th>
+                  <th>Пример</th>
+                  <th>Руководство</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Type_selectors">Селектор по типу</a></td>
+                  <td><code>h1 {  }</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B_%D0%BF%D0%BE_%D1%82%D0%B8%D0%BF%D1%83">Селектор по типу</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Universal_selectors">Универсальный селектор</a></td>
+                  <td><code>* {  }</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80">Универсальный селектор</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Class_selectors">Селектор класса</a></td>
+                  <td><code>.box {  }</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BE%D0%B2">Селекторы классов</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/ID_selectors">Селектор ID</a></td>
+                  <td><code>#unique { }</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B_%D0%BF%D0%BE_id">Селекторы по ID</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors">Селектор атрибутов</a></td>
+                  <td><code>a[title] {  }</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors">Селекторы атрибутов</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Pseudo-classes">Селектор псевдоклассов</a></td>
+                  <td><code>p:first-child { }</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#%D1%87%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D1%81%D1%81">Псевдоклассы</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Pseudo-elements">Селектор псевдоэлементов</a></td>
+                  <td><code>p::first-line { }</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#%D1%87%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82">Псевдоэлементы</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Descendant_combinator">Селектор потомков</a></td>
+                  <td><code>article<span class="meaning" data-tooltip="В приведённом ниже примере выбирается только тот элемент <code>&amp;lt;p&amp;gt;</code>, который находится внутри элемента с классом <code>.box</code>.<p></p><code>.box p</code>"> </span>p</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Combinators#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80_%D0%BF%D0%BE%D1%82%D0%BE%D0%BC%D0%BA%D0%BE%D0%B2">Селектор потомков</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Child_combinator">Селектор дочерних элементов</a></td>
+                  <td><code>article <span class="meaning" data-tooltip="Чтобы выбрать только те элементы <code>&amp;lt;p&amp;gt;</code>, которые являются дочерними элементами <code>&amp;lt;article&amp;gt;</code>, селектор пишется так:<p></p><code>article &amp;gt; p</code>">&gt;</span> p</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Combinators#%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%82%D0%BE%D1%80">Селектор дочерних элементов</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Adjacent_sibling_combinator">Смежные селекторы</a></td>
+                  <td>
+                <code>h1 <span class="meaning" data-tooltip="Соседний родственный селектор (<code>+</code>) используется для выбора элемента, который непосредственно следует за другим элементом и находится на одном с ним уровне иерархии :<p></p>
+                <code>p + img</code>">+</span> p</code>
+              </td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Combinators#%D1%81%D0%BC%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5_%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B">Смежные селекторы</a></td>
+                </tr>
+      <tr>          
+                  <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS/General_sibling_combinator">Селектор братских элементов</a></td>
+                  <td><code>h1 <span class="meaning" data-tooltip="Чтобы выбрать все элементы <code>&amp;lt;img&amp;gt;</code>, которые находятся в любом месте после элементов <code>&amp;lt;p&amp;gt;</code>, надо указать так:<p></p><code>p ~ img</code>">~</span> p</code></td>
+                  <td><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Combinators#%D0%B1%D1%80%D0%B0%D1%82%D1%81%D0%BA%D0%B8%D0%B5_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Селектор братских элементов</a></td>
+                </tr>										
+              </tbody>
+            </table>
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Возврат всех исходных значений свойств">
+          <h3 id="Возврат всех исходных значений свойств">Возврат всех
+              исходных значений свойств</h3>
+          <div class="section-content">
+            <p><span class="meaning" data-tooltip="Стеногра́фия — способ письма посредством особых знаков и целого ряда сокращений, дающий возможность быстро записывать устную речь. Скорость стенографического письма превосходит скорость обычного в четыре—семь раз.">Стенографическое</span>
+              свойство CSS <code>all</code> можно использовать для того, чтобы присвоить одно из значений наследования к
+              (почти) всем свойствам одновременно. Это одно из четырёх значений
+              (<code><span class="meaning" data-tooltip="Устанавливает значение свойства, применённого к элементу, таким же, как у его родительского элемента. Фактически, это &quot;включает наследование&quot;.<p></p>Ключевое слово <code>inherit</code>
+              сообщает браузеру, что значение свойства нужно найти у ближайшего родительского элемента и унаследовать
+              его для текущего элемента. Если у ближайшего родителя также задано значение inherit, то браузер продолжит
+              подниматься по DOM, пока не найдет какое-нибудь значение. Если значения нет, то браузер применит свои
+              стили, а если и браузерных стилей нет, то тогда будет применено значение
+              <code>initial</code>">inherit</span></code>,
+              <code><span class="meaning" data-tooltip="Устанавливает значение свойства, применённого к выбранному элементу, равным <code>initial value</code>
+              этого свойства (в соответствии с настройками браузера по умолчанию. Если в таблице стилей браузера
+              отсутствует значение этого свойства, оно наследуется естественным образом.)
+            <p></p>Значение свойства по умолчанию.">initial</span></code>,
+            <code><span class="meaning" data-tooltip="Возвращает свойству его естественное значение, что означает, что если свойство наследуется естественным образом, оно действует как <code>inherit</code>,
+            иначе оно действует как <code>initial</code>
+            <p></p>Оно ведет себя как <code>inherit</code> ключевое слово в первом случае, когда свойство является
+            унаследованным свойством , и как <code>initial</code> ключевое слово во втором случае, когда свойство не
+            является унаследованным свойством<br><br> ..some-class {<br> color: unset; /* будет равно `inherit` */<br>
+            display: unset; /* будет равно `initial` */<br>}">unset</span></code>, или <code>revert</code>). Это удобный
+            способ для отмены изменений, внесённых в стили, для того, чтобы вы могли вернуться к стартовой точке перед
+            внесением новых изменений.</p>
+            <p>В примере ниже имеются два блока <code>&lt;blockquote&gt;</code>. Первый имеет стиль, который применён к
+              самому элементу <code>blockquote</code>, второй имеет класс <code>fix-this</code>, который устанавливает
+              значение <code>all</code> в <code>unset</code>.</p>
+            <iframe style="height:50rem" src="../getting-started/started12.html"></iframe>
+            <p>Попробуйте установить для <code>all</code> ещё одно из доступных значений и исследуйте, в чём заключается
+              разница.</p>
+            <p><strong>Свой пример:</strong></p>
+            <p>Если указать <code>all: inherit;</code> то все значения свойств наследуются от <code>div</code> с классом <code>hi</code>.</p>
+            <p>Если указать <code>all: unset;</code> то судя по изменениям, наследуются все значения свойств за исключением размера рамки.</p>
+            <p>Если указать <code>all: initial;</code> то судя по изменениям, наследются только <code>border: blue;</code> и <code>background-color: yellow;</code> </p>
+            <iframe style="height:53rem" src="../getting-started/started276.html"></iframe>
+
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

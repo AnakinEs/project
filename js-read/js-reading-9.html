@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Google Chrome">
+          <h2 id="Google Chrome">Google Chrome</h2>
+          <div class="section-content">
+            <p>Откройте страницу <a href="https://learn.javascript.ru/article/devtools/bug.html">bug.html</a>.</p>
+            <p>В её JavaScript-коде закралась ошибка. Она не видна обычному посетителю, поэтому давайте найдём её при
+              помощи инструментов разработки.</p>
+            <p>Нажмите <kbd>F12</kbd> или, если вы используете Mac, <kbd>Cmd+Opt+J</kbd>.</p>
+            <p>По умолчанию в инструментах разработчика откроется вкладка Console (консоль).</p>
+            <p>Она выглядит приблизительно следующим образом:</p><img src="../images/chrome@2x.png"><p>Точный внешний вид инструментов разработки зависит от используемой версии Chrome. Время от времени
+              некоторые детали изменяются, но в целом внешний вид остаётся примерно похожим на предыдущие версии.</p>
+            <ul>
+              <li>В консоли мы можем увидеть сообщение об ошибке, отрисованное красным цветом. В нашем случае скрипт
+                содержит неизвестную команду «lalala».</li>
+              <li>Справа присутствует ссылка на исходный код <code>bug.html:12</code> с номером строки кода, в которой
+                эта ошибка и произошла.</li>
+            </ul>
+            <p>Под сообщением об ошибке находится синий символ <code>&gt;</code>. Он обозначает командную строку, в ней
+              мы можем редактировать и запускать JavaScript-команды. Для их запуска нажмите <kbd>Enter</kbd>.</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Многострочный ввод</div>
+              <p>Обычно при нажатии <kbd>Enter</kbd> введённая строка кода сразу выполняется.</p>
+              <p>Чтобы перенести строку, нажмите <kbd>Shift+Enter</kbd>. Так можно вводить более длинный JS-код.</p>
+            </div>
+            <p>Теперь мы явно видим ошибки, для начала этого вполне достаточно. Мы ещё вернёмся к инструментам
+              разработчика позже и более подробно рассмотрим отладку кода в главе <a href="https://learn.javascript.ru/debugging-chrome">Отладка в браузере</a>.</p>
+          </div>
+        </section>	
+      </article>
+    </main>
+  </div>
+</body>

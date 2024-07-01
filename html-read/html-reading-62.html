@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Указываем кодировку текста документа">
+          <h3 id="Указываем кодировку текста документа">Указываем кодировку текста документа</h3>
+          <div class="section-content">
+            <p>В заголовке примера выше есть следующая строка:</p>
+            <pre><code class="language-html">&lt;meta charset="utf-8"&gt;</code></pre>
+      <p>В этом элементе указана кодировка документа — набор символов, которые в нём можно использовать. <code>utf-8</code> — универсальный набор символов, который включает почти все символы со всех языков человечества. Такая веб-страница сможет работать с любым языком. Установить эту кодировку на всех веб-страницах, которые вы создаёте — отличная идея! Страница в такой кодировке прекрасно отображает как английские, так и японские символы:</p>
+            <img src="../images/correct-encoding.png">
+            
+      <p>Если использовать, скажем, кодировку <code>ISO-8859-1</code> (набор символов для латиницы), текст страницы испортится:</p>
+            <img src="../images/bad-encoding.png">
+            
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Некоторые браузеры (например, Chrome) автоматически исправляют неправильную кодировку, поэтому, в зависимости от используемого вами браузера, вы можете не увидеть эту проблему. Несмотря на это вам всё равно необходимо указывать кодировку UTF-8 для вашей страницы, чтобы избежать возможных проблем в других браузерах.</p>
+            </div>
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

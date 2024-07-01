@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>all</title>
+  <link rel="stylesheet" href="css/started.css">
+  <style>
+
+  </style>
+
+  <style class="editable">
+    blockquote {
+      background-color: red;
+      border: 2px solid green;
+    }
+
+    .fix-this {
+      all: inherit;
+    }
+
+    .hi {
+      background-color: yellow;
+      color: orange;
+      border: 4px solid blue;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="preview">
+    <blockquote>
+      <p>This blockquote is styled</p>
+    </blockquote>
+
+    <div class="hi">
+      <blockquote class="fix-this">
+        <p>This blockquote is not styled</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <textarea class="playable playable-css" style="height: 260px;">
+    blockquote {
+      background-color: red;
+      border: 2px solid green;
+    }
+
+    .fix-this {
+      all: inherit;
+    }
+
+    .hi {
+      background-color: yellow;
+      color: orange;
+      border: 4px solid blue;
+    }
+    </textarea>
+
+  <textarea class="playable playable-html" style="height: 170px;">
+    <blockquote>
+      <p>This blockquote is styled</p>
+    </blockquote>
+        
+    <div class="hi">
+      <blockquote class="fix-this">
+        <p>This blockquote is not styled</p>
+      </blockquote>
+    </div>
+    </textarea>
+
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script src="started.js"></script>
+
+</html>
