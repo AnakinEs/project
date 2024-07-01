@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление CSS в наш документ">
+          <h2 id="Добавление CSS в наш документ">Добавление CSS в наш документ</h2>
+          <div class="section-content">
+            <p>Самое первое, что нам нужно сделать, — это сообщить HTML-документу, что у нас есть некоторые правила CSS, которые мы хотим использовать. Существует три различных способа применения CSS к документу HTML, с которым вы обычно сталкиваетесь, однако сейчас мы рассмотрим наиболее обычный и полезный способ сделать это — связать CSS с заголовком вашего документа.</p>
+            <p>Создайте файл в той же папке, что и документ HTML, и сохраните его как <code>styles.css</code>. Расширение .css показывает, что это файл CSS.</p>
+            <p>Чтобы связать styles.css с index.html, добавьте следующую строку где-то внутри <code>&lt;head&gt;</code> HTML документа:</p>
+            <pre><code class="language-html">&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+    <p>Элемент <code>&lt;link&gt;</code> сообщает браузеру, что у нас есть таблица стилей, используя атрибут rel, и местоположение этой таблицы стилей в качестве значения атрибута href. вы можете проверить, работает ли CSS, добавив правило в styles.css. Используя ваш редактор кода, добавьте следующее в ваш файл CSS:</p>
+            <pre><code class="language-css">h1 {
+color: red;
+}</code></pre>
+    <p>Сохраните файлы HTML и CSS и перезагрузите страницу в веб-браузере. Заголовок первого уровня в верхней части документа теперь должен быть красным. Если это произойдёт, поздравляю — вы успешно применили CSS к документу HTML. Если этого не произойдёт, внимательно проверьте, правильно ли вы ввели всё.</p>
+            <p>Вы можете продолжить работу в <code>styles.css</code> локально, или вы можете использовать наш интерактивный редактор ниже, чтобы продолжить этот урок. Интерактивный редактор действует так, как если бы CSS на первой панели был связан с документом HTML, как это было в нашем документе выше.</p>
+            <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
