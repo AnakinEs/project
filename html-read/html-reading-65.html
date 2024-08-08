@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Верхний и нижний индекс">
+          <h2 id="Верхний и нижний индекс">Верхний и нижний индекс</h2>
+          <div class="section-content">
+            <p>Иногда вам понадобится использовать надстрочный или подстрочный индекс при разметке таких вещей, как даты, химические формулы и математические уравнения, чтобы они имели правильное представление. Элементы <code>&lt;sup&gt;</code> и <code>&lt;sub&gt;</code> созданы для таких ситуаций.</p>
+            <p>Приведём пример:</p>
+            <pre><code class="language-html">&lt;p&gt;Я просыпаюсь в 6&lt;sup&gt;35&lt;/sup&gt; часов утра.&lt;/p&gt;
+&lt;p&gt;Химическая формула кофеина: C&lt;sub&gt;8&lt;/sub&gt;H&lt;sub&gt;10&lt;/sub&gt;N&lt;sub&gt;4&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;.&lt;/p&gt;
+&lt;p&gt;Если x&lt;sup&gt;2&lt;/sup&gt; равно 9, x должен равняться 3 или -3.&lt;/p&gt;</code></pre>
+      <p>Результат этого кода выглядит следующим образом:</p>
+            <div class="note notecard" id="transparent">
+              <p>Я просыпаюсь в 6<sup>35</sup> часов утра.</p>
+              <p>Химическая формула кофеина: C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+              <p>Если x<sup>2</sup> равно 9, x должен равняться 3 или -3.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
