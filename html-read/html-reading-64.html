@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Фрагменты документа">
+          <h3 id="Фрагменты документа">Фрагменты документа</h3>
+          <div class="section-content">
+            <p>Можно ссылаться на определённую часть документа HTML (известную как <strong>фрагмент документа</strong>), а не только на верхнюю часть документа. Для этого вам сначала нужно назначить атрибут <code>id</code> элементу, с которым вы хотите связаться. Обычно имеет смысл ссылаться на определённый заголовок, поэтому это выглядит примерно так:</p>
+            <pre><code class="language-html">&lt;h2 id="Почтовый_адрес"&gt;Почтовый адрес&lt;/h2&gt;</code></pre>
+      <p>Затем, чтобы связаться с  этим конкретным <code>id</code>, вы должны включить его в конец URL-адреса, которому предшествует знак решётки, например:</p>
+            <pre><code class="language-html">&lt;p&gt;Хотите написать мне письмо? Используйте наш
+&lt;a href="contacts.html#Почтовый_адрес"&gt;почтовый адрес&lt;/a&gt;.
+&lt;/p&gt;</code></pre>
+      <p><span id="hint14" class="hint" data-tooltip="Не понял что написано. Разница нет никакой, эта ссылка ведет туда же.">Вы даже можете использовать ссылку на фрагмент документа отдельно для ссылки на другую часть того же документа:</span></p>
+            <pre><code class="language-html">&lt;p&gt;
+&lt;a href="#Почтовый_адрес"&gt;Почтовый адрес кампании&lt;/a&gt;
+можно найти в нижней части этой страницы.
+&lt;/p&gt;</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
