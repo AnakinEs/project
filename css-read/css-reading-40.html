@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление класса">
+          <h2 id="Добавление класса">Добавление класса</h2>
+          <div class="section-content">
+            <p>Пока у нас есть стилизованные элементы, основанные на их именах HTML-элементов. Это работает до тех пор, пока вы хотите, чтобы все элементы этого типа в вашем документе выглядели одинаково. В большинстве случаев это не так, и вам нужно будет найти способ выбрать подмножество элементов, не меняя остальные. Самый распространённый способ сделать это — добавить класс к вашему HTML-элементу и нацелиться на этот класс.</p>
+            <p>В своём HTML-документе добавьте Атрибут <code>class</code> ко второму пункту списка. Ваш список теперь будет выглядеть так:</p>
+            <pre><code class="language-html">&lt;ul&gt;
+&lt;li&gt;Элемент один&lt;/li&gt;
+&lt;li class="special"&gt;Элемент два&lt;/li&gt;
+&lt;li&gt;Элемент &lt;em&gt;три&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    <p>В вашем CSS вы можете выбрать класс <code>special</code> к любому элементу на странице, чтобы он выглядел так же, как и этот элемент списка. Добавьте следующее в ваш файл CSS:</p>
+            <pre><code class="language-css">.special {
+color: orange;
+font-weight: bold;
+}</code></pre>
+    <p>Сохраните и обновите, чтобы увидеть результат.</p>
+            <p>Вы можете захотеть, чтобы <code>&lt;span&gt;</code> в абзаце также был оранжевым и жирным. Попробуйте добавить класс "<code>special</code>", затем перезагрузите страницу и посмотрите, что получится.</p>
+            <p>Иногда вы увидите правила с селектором, который перечисляет селектор HTML-элемента вместе с классом:</p>
+            <pre><code class="language-css">li.special {
+color: orange;
+font-weight: bold;
+}</code></pre>
+    <p>Этот синтаксис означает «предназначаться для любого элемента li, который имеет класс special». Если бы вы сделали это, вы бы больше не смогли применить класс к <code>&lt;span&gt;</code> или другому элементу, просто добавив к нему класс; вы должны добавить этот элемент в список селекторов:</p>
+            <pre><code class="language-css">li.special,
+span.special {
+color: orange;
+font-weight: bold;
+}</code></pre>
+    <p>Как вы можете себе представить, некоторые классы могут быть применены ко многим элементам, и вам не нужно постоянно редактировать свой CSS каждый раз, когда что-то новое должно принять этот стиль. Поэтому иногда лучше обойти элемент и просто обратиться к классу, если только вы не знаете, что хотите создать некоторые специальные правила для одного элемента и, возможно, хотите убедиться, что они не применяются к другим элементам.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
