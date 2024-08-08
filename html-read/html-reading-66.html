@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Краткое руководство по URL-адресам и путям">
+          <h2 id="Краткое руководство по URL-адресам и путям">Краткое руководство по URL-адресам и путям</h2>
+          <div class="section-content">
+            <p>Чтобы полностью понять адреса ссылок, вам нужно понять несколько вещей про URL-адреса и пути к файлам. Этот раздел даст вам информацию, необходимую для достижения этой цели.</p>
+            <p>URL-адрес (Uniform Resource Locator, или единый указатель ресурса, но так его никто не называет) — это просто строка текста, которая определяет, где что-то находится в Интернете. Например, домашняя страница Mozilla находится по адресу <code>https://www.mozilla.org/ru/</code>.</p>
+            <p>URL-адреса используют пути для поиска файлов. Пути указывают, где в файловой системе находится файл, который вас интересует. Давайте рассмотрим простой пример структуры каталогов (смотрите каталог <a href="https://github.com/mdn/learning-area/tree/main/html/introduction-to-html/creating-hyperlinks">creating-hyperlinks</a>.)</p>
+<img src="../images/simple-directory.png"><p><strong>Корень</strong> структуры — каталог  <code>creating-hyperlinks</code>. При работе на локальном веб-сайте у вас будет один каталог, в который входит весь сайт. В корне у нас есть два файла — <code>index.html</code> и <code>contacts.html</code>. На настоящем веб-сайте index.html был бы нашей домашней, или лендинг-страницей (веб-страницей, которая служит точкой входа для веб-сайта или определённого раздела веб-сайта).</p>
+      <p>В корне есть ещё два каталога —  <code>pdfs</code> и <code>projects</code>. У каждого из них есть один файл внутри — <code>project-brief.pdf</code> и <code>index.html</code>, соответственно. Обратите внимание на то, что вы можете довольно успешно иметь два <code>index.html</code> файла в одном проекте, пока они находятся в разных местах файловой системы.  Многие веб-сайты так делают. Второй <code>index.html</code>, возможно, будет главной лендинг-страницей для связанной с проектом информации.</p>
+      <ul>
+              <li><strong>Тот же каталог</strong>: Если вы хотите подключить ссылку внутри <code>index.html</code> (верхний уровень <code>index.html</code>), указывающую на <code>contacts.html</code>, вам просто нужно указать имя файла, на который вы хотите установить ссылку, так как он находится в том же каталоге, что и текущий файл. Таким образом, URL-адрес, который вы используете — <code>contacts.html</code>:</li>
+              <pre><code class="language-html">&lt;p&gt;Хотите связаться с конкретным сотрудником?
+ Найдите подробную информацию на нашей
+&lt;a href="contacts.html"&gt;странице контактов&lt;/a&gt;.
+&lt;/p&gt;</code></pre>
+      <li><strong>Перемещение вниз в подкаталоги</strong>: Если вы хотите подключить ссылку внутри <code>index.html</code> (верхний уровень <code>index.html</code>), указывающую на <code>projects/index.html</code>, вам нужно спуститься ниже в директории <code>projects</code> перед тем, как указать файл, который вы хотите. Это делается путём указания имени каталога, после которого идёт слеш и затем имя файла. Итак, URL-адрес, который вы используете - <code>projects/index.html</code>:</li>
+              <pre><code class="language-html">&lt;p&gt;Посетите мою
+&lt;a href="projects/index.html"&gt;домашнюю страницу проекта&lt;/a&gt;.
+&lt;/p&gt;</code></pre>
+      <li><strong>Перемещение обратно в родительские каталоги</strong>: Если вы хотите подключить ссылку внутри <code>projects/index.html</code>, указывающую на <code>pdfs/project-brief.pdf</code>, вам нужно будет подняться на уровень каталога, затем спустится в каталог <code>pdf</code>. "Подняться вверх на уровень каталога" обозначается двумя точками — <code>..</code> — так, URL-адрес, который вы используете <code>../pdfs/project-brief.pdf</code>:</li>
+              <pre><code class="language-html">&lt;p&gt;Ссылка на
+&lt;a href="../pdfs/project-brief.pdf"&gt;краткое описание моего проекта&lt;/a&gt;.
+&lt;/p&gt;</code></pre>
+      </ul>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: вы можете объединить несколько экземпляров этих функций в сложные URL-адреса, если необходимо, например: <code>../../../сложный/путь/к/моему/файлу.html</code>.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
