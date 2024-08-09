@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Активное обучение: Знакомство с толерантным кодом">
+          <h3 id="Активное обучение: Знакомство с толерантным кодом">Активное обучение: Знакомство с толерантным кодом</h3>
+          <div class="section-content">
+            <p>Время изучить природу толерантного кода в HTML.</p>
+            <ol>
+              <li>Для начала, скачайте наш <a href="https://github.com/mdn/learning-area/blob/main/html/introduction-to-html/debugging-html/debug-example.html">пример отладки</a> и сохраните локально. Эта демонстрация намеренно написана с ошибками, которые нам предстоит обнаружить.</li>
+              <li>Далее, откройте её в браузере. Вы увидите нечто вроде этого:</li>
+              <img src="../images/badly-formed-html.png"><li>Сейчас документ выглядит не особо хорошо; Давайте посмотрим в код и выясним почему (Показано только тело документа):</li>
+              <pre><code class="language-html">&lt;h1&gt;HTML debugging examples&lt;/h1&gt;
+
+&lt;p&gt;What causes errors in HTML?
+
+&lt;ul&gt;
+&lt;li&gt;Unclosed elements: If an element is &lt;strong&gt;not closed properly,
+  then its effect can spread to areas you didn't intend
+
+&lt;li&gt;Badly nested elements: Nesting elements properly is also very important
+  for code behaving correctly. &lt;strong&gt;strong &lt;em&gt;strong emphasised?&lt;/strong&gt;
+  what is this?&lt;/em&gt;
+
+&lt;li&gt;Unclosed attributes: Another common source of HTML problems. Let's
+  look at an example: &lt;a href="https://www.mozilla.org/&gt;link to Mozilla
+  homepage&lt;/a&gt;
+&lt;/ul&gt;</code></pre>
+      <li>Рассмотрим проблемы:</li>
+              <ul>
+                <li>У <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/p">параграфа</a> и <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li">элемента списка</a> не закрыты теги. На изображении выше видно, что разметка не пострадала, так как браузеру легко сделать вывод о том, где заканчивается один элемент и начинается другой.</li>
+                <li>Первый <code>&lt;strong&gt;</code> элемент также не имеет закрывающего тега. Это уже более проблематично, так как сложно сказать, где элемент должен заканчиваться. На деле, весь оставшийся текст был выделен жирным.</li>
+                <li>Следующая часть нарушает правила вложенности: <code>&lt;strong&gt;strong &lt;em&gt;strong emphasised?&lt;/strong&gt; what is this?&lt;/em&gt;</code>. В этом случае код тоже сложно проинтерпретировать по причине, описанной выше.</li>
+                <li>В атрибуте <code>href</code> отсутствует закрывающая двойная кавычка. Это послужило причиной крупной проблемы — ссылка не воспроизвелась вовсе.</li>
+              </ul>
+      <li>Сейчас же посмотрим, как браузер сгенерировал собственную разметку, в противовес исходной разметке документа. Чтобы сделать это, воспользуемся инструментами разработчика. Если вы не знакомы с инструментами разработчика, потратьте несколько минут на <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">Обзор инструментов разработки в браузерах</a>.</li>
+              <li>В DOM инспекторе вы можете увидеть как сгенерировалась новая разметка:</li><img src="../images/html-inspector.png"><li>Используя DOM инспектор, давайте рассмотрим детали нашего кода, чтобы увидеть, как браузер пытается исправить наши ошибки в HTML (мы обозреваем в Firefox; другой современный браузер должен выдать те же результаты):</li>
+              <ul>
+                <li>Параграфы и элементы списка получены с закрывающими тегами.</li>
+                <li>Было неочевидно, где элемент <code>&lt;strong&gt;</code> должен был закрыться, так что браузер обернул каждый отдельный блок текста своими собственными тегами strong, причём до самого низа документа!</li>
+                <li>Некорректная вложенность была исправлена браузером следующим образом:</li>
+                <pre><code class="language-html">&lt;strong&gt;strong
+&lt;em&gt;strong emphasised?&lt;/em&gt;
+&lt;/strong&gt;
+&lt;em&gt; what is this?&lt;/em&gt;</code></pre>
+      <li>Ссылка с отсутствующими двойными кавычками была удалена насовсем. Последний элемент списка будет выглядеть так:</li>
+                <pre><code class="language-html">&lt;li&gt;
+&lt;strong&gt;Unclosed attributes: Another common source of HTML problems.
+Let's look at an example: &lt;/strong&gt;
+&lt;/li&gt;</code></pre>
+      </ul>
+    </ol>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

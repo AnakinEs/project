@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Альтернативная блочная модель CSS">
+          <h3 id="Альтернативная блочная модель CSS">Альтернативная блочная
+              модель CSS</h3>
+          <div class="section-content">
+            <p>Вы можете подумать, что довольно неудобно добавлять рамки и отступы, чтобы получить реальный размер
+              элемента, и окажетесь правы! По этой причине, спустя некоторое время после стандартной блочной модели, в
+              CSS была введена альтернативная блочная модель. При использовании альтернативной модели любая ширина — это
+              ширина видимой части элемента на странице, поэтому ширина области содержимого будет равна общей ширине
+              минус ширина рамки и внутреннего отступа. Тот же CSS, который использовался выше, даст следующий результат
+              (ширина = 350px, высота = 150px).</p><img src="../images/alternate-box-model.png"><p id="border-box2">По умолчанию браузеры используют стандартную блочную модель. Если вы хотите использовать
+              альтернативную блочную модель для элемента, установите для него свойство
+              <code>box-sizing: border-box</code>. С помощью этого вы говорите браузеру о том, что рамка элемента
+              определяется любыми размерами, которые вы устанавливаете.</p>
+            <pre><code class="language-css">.box {
+    box-sizing: border-box;
+  }</code></pre>
+            <p>Если вы хотите, чтобы все ваши элементы использовали альтернативную блочную модель, что является
+              распространённым выбором среди разработчиков, установите свойство <code>box-sizing</code> для элемента
+              <code>&lt;html&gt;</code>, затем задайте всем элементам наследование этого значения
+              (<code>inherit</code>), как показано в примере ниже. Если вы хотите понять ход мыслей, стоящий за этим
+              решением, читайте статью <a href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/"><span class="hint" data-tooltip="Надо будет не забыть прочитать и законспектировать">the CSS Tricks article
+                  on box-sizing</span></a>.</p>
+            <pre><code class="language-css">html {
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }</code></pre>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Интересный факт — Internet Explorer по умолчанию использовал
+                альтернативную блочную модель без доступного механизма для переключения.</p>
+            </div>
+          </div>
+        </section>	
+      </article>
+    </main>
+  </div>
+</body>
