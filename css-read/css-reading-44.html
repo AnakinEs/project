@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Универсальный селектор">
+          <h2 id="Универсальный селектор">Универсальный селектор</h2>
+          <div class="section-content">
+            <p>Универсальный селектор обозначается звёздочкой (<code>*</code>). Он выбирает всё в документе (или внутри родительского элемента, если он сцеплен с другим элементом и с <span class="meaning" data-tooltip="В приведённом ниже примере выбирается только тот элемент <code>&amp;lt;p&amp;gt;</code>, который находится внутри элемента с классом <code>.box</code>.<p><code>.box p</code></p>">комбинатором потомка</span>). В следующем примере мы используем универсальный селектор, чтобы убрать внешние отступы у всех элементов. Несмотря на стилизацию по умолчанию, добавленную браузером, — она раздвигает заголовки и абзацы с помощью отступов, — всё плотно сжато.</p>
+            <iframe style="height:55rem" src="../getting-started/started18.html"></iframe>
+    <p>Такого рода поведение иногда можно увидеть в «таблицах сброса стилей», которые вычищают всю стилизацию браузера. Так как универсальный селектор вызывает глобальные изменения, мы используем его в очень специфических ситуациях, таких как та, что описана ниже.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

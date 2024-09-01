@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Строгий режим — &quot;use strict&quot;">
+          <h1 id="Строгий режим — &quot;use strict&quot;">Строгий режим — "use strict"</h1>
+          <div class="section-content">
+            <p>На протяжении долгого времени JavaScript развивался без проблем с обратной совместимостью. Новые
+              функции добавлялись в язык, в то время как старая функциональность не менялась.</p>
+            <p>Преимуществом данного подхода было то, что существующий код продолжал работать. А недостатком – что
+              любая ошибка или несовершенное решение, принятое создателями JavaScript, застревали в языке навсегда.
+            </p>
+            <p>Так было до 2009 года, когда появился ECMAScript 5 (ES5). Он добавил новые возможности в язык и изменил
+              некоторые из существующих. Чтобы устаревший код работал, как и раньше, по умолчанию подобные изменения
+              не применяются. Поэтому нам нужно явно их активировать с помощью специальной директивы:
+              <code>"use strict"</code>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
