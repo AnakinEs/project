@@ -19,6 +19,72 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Контроль наследования">
+          <h3 id="Контроль наследования">Контроль наследования</h3>
+          <div class="section-content">
+            <p>CSS предоставляет четыре специальных универсальных значения свойства для контроля наследования. Каждое
+              свойство CSS принимает эти значения.</p>
+            <dl>
+              <dt><code><span class="meaning" data-tooltip="Ключевое слово <code>inherit</code> сообщает браузеру, что
+                значение свойства нужно найти у ближайшего
+                родительского элемента и унаследовать его для текущего элемента. Если у ближайшего родителя также задано
+                значение inherit, то браузер продолжит
+                подниматься по DOM, пока не найдет какое-нибудь значение. Если значения нет, то браузер применит свои
+                стили, а если и браузерных стилей нет, то
+                тогда будет применено значение <code>initial</code>">inherit</span></code>
+              </dt><dd>Устанавливает значение свойства, применённого к элементу, таким же, как у его родительского элемента.
+                Фактически, это "включает наследование".</dd>
+              <dt><code><span class="meaning" data-tooltip="Значение совйства по умолчанию">initial</span></code></dt>
+              <dd>Устанавливает значение свойства, применённого к выбранному элементу, равным
+                <a href="https://developer.mozilla.org/ru/docs/Web/CSS/initial_value"><span class="meaning" data-tooltip="Начальное значение. <code>initial</code> использует начальное значение, которое определено отдельно для каждого свойства CSS-спецификацией. Для сравнения, браузеры устанавливают значения по умолчанию в зависимости от CSS селектора. Например, начальное значение для свойства <code>display</code> — <code>inline</code>, тогда как браузер устанавливает значение по умолчанию свойства <code>display</code> элемента <code>&amp;lt;div&amp;gt;</code> как <code>block</code>, а элемента <code>&amp;lt;table&amp;gt;</code> как <code>table</code>, и т.д">initial
+                    value</span></a> этого свойства
+                (в соответствии с настройками браузера по умолчанию. Если в таблице стилей браузера отсутствует значение
+                этого <span class="hint" data-tooltip="Значение по умолчанию, например для свойства <code>color</code>?">свойства</span>,
+                <span class="hint" data-tooltip="Т.е как <code>inherit</code> я так понял">оно наследуется естественным
+                  образом</span>.)
+              </dd>
+              <dt><code><span class="meaning" data-tooltip="Оно ведет себя как <code>inherit</code> ключевое слово в
+                первом случае, когда свойство является унаследованным свойством , и как <code>initial</code> ключевое
+                слово во втором случае, когда свойство не является унаследованным свойством<br><br> ..some-class
+                {<br>&nbsp;&nbsp;color: unset; /* будет равно `inherit` */<br>&nbsp;&nbsp;display: unset; /* будет равно
+                `initial` */<br>}">unset</span></code></dt>
+              <dd>Возвращает свойству его естественное значение, что означает, что если <span class="meaning" data-tooltip="Например <code>color</code>">свойство</span> <span class="meaning" data-tooltip="Если есть сам факт наследования свойства <code>color</code> например">наследуется
+                  естественным образом</span>, оно действует как <code>inherit</code>, <span class="meaning" data-tooltip="Если не является унаследованным">иначе</span> оно действует как <code>initial</code>.
+              </dd>
+            </dl>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Существует также более новое значение
+                <code><span class="hint" data-tooltip="Надо не забыть почитать и законспектить">revert</span></code>,
+                которое имеет ограниченную поддержку браузерами.
+              </p>
+            </div>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Смотрите <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Cascade#origin_of_css_declarations">Origin of CSS
+                  declarations</a> в [<a href="https://developer.mozilla.org/ru/docs/Web/CSS/Cascade">Page not yet
+                  written</a>] для более подробной информации о каждом из них, и о том, как они работают.</p>
+            </div>
+            <p>Можно посмотреть список ссылок и изучить, как работают универсальные значения. Пример, следующий ниже,
+              позволяет вам поиграть с CSS и увидеть, что происходит, когда вы вносите изменения. Подобные эксперименты
+              с кодом — лучший способ освоить HTML и CSS.</p>
+            <p>Например:</p>
+            <ol>
+              <li>Второй элемент списка имеет класс <code>my-class-1</code>. Таким образом, цвет для следующего
+                вложенного элемента <code>a</code> устанавливается по наследству. Как изменится цвет, если это правило
+                будет удалено<span class="meaning" data-tooltip="Цвет будет таким же как у первого элемента">?</span>
+              </li>
+              <li>Понятно ли, почему третий и четвёртый элементы <code>a</code> имеют именно такой цвет? Если нет,
+                перечитайте описание значений, представленное выше.</li>
+              <li>Какая из ссылок изменит цвет, если вы зададите новый цвет для элемента <code>&lt;a&gt;</code> —
+                например: <code>a { color: red; }</code><span class="meaning" data-tooltip="Первая">?</span></li>
+            </ol>
+            <iframe style="height:65rem" src="https://anakines.github.io/uchebnik.github.io/getting-started/started11.html"></iframe>
+            <p>Сверху где: Default <a href="#"><span class="meaning" data-tooltip="<code>link</code> синнего цвета эта я так понял цвет по умолчанию для не кликнутой ссылки, установленная самим браузером">link</span></a>
+              color</p>
+            <p>Сверху на 3 списке где: Reset the <a style="color: initial" href="#"><span class="meaning" data-tooltip="Здесь цвет по умолчанию для ссылки, установленный в соответствии со спецификацией css.">link</span></a> color
+            </p>
+          </div>
+        </section>
+
         <section aria-labelledby="Возврат всех исходных значений свойств">
           <h3 id="Возврат всех исходных значений свойств">Возврат всех
               исходных значений свойств</h3>
