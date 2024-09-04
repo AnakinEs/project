@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Структура HTML документа">
+          <h2 id="Структура HTML документа">Структура HTML документа</h2>
+          <div class="section-content">
+            <p>Ниже дан пример оборачивания основных, самостоятельных HTML-элементов, которые сами по себе не очень полезны. Давайте посмотрим, как самостоятельные элементы объединяются для формирования всей HTML страницы:</p>
+            <p></p>
+          </div>         		  		              
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Тестовая страница&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Это — моя страница&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <p>Вот что мы имеем:</p>
+            <ol>
+              <li><code>&lt;!DOCTYPE html&gt;</code>: Объявление типа документа. Очень давно, ещё когда HTML был молод (1991/2), типы документов использовались в качестве ссылок на набор правил, которым HTML-страница должна была следовать, чтобы она считалась хорошей, что может означать автоматическую проверку ошибок и другие полезные вещи. Объявление типа документа выглядело примерно вот так:</li>
+              <pre><code class="language-html">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</code></pre>
+      <p>Однако в наши дни никто особо не думает о них, и типы документа стали историческим артефактом, которые должны быть включены везде, чтобы всё работало правильно. <code>&lt;!DOCTYPE html&gt;</code> — это самый короткий вид типа документа, который считается действующим. На самом деле это всё, что нужно вам знать о типах документов.</p>
+              <li><code>&lt;html&gt;&lt;/html&gt;</code>: Элемент <code>&lt;html&gt;</code> содержит в себе всё содержимое на всей странице, и иногда его называют "корневой элемент".</li>
+              <li><code>&lt;head&gt;&lt;/head&gt;</code>: Элемент <code>&lt;head&gt;</code>. Данный элемент выступает в качестве контейнера для всего содержимого, которое вы хотите включить в HTML документ, но не хотите показывать посетителям вашей страницы. Он включает такие вещи, как ключевые слова и описание страницы, которые вы хотели бы показывать в поисковых запросах, CSS для стилизирования вашего контента, объявление поддерживаемого набора символов и многое другое. Вы узнаете больше об этом из следующей статьи данного руководства.</li>
+              <li><code>&lt;meta charset="utf-8"&gt;</code>: Этот элемент устанавливает в качестве символьной кодировки для вашего документа utf-8 , который включает большинство символов из всех известных человечеству языков. По существу, теперь страница сможет отобразить любой текстовый контент, который вы сможете в неё вложить. Нет причин не устанавливать эту кодировку, это также позволит избежать некоторых проблем позднее.</li>
+              <li><code>&lt;title&gt;&lt;/title&gt;</code>: Элемент <code>&lt;title&gt;</code>. Этот элемент устанавливает заголовок вашей страницы, который появляется во вкладке браузера, загружающей эту страницу, также это заглавие используется при описании страницы, когда вы сохраняете её в закладках или избранном.</li>
+              <li><code>&lt;body&gt;&lt;/body&gt;</code>: Элемент <code>&lt;body&gt;</code>. Он содержит весь контент, который вы хотите показывать посетителям вашей страницы, — текст, изображения, видео, игры, проигрываемые аудио дорожки или что-то ещё.</li>
+            </ol>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

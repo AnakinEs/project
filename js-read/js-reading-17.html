@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section class="tasks_task" aria-labelledby="Покажите сообщение с помощью внешнего скрипта">
+          <h3 id="Покажите сообщение с помощью внешнего скрипта">Покажите сообщение с помощью внешнего скрипта</h3>
+          <div class="section-content">
+            <p>Возьмите решение предыдущей задачи <a href="https://learn.javascript.ru/task/hello-alert">Вызвать
+                alert</a>, и измените его. Извлеките содержимое скрипта во внешний файл <code>alert.js</code>,
+              лежащий в той же папке.</p>
+            <p>Откройте страницу, убедитесь, что оповещение работает.</p>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <ol>
+                <div class="note notecard" id="transparent-js">
+                  <p>HTML-код:</p>
+                  <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  
+  &lt;body&gt;
+  
+  &lt;script src="alert.js"&gt;&lt;/script&gt;
+  
+  &lt;/body&gt;
+  
+  &lt;/html&gt;</code></pre>
+                  <p>Для файла <code>alert.js</code> в той же папке:</p>
+                  <pre><code class="language-js">alert("Я JavaScript!");</code></pre>
+                </div>
+              </ol>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

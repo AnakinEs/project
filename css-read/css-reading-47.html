@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Примеры разных типов отображения">
+          <h2 id="Примеры разных типов отображения">Примеры разных типов
+              отображения</h2>
+          <div class="section-content">
+            <p>Давайте продолжим и рассмотрим некоторые примеры. Ниже мы имеем три разных элемента HTML с внешним типом
+              отображения <code>block</code>. Первый — это абзац, который имеет обрамление, указанное в CSS. Браузер
+              отображает его как блочный элемент, поэтому абзац начинается с новой строки и расширяется на всю доступную
+              ему ширину.</p>
+            <p>Второй — это список, который свёрстан с использованием <code>display: flex</code>. Это устанавливает
+              flex-расположение для элементов внутри контейнера, однако сам список — блочный элемент и — как и абзац —
+              расширяется на всю ширину контейнера и начинается с новой строки.</p>
+            <p>Ниже у нас есть абзац блочного типа, внутри которого есть два элемента <code>&lt;span&gt;</code>. Эти
+              элементы по умолчанию имеют тип <code>inline</code>, однако у одного из них задан класс
+              <code>block</code>, для которого мы установили <code>display: block</code>.</p>
+            <iframe style="height:94rem" src="../getting-started/started37.html"></iframe>
+            <p>Мы можем видеть, как строчные элементы (<code>inline</code>) ведут себя в следующем примере. Элементы
+              <code>&lt;span&gt;</code> в первом абзаце строчные по умолчанию и поэтому не приводят к переносу строки.
+            </p>
+            <p>У нас также есть элемент <code>&lt;ul&gt;</code>, для которого установлено
+              <code>display: inline-flex</code>, что создаёт строчный элемент вокруг нескольких flex-объектов.</p>
+            <p>Наконец, у нас есть два абзаца, для которых установлено <code>display: inline</code>. И строчный
+              flex-контейнер, и абзацы располагаются вместе на одной строке, а не начинаются каждый с новой строки, как
+              они отображались бы, будучи блочными элементами.</p>
+            <p>В примере вы можете заменить <code>display: inline</code> на <code>display: block</code> или
+              <code><span class="hint" data-tooltip="Непонятно почему при display: inline-flex отступы с верху и с низу такие большие. Там margin 16 сверху и снизу + 16 от верхнего p так же, = 32. Но при блочной модели почему то просто 16 не смотря на такие же отступы от обоих p по 16">display: inline-flex</span></code>
+              на <code>display: flex</code> для переключения между этими двумя режимами отображения.</p>
+            <iframe style="height:87rem" src="../getting-started/started38.html"></iframe>
+            <p>Позже в этих уроках вы встретите такое понятие как flex-раскладка; главное, что нужно запомнить сейчас,
+              это то, что изменение значения свойства <code>display</code> может изменить внешний тип отображения
+              элемента на блочный или строчный, что меняет способ его отображения относительно других элементов в
+              раскладке страницы.</p>
+            <p>В оставшейся части урока мы сосредоточимся на внешнем типе отображения.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

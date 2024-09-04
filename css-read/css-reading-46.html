@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Что происходит, когда браузер не понимает CSS?">
+          <h2 id="Что происходит, когда браузер не понимает CSS?">Что происходит, когда браузер не понимает CSS?</h2>
+          <div class="section-content">
+            <p><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/First_steps/What_is_CSS#%d0%9f%d0%be%d0%b4%d0%b4%d0%b5%d1%80%d0%b6%d0%ba%d0%b0_%d0%b1%d1%80%d0%b0%d1%83%d0%b7%d0%b5%d1%80%d0%b0">В предыдущем уроке</a> я упомянул, что некоторые браузеры могут не поддерживать новые функции CSS. Вдобавок не все используют новейшие версии браузеров. Зная, что CSS разрабатывается всё время, вы можете поразиться и крайне ужаснуться тому, что происходит, если браузер не распознаёт объявление или селектор. Что же произойдёт?</p>
+            <p>— Да ничего: браузер просто пропустит это!</p>
+            <p>Если браузер встретит свойство, которое он не понимает, он просто-напросто проигнорирует его и двинется дальше. Он сделает так, если вы допустите опечатку или ошибку в свойстве или значении или если он не поддерживает какое-либо свойство или значение.</p>
+            <p>Если же браузер встретит селектор, который он не распознаёт, то он просто пропустит данное правило и двинется дальше.</p>
+            <p>Ниже я использовал британское написание слова color, что делает свойство некорректным. Поэтому текст не будет синим. Однако всё остальное будет работать; пропущено только недействительное свойство.</p>
+            <pre><code class="language-html">&lt;p&gt; I want this text to be large, bold and blue.&lt;/p&gt;</code></pre>
+    <pre><code class="language-css">p {
+font-weight: bold;
+colour: blue; /* некорректное написание свойства цвета */
+font-size: 200%;
+}</code></pre>
+            <iframe style="height:11.5rem" src="../getting-started/started6.html"></iframe>
+    <p>Такое поведение можно использовать, например, при добавлении новых функций CSS в качестве дополнения, причём вы будете уверены, что ничего не сломается, если браузер не распознает элемент. Вы можете использовать два правила с одинаковыми уровнями спецификации: одно — в качестве альтернативы для случая, если браузер не поддерживает нововведение.</p>
+            <p>Это хорошо применяется, если вы хотите использовать величину, не использующуюся везде в документе. К примеру, некоторые старые браузеры не поддерживают <code>calc()</code> как значение. Я добавлю резерв — значение в px, затем задам ширину с помощью функции <code>calc()</code>, равной <code>100% - 50px</code>. Старые браузеры используют пиксельное значение, потому что не распознают <code>calc()</code>. Новые браузеры используют <code>calc()</code> так как эта строка появляется позже в каскаде.</p>
+            <pre><code class="language-css">.box {
+width: 500px;
+width: calc(100% - 50px);
+}</code></pre>
+          </div>
+    
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

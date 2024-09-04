@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Разметка контактных данных">
+          <h2 id="Разметка контактных данных">Разметка контактных данных</h2>
+          <div class="section-content">
+            <p>HTML имеет элемент для разметки контактных данных — <code>&lt;address&gt;</code>. Он просто обёртывает ваши контактные данные, например:</p>
+            <pre><code class="language-html">&lt;address&gt;
+&lt;p&gt;Крис Миллс, Манчестер, Жестокий Север, РФ&lt;/p&gt;
+&lt;/address&gt;</code></pre>
+      <p>Однако следует помнить, что элемент <code>&lt;address&gt;</code> предназначен для разметки контактных данных человека, который написал HTML-документ, а не любого адреса. Таким образом, написанное выше было бы корректным только в том случае, если бы Крис написал документ, на котором появляется разметка. Обратите внимание, что следующее также подойдёт:</p>
+            <pre><code class="language-html">&lt;address&gt;
+&lt;p&gt;Автор страницы — &lt;a href="../authors/chris-mills/"&gt;Крис Миллс&lt;/a&gt;.&lt;/p&gt;
+&lt;/address&gt;</code></pre>
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

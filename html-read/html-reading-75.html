@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Центрирование изображения">
+          <h2 id="Центрирование изображения">Центрирование изображения</h2>
+          <div class="section-content">
+            <pre><code class="language-css">img {
+display: block;
+margin: 0 auto;
+}</code></pre>
+      <p>В заключение, мы отцентрируем изображение, чтобы оно лучше выглядело. Мы можем использовать <code>margin: 0 auto</code>
+      уловку снова, как мы это делали раньше для body, но мы также должны сделать кое-что ещё. Элемент <code>&lt;body&gt;</code> 
+      является <strong>блочным</strong>, это значит, что он занимает место на странице и может иметь margin и другие значения 
+      отступов, применяемых к нему. Изображения, наоборот, являются <strong>строчными</strong> элементами, то есть они 
+      этого не могут. Таким образом, чтобы применить margin к изображению, мы должны дать изображению 
+      блочное поведение с помощью <code>display: block;</code>.</p>
+           <div class="note notecard" id="sect4">
+             <p><strong>Примечание</strong>: Приведённые выше инструкции предполагают, что вы используете изображение 
+       меньшей ширины, чем заданная для <code>&lt;body&gt;</code> (600 пикселей). Если ваше изображение больше, тогда оно выйдет за 
+       границы <code>&lt;body&gt;</code> и займёт пространство страницы. Чтобы исправить это, вы можете 1) уменьшить ширину изображения 
+       используя графический редактор, или 2) изменить размер изображения используя CSS путём установки свойства 
+       <code>width</code> для <code>&lt;img&gt;</code> элемента меньшего значения (например <code>400 px;</code>).</p>
+           </div>
+     <div class="note notecard" id="sect4">
+             <p><strong>Примечание</strong>: Не стоит беспокоиться, если вы ещё не понимаете <code>display: block;</code> и 
+       различия между блочным/строчным. Вы поймёте, когда будете изучать CSS более подробно. Вы можете узнать 
+       больше о различных доступных значениях display на нашей странице о свойстве <a href="https://developer.mozilla.org/ru/docs/Web/CSS/display">display</a>.</p>
+           </div>            
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

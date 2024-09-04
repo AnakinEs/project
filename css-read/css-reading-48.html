@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Что такое псевдоэлемент?">
+          <h2 id="Что такое псевдоэлемент?">Что такое псевдоэлемент?</h2>
+          <div class="section-content">
+            <p>Псевдоэлементы ведут себя сходным образом, однако они действуют так, как если бы вы добавили в разметку целый новый HTML-элемент, а не применили класс к существующим элементам. Псевдоэлементы начинаются с двойного двоеточия <code>::</code>.</p>
+            <pre><code class="language-css">::pseudo-element-name</code></pre>
+    <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Некоторые ранние псевдоэлементы использовали синтаксис одинарного двоеточия, которое вы можете иногда видеть в коде или примерах. Современные браузеры поддерживают ранние псевдоэлементы с одинарным или двойным двоеточием синтаксиса для обратной совместимости.</p>
+            </div>
+    <p>Например, если вы хотите выбрать первую строку абзаца, вы могли бы обернуть её в <code>&lt;span&gt;</code> и использовать селектор элемента; однако это может не сработать, если количество слов, которые вы обернули, будет больше или меньше ширины родительского элемента. Поскольку мы, как правило, не знаем, сколько слов поместится в строке — т.к. их количество меняется, если меняется ширина экрана или размер шрифта — то надёжного решения при помощи HTML нет.</p>
+            <p>Селектор псевдоэлемента <code>::first-line</code> сделает это наверняка — если количество слов увеличивается или уменьшается, он всё равно будет выбирать только первую строку.</p>
+            <iframe style="height:60rem" src="../getting-started/started29.html"></iframe>
+    <p>Он действует так, как если бы <code>&lt;span&gt;</code> волшебным образом был обёрнут вокруг этой первой отформатированной строки и обновлялся бы каждый раз при изменении длины строки.</p>
+    <p>Вы можете видеть, что селектор выбирает первую строку обоих абзацев.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

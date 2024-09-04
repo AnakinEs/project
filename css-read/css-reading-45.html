@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Использование универсального селектора для облегчения чтения ваших селекторов">
+          <h3 id="Использование универсального селектора для облегчения чтения ваших селекторов">Использование универсального селектора для облегчения чтения ваших селекторов</h3>
+          <div class="section-content">
+            <p>Одно из применений универсального селектора состоит в том, чтобы облегчить чтение селекторов и сделать их более удобопонятными с точки зрения того, что они делают. Например, если мы хотим выбрать элементы-потомки элемента <code>&lt;article&gt;</code>, которые являются первыми дочерними элементами своего <span class="meaning" data-tooltip="Например в <code>&amp;lt;article&amp;gt;</code> находятся какие нибудь элементы, напримем <code>div</code>-ы, и в этих дивах находятся другие элементы, например несколько <code>p</code>. Так вот самые первые <code>p</code> но не обязательно <code>p</code> которые в <code>div</code>-ах но не обязательно в <code>div</code>-ах, как раз и есть первые дочерние элементы своего родителя">родителя</span>, включая дочерние элементы самого <code>&lt;article&gt;</code>, и сделать их шрифт жирным, мы могли бы использовать псевдокласс <code>:first-child</code>, который мы будем изучать в уроке о <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements">псевдоклассах и псевдо-элементах</a>, как <span class="meaning" data-tooltip="В приведённом ниже примере выбирается только тот элемент <code>&amp;lt;p&amp;gt;</code>, который находится внутри элемента с классом <code>.box</code>.<p></p><code>.box p</code>">селектор-потомок</span> вместе с селектором элемента <code>&lt;article&gt;</code>: </p>
+            <pre><code class="language-css"></code><code><span class="meaning" data-tooltip="Например если у нас есть <code>ul</code> с несколькими элементами, например <code>li</code>, то будет выбран самый первый любой элeмент, не обязательно <code>li</code>. И если у одного из <code>li</code> или <code>p</code> например, есть еще какой нибудть элемент, то самый первый любой будет выбран, например это <code>span</code>">article :first-child</span></code><code class="language-css"> {
+font-weight: bold;
+}</code></pre>
+    <p>Однако этот селектор можно спутать с <code><span class="meaning" data-tooltip="Выбираем первый элемент <code>article</code> который находиться например в <code>main</code> но не обязательно в <code>main</code>">article:first-child</span></code>, который выберет любой элемент <code>&lt;article&gt;</code>, являющийся первым дочерним элементом другого элемента.</p>
+            <p>Чтобы избежать этой путаницы, мы можем добавить <span class="meaning" data-tooltip="Иногда требуется установить одновременно один стиль для всех элементов веб-страницы, например, задать шрифт или начертание текста. В этом случае поможет универсальный селектор, который соответствует любому элементу веб-страницы.">универсальный селектор</span> в псевдокласс <code>:first-child</code> , чтобы было очевидно, что делает селектор. Он выбирает любой элемент, который является первым дочерним элементом элемента <code>&lt;article&gt;</code> или первым дочерним элементом любого потомка элемента <code>&lt;article&gt;</code>:</p>
+            <pre><code class="language-css">article *:first-child {
+font-weight: bold;
+}</code></pre>
+    <p>Хотя оба делают одно и то же, удобочитаемость значительно улучшилась.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
