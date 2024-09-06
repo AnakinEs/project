@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Анатомия набора правил CSS">
+          <h2 id="Анатомия набора правил CSS">Анатомия набора правил CSS</h2>
+          <div class="section-content">
+            <p>Давайте взглянем на вышеупомянутый CSS немного более подробно:</p><p><img src="../images/css-declaration-small.png"><br></p>
+           
+      <p>Вся структура называется <strong>набором правил</strong> (но зачастую для краткости "правило"). Отметим также имена отдельных частей:</p>
+            <dl>
+              <dt>Селектор (Selector)</dt>
+              <dd>Имя HTML-элемента в начале набора правил. Он выбирает элемент(ы) для применения 
+      стиля (в данном случае, элементы <code>p</code> ). Для стилизации другого элемента, просто измените селектор.</dd>
+      
+      <dt>Объявление (Declaration)</dt>
+              <dd>Единственное правило, например <code>color: red;</code> указывает, какие из <strong>свойств</strong> элемента вы хотите стилизовать.</dd>
+      
+      <dt>Свойства (Properties)</dt>
+              <dd>Способы, которыми вы можете стилизовать определённый HTML-элемент 
+      (в данном случае, <code>color</code> является свойством для элементов <code>&lt;p&gt;</code>). 
+      В CSS вы выбираете, какие свойства вы хотите затронуть в вашем правиле.</dd>
+      
+      <dt>Значение свойства (Property value)</dt>
+              <dd>Справа от свойства, после двоеточия, у нас есть <strong>значение свойства</strong>, 
+      которое выбирает одно из множества возможных признаков для данного 
+      свойства (существует множество значений <code>color</code>, помимо <code>red</code>).</dd>				
+            </dl>
+            <p>Обратите внимание на важные части синтаксиса:</p>
+            <ul>
+              <li>Каждый набор правил (кроме селектора) должен быть обёрнут в фигурные скобки (<code>{}</code>).</li>
+              <li>В каждом объявлении необходимо использовать двоеточие (<code>:</code>), чтобы отделить свойство от его значений.</li>
+              <li>В каждом наборе правил вы должны использовать точку с запятой (<code>;</code>), чтобы отделить каждое объявление от следующего.</li>
+            </ul>
+      <p>Таким образом, чтобы изменить несколько значений свойств сразу, вам просто нужно написать их, разделяя точкой с запятой, например так:</p>
+            <pre><code class="language-css">p {
+color: red;
+width: 500px;
+border: 1px solid black;
+}</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Понимание наследования">
+          <h2 id="Понимание наследования">Понимание наследования</h2>
+          <div class="section-content">
+            <p>Итак, наследование. В примере ниже мы имеем <code>&lt;ul&gt;</code> с двумя уровнями неупорядоченных списков, вложенных в него. Мы установили для внешнего <code>&lt;ul&gt;</code> стиль границы, внутренние отступы и цвет шрифта.</p>
+            <p>Цвет шрифта применён к прямому потомку, но также и к непрямому потомку — к прямому потомку <code>&lt;li&gt;</code> и к элементам внутри первого вложенного списка. Далее мы добавили класс <code>special</code> ко второму вложенному списку и применили к нему другой цвет шрифта. Теперь это свойство наследуется всеми его потомками.</p>
+            <p>CSS</p>
+<pre><code class="language-css">.main {
+color: rebeccapurple;
+border: 2px solid #ccc;
+padding: 1em;
+}
+
+.special {
+color: black;
+font-weight: bold;
+}</code></pre>
+<p>HTML</p>
+<pre><code class="language-html">&lt;ul class="main"&gt;
+&lt;li&gt;Item One&lt;/li&gt;
+&lt;li&gt;Item Two
+    &lt;ul&gt;
+        &lt;li&gt;2.1&lt;/li&gt;
+        &lt;li&gt;2.2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Item Three
+    &lt;ul class="special"&gt;
+        &lt;li&gt;3.1
+            &lt;ul&gt;
+                &lt;li&gt;3.1.1&lt;/li&gt;
+                &lt;li&gt;3.1.2&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;3.2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <iframe style="height:90rem" src="../getting-started/started10.html"></iframe>
+    <p>Такие свойства, как ширина (как в примере выше), внутренние и внешние отступы и стиль границы не наследуются. Если бы потомки нашего списка наследовали бы границу, то каждый отдельный список и каждая позиция в списке получили бы такую же границу — вряд ли мы хотели бы получить такой эффект!</p>
+            <p>Какие свойства наследуются по умолчанию, а какие нет, чаще всего определяется здравым смыслом.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

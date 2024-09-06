@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Стандартная блочная модель CSS">
+          <h3 id="Стандартная блочная модель CSS">Стандартная блочная модель
+              CSS</h3>
+          <div class="section-content">
+            <p>В стандартной блочной модели, если указать элементу атрибуты <code>width</code> и <code>height</code>,
+              это определит ширину и высоту содержимого. Любые отступы и рамки затем добавляются к этой ширине и высоте
+              для получения общего размера элемента. Это показано на изображении ниже.</p>
+            <p>Предположим, что в элементе есть следующий CSS определяющий <code>width</code>, <code>height</code>,
+              <code>margin</code>, <code>border</code>, и <code>padding</code>:</p>
+            <pre><code class="language-css">.box {
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+  }</code></pre>
+            <p>Пространство, занимаемое нашим объектом с использованием стандартной блочной модели, на самом деле будет
+              равно 410px в ширину (350 + 25 + 25 + 5 + 5) и 210px в высоту (150 + 25 + 25 + 5 + 5), поскольку отступы и
+              рамки добавляются к размерам поля содержимого.</p>
+                    <img src="../images/standard-box-model.png"><div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Внешний отступ не считается в фактическом размере объекта. Конечно, он
+                влияет на общее пространство, занимаемое объектом на странице, но только на внешнюю часть. Область
+                элемента заканчивается на рамке — она не распространяется за нее.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

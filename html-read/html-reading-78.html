@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="HTML для структурирования содержимого">
+          <h2 id="HTML для структурирования содержимого">HTML для структурирования содержимого</h2>
+          <div class="section-content">
+            <p>Пример, показанный сверху, не красив и примитивен, но идеально подходит для иллюстрирования типичного макета веб-сайта. У некоторых веб-сайтов больше колонок, некоторые — более сложные, но идею вы поняли. С правильным CSS вы могли бы использовать практически любые элементы для обёртывания различных разделов и стилизовать их так, как вам хочется, но, как обсуждалось ранее, нам нужно уважать семантику и <strong>использовать правильный элемент для правильной работы</strong>. </p>
+    <p>Это потому, что визуальные эффекты — это ещё не самое главное. Мы используем цвет и размер шрифта для привлечения внимания посетителей к наиболее полезным частям содержимого, такого как навигационное меню или связанные ссылки, но что насчёт людей со слабым зрением, к примеру, для которых концепция "розового" и "большого шрифта" не будет полезной?</p>
+    <div class="note notecard" id="sect4">
+            <p><strong>Применение</strong>: Люди с дальтонизмом составляют около <a href="http://www.color-blindness.com/2006/04/28/colorblind-population/">8% мирового населения</a>. Слепые и слабовидящие люди составляют примерно 4-5% населения мира (в 2012 году в мире было <a href="https://en.wikipedia.org/wiki/Visual_impairment">285 миллионов таких людей</a>, а общая численность населения составляла <a href="https://en.wikipedia.org/wiki/World_population#/media/File:World_population_history.svg">около 7 миллиардов</a>).</p>
+          </div>
+    <p>В своём HTML-коде вы можете размечать разделы содержимого сайта на основе их <em>функциональности</em> — использовать элементы, которые представляют разделы контента, описанные выше, а вспомогательные технологии, такие как программы чтения с экрана, смогут распознавать эти элементы и помогать в таких задачах, как "найти основную навигацию" или "найти основное содержимое". Как мы упоминали ранее в ходе курса, существует ряд <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#why_do_we_need_structure">последствий неиспользования правильной структуры элементов и семантики для правильной работы</a>.</p>
+    <p>Для реализации такой семантической разметки HTML предоставляет выделенные теги, которые можно использовать для создания таких разделов, например:</p>
+    <ul>
+              <li><strong>Заголовок</strong>: <code>&lt;header&gt;</code>.</li>
+              <li><strong>Навигационное меню</strong>: <code>&lt;nav&gt;</code>.</li>
+              <li><strong>Основное содержимое</strong>: <code>&lt;main&gt;</code>, с различными подразделами содержимого, представленными элементами <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code> и <code>&lt;div&gt;</code>.</li>
+              <li><strong>Боковая панель</strong>: <code>&lt;aside&gt;</code>, обычно располагается внутри <code>&lt;main&gt;</code>.</li>
+              <li><strong>Нижний колонтитул</strong>: <code>&lt;footer&gt;</code>.</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

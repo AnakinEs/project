@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Как представлено DOM-дерево">
+          <h2 id="Как представлено DOM-дерево">Как представлено DOM-дерево</h2>
+          <div class="section-content">
+            <p>Вместо длинного, нудного объяснения взглянем лучше на пример, чтобы понять, как HTML-код преобразуется в DOM.</p>
+            <p>Возьмём следующий пример:</p>
+            <pre><code class="language-html">&lt;p&gt;
+Let's use:
+&lt;span&gt;Cascading&lt;/span&gt;
+&lt;span&gt;Style&lt;/span&gt;
+&lt;span&gt;Sheets&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+    <p>В DOM-дереве узел, соответствующий элементу <code>&lt;p&gt;</code>, — это родительский элемент. Его дочерние элементы — текст и три элемента <code>&lt;span&gt;</code>. Узлы <code>SPAN</code> также будут родителями — с текстом в качестве дочерних элементов:</p>
+            <pre><code class="language-css">P
+├─ "Let's use:"
+├─ SPAN
+|  └─ "Cascading"
+├─ SPAN
+|  └─ "Style"
+└─ SPAN
+└─ "Sheets"
+</code></pre>
+    <p>Вот как браузер преобразует HTML-код — он загружает DOM-дерево, и в результате мы получим это:</p>
+            <div class="note notecard" id="transparent">
+              <p>
+                Let's use:
+                <span>Cascading</span>
+                <span>Style</span>
+                <span>Sheets</span>
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

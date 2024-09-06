@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Селекторы атрибута">
+          <h1 id="Селекторы атрибута">Селекторы атрибута</h1>
+          <div class="section-content">
+            <p>Как вы знаете из курса о HTML, элементы могут иметь атрибуты, которые дают дополнительную информацию о размечаемом элементе. В CSS вы можете использовать селекторы атрибута для стилизации элементов с определёнными атрибутами. Этот урок покажет вам, как использовать эти очень полезные селекторы.</p>
+          </div>
+        </section>
+  
+  <section aria-labelledby="Селекторы наличия и значения">
+          <h2 id="Селекторы наличия и значения">Селекторы наличия и значения</h2>
+          <div class="section-content">
+            <p>Эти селекторы делают возможным выбор элемента, основанный только на наличии атрибута (например, <code>href</code>) или на всевозможных разного рода сочетаниях со значением атрибута.</p>
+            <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Селектор</th>
+                  <th>Пример</th>
+                  <th>Описание</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                     
+                  <td><code>[attr]</code></td>
+                  <td><code>a[title]</code></td>
+                  <td>Выбирает элементы с атрибутом attr (имя которого — это значение в квадратных скобках).</td>
+                </tr>
+      <tr>                     
+                  <td><code>[attr=value]</code></td>
+                  <td><code>a[href="https://example.com"]</code></td>
+                  <td>Выбирает элементы с атрибутом attr, значение которого в точности равно value — строке внутри кавычек.</td>
+                </tr>
+      <tr>                     
+                  <td><code>[attr~=value]</code></td>
+                  <td><code>p[class~="special"]</code></td>
+                  <td>Выбирает элементы с атрибутом attr, значение которого в точности равно value или <span class="meaning" data-tooltip="Содержит в самом значении атрибута:<br><code>&amp;lt;li class=&quot;a&quot;&amp;gt;Item 2&amp;lt;/li&amp;gt;</code><br><code>&amp;lt;li class=&quot;a b&quot;&amp;gt;Item 3&amp;lt;/li&amp;gt;</code> ">содержит</span> value в своём (разделённом пробелами) списке значений.</td>
+
+
+
+                </tr>
+      <tr>                     
+                  <td><code>[attr|=value]</code></td>
+                  <td><code>div[lang|="zh"]</code></td>
+                  <td>Выбирает элементы с атрибутом attr, значение которого в точности равно value или начинается с value, за которым сразу следует дефис.</td>
+                </tr>										
+              </tbody>
+            </table>
+            </div>
+              <p>В приведённом ниже примере вы можете увидеть использование этих селекторов.</p>
+            <ul>
+              <li>Используя <code>li[class]</code>, мы можем выбрать каждый селектор с атрибутом класса. Это соответствует всем пунктам списка, за исключением первого.</li>
+                               <li><code>li[class="a"]</code> выбирает селектор с классом <code>a</code>, но не селектор с классом <code>a</code> в сочетании с другим, <span class="hint" data-tooltip="Запятой? Серъезно? Мне кажется пробелом должно быть">отделённым запятой</span>, классом как частью значения. Он выбирает второй пункт списка.</li>
+
+              <li><code>li[class~="a"]</code> выберет класс <code>a</code>, а также значение, которое содержит класс <code>a</code> как часть разделённого пробелом списка. Он выберет второй и третий пункты списка.</li>
+            </ul>
+    <iframe style="height:75rem" src="../getting-started/started23.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

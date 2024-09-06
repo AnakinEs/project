@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Другие виды метаданных">
+          <h3 id="Другие виды метаданных">Другие виды метаданных</h3>
+          <div class="section-content">
+            <p>В сети вы найдёте также другие типы метаданных. Многие из них — это собственные форматы, созданные для предоставления определённым сайтам (например, социальных сетей) специальной информации, которую они могут использовать.</p>
+            <p>Например, <a href="https://ruogp.me/">Протокол Open Graph</a> создан Facebook чтобы предоставить сайтам дополнительные возможности использования метаданных. В исходном коде MDN Web Docs вы можете найти строки:</p>
+            <pre><code class="language-html">&lt;meta property="og:image" content="/static/img/opengraph-logo.72382e605ce3.png"&gt;
+&lt;meta property="og:description" content="Веб-документация на MDN предоставляет
+собой информацию об открытых веб-технологиях, включая HTML, CSS и различные API для веб-сайтов
+и прогрессивных веб-приложений. Также на сайте содержатся материалы для разработчиков о таких
+продуктах Mozilla, как Инструменты разработчика Firefox."&gt;
+&lt;meta property="og:title" content="MDN Web Docs"&gt;</code></pre>
+      <p>Один из результатов добавления этих метаданных в том, что когда вы добавите ссылку MDN Web Docs на facebook, она отобразится с изображением и описанием, улучшая опыт взаимодействия (<a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%BF%D1%8B%D1%82_%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F">User eXperience, UX</a>).</p>
+            <img src="../images/facebook-output.png">
+            
+      <p>У Twitter также есть собственный формат метаданных, с помощью которого  создаётся аналогичный эффект, при отображении URL сайта на twitter.com:</p>
+            <pre><code class="language-html">&lt;meta name="twitter:title" content="MDN Web Docs"&gt;</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

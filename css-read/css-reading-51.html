@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Нацеливание на элемент, к которому применено более одного класса">
+          <h3 id="Нацеливание на элемент, к которому применено более одного класса">Нацеливание на элемент, к которому применено более одного класса</h3>
+          <div class="section-content">
+            <p>Вы можете применить несколько классов к элементу и нацелиться на них по отдельности, или выбрать элемент только если присутствуют все классы селектора. Это может быть полезно при создании компонентов, которые могут сочетаться на вашем сайте разными способами.</p>
+            <p>В примере ниже у нас есть <code>&lt;div&gt;</code>, содержащий примечание. Серая граница применяется
+          когда блок имеет класс <code>notebox</code>. Если у блока есть также класс <code>warning</code> или
+          <code>danger</code>, мы <span class="meaning" data-tooltip="Ко всем трем элементам применен класс <code>notebox</code>. Но если так же добаить <code>warning</code> или <code>danger</code>, тогда переопределяется <code>border-color</code> и добавляется <code>font-weight</code>">меняем</span> <code>border-color</code>.
+        </p>
+            <p>Мы можем указать браузеру, что мы хотим подобрать только такой элемент, к которому применены два класса, <span class="hint" data-tooltip="Имеется ввиду с точкой без пробела я так понял.">сцепив их вместе без пробелов между ними.</span> Вы увидите, что к последнему <code>&lt;div&gt;</code> не применён ни один стиль, так как он имеет только класс <code>danger</code>; ему нужен ещё и класс <code>notebox</code>, чтобы получить какую-нибудь стилизацию.</p>
+            <iframe style="height:85rem" src="../getting-started/started21.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

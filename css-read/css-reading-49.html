@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Наследование">
+          <h3 id="Наследование">Наследование</h3>
+          <div class="section-content">
+            <p>Наследование также надо понимать в этом контексте — некоторые значения свойства CSS, установленные для родительских элементов наследуются их дочерними элементами, а некоторые нет.</p>
+            <p>Например, если вы установили значение <code>color</code> и <code>font-family</code> для элемента, то каждый элемент внутри него также будет иметь этот цвет и шрифт, если только вы не применили к ним напрямую стиль с другим цветом и шрифтом.</p>
+            <iframe style="height:53rem" src="../getting-started/started9.html"></iframe>
+    <p>Некоторые свойства не наследуются — например, если вы установили для элемента <code>width</code> равным 50%, все его дочерние элементы не получат ширину в 50% от ширины своего родительского элемента. Если бы это было так, CSS было бы чрезвычайно трудно использовать!</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: На страницах справочника CSS-свойств вы можете найти окно технической информации, обычно в конце раздела спецификации, в котором перечислены некоторые технические данные об этом свойстве, в том числе наследуется оно или нет. Например, здесь: <a href="https://developer.mozilla.org/ru/docs/Web/CSS/color#Specifications">color property Specifications section</a>.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

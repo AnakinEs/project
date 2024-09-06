@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление смены изображения">
+          <h3 id="Добавление смены изображения">Добавление смены изображения</h3>
+          <div class="section-content">
+            <p>В этом разделе мы добавим ещё одно изображение на наш сайт и добавим некоторый простой JavaScript для переключения между двумя изображениями, когда по ним щёлкнули.</p>
+            <ol>
+              <li>В первую очередь найдите другое изображение, которые вы хотели бы показать на вашем сайте. Убедитесь что оно такого же размера, как ваше первое изображение или максимально близкое к нему.</li>
+              <li>Сохраните изображение в вашу папку <code>images</code>.</li>
+              <li>Переименуйте это изображение в 'firefox2.png' (без кавычек).</li>
+              <li>Перейдите в ваш файл <code>main.js</code> и введите следующий JavaScript. (Если ваш "hello world" JavaScript по-прежнему существует, удалите его.)</li>
+              <pre><code class="language-js">var myImage = document.</code><span style="color:#DD4A68" class="meaning" data-tooltip="Метод <code>elem.querySelector(css)</code> возвращает первый элемент, соответствующий данному CSS-селектору.">querySelector</span><code class="language-js">('img');
+
+myImage.onclick = function() {
+  var mySrc = myImage.getAttribute('src'); // getAttribute получает значение атрибута
+  if(mySrc === 'images/firefox-icon.png') {
+    myImage.setAttribute ('src','images/firefox2.png'); // setAttribute устанавливает значение атрибута
+  } else {
+    myImage.setAttribute ('src','images/firefox-icon.png');
+  }
+}</code></pre>
+      <li>Сохраните все файлы и загрузите <code>index.html</code> в браузере. Теперь, когда вы щёлкните по изображению, оно должно измениться на другое!</li>
+            </ol>            
+      <p>Итак, мы сохраняем ссылку на наш элемент <code>&lt;img&gt;</code> в переменной <code>myImage</code>. 
+      Далее, мы создаём этой переменной обработчик события <code>onclick</code> с анонимной функцией. 
+      Теперь, каждый раз, когда на этот элемент изображения щёлкнут:</p>
+            <ol>
+              <li>Мы получаем значение из атрибута <code>src</code> изображения.</li>
+              <li>Мы используем условие для проверки значения <code>src</code>, равен ли путь к исходному изображению:</li>
+              <ol>
+                <li>Если это так, мы меняем значение <code>src</code> на путь ко 2-му изображению, заставляя другое изображение загружаться внутри элемента <code>&lt;image&gt;</code>.</li>
+                <li>Если это не так (значит, оно должно было уже измениться), мы меняем значение <code>src</code>, возвращаясь к первоначальному пути изображения, каким он был изначально.</li>
+              </ol>             
+      </ol>              
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

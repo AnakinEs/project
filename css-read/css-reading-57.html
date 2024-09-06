@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Специфичность">
+          <h3 id="Специфичность2">Специфичность</h3>
+          <div class="section-content">
+            <p>Понимая, что порядок следования правил имеет значение, в какой-то момент вы окажетесь в ситуации, когда вы знаете, что правило появляется позже в таблице стилей, но применяется более раннее, конфликтующее правило. Это связано с тем, что более раннее правило имеет более <strong>высокую специфичность</strong> — оно более специфично и поэтому выбирается браузером как правило, которое должно стилизовать элемент.</p>
+            <p>Как мы видели ранее в этом уроке, селектор класса имеет больший вес, чем селектор элемента, поэтому свойства, определённые в классе, будут переопределять свойства, применённые непосредственно к элементу.</p>
+            <p>Здесь следует отметить, что, хотя мы думаем о селекторах и правилах, применяемых к объекту, который они выбирают, переписывается не всё правило, а только свойства, которые являются одинаковыми.</p>
+            <p>Такое поведение помогает избежать повторения в вашем CSS. Обычной практикой является определение общих стилей для базовых элементов, а затем создание классов для тех, которые отличаются. Например, в таблице стилей ниже мы определяем общие стили для заголовков второго уровня, а затем создаём несколько классов, которые изменяют только некоторые свойства и значения. Определённые вначале значения применяются ко всем заголовкам, затем к заголовкам с классами применяются более конкретные значения.</p>
+            <iframe style="height:75rem" src="../getting-started/started13.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
