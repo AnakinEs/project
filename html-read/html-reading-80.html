@@ -32,6 +32,15 @@
 
 &lt;p&gt;A T-Rex on display in the Manchester University Museum.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+    <div class="figure">
+      <img src="../images/dinosaur.jpg"
+         alt="The head and torso of a dinosaur skeleton;
+              it has a large head with long sharp teeth"
+         width="400"
+         height="341">
+      
+      <p>A T-Rex on display in the Manchester University Museum.</p>
+    </div>
     <p>Это нормально. Это содержит всё что вам нужно, и красиво стилизуется с помощью CSS. Но, есть проблема: здесь нет ничего, что семантически связывает изображение с его заголовком, и это может вызвать сложности для читателей. <span id="hint11" class="hint" data-tooltip="Т.е смысл figure в том, чтобы у нас была возможность добраться до изображения которое нам нужно. Блин примеров нету.">Например, когда у вас есть 50 изображений и заголовков, какой заголовок идёт вместе с каким изображением?</span></p>
             <p>Лучшим решением будет использование элементов HTML5 <code>&lt;figure&gt;</code> и <code>&lt;figcaption&gt;</code>. Они были созданы исключительно для этой цели: предоставить семантический контейнер для рисунков и чётко связать рисунок с заголовком. Наш пример выше мог бы быть переписан так:</p>
             <pre><code class="language-html">&lt;figure&gt;
@@ -43,7 +52,16 @@
 
 &lt;figcaption&gt;A T-Rex on display in the Manchester University Museum.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
-    <p>Элемент <code>&lt;figcaption&gt;</code> говорит браузерам и вспомогательной технологии, что заголовок описывает содержимое элемента <code>&lt;figure&gt;</code>.</p>
+              <figure>
+                <img src="../images/dinosaur.jpg"
+                   alt="The head and torso of a dinosaur skeleton;
+                        it has a large head with long sharp teeth"
+                   width="400"
+                   height="341">
+                
+                <figcaption>A T-Rex on display in the Manchester University Museum.</figcaption>
+              </figure>
+              <p>Элемент <code>&lt;figcaption&gt;</code> говорит браузерам и вспомогательной технологии, что заголовок описывает содержимое элемента <code>&lt;figure&gt;</code>.</p>
             <div class="note notecard" id="sect4">
               <p><strong>Замечание</strong>: С точки зрения доступности, заголовки и <code>alt</code> имеют различные предназначения. Заголовки помогают даже тем, кто имеет возможность просматривать изображение, тогда как <code>alt</code> обеспечивает замену функциональности отсутствующего изображения. Таким образом, заголовки и <code>alt</code> не подразумевают под собой одни и те же вещи, потому что оба используются браузером при отсутствии изображения. Попробуйте отключить изображения в своём браузере, чтобы увидеть как это выглядит.</p>
             </div>
