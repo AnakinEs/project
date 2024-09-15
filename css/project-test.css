@@ -291,8 +291,9 @@ section section h3 { // зачем я это правило сдесь зада�
     text-decoration: none; 
   }
   
-  .main_content li {
+  .main_content ul li {
     margin-bottom: 1rem;
+    line-height: 1.8rem;
   }
   
     
