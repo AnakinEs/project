@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Ширина и высота">
+          <h3 id="Ширина и высота">Ширина и высота</h3>
+          <div class="section-content">
+            <p>Вы можете использовать атрибуты <code>width</code> и <code>height</code>, чтобы указать ширину и высоту вашего изображения. Ширину и высоту вашего изображение можете найти различными способами. Например, на Mac можно использовать  <kbd>Cmd</kbd> + <kbd>I</kbd>  чтобы  получить информацию по изображению. Повторяя наш пример, мы можем сделать так:</p>
+            <pre><code class="language-html">&lt;img src="images/dinosaur.jpg"
+ alt="The head and torso of a dinosaur skeleton;
+      it has a large head with long sharp teeth"
+ width="400"
+ height="341"&gt;</code></pre>
+    <p>Это не приводит к большой разнице в отображении при нормальных обстоятельствах. Но если изображение не будет показано, например, когда пользователь только что перешёл на страницу, а оно ещё не успело загрузится, вы укажите браузеру оставить место для отрисовки изображения:</p><img src="../images/alt-text-with-width-height.png"><p>Это хорошая практика, в результате страница загрузится быстрее и более гладко.</p>
+            <p>Однако, вы не должны изменять размеры ваших изображений используя HTML атрибуты. Если вы установите размер изображения слишком большим, то в конечном итоге вы столкнётесь с изображениями, которые выглядят зернистыми, размытыми или слишком маленькими, и потратите трафик для загрузки изображения, которое не будет соответствовать нуждам пользователя. Конечное изображение может также выглядеть искажённым, если вы не сохраните правильное <a href="https://en.wikipedia.org/wiki/Aspect_ratio_(image)">соотношение сторон</a>. Рекомендуется использовать графический редактор для подгонки изображения к нужному размеру, перед вставкой его на вашу веб-страницу.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Если вам действительно нужно изменить размер изображения, вы должны использовать вместо этого CSS.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
