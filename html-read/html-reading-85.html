@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Разметка времени и даты">
+          <h2 id="Разметка времени и даты">Разметка времени и даты</h2>
+          <div class="section-content">
+            <p>HTML также содержит элемент <code>&lt;time&gt;</code> для отметки времени и дат в машиночитаемом формате. Например:</p>
+            <pre><code class="language-html">&lt;time datetime="2020-01-20"&gt;20 Января 2020&lt;/time&gt;</code></pre>
+      <p>Почему это полезно? Ну, есть много разных способов, которыми люди записывают даты. Вышеуказанная дата может быть записана как:</p>
+            <ul>
+              <li>20 Января 2020</li>
+              <li>20-ое Января 2020</li>
+              <li>Янв 20 2020</li>
+              <li>20/01/20</li>
+              <li>01/20/20</li>
+              <li>20e Janvier 2020</li>
+              <li>2020年1月20日</li>
+              <li>и другое...</li>
+            </ul>
+      <p>Но эти разные формы не могут быть легко распознаны компьютерами — что, если вы хотите автоматически захватить даты всех событий на странице и вставить их в календарь? Элемент <code>&lt;time&gt;</code> позволяет прикрепить к этой цели однозначное машиночитаемое время / дату.</p>
+            <p>В приведённом выше базовом примере приведена простая машиносчитываемая дата, но есть много других возможных вариантов, например:</p>
+            <pre><code class="language-html">&lt;!-- Стандартная дата --&gt;
+&lt;time datetime="2020-01-20"&gt;20 Января 2020&lt;/time&gt;
+&lt;!-- Только год и месяц --&gt;
+&lt;time datetime="2020-01"&gt;Январь 2020&lt;/time&gt;
+&lt;!-- Только месяц и день --&gt;
+&lt;time datetime="01-20"&gt;20 Января&lt;/time&gt;
+&lt;!-- Только время, часы и минуты --&gt;
+&lt;time datetime="19:30"&gt;19:30&lt;/time&gt;
+&lt;!-- Также вы можете отобразить секунды и миллисекунды! --&gt;
+&lt;time datetime="19:30:01.856"&gt;19:30:01.856&lt;/time&gt;
+&lt;!-- Дата и время --&gt;
+&lt;time datetime="2020-01-20T19:30"&gt;7.30pm, 20 Января 2020&lt;/time&gt;
+&lt;!-- Дата и время со смещением по часовому поясу --&gt;
+&lt;time datetime="2020-01-20T19:30+01:00"&gt;7.30pm, 20 Января 2020, — это 8.30pm во Франции.&lt;/time&gt;
+&lt;!-- Вызов номера недели --&gt;
+&lt;time datetime="2020-W04"&gt;Четвёртая неделя 2020&lt;/time&gt;</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

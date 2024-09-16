@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Несколько селекторов">
+          <h2 id="Несколько селекторов">Несколько селекторов</h2>
+          <div class="section-content">
+            <p>Несколько селекторов, использующих одни и те же таблицы стилей, можно объединить в лист селекторов: правило будет добавлено к каждому селектору. К примеру, у меня есть одинаковые правила для заголовка <code>h1</code> и класса <code>.special</code>; я могу написать их так:</p>
+            <pre><code class="language-css">h1 {
+color: blue;
+}
+
+.special {
+color: blue;
+}</code></pre>
+    <p>А могу написать короче — просто отделив селекторы запятыми:</p>
+            <pre><code class="language-css">h1, .special {
+color: blue;
+}</code></pre>
+    <p>Пробел можно вставлять до или после запятой. Ещё удобнее писать каждый селектор с новой строки:</p>
+            <pre><code class="language-css">h1,
+.special {
+color: blue;
+}</code></pre>
+    <p>В упражнении ниже объедините два селектора в одном правиле. Результат должен остаться таким же.</p>
+            <iframe style="height:90rem" src="../getting-started/started16.html"></iframe>
+    <p>При объединении селекторов таким образом, при условии если хоть один селектор будет недействительным, всё правило будет пропущено.</p>
+            <p>В примере ниже правило для селектора класса не будет работать, в то время как <code>h1</code> будет стилизован.</p>
+            <pre><code class="language-css">h1 {
+color: blue;
+}
+
+..special {
+color: blue;
+}</code></pre>
+    <p>Но если мы объединим селекторы, правило не применится ни к <code>h1</code>, ни к классу: оно считается недействительным.</p>
+            <pre><code class="language-css">h1, ..special {
+color: blue;
+}</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
