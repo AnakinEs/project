@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Атрибуты id и headers">
+          <h3 id="Атрибуты id и headers">Атрибуты id и headers</h3>
+          <div class="section-content">
+            <p>Альтернатива атрибута <code>scope</code> это использование атрибутов <code>id</code> и <code>headers</code> задавая ассоциации между заголовками и ячейками. Этот способ выглядит следующим образом:</p>
+            <ol>
+              <li>Вы устанавливаете уникальный <code>id</code> для каждого <code>&lt;th&gt;</code> элемента.</li>
+              <li>Вы устанавливаете атрибут <code>headers</code> для каждого <code>&lt;td&gt;</code> элемента. Каждый <code>headers</code> атрибут должен содержать список всех <code>id</code> , разделённый пробелами, ко всем <code>&lt;th&gt;</code> элементам которые действуют как заголовок для этой ячейки.</li>
+            </ol>
+      <p>Это обеспечивает явное определение позиции для каждой ячейки вашей HTML таблицы, определяет заголовки столбцов и строк таблицы. Для того чтобы это работало реально хорошо таблице нужно определить и заголовки столбцов, и заголовки строк.</p>
+            
+
+ 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>My spending record</title>
+   <link href="minimal-table.css" rel="stylesheet" type="text/css">
+   <style>
+       tbody {
+         font-size: 90%;
+         font-style: italic;
+       }
+
+       tfoot {
+         font-weight: bold;
+       }
+   </style>
+ 
+ 
+   <h1>My spending record</h1>
+
+     <table>
+       <caption>How I chose to spend my money</caption>
+       <thead>
+         <tr>
+           <th>Purchase</th>
+           <th>Location</th>
+           <th>Date</th>
+           <th>Evaluation</th>
+           <th>Cost (€)</th>
+         </tr>
+       </thead>
+       <tfoot>
+         <tr>
+           <td colspan="4">SUM</td>
+           <td>118</td>
+         </tr>
+       </tfoot>
+       <tbody>
+         <tr>
+           <td>Haircut</td>
+           <td>Hairdresser</td>
+           <td>12/09</td>
+           <td>Great idea</td>
+           <td>30</td>
+         </tr>
+         <tr>
+           <td>Lasagna</td>
+           <td>Restaurant</td>
+           <td>12/09</td>
+           <td>Regrets</td>
+           <td>18</td>
+         </tr>
+         <tr>
+           <td>Shoes</td>
+           <td>Shoeshop</td>
+           <td>13/09</td>
+           <td>Big regrets</td>
+           <td>65</td>
+         </tr>
+         <tr>
+           <td>Toothpaste</td>
+           <td>Supermarket</td>
+           <td>13/09</td>
+           <td>Good</td>
+           <td>5</td>
+         </tr>
+       </tbody>
+   </table>
+
+ 
+
+            <p>Вернёмся к нашему примеру с расчётом затрат, его можно переписать следующим образом:</p>
+            <pre><code class="language-html">&lt;thead&gt;
+ &lt;tr&gt;
+   &lt;th id="purchase"&gt;Purchase&lt;/th&gt;
+   &lt;th id="location"&gt;Location&lt;/th&gt;
+   &lt;th id="date"&gt;Date&lt;/th&gt;
+   &lt;th id="evaluation"&gt;Evaluation&lt;/th&gt;
+   &lt;th id="cost"&gt;Cost (€)&lt;/th&gt;
+ &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+ &lt;th id="haircut"&gt;Haircut&lt;/th&gt;
+ &lt;td headers="location haircut"&gt;Hairdresser&lt;/td&gt;
+ &lt;td headers="date haircut"&gt;12/09&lt;/td&gt;
+ &lt;td headers="evaluation haircut"&gt;Great idea&lt;/td&gt;
+ &lt;td headers="cost haircut"&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+
+ ...
+
+&lt;/tbody&gt;</code></pre>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Этот метод создания очень точного определения ассоциаций между заголовками и данными в ячейках, но использует <strong>гораздо</strong> больше разметки и оставляет обширное пространство для ошибок. Атрибута <code>scope</code> обычно достаточно для большинства таблиц.</p>
+            </div>
+      <p></p>
+            <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Специфичность">
+          <h3 id="Специфичность2">Специфичность</h3>
+          <div class="section-content">
+            
+            
+    <p>Давайте теперь посмотрим, как браузер будет вычислять специфичность. Мы уже знаем, что селектор элемента имеет низкую специфичность и может быть перезаписан классом. По существу, значение в баллах присуждается различным типам селекторов, и их сложение даёт вам вес этого конкретного селектора, который затем может быть оценён в сравнении с другими потенциальными соперниками.</p>
+            <p>Степень специфичности, которой обладает селектор, измеряется с использованием четырёх различных значений (или компонентов), которые можно представить как тысячи, сотни, десятки и единицы — четыре однозначные цифры в четырёх столбцах:</p>
+            <ol>
+              <li><strong>Тысячи</strong>: поставьте единицу в эту колонку, если объявление стиля находится внутри атрибута <code>style</code> (встроенные стили). Такие объявления не имеют селекторов, поэтому их специфичность всегда просто 1000.</li>
+              <li><strong>Сотни</strong>: поставьте единицу в эту колонку за каждый селектор ID, содержащийся в общем селекторе.</li>
+              <li><strong>Десятки</strong>: поставьте единицу в эту колонку за каждый селектор класса, <span class="meaning" data-tooltip="Все <code>span</code> с атрибутом <code>&quot;lang&quot;</code> будут жирными<br><br><code>span[lang] {font-weight:bold;}</code>">селектор атрибута</span> или <span class="meaning" data-tooltip="Псевдокласс в CSS — это ключевое слово, добавленное к селектору, которое определяет его особое состояние. Например, <code>:hover</code> можно использовать для изменения цвета кнопки при наведении курсора на нее.">псевдокласс</span>, содержащийся в общем селекторе.</li>
+              <li><strong>Единицы</strong>: поставьте общее число единиц в эту колонку за каждый селектор элемента или <span class="meaning" data-tooltip="Псевдоэлемент в CSS — это ключевое слово, добавляемое к селектору, которое позволяет стилизовать определённую часть выбранного элемента. Например, псевдоэлемент <code>::first-line</code> может быть использован для изменения шрифта первой строки абзаца.">псевдоэлемент</span>, содержащийся в общем селекторе.</li>
+            </ol>
+    <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Универсальный селектор (*), комбинаторы (+, &gt;,  ~, '') и псевдокласс отрицания (:not) не влияют на специфичность.</p>
+            </div>
+    <p>Следующая таблица показывает несколько несвязанных примеров, которые помогут вам разобраться. Посмотрите их все и убедитесь, что вы понимаете, почему они обладают той специфичностью, которую мы им дали. Мы ещё не рассмотрели селекторы детально, но вы можете найти подробную информацию о каждом селекторе в <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors">справочнике селекторов</a> MDN.</p>
+            <div class="table-scroll">
+    <table>
+              <thead>
+                <tr>
+                  <th>Селектор</th>
+                  <th>Тысячи</th>
+                  <th>Сотни</th>
+                  <th>Десятки</th>
+                  <th>Единицы</th>
+                  <th>Специфичность</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                      
+                  <td><code>h1</code></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>0001</td>
+                </tr>
+      <tr>                      
+                  <td><code>h1 <span class="meaning" data-tooltip="Соседний родственный комбинатор используется чтобы выбрать все элементы <code>&amp;lt;img&amp;gt;</code>, которые идут сразу после элементов <code>&amp;lt;p&amp;gt;</code><br><br><code>p + img</code>">+</span> p<span class="meaning" data-tooltip="Псевдоэлемент CSS <code>::first-letter</code> применяет стиль к первой букве первой строки блочного элемента , но только если нет другого предшествующего свойства (такого как изображение или встроенная таблица).">::first-letter</span></code></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>3</td>
+                  <td>0003</td>
+                </tr>
+      <tr>                      
+                  <td><code><span class="meaning" data-tooltip="0001">li</span> <span class="meaning" data-tooltip="<p>Дочерний комбинатор (<code>&amp;gt;</code>) Например, чтобы выбрать только те элементы <code>&amp;lt;p&amp;gt;</code>, которые являются дочерними элементами <code>&amp;lt;article&amp;gt;</code>, селектор пишется так:</p><p><code>article &amp;gt; p</code></p>">&gt;</span> <span class="meaning" data-tooltip="0001 вроде так должно быть, это же тоже элемент">a</span><span class="meaning" data-tooltip="0010">[href*="en-US"]</span> &gt; <span class="meaning" data-tooltip="0010">.inline-warning</span></code></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>0022</td>
+                </tr>
+      <tr>                      
+                  <td><code>#identifier</code></td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0100</td>
+                </tr>
+      <tr>                      
+                  <td>Без селектора, с правилом внутри атрибута <code>style</code> элемента.</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>1000</td>
+                </tr>										
+              </tbody>
+            </table>
+    </div>
+    <p>Прежде чем мы продолжим, давайте посмотрим на пример в действии.</p>
+            <iframe style="height:65rem" src="../getting-started/started14.html"></iframe>
+    <p>CSS:</p>
+    <pre><code class="language-css">/* specificity: 0101 */
+#outer a {
+background-color: red;
+}
+    
+/* specificity: 0201 */
+#outer #inner a {
+background-color: blue;
+}
+
+/* specificity: 0104 */
+#outer div ul li a {
+color: yellow;
+}
+
+/* specificity: 0113 */
+#outer div ul .nav a {
+color: white;
+}
+
+/* specificity: 0024 */
+div div li:nth-child(2) a:hover {
+border: 10px solid black;
+}
+
+/* specificity: 0023 */
+div li:nth-child(2) a:hover {
+border: 10px dashed black;
+}
+
+/* specificity: 0033 */
+div div .nav:nth-child(2) a:hover {
+border: 10px double black;
+}
+
+a {
+display: inline-block;
+line-height: 40px;
+font-size: 20px;
+text-decoration: none;
+text-align: center;
+width: 200px;
+margin-bottom: 10px;
+}
+
+ul {
+padding: 0;
+}
+
+li {
+list-style-type: none;
+}</code></pre>
+    <p>HTML:</p>
+    <pre><code class="language-html">&lt;div id="outer" class="container"&gt;
+&lt;div id="inner" class="container"&gt;
+    &lt;ul&gt;
+        &lt;li class="nav"&gt;&lt;a href="#"&gt;One&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav"&gt;&lt;a href="#"&gt;Two&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <p>Так что здесь происходит? Прежде всего, нас интересуют только первые семь правил этого примера, и, как вы заметите, мы включили их значения специфичности в комментарий перед каждым правилом.</p>
+            <ul>
+              <li>Первые два правила конкурируют за стилизацию цвета фона ссылки — второе выигрывает и делает фоновый цвет синим, потому что у него есть дополнительный селектор ID в цепочке: его специфичность 201 против 101.</li>
+              <li>Третье и четвёртое правило конкурируют за стилизацию цвета текста ссылки — второе выигрывает и делает текст белым, потому что, хотя у него на один селектор элемента меньше, отсутствующий селектор заменяется на селектор класса, который оценивается в десять вместо единицы. Таким образом, приоритетная специфичность составляет 113 против 104.</li>
+              <li>Правила 5–7 соревнуются за определение стиля границы ссылки при наведении курсора. Шестой селектор со специфичностью 23 явно проигрывает пятому со специфичностью 24 — у него в цепочке на один селектор элемента меньше. Седьмой селектор, однако, превосходит как пятый, так и шестой — он имеет то же количество подселекторов в цепочке, что и пятый, но один элемент заменён селектором класса. Таким образом, приоритетная специфичность 33 против 23 и 24.</li>
+            </ul>
+    <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Это был условный пример для более простого усвоения. В действительности, каждый тип селектора имеет собственный уровень специфичности, который не может быть замещён селекторами с более низким уровнем специфичности. Например, миллион соединённых селекторов класса не способны переписать правила одного селектора id. <span class="hint" data-tooltip="Не понял как это делать. Пример бы сюда, хотя бы свой.">Более правильный способ</span> вычисления специфичности состоит в индивидуальной оценке уровней специфичности, начиная с наивысшего и продвигаясь к самому нижнему, когда это необходимо. Только когда  оценки уровня специфичности совпадают, следует вычислять следующий нижний уровень; в противном случае, вы можете пренебречь селекторами с меньшим уровнем специфичности, поскольку они никогда не смогут преодолеть уровни более высокой специфичности.</p>
+
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

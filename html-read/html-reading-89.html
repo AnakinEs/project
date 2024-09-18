@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Что же на самом деле происходит?">
+          <h2 id="Что же на самом деле происходит?">Что же на самом деле происходит?</h2>
+          <div class="section-content">
+            <p>Когда вы вводите веб-адрес в свой браузер (для нашей аналогии - посещаете магазин):</p>
+            <ol>
+              <li>Браузер обращается к DNS серверу и находит реальный адрес сервера, на котором "живёт" сайт (Вы находите адрес магазина).</li>
+              <li>Браузер посылает HTTP запрос к серверу, запрашивая его отправить копию сайта для клиента (Вы идёте в магазин и заказываете товар). Это сообщение и все остальные данные, передаваемые между клиентом и сервером, передаются по интернет-соединению с использованием протокола TCP/IP.</li>
+              <li>Если сервер одобряет запрос клиента, сервер отправляет клиенту статус "200 ОК", который означает: "Конечно, вы можете посмотреть на этот сайт! Вот он", а затем начинает отправку файлов сайта в браузер в виде небольших порций, называемых пакетными данными (магазин выдаёт вам ваш товар или вам привозят его домой).</li>
+              <li>Браузер собирает маленькие куски в полноценный сайт и показывает его вам (товар прибывает к вашей двери — новые вещи, потрясающе!).</li>
+            </ol>
+      <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
