@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Булевые атрибуты">
+          <h3 id="Булевые атрибуты">Булевые атрибуты</h3>
+          <div class="section-content">
+            <p>Иногда вы будете видеть атрибуты, написанные без значения — это совершенно допустимо.  Такие атрибуты называются булевые, и они могут иметь только одно значение, которое в основном совпадает с его именем. В качестве примера возьмём атрибут <code>disabled</code>, который можно назначить для формирования элементов ввода, если вы хотите, чтобы они были отключены (неактивны), так что пользователь не может вводить какие-либо данные в них.</p>
+            <pre><code class="language-html">&lt;input type="text" disabled="disabled"&gt;</code></pre>
+      <p>Для краткости совершенно допустимо записывать их следующим образом (мы также для справки разместили не деактивированный элемент <code>input</code>, чтобы дать вам большее понимание происходящего):</p>
+            <pre><code class="language-html">&lt;input type="text" disabled&gt;
+
+&lt;input type="text"&gt;</code></pre>
+      <p>На выходе оба варианта будут выглядеть следующим образом:</p>
+            <div style="height:5rem" class="note notecard" id="transparent">
+              <input type="text" disabled=""> <input type="text">
+            </div>
+      <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

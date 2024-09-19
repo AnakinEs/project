@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Разные типы селекторов">
+          <h2 id="Разные типы селекторов">Разные типы селекторов</h2>
+          <div class="section-content">
+            <p>Существует множество различных типов селектора. Выше мы рассматривали только <strong>селектор элементов</strong>, 
+      который выбирает все элементы определённого типа в HTML документе. Но мы можем сделать выбор более 
+      конкретным. Вот некоторые из наиболее распространённых типов селекторов:</p>
+      
+            <table class="stylized-table">
+        <thead>
+        <tr>
+          <th>Имя селектора</th>
+          <th>Что выбирает</th>
+          <th>Пример</th>
+        </tr>				  
+      </thead>
+      <tbody>
+      </tbody><colgroup>
+                <col>
+                <col class="cool-two">
+              </colgroup>
+        <tbody><tr>
+          <td>Селектор элемента (иногда называемый селектором тега или типа)</td>				
+          <td>Все HTML-элемент(ы) указанного типа.</td>				
+          <td><code>p</code> Выбирает <code>&lt;p&gt;</code></td>				
+        </tr>
+        <tr>
+          <td>ID селектор</td>				
+          <td>Элемент на странице с указанным ID на данной HTML. Лучше всего использовать один элемент для 
+        каждого ID (и конечно один ID для каждого элемента), даже если вам разрешено использовать один и тот же ID для нескольких элементов.</td>				
+          <td><code>#my-id</code> <br> Выбирает <code>&lt;p id="my-id"&gt;</code> или <code>&lt;a id="my-id"&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Селектор класса</td>				
+          <td>Элемент(ы) на странице с указанным классом (множество экземпляров класса может объявляться на странице).</td>				
+          <td><code>.my-class</code> Выбирает <code>&lt;p class="my-class"&gt;</code> и <code>&lt;a class="my-class"&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Селектор атрибута</td>				
+          <td>Элемент(ы) на странице с указанным атрибутом.</td>				
+          <td><code>img[src]</code> Выбирает <code>&lt;img src="myimage.png"&gt;</code> но не <code>&lt;img&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Селектор псевдокласса</td>				
+          <td>Указанные элемент(ы), но только в случае определённого состояния, например, при наведении курсора.</td>				
+          <td><code>a:hover</code> Выбирает <code>&lt;a&gt;</code>, но только тогда, когда указатель мыши наведён на ссылку.</td>
+        </tr>				  
+      </tbody>
+      </table>
+      <p>Существует ещё много селекторов для изучения, и вы можете найти более подробный список в нашем <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">Руководстве селекторов (en-US)</a>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

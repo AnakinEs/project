@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Так что же такое CSS? ">
+          <h2 id="Так что же такое CSS?">Так что же такое CSS?</h2>
+          <div class="section-content">
+            <p>Как и HTML, CSS на самом деле не является языком программирования. Это не язык разметки - 
+      это язык таблицы стилей. Это означает, что он позволяет применять стили выборочно к элементам 
+      в документах HTML. Например, чтобы выбрать <strong>все</strong> элементы абзаца на HTML странице и изменить 
+      текст внутри них с чёрного на красный, вы должны написать этот CSS:</p>              
+      <pre><code class="language-css">p {
+color: red;
+}</code></pre>
+      <p>Давайте попробуем: вставьте эти три строки CSS в новый файл в ваш текстовый редактор, а затем сохраните файл как <code>style.css</code> в вашей папке <code>styles</code>.</p>
+            <p>Но нам всё равно нужно применить CSS к нашему HTML документу. В противном случае, CSS стиль не повлияет на то, 
+      как ваш браузер отобразит HTML документ. (Если вы не следили за нашим проектом, то прочитайте раздел 
+      <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files">Работа с файлами</a> и 
+      <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics">Основы HTML</a>, чтобы узнать, что вам нужно сделать в первую очередь.)</p>
+            <ol>
+              <li>Откройте ваш файл <code>index.html</code> и вставьте следующую строку куда-нибудь в шапку, 
+      между <code>&lt;head&gt;</code> и <code>&lt;/head&gt;</code> тегами:</li>
+      
+              <pre><code class="language-html">&lt;link href="styles/style.css" rel="stylesheet" type="text/css"&gt;</code></pre>
+      <li>Сохраните <code>index.html</code> и загрузите его в вашем браузере. Вы должны увидеть что-то вроде этого:</li>
+              <img src="../images/website-screenshot-styled.png"></ol><p>Если текст вашего абзаца теперь красный, примите наши поздравления! Вы написали свой первый успешный CSS!</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
