@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Специфичность">
+          <h3 id="Специфичность">Специфичность</h3>
+          <div class="section-content">
+            <p>Специфичность определяет, как браузер решает, какое именно правило применяется в случае, когда несколько правил имеют разные селекторы, но, тем не менее, могут быть применены к одному и тому же элементу. <em>Различные типы селекторов ( селекторы элементов <code>h1{...}</code>, селекторы классов, селекторы идентификаторов и т.д ) имеют разной степени влияние на элементы страницы. Чем более общее влияние оказывает селектор на элементы страницы тем меньше его специфичность, конкретность</em>. По существу, это мера того, насколько специфическим будет отбор по селектору:</p>
+            <ol>
+              <li>Селектор элементов ( <em>например <code>h1</code></em> ) менее специфичен — он выберет все элементы этого типа на странице — поэтому получит меньше баллов.</li>
+              <li>Селектор класса более специфичен — он выберет только те элементы на странице, которые имеют конкретное значение атрибута <code>class</code> — поэтому получит больше баллов, <em>селектор класса применится после селектора элемента и поэтому перекроет его стили</em>.</li>
+            </ol>
+    <p>Например. Как указано ниже, у нас опять есть два правила, которые могут применяться к <code>h1</code>. <code>h1</code> в результате будет окрашен красным цветом — селектор класса даёт своему правилу более высокую специфичность, поэтому он будет применён, несмотря на то, что правило для селектора элемента расположено ниже в таблице стилей.</p>
+            <iframe style="height:40rem" src="../getting-started/started8.html"></iframe>
+    <p>Позже мы объясним, как сделать оценку специфичности, и прочие детали.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
