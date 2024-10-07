@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Отображение текстовых дорожек к видео">
+          <h2 id="Отображение текстовых дорожек к видео">Отображение текстовых дорожек к видео</h2>
+          <div class="section-content">
+            <p>Теперь мы обсудим немного более продвинутую концепцию, о которой очень полезно знать. Многие люди не могут или не хотят слышать аудио или видео контент, который они находят в Интернете, по крайней мере, в определённое время. Например:</p>
+            <ul>
+              <li>У многих людей есть слуховые нарушения (более известные как слабослышащие или глухие).</li>
+              <li>Другие могут не слышать звук, потому что они находятся в шумной обстановке (например, в переполненном баре при показе спортивной игры) или, возможно, не хотят беспокоить других, если они находятся в тихом месте (например, в библиотеке).</li>
+              <li>Люди, которые не говорят на языке из видео, могут захотеть увидеть текстовую расшифровку или даже перевод, чтобы помочь им понять медиа-контент.</li>
+            </ul>
+    <p>Разве было бы неплохо иметь возможность предоставить этим людям транскрипцию слов, произносимых в аудио или видео? Благодаря HTML5 вы можете это сделать с форматом <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">WebVTT</a> и элементом <code>&lt;track&gt;</code>..</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Замечание</strong>: "Транскрибировать" значит записывать устную речь в виде текста. Полученный текст представляет собой «стенограмму».</p>
+            </div>
+    <p>WebVTT - это формат для записи текстовых файлов, содержащих несколько строк текста, а также метаданные, такие как время, в которое вы хотите отображать каждую текстовую строку, и даже ограниченную информацию о стиле/позиционировании. Эти текстовые строки называются репликами, и вы можете отображать разные типы для разных целей, наиболее распространёнными являются:</p>                			
+    
+    
+    <dl>
+              <dt>субтитры</dt>
+              <dd>Переводы иностранного материала, для людей, которые не понимают слов, произнесённых в аудио.
+      </dd><dt>титры</dt>
+              <dd>Синхронизированные транскрипции диалога или описания значимых звуков, чтобы люди, которые не могут слышать звук, поняли что происходит.
+      </dd><dt>рассчитанные описания</dt>
+              <dd><span class="hint" data-tooltip="Не понял щас">Текст для преобразования в аудио</span>, чтобы обслуживать людей с нарушениями зрения.</dd></dl>
+    <p>Типичный файл WebVTT будет выглядеть примерно так:</p>
+            <pre><code class="language-html">WEBVTT
+
+1
+00:00:22.230 --&gt; 00:00:24.606
+Это первый субтитр.
+
+2
+00:00:30.739 --&gt; 00:00:34.074
+Это второй.
+
+...</code></pre>
+    <p>Чтобы отобразить это вместе с воспроизведением мультимедиа HTML, вам необходимо:</p>
+    <ol>
+              <li>Сохраните его как <code>.vtt</code>- файл, в разумном месте.</li>
+              <li>Ссылка на файл <code>.vtt</code> с элементом <code>&lt;track&gt;</code>. <code>&lt;track&gt;</code> должен быть помещён в <code>&lt;audio&gt;</code> или <code>&lt;video&gt;</code>, но после элементов <code><span class="blue" data-tooltip="**HTML-элемент <code>&amp;lt;source&amp;gt;</code> **указывает несколько медиа-ресурсов для элементов <code>&amp;lt;picture&amp;gt;</code>, <code>&amp;lt;video&amp;gt;</code> и <code>&amp;lt;audio&amp;gt;</code>. Это пустой элемент. Он обычно используется для обслуживания одного и того же медиа-контента в нескольких форматах, поддерживаемых различными браузерами (en-US).">&lt;source&gt;</span></code>. Используйте атрибут <code><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/track#attr-kind">kind</a></code>, чтобы указать, являются ли реплики <code>субтитрами</code>, <code>титрами</code> или <code>описаниями</code>. Кроме того, используйте <code><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/track#attr-srclang">srclang</a></code>, чтобы сообщить браузеру, на каком языке вы записывали субтитры.</li>
+            </ol>
+    <p>Вот пример:</p>
+    <pre><code class="language-html">&lt;video controls&gt;
+&lt;source src="example.mp4" type="video/mp4"&gt;
+&lt;source src="example.webm" type="video/webm"&gt;
+&lt;track kind="subtitles" src="subtitles_en.vtt" srclang="en"&gt;
+&lt;/video&gt;</code></pre>
+    <p>Это приведёт к просмотру видео с субтитрами, таким как:</p><img src="../images/video-player-with-captions.png"><p>Подробнее читайте в разделе <a href="https://developer.mozilla.org/ru/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video">добавление титров и субтитров к видео HTML5</a>. Вы можете <a href="http://iandevlin.github.io/mdn/video-player-with-captions/">найти пример</a>, который соответствует этой статье в Github, написанной Яном Девлином (см. также <a href="https://github.com/iandevlin/iandevlin.github.io/tree/master/mdn/video-player-with-captions">исходный код</a>). В этом примере используется JavaScript, позволяющий пользователям выбирать между различными субтитрами. Обратите внимание, что для включения субтитров вам нужно нажать кнопку «CC» и выбрать вариант - английский, немецкий или испанский.</p>
+    <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Текстовые треки также помогут вам с <a href="https://developer.mozilla.org/ru/docs/Glossary/SEO">SEO</a>, так как поисковые системы особенно преуспевают в работе с текстом. Текстовые треки даже позволяют поисковым системам напрямую связываться с местом, происходящим в видео.</p>
+            </div>
+          </div>
+    
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

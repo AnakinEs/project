@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Небольшое отступление о регистре и пробелах">
+          <h2 id="Небольшое отступление о регистре и пробелах">Небольшое отступление о регистре и пробелах</h2>
+          <div class="section-content">
+            <p>Вы заметите, что в этой статье, мы просим вас называть папки и файлы полностью в нижнем регистре без
+              пробелов. Это потому что:</p>
+            <ol>
+              <li>Многие компьютеры, в частности веб-серверы, чувствительны к регистру. Так, например, если вы положили
+                изображение на свой веб-сайт в <code>test-site/MyImage.jpg</code>, а затем в другом файле вы пытаетесь
+                вызвать изображение как <code>test-site/myimage.jpg</code>, это может не сработать.</li>
+              <li>Браузеры, веб-серверы и языки программирования не обрабатывают пробелы последовательно. Например, если
+                вы используете пробелы в имени файла, некоторые системы могут отнестись к имени файла как к двум именам
+                файлов. Некоторые серверы заменяют пробелы в вашем имени файла на "%20" (символьный код для пробелов в
+                URI), в результате чего все ваши ссылки будут сломаны. Лучше разделять слова дефисами, чем нижними
+                подчёркиваниями: <code>my-file.html</code> лучше чем <code>my_file.html</code>.</li>
+            </ol>
+            <p>Говоря простым языком, вы должны использовать дефис для имён файлов. Поисковая система Google
+              рассматривает дефис как разделитель слов, но не относится к подчёркиванию таким образом. По этим причинам,
+              лучше всего приобрести привычку писать названия ваших папок и файлов в нижнем регистре без пробелов,
+              разделяя слова дефисами, по крайней мере, пока вы не поймёте, что вы делаете. Так в будущем вы столкнётесь
+              с меньшим количеством проблем.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

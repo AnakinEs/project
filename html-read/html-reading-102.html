@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Слияние нескольких строк или столбцов">
+          <h2 id="Слияние нескольких строк или столбцов">Слияние нескольких строк или столбцов</h2>
+          <div class="section-content">
+            <p>Иногда нам нужно, чтобы ячейки распространялись на несколько строк или столбцов. Возьмём простой пример, в котором приведены имена животных. Иногда бывает нужно вывести имена людей рядом с именами животных. А иногда это не требуется, и тогда мы хотим, чтобы имя животного занимало всю ширину.</p>
+            <p>Исходная разметка выглядит так:</p>
+            <pre><code class="language-html">&lt;table&gt;
+ &lt;tr&gt;
+   &lt;th&gt;Animals&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;th&gt;Hippopotamus&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;th&gt;Horse&lt;/th&gt;
+   &lt;td&gt;Mare&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;Stallion&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;th&gt;Crocodile&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;th&gt;Chicken&lt;/th&gt;
+   &lt;td&gt;Cock&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;Rooster&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      <p>Но результат не такой, как хотелось бы:</p>
+            <table>
+              <tbody><tr>
+                <th>Animals</th>
+              </tr>
+              <tr>
+                <th>Hippopotamus</th>
+              </tr>
+              <tr>
+                <th>Horse</th>
+                <td>Mare</td>
+              </tr>
+              <tr>
+                <td>Stallion</td>
+              </tr>
+              <tr>
+                <th>Crocodile</th>
+              </tr>
+              <tr>
+                <th>Chicken</th>
+                <td>Cock</td>
+              </tr>
+              <tr>
+                <td>Rooster</td>
+              </tr>
+            </tbody></table>
+      <p>Нужно, чтобы  "Animals", "Hippopotamus" и "Crocodile" распространялись на два столбца, а "Horse" и "Chicken" - на две строки. К счастью, табличные заголовки и ячейки имеют атрибуты <code>colspan</code> и <code>rowspan</code>, которые позволяют это сделать. Оба принимают безразмерное числовое значение, которое равно количеству строк или столбцов, на которые должны распространяться ячейки. Например, <code>colspan="2"</code> распространяет ячейку на два столбца.</p>
+            <p>Воспользуемся <code>colspan</code> и <code>rowspan</code> чтобы улучшить таблицу.</p>
+            <ol>
+              <li>Сначала создайте локальную копию <a href="https://github.com/mdn/learning-area/blob/main/html/tables/basic/animals-table.html">animals-table.html</a> и <a href="https://github.com/mdn/learning-area/blob/main/html/tables/basic/minimal-table.css">minimal-table.css</a> в новой папке на вашем компьютере. Код HTML содержит пример с животными, который вы уже видели выше.</li>
+              <li>Затем используйте атрибут <code>colspan</code> чтобы распространить "Animals", "Hippopotamus" и "Crocodile" на два столбца.</li>
+              <table>
+     <tbody><tr>
+       <th colspan="2">Animals</th>
+     </tr>
+     <tr>
+       <th colspan="2">Hippopotamus</th>
+     </tr>
+     <tr>
+       <th>Horse</th>
+       <td>Mare</td>
+     </tr>
+     <tr>
+       <td>Stallion</td>
+     </tr>
+     <tr>
+       <th colspan="2">Crocodile</th>
+     </tr>
+     <tr>
+       <th>Chicken</th>
+       <td>Cock</td>
+     </tr>
+     <tr>
+       <td>Rooster</td>
+     </tr>
+   </tbody></table>
+              <li>Наконец, используйте атрибут <code>rowspan</code> чтобы распространить  "Horse" и "Chicken" на две строки.</li>
+              <table>
+     <tbody><tr>
+       <th colspan="2">Animals</th>
+     </tr>
+     <tr>
+       <th colspan="2">Hippopotamus</th>
+     </tr>
+     <tr>
+       <th rowspan="2">Horse</th>
+       <td>Mare</td>
+     </tr>
+     <tr>
+       <td>Stallion</td>
+     </tr>
+     <tr>
+       <th colspan="2">Crocodile</th>
+     </tr>
+     <tr>
+       <th rowspan="2">Chicken</th>
+       <td>Hen</td>
+     </tr>
+     <tr>
+       <td>Rooster</td>
+     </tr>
+   </tbody></table>
+              <li>Сохраните код и откройте его в браузере, чтобы увидеть улучшения.</li>
+            </ol>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Законченный пример можно посмотреть в <a href="https://github.com/mdn/learning-area/blob/main/html/tables/basic/animals-table-fixed.html">animals-table-fixed.html</a> на GitHub (<a href="https://mdn.github.io/learning-area/html/tables/basic/animals-table-fixed.html">живой пример</a>).</p>
+            </div>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8"&gt;
+   &lt;meta name="viewport" content="width=device-width"&gt;
+   &lt;title&gt;Animals table&lt;/title&gt;
+   &lt;link href="minimal-table.css" rel="stylesheet" type="text/css"&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;h1&gt;Animals table&lt;/h1&gt;
+
+   &lt;table&gt;
+     &lt;tr&gt;
+       &lt;th colspan="2"&gt;Animals&lt;/th&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;th colspan="2"&gt;Hippopotamus&lt;/th&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;th rowspan="2"&gt;Horse&lt;/th&gt;
+       &lt;td&gt;Mare&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;td&gt;Stallion&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;th colspan="2"&gt;Crocodile&lt;/th&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;th rowspan="2"&gt;Chicken&lt;/th&gt;
+       &lt;td&gt;Hen&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;td&gt;Rooster&lt;/td&gt;
+     &lt;/tr&gt;
+   &lt;/table&gt;
+
+
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            
+ 
+
+   <table>
+     <tbody><tr>
+       <th colspan="2">Animals</th>
+     </tr>
+     <tr>
+       <th colspan="2">Hippopotamus</th>
+     </tr>
+     <tr>
+       <th rowspan="2">Horse</th>
+       <td>Mare</td>
+     </tr>
+     <tr>
+       <td>Stallion</td>
+     </tr>
+     <tr>
+       <th colspan="2">Crocodile</th>
+     </tr>
+     <tr>
+       <th rowspan="2">Chicken</th>
+       <td>Hen</td>
+     </tr>
+     <tr>
+       <td>Rooster</td>
+     </tr>
+   </tbody></table>
+</div>
+
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

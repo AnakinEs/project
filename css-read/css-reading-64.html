@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Использование display: inline-block">
+          <h2 id="Использование display: inline-block"><a href="#Использование display: inline-block">Использование
+              display: inline-block</a></h2>
+          <div class="section-content">
+            <p>Существует особое значение <code>display</code>, которое представляет собой золотую середину между
+              <code>inline</code> и <code>block</code>. Это полезно в ситуациях, когда вы не хотите, чтобы элемент
+              переносился на новую строку, но нужно, чтобы он применял <code>width</code> и <code>height</code> и
+              избегал перекрытия, показанного выше.</p>
+            <p>Элемент с <code>display: inline-block</code> применяет ряд свойств блочного элемента, о которых мы уже
+              знаем:</p>
+            <ul>
+              <li>Применяются свойства <code>width</code> и <code>height</code>.</li>
+              <li>Использование <code>padding</code>, <code>margin</code> и <code>border</code> приведёт к тому, что
+                другие элементы будут отодвинуты от нашего элемента.</li>
+            </ul>
+            <p>Он не перенесётся на новую строку и станет больше, чем его содержимое, только если вы явно зададите
+              свойства <code>width</code> и <code>height</code>.</p>
+            <p>В следующем примере мы добавили <code>display: inline-block</code> к нашему элементу
+              <code>&lt;span&gt;</code>. Попробуйте изменить значение свойства на <code>display: block</code> или
+              полностью удалить строку, чтобы увидеть разницу.</p>
+            <iframe style="height:53rem" src="../getting-started/started45.html"></iframe>
+            <p>Это может быть полезно, когда вы хотите создать ссылку с большой областью попадания, добавив
+              <code>padding</code>. <code>&lt;a&gt;</code> — это строчный элемент, такой же как
+              <code>&lt;span&gt;</code>; вы можете использовать <code>display: inline-block</code>, чтобы разрешить
+              применение отступов, что упростит пользователю переход по ссылке.</p>
+            <p>Довольно часто это можно увидеть в панелях навигации. Приведённая ниже навигация отображается в виде
+              строки с использованием <code>flexbox</code>, и мы добавили отступы к элементу <code>&lt;a&gt;</code>,
+              потому что хотим, чтобы <code>background-color</code> изменялся при наведении курсора на
+              <code>&lt;a&gt;</code>. Отступы перекрывают рамку элемента <code>&lt;ul&gt;</code>. Это происходит потому,
+              что <code>&lt;a&gt;</code> — строчный элемент.</p>
+            <p>Добавьте в правило <code>display: inline-block</code> с помощью селектора <code>.links-list a</code>, и
+              вы увидите, как он решает эту проблему, заставляя другие элементы соблюдать отступы.</p>
+            <iframe style="height:43rem" src="../getting-started/started46.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="">
+          <h3 id="Заголовок изображения">Заголовок изображения</h3>
+          <div class="section-content">
+            <p>Как и для ссылок, вы также можете добавить атрибут <code>title</code> для изображений, чтобы при необходимости предоставить дополнительную информацию. В нашем примере мы могли бы сделать это так:</p>
+            <pre><code class="language-html">&lt;img src="images/dinosaur.jpg"
+ alt="The head and torso of a dinosaur skeleton;
+      it has a large head with long sharp teeth"
+ width="400"
+ height="341"
+ title="A T-Rex on display in the Manchester University Museum"&gt;</code></pre>
+    <p>Это даёт нам всплывающую подсказку при наведении курсора мыши, также как и в ссылках:</p><img src="../images/image-with-title.png"><p>Однако это не рекомендуется - <code>title</code> имеет ряд проблем с доступностью, в основном из-за того, что поддержка программ чтения с экрана очень непредсказуема, и большинство браузеров не будут отображать её, если вы не наведёте курсор мыши (например, нет доступа для пользователей клавиатуры). Зачастую лучше включить такого рода вспомогательную информацию в основной текст статьи, чем прикреплять её к изображению. Однако, она полезна в некоторых обстоятельствах; например, в галереях изображений, когда у вас нет места для их заголовков.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

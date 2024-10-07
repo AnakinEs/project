@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Элемент <audio> ">
+          <h3 id="Элемент <audio>">Элемент &lt;audio&gt;</h3>
+          <div class="section-content">
+            <p>Элемент <code>&lt;audio&gt;</code> работает точно так же, как элемент <code>&lt;video&gt;</code>, с несколькими небольшими отличиями, которые описаны ниже. Типичный пример может выглядеть так:</p>
+            <pre><code class="language-html">&lt;audio controls&gt;
+&lt;source src="viper.mp3" type="audio/mp3"&gt;
+&lt;source src="viper.ogg" type="audio/ogg"&gt;
+&lt;p&gt;Your browser doesn't support HTML5 audio. Here is a &lt;a href="viper.mp3"&gt;link to the audio&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/audio&gt;</code></pre>
+    <p>В браузере это вызывает следующее:</p><img src="../images/audio-player.png"><div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: вы можете запустить <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html">аудио-демо</a> в Github (см. также <a href="https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html">исходный код аудиоплеера</a>.)</p>
+            </div>
+    <p>Он занимает меньше места, чем видеоплеер, поскольку нет визуального компонента - вам просто нужно отображать элементы управления для воспроизведения звука. Другие отличия от видео HTML5 заключаются в следующем:</p>
+    <ul>
+              <li>Элемент <code>&lt;audio&gt;</code> не поддерживает атрибуты <code>width</code> и <code>height</code> - опять же, нет визуального компонента, поэтому присваивать ширину или высоту не к чему.</li>
+              <li>Он также не поддерживает атрибут​​​​​ <code>poster</code> опять же, из-за отсутствия визуального компонента. </li>
+            </ul>
+    <p>Помимо этого, <code>&lt;audio&gt;</code> поддерживает все те же функции, что и <code>&lt;video&gt;</code> - просмотрите приведённые выше разделы для получения дополнительной информации о них.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

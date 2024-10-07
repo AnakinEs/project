@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Генерация контента с помощью ::before и ::after">
+          <h2 id="Генерация контента с помощью ::before и ::after">Генерация контента с помощью ::before и ::after</h2>
+          <div class="section-content">
+            <p>Существует пара специальных псевдоэлементов, которые используются вместе со свойством <code>content</code> для вставки содержимого в документ с помощью CSS.</p>
+            <p>Вы можете использовать их для вставки строки текста, как в приведённом ниже живом примере. Попробуйте изменить текстовое значение свойства <code>content</code> и вы увидите, как изменится результат. Можете также изменить псевдоэлемент <code>::before</code> на <code>::after</code> и увидите, что текст вставлен в конце элемента, а не в начале.</p>
+            <iframe style="height:40rem" src="../getting-started/started30.html"></iframe>
+    <p>Однако вставка строк текста из CSS в реальности происходит не слишком часто, поскольку этот текст недоступен для некоторых экранных дикторов и его будет трудно найти и отредактировать в будущем.</p>
+            <p>Более корректным использованием этих псевдоэлементов является вставка значка, например маленькой стрелки, добавленной в приведённом ниже примере, которая является визуальным указателем, не предназначенным для зачитывания с помощью экранного диктора:</p>
+            <iframe style="height:38rem" src="../getting-started/started31.html"></iframe>
+          
+    <p>Эти псевдоэлементы также часто используются для вставки пустой строки, которая затем может быть стилизована так же, как и любой элемент на странице.</p>
+            <p>В следующем примере мы добавили пустую строку, используя псевдоэлемент <code>::before</code>. Мы установили <code>display: block</code>, чтобы стилизовать его по ширине и высоте. Затем мы используем CSS, чтобы стилизовать его так же, как и любой другой элемент. Вы можете поиграть с CSS и изменить его внешний вид и поведение.</p>
+            <iframe style="height:50rem" src="../getting-started/started32.html"></iframe>
+    <p>Использование псевдоэлементов <code>::before</code> и <code>::after</code> вместе со свойством <code>content</code> в CSS называется "генерируемым контентом" в CSS, и вы часто будете видеть, как этот метод используется для различных задач. Отличным примером является сайт <a href="https://cssarrowplease.com/">CSS Arrow Please</a>, который помогает вам генерировать стрелку с помощью CSS. Посмотрите на CSS, когда вы создадите свою стрелку, и вы увидите использование псевдо-элементов <code>::before</code> и <code>::after</code>. Всякий раз, когда вы будете видеть эти селекторы, смотрите на свойство <code>content</code>, чтобы увидеть, что добавляется в документ.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

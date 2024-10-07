@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функции">
+          <h3 id="Функции">Функции</h3>
+          <div class="section-content">
+            <p><a href="https://developer.mozilla.org/ru/docs/Glossary/Function">Функции</a> - способ упаковки функциональности, которую вы хотите использовать повторно. Всякий раз, когда вам нужна определённая процедура, вы можете просто вызвать функцию по её имени, а не переписывать весь код каждый раз. Вы уже видели некоторые функции, описанные выше, например:</p>
+            <ol>
+              <li><pre><code class="language-js">var myVariable = document.querySelector('h1');</code></pre></li>
+              <li><pre><code class="language-js">alert('hello!');</code></pre></li>
+            </ol>              
+      <p>Эти функции, <code>document.querySelector</code> и <code>alert</code>, встроены в браузер для того, чтобы вы использовали их всякий раз, когда вам это необходимо.</p>
+            <p>Если вы видите что-то, что выглядит как имя переменной, но имеет после него скобки — <code>()</code>, скорее всего, это функция. Функции часто принимают <a href="https://developer.mozilla.org/ru/docs/Glossary/Argument">аргументы</a> — биты данных, которые им необходимы для выполнения своей работы. Они находятся в скобках, и разделяются запятыми, если присутствует более одного аргумента.</p>
+            <p>Например, функция <code>alert()</code> вызывает всплывающий блок, появляющийся в окне браузера, но мы должны дать ему строку в качестве аргумента, чтобы сказать функции, что писать во всплывающем блоке.</p>
+            <p>Хорошая новость заключается в том, что вы можете определить свои собственные функции — в следующем примере мы напишем простую функцию, которая принимает два числа в качестве аргументов и умножает их:</p>
+            <pre><code class="language-js">function multiply(num1,num2) {
+var result = num1 * num2;
+return result;
+}</code></pre>
+      <p>Попробуйте запустить вышеупомянутую функцию в консоли, затем попробуйте изменить аргументы, например:</p>
+            <pre><code class="language-js">multiply(4,7);
+multiply(20,20);
+multiply(0.5,3);</code></pre>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Инструкция <code>return</code> сообщает браузеру, что нужно 
+      вернуть переменную <code>result</code> из функции, которую можно будет использовать. Это необходимо 
+      потому, что переменные, определённые внутри функций, доступны только внутри этих функций. 
+      Это называется <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope">областью видимости</a> 
+      переменной. (Читайте <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_types#variable_scope">больше об области видимости переменных</a>.)</p>
+            </div>			  
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
