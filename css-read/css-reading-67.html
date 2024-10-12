@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="!important">
+          <h3 id="!important">!important</h3>
+          <div class="section-content">
+            <p>Существует специальный элемент CSS, который вы можете использовать для отмены всех вышеперечисленных вычислений, однако вы должны быть очень осторожны с его использованием — <code>!important</code>. Он используется, чтобы сделать конкретное свойство и значение самыми специфичными, таким образом переопределяя нормальные правила каскада.</p>
+            <p>Взгляните на этот пример, где у нас есть два абзаца, один из которых имеет ID.</p>
+            <iframe style="height:65rem" src="../getting-started/started15.html"></iframe>
+    <p>Давайте пройдёмся по этому примеру, чтобы увидеть, что происходит — попробуйте удалить некоторые свойства, чтобы увидеть, что получится, если вам трудно понять:</p>
+            
+    <p>CSS:</p>
+    <pre><code class="language-css">#winning {
+background-color: red; /* к 2 */
+border: 1px solid black;
+}
+
+.better {
+background-color: gray; /* к 1 */
+border: none !important; /* к 1, 2 */<br>}
+
+p {
+background-color: blue;
+color: white; /* к 1, 2 */
+padding: 5px; /* к 1, 2 */
+}  </code></pre>
+    <p>HTML:</p>
+    <pre><code class="language-html">&lt;p class="better"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p class="better" id="winning"&gt;One selector to rule them all!&lt;/p&gt;</code></pre>
+    <ol>
+              <li>Вы увидите, что применены значения <code>color</code> и <code>padding</code> третьего правила, но <code>background-color</code> — нет. Почему? Действительно, все три безусловно должны применяться, потому что правила, более поздние в порядке следования, обычно переопределяют более ранние правила.</li>
+              <li>Однако вышеприведённые правила выигрывают, потому что селекторы классов имеют более высокую специфичность, чем селекторы элементов.</li>
+              <li>Оба элемента имеют <code>class</code> с названием <code>better</code>, но у второго также есть <code>id</code> с названием <code>winning</code>. Поскольку ID имеют ещё более высокую специфичность, чем классы (у вас может быть только один элемент с каждым уникальным ID на странице, но много элементов с одним и тем же классом — селекторы ID очень специфичны, на что они и нацелены), красный цвет фона и однопиксельная чёрная граница должны быть применены ко 2-му элементу, причём первый элемент получает серый фоновый цвет и отсутствие границы, как определено классом.</li>
+              <li>2-й элемент получил красный цвет фона и отсутствие границы. Почему? Из-за объявления <code>!important</code> во втором правиле — размещение которого после <code>border: none</code> означает, что это объявление перевесит значение границы в предыдущем правиле, даже если ID имеет более высокую специфичность.</li>
+            </ol>
+    <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Единственный способ переопределить объявление <code>!important</code> –  это включить другое объявление <code>!important</code> в правило с такой же специфичностью позже или в правило с более высокой специфичностью.</p>
+            </div>
+    <p>Полезно знать о существовании <code>!important</code>, чтобы вы понимали, что это такое, когда встретите в чужом коде. <strong>Тем не менее, мы настоятельно рекомендуем вам никогда не использовать его, если в этом нет острой необходимости.</strong> <code>!important</code> меняет обычный порядок работы каскада, поэтому он может серьёзно затруднить отладку проблем CSS, особенно в большой таблице стилей.</p>
+    <p>Одна из ситуаций, в которой вам, возможно, придётся это использовать, — это когда вы работаете с <span class="hint" data-tooltip="Не знаю че там да как, не изучал.">CMS</span>, где вы не можете редактировать модули CSS ядра, и вы действительно хотите переопределить стиль, который нельзя переопределить другим способом. Но, вообще говоря, не стоит использовать этот элемент, если можно этого избежать.</p>
+    <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
