@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Устранение неполадок и кросс-браузерная поддержка">
+          <h3 id="Устранение неполадок и кросс-браузерная поддержка">Устранение неполадок и кросс-браузерная поддержка</h3>
+          <div class="section-content">
+            <p>Для браузеров которые не поддерживают SVG (IE 8 и ниже, Android 2.3 и ниже), вы можете ссылаться на PNG или JPG в <code>src</code> атрибуте и использовать <code>srcset</code> атрибут (который распознают только последние браузеры) чтобы сослаться на SVG. В этом случае SVG будут загружаться только поддерживающими браузерами - старые же браузеры будут загружать PNG:</p>
+            <pre><code class="language-html">&lt;img src="equilateral.png" alt="triangle with equal sides" srcset="equilateral.svg"&gt;</code></pre>
+      <p>Также вы можете использовать SVG в качестве фоновых изображение CSS, как показано ниже. В приведённом коде ниже старые браузеры будут придерживаться PNG, который они понимают, тогда как новые браузеры будут загружать SVG:</p>
+            <pre><code class="language-css">background: url("fallback.png") no-repeat center;
+background-image: url("image.svg");
+background-size: contain;</code></pre>
+      <p>Подобно методу <code>&lt;img&gt;</code>, описанному выше, вставка SVG с использованием фоновых изображений CSS означает, что SVG нельзя манипулировать при помощи JavaScript, и что SVG будет иметь те же ограничения, что и CSS.</p>
+            <p>Если ваши SVG не отображаются вовсе, возможно, ваш сервер не настроен должным образом. Если проблема в этом, то <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started#a_word_on_webservers">данная статья укажет вам верное направление</a>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

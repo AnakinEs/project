@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавляем информацию через атрибут title">
+          <h3 id="Добавляем информацию через атрибут title">Добавляем информацию через атрибут title</h3>
+          <div class="section-content">
+            <p>Другим атрибутом, который вы можете добавить к своим ссылкам, является — <code>title</code>. Он предназначен для хранения полезной информации о ссылке. Например, какую информацию содержит страница или другие вещи, о которых вам нужно знать. Например:</p>
+            <pre><code class="language-html">&lt;p&gt;Я создал ссылку на
+&lt;a href="https://www.mozilla.org/ru/"
+   title="Лучшее место для поиска дополнительной информации
+   о миссии Mozilla и о том, как внести свой вклад"&gt;домашнюю страницу Mozilla
+&lt;/a&gt;.
+&lt;/p&gt;</code></pre>
+      <p>Вот что получилось (описание появится, если навести курсор на ссылку):</p>
+      <p>Я создал ссылку на <a href="https://www.mozilla.org/ru/">домашнюю страницу Mozilla</a>.</p>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Описание из атрибута title отображается только при наведении курсора, значит люди, полагающиеся на клавиатурные элементы управления для навигации по веб-страницам, будут испытывать трудности с доступом к информации, которую содержит title. Если информация заголовка действительно важна для удобства использования страницы, то вы должны представить её таким образом, который будет доступен для всех пользователей, например, поместив её в обычный текст.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
