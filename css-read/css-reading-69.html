@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функции">
+          <h3 id="Функции">Функции</h3>
+          <div class="section-content">
+            <p>Чаще всего значения принимают форму числа или ключевого слова; существуют способы создавать функции для значений. Для примера можно взять функцию <code>calc()</code>. Она позволяет вам совершать лёгкие математические вычисления внутри CSS, например:</p>
+            <pre><code class="language-html">&lt;div class="outer"&gt;&lt;div class="box"&gt;The inner box is 90% - 30px.&lt;/div&gt;&lt;/div&gt;</code></pre>
+    <pre><code class="language-css">.outer {
+border: 5px solid black;
+}
+
+.box {
+padding: 10px;
+width: calc(90% - 30px);
+background-color: rebeccapurple;
+color: white;
+}</code></pre>
+    <p>В результате получим это:</p>
+            <iframe style="height:100%" src="../getting-started/started3.html"></iframe>
+    <p>Функция состоит из названия и скобок, внутри который помещается выражение с допустимыми для данной функции знаками. В примере выше я задал значение ширины блока равной 90% внешнего блока минус 30px. Не могу же я сказать, чему равны 90% блока?!</p>
+            <p>В следующем примере будут различные значения для свойства <code>&lt;transform&gt;</code> <code>rotate()</code>.</p>
+            <pre><code class="language-html">&lt;div class="box"&gt;&lt;/div&gt;</code></pre>
+    <pre><code class="language-css">.box {
+margin: 30px;
+width: 100px;
+height: 100px;
+background-color: rebeccapurple;
+transform: rotate(0.8turn)
+}</code></pre>
+    <p>Результат этого кода будет:</p>
+            <iframe style="height:15.5rem" src="../getting-started/started4.html"></iframe>
+    <p><strong>Найдите несколько значений для следующих свойств, а свойства добавьте в ваш файл:</strong></p>
+            <ol>
+              <li><code>transform</code></li>
+              <li><code>background-image</code>, в частности со значениями градиента</li>
+              <li><code>color</code>,в частности со значениями rgb/rgba/hsl/hsla</li>
+            </ol>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

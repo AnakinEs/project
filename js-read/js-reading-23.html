@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Современная разметка">
+          <h2 id="Современная разметка">Современная разметка</h2>
+          <div class="section-content">
+            <p>Тег <code>&lt;script&gt;</code> имеет несколько атрибутов, которые редко используются, но всё ещё могут
+              встретиться в старом коде:</p>
+            <dl>
+              <dt><strong>Атрибут</strong> <code>type: &lt;script type=…&gt;</code></dt>
+              <dd>Старый стандарт HTML, HTML4, требовал наличия этого атрибута в теге <code>&lt;script&gt;</code>.
+                Обычно он имел значение <code>type="text/javascript"</code>. На текущий момент этого больше не
+                требуется. Более того, в современном стандарте HTML смысл этого атрибута полностью изменился. Теперь
+                он может использоваться для JavaScript-модулей. Но это тема не для начального уровня, и о ней мы
+                поговорим в другой части учебника.
+              </dd><dt><strong>Атрибут language</strong>: <code>&lt;script language=…&gt;</code></dt>
+              <dd>Этот атрибут должен был задавать язык, на котором написан скрипт. Но так как JavaScript является
+                языком по умолчанию, в этом атрибуте уже нет необходимости.
+              </dd><dt><strong>Обёртывание скрипта в HTML-комментарии.</strong></dt>
+              <dd>В очень древних книгах и руководствах вы сможете найти комментарии внутри тега
+                <code>&lt;script&gt;</code>, например, такие:</dd>
+              <dd>
+                <pre><code class="language-html">&lt;script type="text/javascript"&gt;&lt;!--
+  ...
+  //--&gt;&lt;/script&gt;</code></pre>
+              </dd>
+            </dl>
+            <p>Этот комментарий скрывал код JavaScript в старых браузерах, которые не знали, как обрабатывать тег
+              <code>&lt;script&gt;</code>. Поскольку все браузеры, выпущенные за последние 15 лет, не содержат данной
+              проблемы, такие комментарии уже не нужны. Если они есть, то это признак, что перед нами очень древний
+              код.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

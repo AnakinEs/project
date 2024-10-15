@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление персонального приветственного сообщения">
+          <h3 id="Добавление персонального приветственного сообщения">Добавление персонального приветственного сообщения</h3>
+          <div class="section-content">
+            <p>Далее мы добавим немного другого кода, чтобы изменить заголовок страницы на персонализированное приветственное сообщение, когда пользователь впервые зайдёт на сайт. Это приветственное сообщение будет сохраняться, когда пользователь покинет сайт, а позже вернётся - мы сохраним его с помощью <a href="https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API">Web Storage API</a>. Мы также включим возможность изменить пользователя и, следовательно, приветственное сообщение, в любое время, когда это будет необходимо.</p>
+            <ol>
+              <li>В <code>index.html</code>, добавьте следующую строку перед элементом <code>&lt;script&gt;</code>:</li>
+              <pre><code class="language-html">&lt;button&gt;Change user&lt;/button&gt;</code></pre>
+      <li>В <code>main.js</code>, добавьте следующий код в конец файла, точно так, как написано - он захватит ссылки на новую кнопку и заголовок, и сохранит их в переменные:</li>
+              <pre><code class="language-js">var myButton = document.querySelector('button');
+var myHeading = document.querySelector('h1');</code></pre>
+      <li>Теперь добавьте следующую функцию для установки персонализированного приветствия - она ничего не будет делать, но мы будем использовать её позже:</li>
+              <pre><code class="language-js">function setUserName() {
+var myName = prompt('Please enter your name.');
+localStorage.setItem('name', myName);
+myHeading.textContent = 'Mozilla is cool, ' + myName;
+}</code></pre>
+      <p>Эта функция содержит функцию <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt">prompt()</a>, которая вызывает 
+      диалоговое окно, немного похожее на <code>alert()</code> кроме того, что <code>prompt()</code> 
+      просит пользователя ввести некоторые данные, и сохраняет эти данные в 
+      переменной, после того как пользователь нажимает <strong>OK</strong>. В данном случае, 
+      мы просим пользователя ввести его имя. Далее, мы вызываем API под названием 
+      <code>localStorage</code>, который позволяет нам хранить данные в браузере и извлекать 
+      их позднее. Мы используем функцию <code>setItem()</code> из localStorage для создания и 
+      хранения данных в свойстве под названием <code>'name'</code>, и устанавливаем это значение 
+      в переменную <code>myName</code>, которая содержит имя введённое пользователем. В конце 
+      мы устанавливаем <code>textContent</code> заголовку в виде строки и имени пользователя.</p>
+              <li>Затем добавьте блок <code>if ... else</code> - мы могли бы назвать это кодом инициализации, поскольку он структурирует приложение при его первой загрузке:</li>
+              <pre><code class="language-js">if(!localStorage.getItem('name')) {
+setUserName();
+} else {
+var storedName = localStorage.getItem('name');
+myHeading.textContent = 'Mozilla is cool, ' + storedName;
+}</code></pre>
+      <p>Этот блок сначала использует оператор отрицания (логическое НЕ, представленное в виде !) чтобы 
+      проверить, существуют ли данные в пункте <code>name</code>. Если нет, то функция <code>setUserName()</code> запускается для 
+      их создания. Если данные существуют (то есть, пользователь установил его во время предыдущего 
+      посещения), мы извлекаем сохранённое имя, с помощью <code>getItem()</code> и устанавливаем <code>textContent</code> 
+      заголовку в виде строки плюс имя пользователя, так же, как мы делали внутри <code>setUserName()</code>.</p>
+      <li>Наконец, установите обработчик события <code>onclick</code> на кнопку. При нажатии кнопки запускается функция 
+      <code>setUserName()</code>. Это позволяет пользователю установить новое имя, всякий раз, когда он захочет, нажатием кнопки:</li>
+      <pre><code class="language-js">myButton.onclick = function() {
+setUserName();
+}</code></pre>
+      </ol>             			  
+      <p>Теперь, когда вы впервые заходите на сайт, он попросит вас указать имя пользователя, а затем предоставит вам персональное сообщение. Вы можете изменить имя в любое время, нажав на кнопку. В качестве дополнительного бонуса, поскольку имя хранится внутри localStorage, оно сохраняется после закрытия сайта, сохраняя при этом персонализированное сообщение при следующем открытии сайта!</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
