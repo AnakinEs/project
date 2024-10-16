@@ -313,6 +313,7 @@ section section h3 { // зачем я это правило сдесь зада�
 
   .main_content li {
     margin-bottom: 1rem;
+    line-height: 1.8rem;
   }
   
   .main_content li img {
