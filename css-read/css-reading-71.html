@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Стилизация элементов на основе их расположения в документе">
+          <h2 id="Стилизация элементов на основе их расположения в документе">Стилизация элементов на основе их расположения в документе</h2>
+          <div class="section-content">
+            <p>Есть моменты, когда вы хотите, чтобы что-то выглядело иначе, в зависимости от того, где оно находится в документе. Здесь есть несколько селекторов, которые могут вам помочь, но сейчас мы рассмотрим только пару. В нашем документе два элемента <code>&lt;em&gt;</code> — один внутри абзаца, а другой внутри элемента списка. Чтобы выбрать только <code>&lt;em&gt;</code> который вложен в элемент <code>&lt;li&gt;</code>, я могу использовать селектор под названием <strong>descendant combinator</strong> (<strong>комбинатор-потомок</strong>), который просто принимает форму пробела между двумя другими селекторами.</p>
+            <p>Добавьте следующее правило в таблицу стилей.</p>
+            <pre><code class="language-css">li em {
+color: rebeccapurple;
+}</code></pre>
+    <p>Этот селектор выберет любой элемент <code>&lt;em&gt;</code>, который находится внутри (потомка) <code>&lt;li&gt;</code>. Итак, в вашем примере документа вы должны найти, что <code>&lt;em&gt;</code> в третьем элементе списка теперь фиолетовый, но тот, который находится внутри абзаца, не изменился.</p>
+            <p>Ещё можно попробовать стилизовать абзац, когда он идёт сразу после заголовка на том же уровне иерархии в HTML. Для этого поместите + (<strong>соседний братский комбинатор</strong>) между селекторами.</p>
+            <p>Попробуйте также добавить это правило в таблицу стилей:</p>
+            <pre><code class="language-css">h1 + p {
+font-size: 200%;
+}</code></pre>
+          <p>Пример ниже включает в себя два правила выше. Попробуйте добавить правило, чтобы сделать элемент span красный, если он внутри абзаца. Вы узнаете, правильно ли вы это сделали, так как промежуток в первом абзаце будет красным, но цвет в первом элементе списка не изменит цвет.</p>
+    <iframe style="height: 86rem" src="../getting-started/started.html"></iframe>
+    <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Как вы можете видеть, CSS даёт нам несколько способов нацеливания на элементы, и мы пока только слегка изучили его! Мы будем внимательно смотреть на все эти селекторы и многое другое в нашей статье <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">Селекторы</a> позже в нашем курсе.</p>
+            </div>
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

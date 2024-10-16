@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Вложенные списки">
+          <h3 id="Вложенные списки">Вложенные списки</h3>
+          <div class="section-content">
+            <p>Вполне нормально вложить один список в другой. Возможно, вы захотите, чтобы один список располагался внутри другого. Давайте возьмём второй список из нашего примера рецепта:</p>
+            <pre><code class="language-html">&lt;ol&gt;
+&lt;li&gt;Очистите чеснок от кожуры и крупно нарежьте.&lt;/li&gt;
+&lt;li&gt;Удалите стебель и семена у перца; крупно нарежьте перец.&lt;/li&gt;
+&lt;li&gt;Добавьте все ингредиенты в пищевой комбайн.&lt;/li&gt;
+&lt;li&gt;Измельчите все ингредиенты до состояния пасты.&lt;/li&gt;
+&lt;li&gt;Если вы хотите "грубый" хумус, измельчайте пару минут.&lt;/li&gt;
+&lt;li&gt;Если вам нужен гладкий хумус, измельчайте дольше.&lt;/li&gt;
+&lt;/ol&gt; </code></pre>
+            <div class="note notecard" id="transparent">
+<ol>
+  <li>Очистите чеснок от кожуры и крупно нарежьте.</li>
+  <li>Удалите стебель и семена у перца; крупно нарежьте перец.</li>
+  <li>Добавьте все ингредиенты в пищевой комбайн.</li>
+  <li>Измельчите все ингредиенты до состояния пасты.</li>
+  <li>Если вы хотите "грубый" хумус, измельчайте пару минут.</li>
+  <li>Если вам нужен гладкий хумус, измельчайте дольше.</li>
+</ol> 
+</div>
+      <p>Поскольку последние две строки очень тесно связаны с тем, что было до них (они читаются как вспомогательные инструкции или варианты, которые подходят под этой маркой), может иметь смысл вложить их в свой собственный неупорядоченный список и поместить этот список внутри текущего. Это будет выглядеть так:</p>
+            <pre><code class="language-html">&lt;ol&gt;
+&lt;li&gt;Очистите чеснок от кожуры и крупно нарежьте.&lt;/li&gt;
+&lt;li&gt;Удалите стебель и семена у перца; крупно нарежьте перец.&lt;/li&gt;
+&lt;li&gt;Добавьте все ингредиенты в пищевой комбайн.&lt;/li&gt;
+&lt;li&gt;Измельчите все ингредиенты до состояния пасты.
+  &lt;ul&gt;
+    &lt;li&gt;Если вы хотите "грубый" хумус, измельчайте пару минут.&lt;/li&gt;
+    &lt;li&gt;Если вам нужен гладкий хумус, измельчайте дольше.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            <div class="note notecard" id="transparent">
+<ol>
+<li>Очистите чеснок от кожуры и крупно нарежьте.</li>
+<li>Удалите стебель и семена у перца; крупно нарежьте перец.</li>
+<li>Добавьте все ингредиенты в пищевой комбайн.</li>
+<li>Измельчите все ингредиенты до состояния пасты.
+  <ul>
+    <li>Если вы хотите "грубый" хумус, измельчайте пару минут.</li>
+    <li>Если вам нужен гладкий хумус, измельчайте дольше.</li>
+  </ul>
+</li>
+</ol> 
+</div>
+      <p>Попробуйте вернуться к предыдущему примеру активного обучения и обновить второй список.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
