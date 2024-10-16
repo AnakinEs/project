@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Разбираемся с телом">
+          <h3 id="Разбираемся с телом">Разбираемся с телом</h3>
+          <div class="section-content">
+<pre><code class="language-css">body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #FF9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}</code></pre>
+      <p>Теперь для <code>&lt;body&gt;</code> элемента. Здесь есть немало деклараций, так что давайте пройдём через них всех по одному:</p>
+            <ol>
+              <li><code>width: 600px;</code> — заставляет тело быть всегда 600 пикселей в ширину.</li>
+              <li><code>margin: 0 auto;</code> — когда вы устанавливаете два значения для таких свойств как <code>margin</code> или <code>padding</code>, 
+      первое значение элемента влияет на верхнюю <strong>и</strong> нижнюю сторону (делает их <code>0</code> в данном случае), и 
+      второе значение на левую <strong>и</strong> правую сторону (здесь, <code>auto</code> является особым значением, которое 
+      делит доступное пространство по горизонтали поровну слева и справа). Вы также можете 
+      использовать один, три или четыре значения, как описано <a href="https://developer.mozilla.org/ru/docs/Web/CSS/margin#values">здесь</a>.</li>
+              <li><code>background-color: #FF9500;</code> — как и прежде, устанавливает цвет фона элемента. Я использовал красновато-оранжевый для тела, в отличие от темно-синего цвета для <code>&lt;html&gt;</code> элемента, но не стесняйтесь и экспериментируйте.</li>
+              <li><code>padding: 0 20px 20px 20px;</code> — у нас есть четыре значения, установленные для padding, чтобы сделать немного пространства вокруг нашего контента. В этот раз мы не устанавливаем padding на верхней части тела, но делаем 20 пикселей слева, снизу и справа. Значения устанавливаются сверху, справа, снизу, слева, в таком порядке.</li>
+              <li><code>border: 5px solid black;</code> — просто устанавливает <span class="meaning" data-tooltip="<p>1. без промежутков, сплошь заполняющий собою какое-либо пространство</p><p>2. безостановочный, непрерывный</p><p>3. охватывающий всех или всё без исключения</p><p>4. разг. не содержащий ничего другого; состоящий исключительно из чего-либо</p><p>5. разг. очень сильный, чрезвычайный</p>">сплошную</span> чёрную рамку шириной 5 пикселей со всех сторон тела.</li>
+            </ol>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

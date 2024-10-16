@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="События">
+          <h3 id="События">События</h3>
+          <div class="section-content">
+            <p>Для создания действительной интерактивности на веб-сайте вам необходимы события. 
+      События — это структура, которая следит за тем, что происходит в браузере, а затем 
+      позволяет вам запускать код в ответ на это. Наиболее очевидным является 
+      <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">событие 
+      клика</a>, которое вызывается браузером, когда мы щёлкаем по чему-то мышью. 
+      Для демонстрации этого события введите следующую команду в вашу консоль, а 
+      затем щёлкните по текущей веб-странице:</p>
+<pre><code class="language-js">document.querySelector('html').onclick = function() {
+alert('Ouch! Stop poking me!');
+}</code></pre>             
+      <p>Существуют множество способов прикрепить событие к элементу. Здесь мы выбираем <code>&lt;html&gt;</code> 
+      элемент и устанавливаем ему обработчик свойства <code>onclick</code> 
+      анонимной функцией (т.е. безымянной) которая содержит код, который мы хотим запустить для события клика.</p>
+            <p>Обратите внимание, что</p>
+            <pre><code class="language-js">document.querySelector('html').onclick = function() {};</code></pre>
+      <p>эквивалентно</p>
+            <pre><code class="language-js">var myHTML = document.querySelector('html');
+myHTML.onclick = function() {};</code></pre>
+      <p>Просто так короче.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

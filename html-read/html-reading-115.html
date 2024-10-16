@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Пример hello world">
+          <h2 id="Пример hello world">Пример "hello world"</h2>
+          <div class="section-content">
+            <p>Предыдущий раздел звучит очень многообещающе, и это на самом деле так — JavaScript является одной из самых перспективных веб-технологий, и когда вы освоитесь и начнёте использовать его, ваши веб-сайты перейдут в новое измерение мощи и креативности.</p>
+            <p>Тем не менее, с JavaScript немного более сложно освоиться, чем с HTML и CSS. Вам придётся начать с малого, продолжая изучение небольшими шагами. Для начала мы покажем вам, как добавить некоторые основы JavaScript на вашу страницу, чтобы создать "hello world!" пример (<a href="https://ru.wikipedia.org/wiki/Hello,_world!">стандарт в начальных примерах программирования</a>).</p>
+            <div class="note notecard" style="background-color:#ffe9ed" id="sect4">
+              <p><strong>Важно</strong>: Если вы не следили за остальным нашим курсом, <a href="https://github.com/mdn/beginner-html-site-styled/archive/gh-pages.zip">скачайте этот пример кода</a> и используйте его в качестве стартовой точки.</p>
+            </div>              
+            <ol>
+              <li>Для начала перейдите на ваш тестовый сайт и создайте папку с именем 'scripts' (без кавычек). Затем, в новой папке скриптов, которую вы только что создали, создайте новый файл с именем <code>main.js</code>. Сохраните его в вашей папке <code>scripts</code>.</li>
+              <li>Далее перейдите в ваш <code>index.html</code> файл и введите следующий элемент на новой строке прямо перед закрывающим тегом <code>&lt;/body&gt;</code>:</li>
+              <pre><code class="language-js">&lt;script src="scripts/main.js"&gt;&lt;/script&gt;</code></pre>
+      <li>В основном этот код выполняет ту же работу, что и элемент <code>&lt;link&gt;</code> для CSS — добавляет JavaScript на страницу, позволяя ему взаимодействовать с HTML (и CSS, и чем-нибудь ещё на странице).</li>
+              <li>Теперь добавьте следующий код в файл <code>main.js</code>:</li>
+              <pre><code class="language-js">var myHeading = document.querySelector('h1'); // Метод elem.querySelector(css) возвращает первый элемент, соответствующий данному CSS-селектору. Иначе говоря, результат такой же, как при вызове elem.querySelectorAll(css)[0], но он сначала найдёт все элементы, а потом возьмёт первый, в то время как elem.querySelector найдёт только первый и остановится.
+myHeading.textContent = 'Hello world!'; // Позволяет задавать или получать текстовое содержимое элемента и его потомков.</code></pre>
+      <li>Теперь убедитесь, что HTML и JavaScript файлы сохранены, и загрузите <code>index.html</code> в браузере. Вы должны увидеть что-то вроде этого:</li><p><img src="../images/hello-world.png"><strong><br></strong></p></ol><div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Причиной, по которой мы поставили элемент <code>&lt;script&gt;</code> в нижней части HTML файла, является то, что HTML-элементы загружаются браузером в том порядке, в котором они расположены в файле. Поэтому, если JavaScript загружается первым и ему нужно взаимодействовать с HTML ниже его, он не сможет работать, так как JavaScript будет загружен раньше, чем HTML, с которым нужно работать. Поэтому, располагать JavaScript в нижней части HTML страницы считается лучшей стратегией.</p>
+            </div>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Что произошло?">
+          <h3 id="Что произошло?">Что произошло?</h3>
+          <div class="section-content">
+            <p>Итак, ваш заголовок текста был изменён на "Hello world!" с помощью JavaScript. Мы сделали это с помощью вызова функции <code>querySelector()</code>, захватив ссылку на наш заголовок и сохранив её в переменной, названной <code>myHeading</code>. Это очень похоже на то, что мы делали в CSS с помощью селекторов. Если вы хотите что-то сделать с элементом, то для начала вам нужно его выбрать.</p>
+            <p>После этого, вы устанавливаете значение переменной <code>myHeading</code> в <code>textContent</code> свойство (которое представляет собой контент заголовка) "Hello world!".</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

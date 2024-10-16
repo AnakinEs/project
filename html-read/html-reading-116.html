@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Другие параметры <video>">
+          <h3 id="Другие параметры <video>">Другие параметры &lt;video&gt;</h3>
+          <div class="section-content">
+            <p>Есть ряд других параметры, которые вы можете включить в HTML5 элемент <code>video</code>. Взгляните на наш третий пример:</p>
+            <pre><code class="language-html">&lt;video controls width="400" height="400"
+   autoplay loop muted
+   poster="poster.png"&gt;
+&lt;source src="rabbit320.mp4" type="video/mp4"&gt;
+&lt;source src="rabbit320.webm" type="video/webm"&gt;
+&lt;p&gt;Your browser doesn't support HTML5 video. Here is a &lt;a href="rabbit320.mp4"&gt;link to the video&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+    <p>На выходе получим нечто, подобное этому:</p><img src="../images/extra-video-features.png"><p>Новые параметры:</p>
+            <dl>
+              <dt><code>width</code> and <code>height</code></dt>
+              <dd>Вы можете контролировать размер видео либо с помощью этих атрибутов, либо с помощью CSS. В обоих случаях видео поддерживают собственное соотношение ширины и высоты — известное как соотношение сторон. Если соотношение сторон не поддерживается установленными вами размерами, видео будет увеличиваться, чтобы заполнить пространство по горизонтали, а заполненному пространству по умолчанию будет задан сплошной цвет фона.</dd>
+      
+      <dt><code>autoplay</code></dt>
+              <dd>Этот атрибут позволяет сразу начать воспроизведение звука или видео, пока остальная часть страницы загружается. Вам не рекомендуется использовать автовоспроизведение видео (или аудио) на ваших сайтах, потому что пользователи могут найти это действительно раздражающим.</dd>
+      
+      <dt><code>loop</code></dt>
+              <dd>Этот атрибут позволяет воспроизводить видео (или аудио) снова, когда он заканчивается. Это также может раздражать, поэтому используйте тогда, когда это действительно необходимо.</dd>
+      
+      <dt><code>muted</code></dt>
+              <dd>Этот атрибут заставляет проигрыватель воспроизводить звук, отключённый по умолчанию.</dd>
+      
+      <dt><code>poster</code></dt>
+              <dd>Этот атрибут принимает в качестве значения URL-адрес изображения, который будет отображаться до воспроизведения видео. Он предназначен для заставки к видео или рекламы.</dd>
+      
+      <dt><code>preload</code></dt>
+              <dd>этот атрибут используется в элементе для буферизации больших файлов. Он может принимать одно из трёх значений:</dd>				  				  
+              <ul>
+                <li><code>"none"</code> не <span class="hint" data-tooltip="Не знаю что это">буферизирует</span> файл</li>
+                <li><code>"auto"</code> буферизирует медиафайл</li>
+                <li><code>"metadata"</code> буферирует только метаданные файла</li>
+              </ul>
+    </dl>
+    <p>Вы можете найти приведённый выше пример для воспроизведения <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html">на Github</a> (также <a href="https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html">просмотрите исходный код</a>.) Обратите внимание, что мы не включили атрибут <code>autoplay</code> в live-версию - если видео начнёт воспроизводиться, как только страница загрузится, вы не увидите заставку к видео!</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

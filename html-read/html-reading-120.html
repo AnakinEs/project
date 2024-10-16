@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Всегда используйте атрибут sandbox">
+          <h3 id="Всегда используйте атрибут sandbox">Всегда используйте атрибут sandbox</h3>
+          <div class="section-content">
+            <p>Вы хотите дать хакерам как можно меньше возможностей, чтобы делать плохие вещи на вашем веб-сайте, поэтому вы должны позволять копипастить встроенный контент только с разрешений, необходимых для выполнения этого действия. Конечно, это относится и к вашему собственному контенту. Контейнер для кода, в котором он может использоваться надлежащим образом или для тестирования, но не может нанести вред остальной части кодовой базы (случайной или злонамеренной), называется <a href="https://en.wikipedia.org/wiki/Sandbox_(computer_security)">sandbox</a>.</p>
+            <p>Контент, не ограниченный <code>sandbox</code>, может сделать слишком многое (выполнение JavaScript, отправка форм, всплывающие окна и т. д.). По умолчанию включайте все возможные ограничения, используя атрибут <code>sandbox</code> без параметров, как показано в предыдущем примере.</p>
+            <p>Если это необходимо, вы можете добавлять разрешения один за другим (внутри значения атрибута <code>sandbox=""</code>) — <span class="hint" data-tooltip="Не забыть почитать и законспектить">смотри</span> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">sandbox</a> ссылка для всех доступных опций. Важно отметить, что вы никогда не должны добавлять атрибуты <code>allow-scripts</code> и <code>allow-same-origin</code> в свой <code>sandbox</code> атрибут одновременно — в таком случае, встроенный контент может обходить политику безопасности, которая запрещает сайтам выполнять скрипты и использовать JavaScript для отключения "песочницы" <code>sandbox</code> .</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: "Песочница" не обеспечивает защиту, если злоумышленники могут обманывать людей через прямое посещение вредоносного контента (вне iframe). <span class="hint" data-tooltip="Не совсем понял о чем речь">Если есть вероятность, что определённый контент может быть вредоносным (например, созданный пользователями контент), пожалуйста, используйте его из другого <a href="https://developer.mozilla.org/ru/docs/Glossary/Domain">domain</a> на ваш основной сайт.</span></p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Как включить SVG в ваш HTML код">
+          <h3 id="Как включить SVG в ваш HTML код">Как включить SVG в ваш HTML код</h3>
+          <div class="section-content">
+            <p>Вы можете открыть файл SVG в текстовом редакторе, скопировать этот код и вставить его в ваш HTML документ — такой приём иногда называют встраиванием SVG (<strong>SVG inline</strong> или <strong>inlining SVG</strong>). Убедитесь, что фрагмент вашего SVG кода начинается и заканчивается с тегов <code>&lt;svg&gt;&lt;/svg&gt;</code> (не включайте ничего, кроме них). Вот очень простой пример того, что вы можете вставить в ваш документ:</p>
+            <pre><code class="language-html">&lt;svg width="300" height="200"&gt;
+  &lt;rect width="100%" height="100%" fill="green" /&gt;
+&lt;/svg&gt;</code></pre>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Плюсы2">
+          <h4 id="Плюсы2">Плюсы</h4>
+          <div class="section-content">
+            <ul>
+                             <li>Вставка вашего SVG путём <strong>SVG inline</strong> <span class="hint" data-tooltip="Не понял">позволяет сохранить HTTP запросы</span> и, следовательно, может уменьшить время загрузки.</li>
+
+                                              <li>Вы можете присваивать <code>class</code>-ы и <code>id</code> элементам SVG и стилизовать их при помощи CSS, <span class="hint" data-tooltip="Это где не понял. Снаружи SVG?">либо в пределах SVG</span>, либо внутри SVG, либо там, где вы размещаете правила стиля CSS для вашего HTML документа. По факту вы можете использовать любой <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute#presentation_attributes"><span class="hint" data-tooltip="Не понял что это, не читал">атрибут представления SVG</span></a> как свойство CSS.</li>
+
+
+              <li><code>SVG inline</code> единственный метод, который позволяет вам использовать CSS-взаимодействия (как <code>:focus</code>) и CSS-анимацию на вашем SVG изображении (даже в вашей обычной таблице стилей).</li>
+              <li>Вы можете разметить SVG как гиперссылку, обернув в элемент <code>&lt;a&gt;</code>.</li>
+            </ul>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Минусы2">
+          <h4 id="Минусы2">Минусы</h4>
+          <div class="section-content">
+            <ul>
+              <li>Этот метод подходит, только если вы используете SVG лишь в одном месте. Дублирование делает обслуживание ресурсоёмким.</li>
+              <li>Дополнительный SVG код увеличивает размер вашего HTML файла.</li>
+              <li>Браузер не может кешировать встроенный SVG, так как он кеширует обычные изображения.</li>
+              <li>Вы можете добавить альтернативный вариант в элементе <code>&lt;foreignObject&gt;</code>, но браузеры поддерживающие SVG будут продолжать загружать все альтернативные изображения. Вы должны взвесить действительно стоит ли поддержка устаревших браузеров дополнительных накладных расходов (ресурсов).</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
