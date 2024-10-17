@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление заголовка к таблице с помощью <caption>">
+          <h2 id="Добавление заголовка к таблице с помощью <caption>">Добавление заголовка к таблице с помощью &lt;caption&gt;</h2>
+          <div class="section-content">
+            <p>Вы можете добавить заголовок для таблицы установив его в элементе <code>&lt;caption&gt;</code> и этот элемент необходимо поместить внутрь  элемента <code>&lt;table&gt;</code>. Причём вам нужно поместить его сразу после открытия тега <code>&lt;table&gt;</code>.</p>
+            <pre><code class="language-html">&lt;table&gt;
+ &lt;caption&gt;Dinosaurs in the Jurassic period&lt;/caption&gt;
+
+ ...
+&lt;/table&gt;</code></pre>
+        <p>Как можно понять из короткого примера выше, заголовок отражает в себе описание контента таблицы. Это полезно для всех читателей просматривающих страницу и желающих получить краткое представление от том полезна ли для них таблица,  что особенно важно для слепых пользователей. Вместо того чтобы читать содержимое множества ячеек чтобы понять о чем таблица, он или она могут полагаться на заголовок и принимать решение читать ли таблицу более подробно.</p>
+            <p>Заголовок помещают сразу после тега <code>&lt;table&gt;</code>.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Атрибут <code>summary</code> также может быть использован в <code>&lt;table&gt;</code> элементе предоставляя описание — это также читается скринридерами. Однако мы рекомендуем вместо этого использовать <code>&lt;caption&gt;</code> элемент, так как <code>summary</code> <span class="meaning" data-tooltip="Устарел">deprecated</span> в HTML5 спецификации и не может быть прочитан зрячими пользователями (он не отображается на странице).</p>
+            </div>
+          </div>
+        </section>
+      
+      <section aria-labelledby="Упражнение: Добавление заголовка">
+          <h3 id="Упражнение: Добавление заголовка">Упражнение: Добавление заголовка</h3>
+          <div class="section-content">
+            <p>Давайте попробуем это, вернёмся к примеру который мы ранее встретили в прошлой статье.</p>
+            <ol>
+              <li>Откройте расписание занятий школьного учителя по языку в конце статьи <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Tables/Basics#active_learning_colgroup_and_col">HTML таблицы основы</a>, или сделайте копию нашего <a href="https://github.com/mdn/learning-area/blob/main/html/tables/basic/timetable-fixed.html">timetable-fixed.html</a> файла.</li>
+              <li>Добавьте подходящий заголовок к таблице.</li>
+              <li>Сохраните свой код и откройте его в браузере, чтобы посмотреть как это выглядит.</li>
+            </ol>
+            <pre><code class="language-html">&lt;table&gt;
+ &lt;caption&gt;How I chose to spend my money&lt;/caption&gt;
+ &lt;thead&gt;
+   &lt;tr&gt;
+     &lt;th&gt;Purchase&lt;/th&gt;
+     &lt;th&gt;Location&lt;/th&gt;
+     &lt;th&gt;Date&lt;/th&gt;
+     &lt;th&gt;Evaluation&lt;/th&gt;
+     &lt;th&gt;Cost (€)&lt;/th&gt;
+   &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tfoot&gt;
+   &lt;tr&gt;
+     &lt;td colspan="4"&gt;SUM&lt;/td&gt;
+     &lt;td&gt;118&lt;/td&gt;
+   &lt;/tr&gt;
+ &lt;/tfoot&gt;
+ &lt;tbody&gt;
+   &lt;tr&gt;
+     &lt;td&gt;Haircut&lt;/td&gt;
+     &lt;td&gt;Hairdresser&lt;/td&gt;
+     &lt;td&gt;12/09&lt;/td&gt;
+     &lt;td&gt;Great idea&lt;/td&gt;
+     &lt;td&gt;30&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+     &lt;td&gt;Lasagna&lt;/td&gt;
+     &lt;td&gt;Restaurant&lt;/td&gt;
+     &lt;td&gt;12/09&lt;/td&gt;
+     &lt;td&gt;Regrets&lt;/td&gt;
+     &lt;td&gt;18&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+     &lt;td&gt;Shoes&lt;/td&gt;
+     &lt;td&gt;Shoeshop&lt;/td&gt;
+     &lt;td&gt;13/09&lt;/td&gt;
+     &lt;td&gt;Big regrets&lt;/td&gt;
+     &lt;td&gt;65&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+     &lt;td&gt;Toothpaste&lt;/td&gt;
+     &lt;td&gt;Supermarket&lt;/td&gt;
+     &lt;td&gt;13/09&lt;/td&gt;
+     &lt;td&gt;Good&lt;/td&gt;
+     &lt;td&gt;5&lt;/td&gt;
+   &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+</code></pre>
+            <img style="width: 70%;" src="../images/newimg.jpg">
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Этот пример можно найти на GitHub по ссылке <a href="https://github.com/mdn/learning-area/blob/main/html/tables/advanced/timetable-caption.html">timetable-caption.html</a> (<a href="https://mdn.github.io/learning-area/html/tables/advanced/spending-record-finished.html">живой пример</a>).</p>
+            </div>			 
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

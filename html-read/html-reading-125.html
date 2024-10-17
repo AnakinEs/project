@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Цитирование">
+          <h3 id="Цитирование">Цитирование</h3>
+          <div class="section-content">
+            <p>Содержание атрибута <code>cite</code> выглядит полезным, но, к сожалению, браузерам, программам чтения с экрана и т. д. оно на самом деле мало чем помогает. Невозможно заставить браузер отображать содержимое атрибута <code>&lt;cite&gt;</code> без написания собственного решения с использованием JavaScript или CSS. Если вы хотите, чтобы источник цитирования был доступен на странице, лучший способ его разметки - поместить элемент <code>&lt;cite&gt;</code> рядом с элементом цитаты (или внутри него). Это действительно будет означать то, что имя источника цитаты — то есть имя книги или имя человека, которое произвело цитату, — будет включено в текст. Нет причин, по которым вы не могли бы связать текст внутри <code>&lt;cite&gt;</code> с источником цитаты:</p>
+            <pre><code class="language-html">&lt;p&gt;Как указано в статье о &lt;a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote"&gt;
+&lt;cite&gt;блочных цитатах&lt;/cite&gt;&lt;/a&gt;:
+&lt;/p&gt;
+
+&lt;blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote"&gt;
+&lt;p&gt;&lt;strong&gt;HTML-элемент&lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt;&lt;/strong&gt; (от англ. &lt;em&gt;HTML Block
+Quotation Element&lt;/em&gt;) указывает на то, что заключённый в нем текст является развёрнутой цитатой.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Элемент цитирования — &lt;code&gt;&amp;lt;q&amp;gt;&lt;/code&gt; — &lt;q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q"&gt;предназначен
+для коротких цитат, не требующих прерывания абзаца&lt;/q&gt;. -- &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q"&gt;
+&lt;cite&gt;Строчные цитаты&lt;/cite&gt;&lt;/a&gt;.&lt;/p&gt;</code></pre>
+      <div class="note notecard" id="transparent-js">
+              <div class="important_type"></div>
+              <p>Как указано в статье о <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote">
+<cite>блочных цитатах</cite></a>:
+</p>
+
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+<p><strong>HTML-элемент<code>&lt;blockquote&gt;</code></strong> (от англ. <em>HTML Block
+Quotation Element</em>) указывает на то, что заключённый в нем текст является развёрнутой цитатой.</p>
+</blockquote>
+
+<p>Элемент цитирования — <code>&lt;q&gt;</code> — <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">предназначен
+для коротких цитат, не требующих прерывания абзаца</q>. -- <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+<cite>Строчные цитаты</cite></a>.</p>
+            </div>
+            <p>По умолчанию цитаты стилизованы курсивом. Этот код можно увидеть в нашем примере <a href="https://github.com/mdn/learning-area/blob/main/html/introduction-to-html/advanced-text-formatting/quotations.html">quotations.html</a></p>
+            
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

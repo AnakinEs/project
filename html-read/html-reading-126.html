@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Представление компьютерного кода">
+          <h2 id="Представление компьютерного кода">Представление компьютерного кода</h2>
+          <div class="section-content">
+            <p>Существует несколько элементов для маркировки компьютерного кода с использованием HTML:</p>		  
+      <ul>
+    <li><code>&lt;code&gt;</code>: Для разметки общих частей компьютерного кода.</li>
+    <li><code>&lt;pre&gt;</code>: Для сохранения пробелов (как правило, кодовых блоков) — если вы используете отступы
+      или лишние пробелы внутри вашего текста, браузеры будут игнорировать его, и вы не увидите его на вашей
+      отображаемой странице; если вы поместите текст в теги <code>&lt;pre&gt;&lt;/pre&gt;</code>, то ваши пробелы
+      будут отображаться идентично тому, как вы видите текст в редакторе.</li>
+    <li><code>&lt;var&gt;</code>: Для конкретной маркировки имён переменных.</li>
+    <li><code>&lt;kbd&gt;</code>: Для маркировки ввода с клавиатуры (и других типов).</li>
+    <li><code><span id="hint12" class="meaning" data-tooltip="Тег <code>&amp;lt;samp&amp;gt;</code> используется для оформления вывода данных, которые показываются пользователю в результате выполнения программы. Содержимое этого элемента воспринимается устройствами как простой текст.">&lt;samp&gt;</span></code>: Для
+      маркировки вывода компьютерной программы</li>
+  </ul>
+      <p>Давайте рассмотрим несколько примеров. Вы должны попробовать поиграть с ними (захватите копию нашего файла <a href="https://github.com/mdn/learning-area/blob/main/html/introduction-to-html/advanced-text-formatting/other-semantics.html">other-semantics.html</a>):</p>
+      <pre><code class="language-html">&lt;pre&gt;&lt;code&gt;var para = document.querySelector('p');
+
+para.onclick = function() {
+alert('Owww, stop poking me!');
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You shouldn't use presentational elements like &lt;code&gt;&amp;lt;font&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;center&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the above JavaScript example, &lt;var&gt;para&lt;/var&gt; represents a paragraph element.&lt;/p&gt;
+
+&lt;p&gt;Select all the text with &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;A&lt;/kbd&gt;.&lt;/p&gt;
+
+&lt;pre&gt;$ &lt;kbd&gt;ping mozilla.org&lt;/kbd&gt;
+&lt;samp&gt;PING mozilla.org (63.245.215.20): 56 data bytes
+64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms&lt;/samp&gt;&lt;/pre&gt;</code></pre>
+      
+      <p>Вышеприведённый код будет выглядеть так:</p>
+            <div class="note notecard" id="transparent">
+<pre style="border: none"><code class="code_transparent">var para = document.querySelector('p');
+
+para.onclick = function() {
+alert('Owww, stop poking me!');
+}</code></pre>
+
+<p>You shouldn't use presentational elements like <code class="code_transparent">&lt;font&gt;</code> and <code class="code_transparent">&lt;center&gt;</code>.</p>
+
+<p>In the above JavaScript example, <var class="code_transparent">para</var> represents a paragraph element.</p>
+
+<p>Select all the text with <kbd class="code_transparent">Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+<pre class="pre_transparent">$ <kbd class="code_transparent">ping mozilla.org</kbd>
+<samp class="code_transparent">PING mozilla.org (63.245.215.20): 56 data bytes
+64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+            </div>
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
