@@ -31,7 +31,7 @@
         <p>Как можно понять из короткого примера выше, заголовок отражает в себе описание контента таблицы. Это полезно для всех читателей просматривающих страницу и желающих получить краткое представление от том полезна ли для них таблица,  что особенно важно для слепых пользователей. Вместо того чтобы читать содержимое множества ячеек чтобы понять о чем таблица, он или она могут полагаться на заголовок и принимать решение читать ли таблицу более подробно.</p>
             <p>Заголовок помещают сразу после тега <code>&lt;table&gt;</code>.</p>
             <div class="note notecard" id="sect4">
-              <p><strong>Примечание</strong>: Атрибут <code>summary</code> также может быть использован в <code>&lt;table&gt;</code> элементе предоставляя описание — это также читается скринридерами. Однако мы рекомендуем вместо этого использовать <code>&lt;caption&gt;</code> элемент, так как <code>summary</code> <span class="meaning" data-tooltip="Устарел">deprecated</span> в HTML5 спецификации и не может быть прочитан зрячими пользователями (он не отображается на странице).</p>
+              <p><strong>Примечание</strong>: Атрибут <code><span class="meaning" data-tooltip='<p>Элемент <strong>HTML Disclosure Summary</strong> ( <code>&amp;lt;summary&amp;gt;</code> ) определяет резюме, заголовок или легенду для <code>&amp;lt;details&amp;gt;</code> поля раскрытия элемента. Щелчок по <code>&amp;lt;summary&amp;gt;</code> элементу переключает состояние родительского <code>&amp;lt;details&amp;gt;</code> элемента с открытого на закрытое.</p><iframe style="height:15rem" src="iframe/iframe.html"></iframe><details><summary>I have keys but no doors. I have space but no room. You can enter but can’t leave. What am I?</summary> A keyboard. </details>'>summary</span></code> также может быть использован в <code>&lt;table&gt;</code> элементе предоставляя описание — это также читается скринридерами. Однако мы рекомендуем вместо этого использовать <code>&lt;caption&gt;</code> элемент, так как <code>summary</code> <span class="meaning" data-tooltip="Устарел">deprecated</span> в HTML5 спецификации и не может быть прочитан зрячими пользователями (он не отображается на странице).</p>
             </div>
           </div>
         </section>
@@ -95,6 +95,55 @@
 &lt;/table&gt;
 
 </code></pre>
+
+<table>
+  <caption>How I chose to spend my money</caption>
+  <thead>
+    <tr>
+      <th>Purchase</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Evaluation</th>
+      <th>Cost (€)</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="4">SUM</td>
+      <td>118</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>Haircut</td>
+      <td>Hairdresser</td>
+      <td>12/09</td>
+      <td>Great idea</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Lasagna</td>
+      <td>Restaurant</td>
+      <td>12/09</td>
+      <td>Regrets</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>Shoes</td>
+      <td>Shoeshop</td>
+      <td>13/09</td>
+      <td>Big regrets</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>Toothpaste</td>
+      <td>Supermarket</td>
+      <td>13/09</td>
+      <td>Good</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+ </table>
             
       <div class="note notecard" id="sect4">
               <p><strong>Примечание</strong>: Этот пример можно найти на GitHub по ссылке <a href="https://github.com/mdn/learning-area/blob/main/html/tables/advanced/timetable-caption.html">timetable-caption.html</a> (<a href="https://mdn.github.io/learning-area/html/tables/advanced/spending-record-finished.html">живой пример</a>).</p>
