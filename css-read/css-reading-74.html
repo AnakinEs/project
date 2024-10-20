@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Как структурирован CSS">
+          <h1 id="Как структурирован CSS"><a href="#Как структурирован CSS2">Как структурирован CSS</a></h1>
+          <div class="section-content">
+            <p>Теперь, когда у вас есть представление о том, чем является CSS, и о его основах, настало время посмотреть немного глубже в структуру самого языка. Нам уже встречались многие из обсуждаемых здесь концепций; вы можете вернуться к этому, чтобы разобраться, если вы обнаружите какие-либо более поздние концепции запутанными.</p>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Применение CSS к вашему HTML">
+          <h2 id="Применение CSS к вашему HTML"><a href="#Применение CSS к вашему HTML">Применение CSS к вашему HTML</a></h2>
+          <div class="section-content">
+            <p>Первое, что мы рассмотрим, это три метода применения CSS к документу.</p>
+          </div>
+        </section>
+    
+    <section aria-labelledby="Внешняя таблица стилей">
+          <h3 id="Внешняя таблица стилей"><a href="#Внешняя таблица стилей">Внешняя таблица стилей</a></h3>
+          <div class="section-content">
+            <p>В статье ​<a href="https://developer.mozilla.org/ru/docs/Learn/CSS/First_steps/Getting_started">Начало работы с CSS</a> мы связывали внешнюю таблицу стилей с нашей страницей. Это самый распространённый и полезный способ крепления CSS к документу, так вы можете привязать CSS сразу к нескольким страницам, что позволяет стилизовать их всё с той же таблицей стилей. В большинстве случаев различные страницы сайта будут выглядеть почти так же, поэтому вы можете использовать один и тот же набор правил для основного вида.</p>
+            <p>Внешняя таблица стилей - это когда у вас есть CSS отдельным файлом с расширением <code>.css</code>, и ссылка на него из HTML-элемента <code>&lt;link&gt;</code>:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Я пробую писать CSS&lt;/title&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Привет!&lt;/h1&gt;
+&lt;p&gt;Это мой первый опыт в CSS&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p>Файл CSS может выглядеть следующим образом:</p>
+            <pre><code class="language-css">h1 {
+color: blue;
+background-color: yellow;
+border: 1px solid black;
+}
+
+p {
+color: red;
+}</code></pre>
+    <p>Атрибут <code>href</code> элемента <code>&lt;link&gt;</code> должен ссылаться на файл в файловой системе.</p>
+            <p>В приведённом выше примере файл CSS находится в той же папке, что и HTML-документ, но вы можете поместить его куда-нибудь ещё и настроить относительный путь, например:</p>
+            <pre><code class="language-html">&lt;!-- Файл находится внутри под-директории styles, находящейся в текущей директории --&gt;
+&lt;link rel="stylesheet" href="styles/style.css"&gt;
+
+&lt;!-- Файл — внутри под-директории styles внутри под-под-директории general и так далее --&gt;
+&lt;link rel="stylesheet" href="styles/general/style.css"&gt;
+
+&lt;!-- Вверх на один уровень в директории, затем направиться в под-директорию styles --&gt;
+&lt;link rel="stylesheet" href="../styles/style.css"&gt;</code></pre>
+    <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

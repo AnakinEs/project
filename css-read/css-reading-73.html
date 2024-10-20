@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Внешние, внутренние отступы и рамки">
+          <h2 id="Внешние, внутренние отступы и рамки">Внешние,
+              внутренние отступы и рамки</h2>
+          <div class="section-content">
+            <p>Вы уже видели свойства <code>margin</code>, <code>padding</code> и <code>border</code> в работе в
+              приведённом выше примере. Используемые в этом примере свойства — <strong>сокращённые</strong> и позволяют
+              нам устанавливать все четыре стороны блока одновременно. У них также есть эквивалентные полные свойства,
+              которые позволяют индивидуально управлять разными сторонами блока.</p>
+            <p>Давайте рассмотрим эти свойства более подробно.</p>
+          </div>
+        </section>  		  
+        
+        <section aria-labelledby="Внешний отступ (margin)">
+          <h3 id="Внешний отступ (margin)">Внешний отступ (margin)</h3>
+          <div class="section-content">
+            <p>Внешний отступ — это невидимое пространство вокруг вашего элемента. Оно отталкивает другие элементы от
+              него. Внешний отступ может быть как положительным, так и отрицательным. Негативное значение может привести
+              к перекрытию некоторых элементов страницы. Независимо от того, используете ли вы стандартную или
+              альтернативную блочную модель, внешний отступ всегда добавляется после расчёта размера видимого блока.</p>
+            <p>Мы можем контролировать все поля элемента сразу, используя свойство <code>margin</code>, или каждую
+              сторону индивидуально, используя эквивалентные полные свойства:</p>
+            <ol>
+              <li><code>margin-top</code></li>
+              <li><code>margin-right</code></li>
+              <li><code>margin-bottom</code></li>
+              <li><code>margin-left</code></li>
+            </ol>
+            <p>В примере ниже, попробуйте изменить значение margin чтобы увидеть как блок смещается, создавая или удаляя
+              пространство (если вводить отрицательные значения margin) между этим элементом и элементом его содержащим.
+            </p>
+            <iframe style="height:63rem" src="../getting-started/started40.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

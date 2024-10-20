@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Зачем нам необходима структура?">
+          <h3 id="Зачем нам необходима структура?">Зачем нам необходима структура?</h3>
+          <div class="section-content">
+            <p>Чтобы ответить на этот вопрос, давайте посмотрим на <a href="https://github.com/mdn/learning-area/blob/main/html/introduction-to-html/html-text-formatting/text-start.html">text-start.html</a> — отправную точку нашего примера для этой статьи (хороший рецепт хумуса). Вы должны сохранить копию этого файла на своём локальном компьютере, так как вам понадобится это для упражнений позже. Сейчас тело этого документа содержит несколько фрагментов контента — они не отмечены каким-либо образом, но они разделены разрывами строк (был нажат Enter / Return  для перехода на следующую строку).</p>
+            <p>Однако, когда вы откроете документ в своём браузере, вы увидите, что текст выглядит как один большой кусок!</p>
+            <img src="../images/Screen%20Shot%202017-03-29%20at%2009.20.35.png">
+            
+      <p>Это связано с тем, что нет элементов для создания структуры контента, поэтому браузер не знает, где здесь заголовок и где абзац. Более того:</p>
+            <ul>
+              <li>Пользователи, просматривающие веб-страницу, быстро сканируют её в поиске подходящего контента, часто просто просматривая только заголовки  (мы обычно <a href="https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/">тратим очень мало времени на веб-странице</a>). Если они не смогут увидеть ничего полезного в течение нескольких секунд, они, скорее всего, расстроятся и отправятся куда-нибудь ещё.</li>
+              <li>Поисковые системы, индексирующие вашу страницу, считают содержание заголовков важными ключевыми словами для влияния на ранжирование поиска страницы. Без заголовков ваша страница будет плохо работать с точки зрения <a href="https://developer.mozilla.org/ru/docs/Glossary/SEO">SEO</a> (Search Engine Optimization — поисковая оптимизация).</li>
+              <li>Сильно слабовидящие люди часто не читают веб-страницы — они слушают их вместо этого. Это делается с помощью программного обеспечения, называемого <a href="https://en.wikipedia.org/wiki/Screen_reader">программой чтения с экрана</a>. Это программное обеспечение предоставляет способы быстрого доступа к данному текстовому контенту. Среди различных используемых методов они предоставляют схему документа, считывая заголовки, позволяя своим пользователям быстро находить нужную им информацию. Если заголовки недоступны, они будут вынуждены слушать весь документ вслух.</li>
+              <li>Чтобы стилизовать контент с помощью <a href="https://developer.mozilla.org/ru/docs/Glossary/CSS">CSS</a> или сделать его интересным с помощью <a href="https://developer.mozilla.org/ru/docs/Glossary/JavaScript">JavaScript</a>, вам нужно, чтобы элементы обёртывали соответствующий контент, чтобы CSS и JavaScript смогли эффективно работать.</li>
+            </ul>
+      <p>Поэтому нужно дать структурную разметку нашему контенту.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

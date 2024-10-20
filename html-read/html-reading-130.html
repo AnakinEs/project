@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Анатомия HTML документа">
+          <h3 id="Анатомия HTML документа">Анатомия HTML документа</h3>
+          <div class="section-content">
+            <p>Мы завершили изучение основ отдельных HTML элементов, но они не очень полезны сами по себе. Теперь мы посмотрим,
+      как отдельные элементы объединяются в целую HTML страницу. Давайте вернёмся к коду, который мы записывали 
+      в наш <code>index.html</code> (с которым мы впервые встретились в статье <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files">Работа с файлами</a>):</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Моя тестовая страница&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;img src="images/firefox-icon.png" alt="Моё тестовое изображение"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>             
+      <p>Здесь мы имеем:</p>
+            <ul>
+              <li><code>&lt;!DOCTYPE html&gt;</code> — доктайп. В прошлом, когда HTML был молод (около 1991/1992), доктайпы должны были выступать в качестве ссылки на набор правил, которым HTML страница должна была следовать, чтобы считаться хорошим HTML, что могло означать автоматическую проверку ошибок и другие полезные вещи. Однако в наши дни, никто не заботится об этом, и они на самом деле просто исторический артефакт, который должен быть включён для того, что бы все работало правильно. На данный момент это все, что вам нужно знать.</li>
+              <li><code>&lt;html&gt;&lt;/html&gt;</code> — элемент <code>&lt;html&gt;</code>. Этот элемент оборачивает весь контент на всей странице, и иногда известен как корневой элемент.</li>
+              <li><code>&lt;head&gt;&lt;/head&gt;</code> — элемент <code>&lt;head&gt;</code>. Этот элемент выступает в качестве контейнера для всего, что вы пожелаете включить на HTML страницу, но не являющегося контентом, который вы показываете пользователям вашей страницы. К ним относятся такие вещи, как ключевые слова и описание страницы, которые будут появляться в результатах поиска, CSS стили нашего контента, кодировка и многое другое.</li>
+              <li><code>&lt;body&gt;&lt;/body&gt;</code> — элемент <code>&lt;body&gt;</code>. В нем содержится весь контент, который вы хотите показывать пользователям, когда они посещают вашу страницу, будь то текст, изображения, видео, игры, проигрываемые аудиодорожки или что-то ещё.</li>
+              <li><code>&lt;meta charset="utf-8"&gt;</code> — этот элемент устанавливает UTF-8 кодировку вашего документа, которая включает в себя большинство символов из всех известных человечеству языков. По сути, теперь документ может обрабатывать любой текстовый контент, который вы в него вложите. Нет причин не устанавливать её, так как это может помочь избежать некоторых проблем в дальнейшем.</li>
+              <li><code>&lt;title&gt;&lt;/title&gt;</code> — элемент <code>&lt;title&gt;</code>. Этот элемент устанавливает заголовок для вашей страницы, который является названием, появляющимся на вкладке браузера загружаемой страницы, и используется для описания страницы, когда вы добавляете её в закладки/избранное.</li>
+            </ul>             			  
+          </div>         
+   </section>
+      </article>
+    </main>
+  </div>
+</body>

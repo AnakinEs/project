@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Добавление иконок">
+          <h2 id="Добавление иконок">Добавление иконок</h2>
+          <div class="section-content">
+            <p>Чтобы добавить своему сайту узнаваемости, можно указать в метаданных разные иконки.</p>
+            <p><a href="https://ru.wikipedia.org/wiki/Favicon">Favicon</a>, один из старожилов интернета, стал первой из таких иконок. Браузеры показывают её в заголовке вкладки и в списке избранных страниц.</p>
+            <img src="../images/bookmark-favicon.png">
+            
+      <p>Чтобы добавить на страницу favicon:</p>
+            <ol>
+              <li>Сохраните изображение в формате <code>.ico</code> (многие браузеры поддерживают и в более привычных форматах, таких как <code>.gif</code> или <code>.png</code>) в папку со своим документом. Старые браузеры, например, Internet Explorer 6, поддерживают только формат <code>.ico</code></li>
+              <li>Добавьте ссылку на иконку в <code>&lt;head&gt;</code> документа:</li>
+              <pre><code class="language-html">&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;</code></pre>
+      </ol>
+      <p>Для разных устройств можно указывать разные иконки. Например, на главной странице MDN:</p>
+            <pre><code class="language-html">&lt;!-- Для iPad 3 с Retina-экраном высокого разрешения: --&gt;
+&lt;link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.mozilla.org/static/img/favicon144.png"&gt;
+&lt;!-- Для iPhone с Retina-экраном высокого разрешения: --&gt;
+&lt;link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.mozilla.org/static/img/favicon114.png"&gt;
+&lt;!-- Для iPad первого и второго поколения: --&gt;
+&lt;link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.mozilla.org/static/img/favicon72.png"&gt;
+&lt;!-- Для iPhone, iPod Touch без Retina и устройств с Android 2.1+: --&gt;
+&lt;link rel="apple-touch-icon-precomposed" href="https://developer.mozilla.org/static/img/favicon57.png"&gt;
+&lt;!-- Для других случаев - обычный favicon --&gt;
+&lt;link rel="shortcut icon" href="https://developer.mozilla.org/static/img/favicon32.png"&gt;</code></pre>
+      <p>В комментариях указано, для чего используется каждая иконка — например, при добавлении страницы на домашний экран iPad будет использована иконка в высоком разрешении. </p>
+            <p>Не беспокойтесь о реализации всех этих типов значков — это довольно продвинутая функция, и мы не станем возвращаться к ней в курсе. Основная цель — показать вам, что это такое, если вы столкнётесь с ними при просмотре исходного кода других веб-сайтов.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

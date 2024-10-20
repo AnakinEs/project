@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Отступы">
+          <h2 id="Отступы">Отступы</h2>
+          <div class="section-content">
+            <p>Под отступами подразумеваются пробелы, табуляция и перенос на новую строку. Как и в HTML, браузер будет стараться игнорировать большие отступы в CSS-коде; к тому же большие отступы пагубны для читаемости кода.</p>
+            <p>В примере ниже каждое объявление (а также начало/окончание правила) находится на своей строке — это, возможно, наилучший вариант написания CSS-кода: он понятен и аккуратен:</p>
+            <pre><code class="language-css">body {
+font: 1em/150% Helvetica, Arial, sans-serif;
+padding: 1em;
+margin: 0 auto;
+max-width: 33em;
+}
+
+@media (min-width: 70em) {
+body {
+font-size: 130%;
+}
+}
+
+h1 {
+font-size: 1.5em;
+}
+
+div p,
+#id:first-line {
+background-color: red;
+background-style: none
+}
+
+div p {
+margin: 0;
+padding: 1em;
+}
+
+div p + p {
+padding-top: 0;
+}</code></pre>
+    <p>То же самое вы можете написать, не добавляя большие отступы, — коды идентичны; но я уверен, вы согласитесь, что это очень тяжело прочитать:</p>
+            <pre><code class="language-css">body {font: 1em/150% Helvetica, Arial, sans-serif; padding: 1em; margin: 0 auto; max-width: 33em;}
+@media (min-width: 70em) { body {font-size: 130%;} }
+
+h1 {font-size: 1.5em;}
+
+div p, #id:first-line {background-color: red; background-style: none}
+div p {margin: 0; padding: 1em;}
+div p + p {padding-top: 0;}</code></pre>
+    <p>Как вы будете оформлять код — решать вам; хотя, работая в команде, вы обнаружите, что она придерживается тех правил форматирования, которые в ней утверждены.</p>
+            <p>Внимательно делайте отступы в свойствах и значениях. К примеру, такие объявления будут работать:</p>
+            <pre><code class="language-css">margin: 0 auto;
+padding-left: 10px;</code></pre>
+    <p>А такие объявления не действительны:</p>
+            <pre><code class="language-css">margin: 0auto;
+padding- left: 10px;</code></pre>
+    <p>Всегда отделяйте друг от друга значения, а свойства пишите без пробелов через дефис.</p>
+            <p><strong>Добавьте отступы в ваш код и посмотрите, что повлияет на код, а что нет.</strong></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
