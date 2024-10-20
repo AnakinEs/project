@@ -611,7 +611,7 @@ details {
   padding: .125rem 0;  
 }
 
-.hint:hover {
+.hint:active {
   background-color: #fcc934;
 } 
 
@@ -635,7 +635,7 @@ code .meaning, code .hint {
   padding: .125rem .25rem; 
 }
 
-.meaning:hover {
+.meaning:active {
   background-color: #e3baff;
 } 
 
