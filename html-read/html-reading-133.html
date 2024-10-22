@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Позиционирование и стилизация нашего заголовка главной страницы">
+          <h3 id="Позиционирование и стилизация нашего заголовка главной страницы">Позиционирование и стилизация нашего заголовка главной страницы</h3>
+          <div class="section-content">
+            <pre><code class="language-css">h1 {
+margin: 0;
+padding: 20px 0;
+color: #00539F;
+text-shadow: 3px 3px 1px black;
+}</code></pre>
+      <p>Вы, возможно, заметили, что есть ужасный разрыв в верхней части тела. Это происходит, 
+      потому что браузеры применяют некоторый <strong>стиль</strong> по умолчанию для элемента <code>&lt;h1&gt;</code> (по 
+      сравнению с другими), даже если вы не применяли какой-либо CSS вообще! Это может звучать 
+      как плохая идея, но мы хотим, чтобы веб-страница без стилей имела базовую читаемость. 
+      Чтобы избавиться от разрыва, мы переопределили стиль по умолчанию, установив <code>margin: 0;</code>.</p>
+            <p>Затем мы установили заголовку верхний и нижний padding на 20 пикселей, и сделали текст заголовка того же цвета, как и цвет фона html.</p>
+            <p>Здесь, мы использовали одно довольно интересное свойство - это <code>text-shadow</code>, которое применяет тень к текстовому контенту элемента. Оно имеет следующие четыре значения:</p>
+            <ul>
+              <li>Первое значение пикселей задаёт <strong>горизонтальное смещение</strong> тени от текста — как далеко она движется поперёк: отрицательное значение должно двигать её влево.</li>
+              <li>Второе значение пикселей задаёт <strong>вертикальное смещение</strong> тени от текста — как далеко она движется вниз, в этом примере: отрицательное значение должно переместить её вверх.</li>
+              <li>Третье значение пикселей задаёт <strong>радиус размытия</strong> тени — большее значение будет означать более размытую тень.</li>
+              <li>Четвёртое значение задаёт основной цвет тени.</li>
+            </ul>        
+      <p>И вновь попробуйте поэкспериментировать с различными значениями, чтобы посмотреть, что вы можете придумать.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

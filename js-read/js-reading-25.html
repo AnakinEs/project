@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Внешние скрипты">
+          <h2 id="Внешние скрипты">Внешние скрипты</h2>
+          <div class="section-content">
+            <p>Если у вас много JavaScript-кода, вы можете поместить его в отдельный файл.</p>
+            <p>Файл скрипта можно подключить к HTML с помощью атрибута <code>src</code>:</p>
+            <pre><code class="language-html">&lt;script src="/path/to/script.js"&gt;&lt;/script&gt;</code></pre>
+            <p>Здесь <code>/path/to/script.js</code> – это абсолютный путь до скрипта от корня сайта. Также можно
+              указать относительный путь от текущей страницы. Например, <code>src="script.js"</code> или
+              <code>src="./script.js"</code> будет означать, что файл <code>"script.js"</code> находится в текущей
+              папке.</p>
+            <p>Можно указать и полный URL-адрес. Например:</p>
+            <pre><code class="language-html">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"&gt;&lt;/script&gt;</code></pre>
+            <p>Для подключения нескольких скриптов используйте несколько тегов:</p>
+            <pre><code class="language-html">&lt;script src="/js/script1.js"&gt;&lt;/script&gt;
+  &lt;script src="/js/script2.js"&gt;&lt;/script&gt;
+  …</code></pre>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">На заметку:</div>
+              <p>Как правило, только простейшие скрипты помещаются в HTML. Более сложные выделяются в отдельные файлы.
+              </p>
+              <p>Польза отдельных файлов в том, что браузер загрузит скрипт отдельно и сможет хранить его в <a href="https://en.wikipedia.org/wiki/Web_cache">кеше</a>.</p>
+              <p>Другие страницы, которые подключают тот же скрипт, смогут брать его из кеша вместо повторной загрузки
+                из сети. И таким образом файл будет загружаться с сервера только один раз.</p>
+              <p>Это сокращает расход трафика и ускоряет загрузку страниц.</p>
+            </div>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Если атрибут <code>src</code> установлен, содержимое тега
+                <code>script</code> будет игнорироваться.</div>
+              <p>В одном теге <code>&lt;script&gt;</code> нельзя использовать одновременно атрибут <code>src</code> и
+                код внутри.</p>
+              <p>Нижеприведённый пример не работает:</p>
+              <pre><code class="language-html">&lt;script src="file.js"&gt;
+  alert(1); // содержимое игнорируется, так как есть атрибут src
+  &lt;/script&gt;</code></pre>
+              <p>Нужно выбрать: либо внешний скрипт <code>&lt;script src="…"&gt;</code>, либо обычный
+                код внутри тега <code>&lt;script&gt;</code>.</p>
+              <p>Вышеприведённый пример можно разделить на два скрипта:</p>
+              <pre><code class="language-html">&lt;script src="file.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+  alert(1);
+  &lt;/script&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

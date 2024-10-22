@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="«use strict»">
+          <h2 id="«use strict»">«use strict»</h2>
+          <div class="section-content">
+            <p>Директива выглядит как строка: <code>"use strict"</code> или <code>'use strict'</code>. Когда она
+              находится в начале скрипта, весь сценарий работает в «современном» режиме.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">"use strict";
+  
+  // этот код работает в современном режиме
+  ...</code></pre>
+            <p>Позже мы изучим функции (способ группировки команд). Забегая вперёд, заметим, что вместо всего скрипта
+              <code>"use strict"</code> можно поставить в начале большинства видов функций. Это позволяет включить
+              строгий режим только в конкретной функции. Но обычно люди используют его для всего файла.</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Убедитесь, что «use strict» находится в начале</div>
+              <p>Проверьте, что <code>"use strict"</code> находится в первой исполняемой строке скрипта, иначе строгий
+                режим может не включиться.</p>
+              <p>Здесь строгий режим не включён:</p>
+              <pre><code class="language-js">alert("some code");
+  // "use strict" ниже игнорируется - он должен быть в первой строке
+  
+  "use strict";
+  
+  // строгий режим не активирован</code></pre>
+              <p>Над <code>"use strict"</code> могут быть записаны <span id="hint15" class="meaning" data-tooltip="И функции которые не требуют use strict получается">только комментарии</span>.</p>
+            </div>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Нет никакого способа отменить <code>use strict</code></div>
+              <p>Нет директивы типа <code>"no use strict"</code>, которая возвращала бы движок к старому поведению.
+              </p>
+              <p><span id="hint14" class="hint" data-tooltip="А удалить строку use strict нельзя?">Как только мы
+                  входим в строгий режим, отменить это невозможно.</span></p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

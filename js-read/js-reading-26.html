@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Что может JavaScript в браузере?">
+          <h2 id="Что может JavaScript в браузере?">Что может JavaScript в браузере?</h2>
+          <div class="section-content">
+          <p>Современный JavaScript – это «безопасный» язык программирования. Он не предоставляет <span class="hint" data-tooltip="Не знаю что это. Надо почитать.">низкоуровневый доступ</span> к памяти или процессору, потому что изначально был создан для браузеров, не требующих этого.</p>
+
+            <p>Возможности JavaScript сильно зависят от окружения, в котором он работает. Например, <a href="https://ru.wikipedia.org/wiki/Node.js">Node.JS</a> поддерживает функции чтения/записи произвольных файлов, выполнения сетевых запросов и т.д.</p>
+            <p>В браузере для JavaScript доступно всё, что связано с манипулированием веб-страницами, взаимодействием с пользователем и веб-сервером.</p>
+            <p>Например, в браузере JavaScript может:</p>
+            <ul>
+              <li>Добавлять новый HTML-код на страницу, изменять существующее содержимое, модифицировать стили.</li>
+              <li>Реагировать на действия пользователя, щелчки мыши, перемещения указателя, нажатия клавиш.</li>
+              <li>Отправлять сетевые запросы на удалённые сервера, скачивать и загружать файлы (технологии <a href="https://ru.wikipedia.org/wiki/AJAX">AJAX</a> и <a href="https://ru.wikipedia.org/wiki/Comet_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)">COMET</a>).</li>
+              <li>Получать и устанавливать куки, задавать вопросы посетителю, показывать сообщения.</li>
+              <li>Запоминать данные на стороне клиента («<span class="hint" data-tooltip="Не знаю что это.">local storage</span>»).</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

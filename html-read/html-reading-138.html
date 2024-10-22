@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Упражнение: Добавление структуры таблицы">
+          <h2 id="Упражнение: Добавление структуры таблицы">Упражнение: Добавление структуры таблицы</h2>
+          <div class="section-content">
+            <p>Давайте используем эти новые элементы.</p>
+            <ol>
+              <li>В первую очередь,  сделайте копию <a href="https://github.com/mdn/learning-area/blob/main/html/tables/advanced/spending-record.html">spending-record.html</a> и <a href="https://github.com/mdn/learning-area/blob/main/html/tables/advanced/minimal-table.css">minimal-table.css</a> в новой папке.</li>
+              <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8"&gt;
+   &lt;meta name="viewport" content="width=device-width"&gt;
+   &lt;title&gt;My spending record&lt;/title&gt;
+   &lt;link href="minimal-table.css" rel="stylesheet" type="text/css"&gt;
+   &lt;style&gt;
+   &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;h1&gt;My spending record&lt;/h1&gt;
+
+     &lt;table&gt;
+       &lt;caption&gt;How I chose to spend my money&lt;/caption&gt;
+         &lt;tr&gt;
+           &lt;th&gt;Purchase&lt;/th&gt;
+           &lt;th&gt;Location&lt;/th&gt;
+           &lt;th&gt;Date&lt;/th&gt;
+           &lt;th&gt;Evaluation&lt;/th&gt;
+           &lt;th&gt;Cost (€)&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;SUM&lt;/td&gt;
+           &lt;td&gt;118&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Haircut&lt;/td&gt;
+           &lt;td&gt;Hairdresser&lt;/td&gt;
+           &lt;td&gt;12/09&lt;/td&gt;
+           &lt;td&gt;Great idea&lt;/td&gt;
+           &lt;td&gt;30&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Lasagna&lt;/td&gt;
+           &lt;td&gt;Restaurant&lt;/td&gt;
+           &lt;td&gt;12/09&lt;/td&gt;
+           &lt;td&gt;Regrets&lt;/td&gt;
+           &lt;td&gt;18&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Shoes&lt;/td&gt;
+           &lt;td&gt;Shoeshop&lt;/td&gt;
+           &lt;td&gt;13/09&lt;/td&gt;
+           &lt;td&gt;Big regrets&lt;/td&gt;
+           &lt;td&gt;65&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Toothpaste&lt;/td&gt;
+           &lt;td&gt;Supermarket&lt;/td&gt;
+           &lt;td&gt;13/09&lt;/td&gt;
+           &lt;td&gt;Good&lt;/td&gt;
+           &lt;td&gt;5&lt;/td&gt;
+         &lt;/tr&gt;
+   &lt;/table&gt;
+
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              <pre><code class="language-css">html {
+ font-family: sans-serif;
+}
+
+table {
+ border-collapse: collapse;
+ border: 2px solid rgb(200,200,200);
+ letter-spacing: 1px;
+ font-size: 0.8rem;
+}
+
+td, th {
+ border: 1px solid rgb(190,190,190);
+ padding: 10px 20px;
+}
+
+th {
+ background-color: rgb(235,235,235);
+}
+
+td {
+ text-align: center;
+}
+
+tr:nth-child(even) td {
+ background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+ background-color: rgb(245,245,245);
+}
+
+caption {
+ padding: 10px;
+}</code></pre>
+              <li>Попробуйте открыть это в браузере — вы увидите, что все выглядит классно, но могло бы быть лучше. Строка "SUM" которая содержит потраченные суммы кажется находится не в том месте и некоторые детали отсутствуют в коде.</li>
+              <div style="overflow:auto">
+              
+
+
+ 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>My spending record</title>
+   <link href="minimal-table.css" rel="stylesheet" type="text/css">
+   <style>
+ html {
+ font-family: sans-serif;
+}
+
+table {
+ border-collapse: collapse;
+ border: 2px solid rgb(200,200,200);
+ letter-spacing: 1px;
+ font-size: 0.8rem;
+}
+
+td, th {
+ border: 1px solid rgb(190,190,190);
+ padding: 10px 20px;
+}
+
+th {
+ background-color: rgb(235,235,235);
+}
+
+td {
+ text-align: center;
+}
+
+tr:nth-child(even) td {
+ background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+ background-color: rgb(245,245,245);
+}
+
+caption {
+ padding: 10px;
+}
+   </style>
+ 
+ 
+   <h1>My spending record</h1>
+
+     <table>
+       <caption>How I chose to spend my money</caption>
+         <tbody><tr>
+           <th>Purchase</th>
+           <th>Location</th>
+           <th>Date</th>
+           <th>Evaluation</th>
+           <th>Cost (€)</th>
+         </tr>
+         <tr>
+           <td>SUM</td>
+           <td>118</td>
+         </tr>
+         <tr>
+           <td>Haircut</td>
+           <td>Hairdresser</td>
+           <td>12/09</td>
+           <td>Great idea</td>
+           <td>30</td>
+         </tr>
+         <tr>
+           <td>Lasagna</td>
+           <td>Restaurant</td>
+           <td>12/09</td>
+           <td>Regrets</td>
+           <td>18</td>
+         </tr>
+         <tr>
+           <td>Shoes</td>
+           <td>Shoeshop</td>
+           <td>13/09</td>
+           <td>Big regrets</td>
+           <td>65</td>
+         </tr>
+         <tr>
+           <td>Toothpaste</td>
+           <td>Supermarket</td>
+           <td>13/09</td>
+           <td>Good</td>
+           <td>5</td>
+         </tr>
+   </tbody></table>
+
+ 
+
+
+              </div>
+              <li>Поместите очевидную строку заголовка внутрь <code>&lt;thead&gt;</code> элемента, строку "SUM" внутрь <code>&lt;tfoot&gt;</code> элемента и оставшийся контент внутрь <code>&lt;tbody&gt;</code> элемента.</li>
+              <li>Сохраните, перезагрузите и вы увидите, что добавление элемента <code>&lt;tfoot&gt;</code> привело к тому,  что строка "SUM" опустилась к нижней части таблицы.</li>
+               <div style="overflow:auto">
+              
+
+
+ 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>My spending record</title>
+   <link href="minimal-table.css" rel="stylesheet" type="text/css">
+   <style>
+ html {
+ font-family: sans-serif;
+}
+
+table {
+ border-collapse: collapse;
+ border: 2px solid rgb(200,200,200);
+ letter-spacing: 1px;
+ font-size: 0.8rem;
+}
+
+td, th {
+ border: 1px solid rgb(190,190,190);
+ padding: 10px 20px;
+}
+
+th {
+ background-color: rgb(235,235,235);
+}
+
+td {
+ text-align: center;
+}
+
+tr:nth-child(even) td {
+ background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+ background-color: rgb(245,245,245);
+}
+
+caption {
+ padding: 10px;
+ font-size: 0.8rem;
+}
+   </style>
+ 
+ 
+   <h1>My spending record</h1>
+
+     <table>
+       <caption>How I chose to spend my money</caption>
+         <thead><tr>
+           <th>Purchase</th>
+           <th>Location</th>
+           <th>Date</th>
+           <th>Evaluation</th>
+           <th>Cost (€)</th>
+         </tr>
+       </thead>
+       <tfoot>
+         <tr>
+           <td>SUM</td>
+           <td>118</td>
+         </tr>
+       </tfoot>
+       <tbody>
+         <tr>
+           <td>Haircut</td>
+           <td>Hairdresser</td>
+           <td>12/09</td>
+           <td>Great idea</td>
+           <td>30</td>
+         </tr>
+         <tr>
+           <td>Lasagna</td>
+           <td>Restaurant</td>
+           <td>12/09</td>
+           <td>Regrets</td>
+           <td>18</td>
+         </tr>
+         <tr>
+           <td>Shoes</td>
+           <td>Shoeshop</td>
+           <td>13/09</td>
+           <td>Big regrets</td>
+           <td>65</td>
+         </tr>
+         <tr>
+           <td>Toothpaste</td>
+           <td>Supermarket</td>
+           <td>13/09</td>
+           <td>Good</td>
+           <td>5</td>
+         </tr>
+   </tbody></table>
+              </div>
+              <li>Далее, добавьте атрибут <code>colspan</code>, чтобы ячейка "SUM" занимала первые четыре столбца, таким образом числовое значение "Cost" появится в последнем столбце.</li>
+              <div style="overflow:auto">
+              
+
+
+ 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>My spending record</title>
+   <link href="minimal-table.css" rel="stylesheet" type="text/css">
+   <style>
+ html {
+ font-family: sans-serif;
+}
+
+table {
+ border-collapse: collapse;
+ border: 2px solid rgb(200,200,200);
+ letter-spacing: 1px;
+ font-size: 0.8rem;
+}
+
+td, th {
+ border: 1px solid rgb(190,190,190);
+ padding: 10px 20px;
+}
+
+th {
+ background-color: rgb(235,235,235);
+}
+
+td {
+ text-align: center;
+}
+
+tr:nth-child(even) td {
+ background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+ background-color: rgb(245,245,245);
+}
+
+caption {
+ padding: 10px;
+}
+   </style>
+ 
+ 
+   <h1>My spending record</h1>
+
+     <table>
+       <caption>How I chose to spend my money</caption>
+         <thead><tr>
+           <th>Purchase</th>
+           <th>Location</th>
+           <th>Date</th>
+           <th>Evaluation</th>
+           <th>Cost (€)</th>
+         </tr>
+       </thead>
+       <tfoot>
+         <tr>
+           <td colspan="4">SUM</td>
+           <td>118</td>
+         </tr>
+       </tfoot>
+       <tbody>
+         <tr>
+           <td>Haircut</td>
+           <td>Hairdresser</td>
+           <td>12/09</td>
+           <td>Great idea</td>
+           <td>30</td>
+         </tr>
+         <tr>
+           <td>Lasagna</td>
+           <td>Restaurant</td>
+           <td>12/09</td>
+           <td>Regrets</td>
+           <td>18</td>
+         </tr>
+         <tr>
+           <td>Shoes</td>
+           <td>Shoeshop</td>
+           <td>13/09</td>
+           <td>Big regrets</td>
+           <td>65</td>
+         </tr>
+         <tr>
+           <td>Toothpaste</td>
+           <td>Supermarket</td>
+           <td>13/09</td>
+           <td>Good</td>
+           <td>5</td>
+         </tr>
+   </tbody></table>
+              </div>
+              <li>Давайте добавим несколько простых дополнительных стилей к таблице, чтобы дать вам представление насколько эти элементы полезны при использовании CSS. Внутри в <code>&lt;head&gt;</code> вашего HTML документа вы увидите пустой элемент <code>&lt;style&gt;</code>. Внутри этого элемента добавьте следующие строки CSS кода:</li>
+              <pre><code class="language-css">tbody {
+ font-size: 90%;
+ font-style: italic;
+}
+
+tfoot {
+ font-weight: bold;
+}</code></pre>
+        <li>Сохраните, обновите и вы увидите результат. Если <code>&lt;tbody&gt;</code> и <code>&lt;tfoot&gt;</code> элементы не были установлены, то вам придётся писать много сложных селекторов/правил для применения одного и того же стиля.</li>
+              <table>
+       <caption>How I chose to spend my money</caption>
+       <thead>
+         <tr>
+           <th>Purchase</th>
+           <th>Location</th>
+           <th>Date</th>
+           <th>Evaluation</th>
+           <th>Cost (€)</th>
+         </tr>
+       </thead>
+       <tfoot style="font-weight: bold;">
+         <tr>
+           <td colspan="4">SUM</td>
+           <td>118</td>
+         </tr>
+       </tfoot>
+       <tbody style="font-size: 90%;font-style: italic;">
+         <tr>
+           <td>Haircut</td>
+           <td>Hairdresser</td>
+           <td>12/09</td>
+           <td>Great idea</td>
+           <td>30</td>
+         </tr>
+         <tr>
+           <td>Lasagna</td>
+           <td>Restaurant</td>
+           <td>12/09</td>
+           <td>Regrets</td>
+           <td>18</td>
+         </tr>
+         <tr>
+           <td>Shoes</td>
+           <td>Shoeshop</td>
+           <td>13/09</td>
+           <td>Big regrets</td>
+           <td>65</td>
+         </tr>
+         <tr>
+           <td>Toothpaste</td>
+           <td>Supermarket</td>
+           <td>13/09</td>
+           <td>Good</td>
+           <td>5</td>
+         </tr>
+       </tbody>
+   </table>
+            </ol>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8"&gt;
+   &lt;meta name="viewport" content="width=device-width"&gt;
+   &lt;title&gt;My spending record&lt;/title&gt;
+   &lt;link href="minimal-table.css" rel="stylesheet" type="text/css"&gt;
+   &lt;style&gt;
+       tbody {
+         font-size: 90%;
+         font-style: italic;
+       }
+
+       tfoot {
+         font-weight: bold;
+       }
+   &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;h1&gt;My spending record&lt;/h1&gt;
+
+     &lt;table&gt;
+       &lt;caption&gt;How I chose to spend my money&lt;/caption&gt;
+       &lt;thead&gt;
+         &lt;tr&gt;
+           &lt;th&gt;Purchase&lt;/th&gt;
+           &lt;th&gt;Location&lt;/th&gt;
+           &lt;th&gt;Date&lt;/th&gt;
+           &lt;th&gt;Evaluation&lt;/th&gt;
+           &lt;th&gt;Cost (€)&lt;/th&gt;
+         &lt;/tr&gt;
+       &lt;/thead&gt;
+       &lt;tfoot&gt;
+         &lt;tr&gt;
+           &lt;td colspan="4"&gt;SUM&lt;/td&gt;
+           &lt;td&gt;118&lt;/td&gt;
+         &lt;/tr&gt;
+       &lt;/tfoot&gt;
+       &lt;tbody&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Haircut&lt;/td&gt;
+           &lt;td&gt;Hairdresser&lt;/td&gt;
+           &lt;td&gt;12/09&lt;/td&gt;
+           &lt;td&gt;Great idea&lt;/td&gt;
+           &lt;td&gt;30&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Lasagna&lt;/td&gt;
+           &lt;td&gt;Restaurant&lt;/td&gt;
+           &lt;td&gt;12/09&lt;/td&gt;
+           &lt;td&gt;Regrets&lt;/td&gt;
+           &lt;td&gt;18&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Shoes&lt;/td&gt;
+           &lt;td&gt;Shoeshop&lt;/td&gt;
+           &lt;td&gt;13/09&lt;/td&gt;
+           &lt;td&gt;Big regrets&lt;/td&gt;
+           &lt;td&gt;65&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+           &lt;td&gt;Toothpaste&lt;/td&gt;
+           &lt;td&gt;Supermarket&lt;/td&gt;
+           &lt;td&gt;13/09&lt;/td&gt;
+           &lt;td&gt;Good&lt;/td&gt;
+           &lt;td&gt;5&lt;/td&gt;
+         &lt;/tr&gt;
+       &lt;/tbody&gt;
+   &lt;/table&gt;
+
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Мы не ожидаем что сейчас вы полностью поймёте CSS. Вы узнаете больше когда пройдёте наши CSS курсы (например, <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps">Вступление в CSS</a> это хорошее место для начала; у нас также есть статья конкретно о <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Styling_tables">стилизации таблиц</a>).</p>
+            </div>
+      <p>Ваша готовая таблица должна выглядеть примерно так:</p><img src="../images/table.png"><div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Этот пример можно также найти на GitHub по ссылке <a href="https://github.com/mdn/learning-area/blob/main/html/tables/advanced/spending-record-finished.html">spending-record-finished.html</a> (<a href="https://mdn.github.io/learning-area/html/tables/advanced/spending-record-finished.html">живой пример</a>).</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
