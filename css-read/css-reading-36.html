@@ -36,18 +36,16 @@
                 Фактически, это "включает наследование".</dd>
               <dt><code><span class="meaning" data-tooltip="Значение совйства по умолчанию">initial</span></code></dt>
               <dd>Устанавливает значение свойства, применённого к выбранному элементу, равным
-                <a href="https://developer.mozilla.org/ru/docs/Web/CSS/initial_value"><span class="meaning" data-tooltip="Начальное значение. <code>initial</code> использует начальное значение, которое определено отдельно для каждого свойства CSS-спецификацией. Для сравнения, браузеры устанавливают значения по умолчанию в зависимости от CSS селектора. Например, начальное значение для свойства <code>display</code> — <code>inline</code>, тогда как браузер устанавливает значение по умолчанию свойства <code>display</code> элемента <code>&amp;lt;div&amp;gt;</code> как <code>block</code>, а элемента <code>&amp;lt;table&amp;gt;</code> как <code>table</code>, и т.д">initial
-                    value</span></a> этого свойства
+                <span class="meaning" data-tooltip="Начальное значение. <code>initial</code> использует начальное значение, которое определено отдельно для каждого свойства CSS-спецификацией. Для сравнения, браузеры устанавливают значения по умолчанию в зависимости от CSS селектора. Например, начальное значение для свойства <code>display</code> — <code>inline</code>, тогда как браузер устанавливает значение по умолчанию свойства <code>display</code> элемента <code>&amp;lt;div&amp;gt;</code> как <code>block</code>, а элемента <code>&amp;lt;table&amp;gt;</code> как <code>table</code>, и т.д. <p><a href='https://developer.mozilla.org/ru/docs/Web/CSS/initial_value'>initial value</a></p>">initial
+                    value</span> этого свойства
                 (в соответствии с настройками браузера по умолчанию. Если в таблице стилей браузера отсутствует значение
-                этого <span class="hint" data-tooltip="Значение по умолчанию, например для свойства <code>color</code>?">свойства</span>,
+                этого <span class="meaning" data-tooltip="Значение по умолчанию, например для свойства <code>color</code>.">свойства</span>,
                 <span class="hint" data-tooltip="Т.е как <code>inherit</code> я так понял">оно наследуется естественным
                   образом</span>.)
               </dd>
-              <dt><code><span class="meaning" data-tooltip="Оно ведет себя как <code>inherit</code> ключевое слово в
+              <dt><code><span class="meaning" data-tooltip='Оно ведет себя как <code>inherit</code> ключевое слово в
                 первом случае, когда свойство является унаследованным свойством , и как <code>initial</code> ключевое
-                слово во втором случае, когда свойство не является унаследованным свойством<br><br> ..some-class
-                {<br>&nbsp;&nbsp;color: unset; /* будет равно `inherit` */<br>&nbsp;&nbsp;display: unset; /* будет равно
-                `initial` */<br>}">unset</span></code></dt>
+                слово во втором случае, когда свойство не является унаследованным свойством<br><br><iframe style="height:13rem" src="iframe/iframe.html"></iframe>'>unset</span></code></dt>
               <dd>Возвращает свойству его естественное значение, что означает, что если <span class="meaning" data-tooltip="Например <code>color</code>">свойство</span> <span class="meaning" data-tooltip="Если есть сам факт наследования свойства <code>color</code> например">наследуется
                   естественным образом</span>, оно действует как <code>inherit</code>, <span class="meaning" data-tooltip="Если не является унаследованным">иначе</span> оно действует как <code>initial</code>.
               </dd>
@@ -78,9 +76,9 @@
                 например: <code>a { color: red; }</code><span class="meaning" data-tooltip="Первая">?</span></li>
             </ol>
             <iframe style="height:65rem" src="../getting-started/started11.html"></iframe>
-            <p>Сверху где: Default <a href="#"><span class="meaning" data-tooltip="<code>link</code> синнего цвета эта я так понял цвет по умолчанию для не кликнутой ссылки, установленная самим браузером">link</span></a>
+            <p>Сверху где: Default <a ><span class="meaning" data-tooltip="<code>link</code> синнего цвета эта я так понял цвет по умолчанию для не кликнутой ссылки, установленная самим браузером">link</span></a>
               color</p>
-            <p>Сверху на 3 списке где: Reset the <a style="color: initial" href="#"><span class="meaning" data-tooltip="Здесь цвет по умолчанию для ссылки, установленный в соответствии со спецификацией css.">link</span></a> color
+            <p>Сверху на 3 списке где: Reset the <a style="color: initial" ><span class="meaning" data-tooltip="Здесь цвет по умолчанию для ссылки, установленный в соответствии со спецификацией css.">link</span></a> color
             </p>
           </div>
         </section>
