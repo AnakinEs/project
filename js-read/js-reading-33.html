@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section class="tasks_task" aria-labelledby="Работа с переменными">
+          <h3 id="Работа с переменными">Работа с переменными</h3>
+          <div class="section-content">
+            <ol>
+              <li>Объявите две переменные: <code>admin</code> и <code>name</code>.</li>
+              <li>Запишите строку <code>"Джон"</code> в переменную <code>name</code>.</li>
+              <li>Скопируйте значение из переменной <code>name</code> в <code>admin</code>.</li>
+              <li>Выведите на экран значение <code>admin</code>, используя функцию <code>alert</code> (должна
+                показать «Джон»).</li>
+            </ol>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <ol>
+                <p>В коде ниже каждая строка решения соответствует одному элементу в списке задач.</p>
+                <pre><code class="language-js">let admin, name; // можно объявить две переменные через запятую
+
+name = "Джон";
+
+admin = name;
+
+alert( admin ); // "Джон"</code></pre>
+              </ol>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

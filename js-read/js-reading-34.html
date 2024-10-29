@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Придумайте правильные имена">
+          <h3 id="Придумайте правильные имена">Придумайте правильные имена</h3>
+          <div class="section-content">
+            <ol>
+              <li>Создайте переменную для названия нашей планеты. Как бы вы её назвали?</li>
+              <li>Создайте переменную для хранения имени текущего посетителя сайта. Как бы вы назвали такую
+                переменную?</li>
+            </ol>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <ol>
+
+                <details>
+                  <summary>
+                    <h4>Переменная для названия нашей планеты</h4>
+                  </summary>
+                  <ol>
+                    <p>Например:</p>
+                    <pre><code class="language-js">let ourPlanetName = "Земля";</code></pre>
+                    <p>Обратите внимание, мы могли бы использовать короткое имя <code>planet</code>, но тогда
+                      будет
+                      непонятно, о какой планете мы говорим. Лучше описать содержимое переменной подробнее, по
+                      крайней мере, до тех пор, пока имя переменной неСтанетСлишкомДлинным.</p>
+                  </ol>
+                </details>
+
+
+                <details>
+                  <summary>
+                    <h4>Имя текущего посетителя:</h4>
+                  </summary>
+                  <ol>
+                    <pre><code class="language-js">let currentUserName = "Джон";</code></pre>
+                    <p>Опять же, мы могли бы укоротить название до <code>userName</code>, если мы точно знаем, что
+                      это текущий пользователь.</p>
+                    <p>Современные редакторы и автодополнение ввода в них позволяют легко писать длинные названия
+                      переменных. Не экономьте буквы. Имена, состоящие из трёх слов, вполне нормальны.</p>
+                    <p>Если в вашем редакторе нет автодополнения, воспользуйтесь <a
+                        href="https://learn.javascript.ru/code-editors">другими</a>.</p>
+                  </ol>
+                </details>
+
+              </ol>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

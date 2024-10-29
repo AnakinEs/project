@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Какие буквы (заглавные или строчные) использовать для имён констант?">
+          <h3 id="Какие буквы (заглавные или строчные) использовать для имён констант?">Какие буквы (заглавные или
+            строчные) использовать для имён констант?</h3>
+          <div class="section-content">
+            <p>Рассмотрим следующий код:</p>
+            <pre><code class="language-js">const birthday = '18.04.1982';
+
+const age = someCode(birthday);</code></pre>
+            <p>У нас есть константа <code>birthday</code>, а также <code>age</code>, которая вычисляется при
+              помощи
+              некоторого кода, используя значение из <code>birthday</code> (в данном случае детали не имеют
+              значения, поэтому код не рассматривается).</p>
+            <p>Можно ли использовать заглавные буквы для имени <code>birthday</code>? А для <code>age</code>? Или
+              одновременно для обеих переменных?</p>
+            <pre><code class="language-js">const BIRTHDAY = '18.04.1982'; // использовать заглавные буквы?
+
+const AGE = someCode(BIRTHDAY); // а здесь?</code></pre>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <ol>
+                <p>Обычно мы используем буквы в верхнем регистре для констант, которые «жёстко закодированы». Или,
+                  другими словами, когда значение известно до выполнения скрипта и записывается непосредственно в
+                  код.</p>
+                <p>В нашем примере, <code>birthday</code> именно такая переменная. Поэтому мы можем использовать
+                  заглавные буквы.</p>
+                <p>В отличие от предыдущей, переменная <code>age</code> вычисляется во время выполнения скрипта.
+                  Сегодня у нас один возраст, а через год уже совсем другой. Она является константой, потому что
+                  не
+                  изменяется при выполнении кода. Но она является «менее константной», чем <code>birthday</code>:
+                  она вычисляется, поэтому мы должны сохранить её в нижнем регистре.</p>
+              </ol>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
