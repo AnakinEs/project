@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Вложенные таблицы">
+          <h2 id="Вложенные таблицы">Вложенные таблицы</h2>
+          <div class="section-content">
+            <p>В одну таблицу вкладывать другую таблицу возможно, если вы используете полную структуру включая элемент <code>&lt;table&gt;</code>. Это как правило не рекомендуется, так как делает разметку более запутанной и менее доступной для пользователей скринридеров, так в большинстве случаев вы можете просто вставить дополнительные ячейки/строки/столбцы в существующую таблицу. Однако, иногда это необходимо, например, если вы хотите легко импортировать контент из других источников.</p>
+            <p>Разметка простой вложенной таблицы:</p>
+            <pre><code class="language-html">&lt;table id="table1"&gt;
+ &lt;tr&gt;
+   &lt;th&gt;title1&lt;/th&gt;
+   &lt;th&gt;title2&lt;/th&gt;
+   &lt;th&gt;title3&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td id="nested"&gt;
+     &lt;table id="table2"&gt;
+       &lt;tr&gt;
+         &lt;td&gt;cell1&lt;/td&gt;
+         &lt;td&gt;cell2&lt;/td&gt;
+         &lt;td&gt;cell3&lt;/td&gt;
+       &lt;/tr&gt;
+     &lt;/table&gt;
+   &lt;/td&gt;
+   &lt;td&gt;cell2&lt;/td&gt;
+   &lt;td&gt;cell3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;cell4&lt;/td&gt;
+   &lt;td&gt;cell5&lt;/td&gt;
+   &lt;td&gt;cell6&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      <p>Результат которого выглядит примерно так:</p>
+            <table id="table1">
+              <tbody><tr>
+                <th>title1</th>
+                <th>title2</th>
+                <th>title3</th>
+              </tr>
+              <tr>
+                <td id="nested">
+                  <table id="table2" style="margin-bottom: 0">
+                    <tbody><tr>
+                      <td>cell1</td>
+                      <td>cell2</td>
+                      <td>cell3</td>
+                    </tr>
+                  </tbody></table>
+                </td>
+                <td>cell2</td>
+                <td>cell3</td>
+              </tr>
+              <tr>
+                <td>cell4</td>
+                <td>cell5</td>
+                <td>cell6</td>
+              </tr>
+            </tbody></table>             
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
