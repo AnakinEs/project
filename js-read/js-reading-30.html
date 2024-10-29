@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Константы в верхнем регистре">
+          <h2 id="Константы в верхнем регистре">Константы в верхнем регистре</h2>
+          <div class="section-content">
+            <p>Широко распространена практика использования констант в качестве псевдонимов для трудно запоминаемых
+              значений, которые известны до начала исполнения скрипта.</p>
+            <p>Названия таких констант пишутся с использованием заглавных букв и подчёркивания.</p>
+            <p>Например, сделаем константы для различных цветов в «шестнадцатеричном формате»:</p>
+            <pre><code class="language-js">const COLOR_RED = "#F00";
+  const COLOR_GREEN = "#0F0";
+  const COLOR_BLUE = "#00F";
+  const COLOR_ORANGE = "#FF7F00";
+  
+  // ...когда нам нужно выбрать цвет
+  let color = COLOR_ORANGE;
+  alert(color); // #FF7F00</code></pre>
+            <p>Преимущества:</p>
+            <ul>
+              <li><code>COLOR_ORANGE</code> гораздо легче запомнить, чем <code>"#FF7F00"</code>.</li>
+              <li>Гораздо легче допустить ошибку при вводе <code>"#FF7F00"</code>, чем при вводе
+                <code>COLOR_ORANGE</code>.</li>
+              <li>При чтении кода <code>COLOR_ORANGE</code> намного понятнее, чем <code>#FF7F00</code>.</li>
+            </ul>
+            <p>Когда мы должны использовать для констант заглавные буквы, а когда называть их нормально? Давайте
+              разберёмся и с этим.</p>
+            <p>Название «константа» просто означает, что значение переменной никогда не меняется. Но есть константы,
+              которые известны до выполнения (например, шестнадцатеричное значение для красного цвета), а есть
+              константы, которые <em><span id="hint13" class="hint" data-tooltip="Я так понял, константа которая пустая записывается в процессе выполнения кода.">вычисляются</span></em>
+              во время выполнения сценария, но не изменяются после их первоначального назначения.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">const pageLoadTime = /* время, потраченное на загрузку веб-страницы */;</code></pre>
+            <p>Значение <code>pageLoadTime</code> неизвестно до загрузки страницы, поэтому её имя записано обычными, а
+              не прописными буквами. Но это всё ещё константа, потому что она не изменяется после назначения.</p>
+            <p>Другими словами, константы с именами, записанными заглавными буквами, используются только как
+              псевдонимы для «жёстко закодированных» значений.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
