@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Создание иерархической структуры">
+          <h3 id="Создание иерархической структуры">Создание иерархической структуры</h3>
+          <div class="section-content">
+            <p>Например, в рассказе <code>&lt;h1&gt;</code> будет представлять заглавие рассказа, <code>&lt;h2&gt;</code> обозначит название каждой главы, <code>&lt;h3&gt;</code>  будет обозначать подзаголовки в каждой главе и так далее.</p>
+            <pre><code class="language-html">&lt;h1&gt; Сокрушительная скука &lt;/ h1&gt;
+
+&lt;p&gt; Крис Миллс &lt;/ p&gt;
+
+&lt;h2&gt; Глава 1: Тёмная ночь &lt;/ h2&gt;
+
+&lt;p&gt; Это была тёмная ночь. Где-то кричала сова. Дождь обрушился на ... &lt;/ p&gt;
+
+&lt;h2&gt; Глава 2: Вечное молчание &lt;/ h2&gt;
+
+&lt;p&gt; Наш главный герой ничего не мог, когда шёпот из тёмной фигуры ... &lt;/ p&gt;
+
+&lt;h3&gt; Призрак говорит &lt;/ h3&gt;
+
+&lt;p&gt; Прошло ещё несколько часов, когда внезапно призрак выпрямился и воскликнул: «Пожалуйста, помилуй мою душу!» &lt;/ p&gt;</code></pre>
+      <p>Всё это действительно зависит от вас — что именно будут представлять собой элементы, пока существует иерархия. Вам просто нужно иметь в виду несколько хороших правил при создании таких структур.</p>
+      <ul>
+              <li>Предпочтительнее использовать <code>&lt;h1&gt;</code> только один раз на странице — это заголовок самого верхнего уровня, и все остальные заголовки располагаются ниже его в иерархии.</li>
+              <li>Убедитесь, что вы используете заголовки в правильном порядке в иерархии.  Не используйте <code>&lt;h3&gt;</code> для создания подзаголовков при одновременном использовании <code>&lt;h2&gt;</code> для представления под-подзаголовков — это не имеет смысла и приведёт к странным результатам.</li>
+              <li>Из шести доступных уровней заголовка вы должны стремиться использовать не более трёх на странице, если только вы не чувствуете, что это необходимо. Документы с большим количеством уровней (то есть с глубокой иерархией) становятся громоздкими и трудными для навигации. В таких случаях рекомендуется распределять контент по нескольким страницам, если это возможно.</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

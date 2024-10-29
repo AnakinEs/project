@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Как работает CSS">
+          <h1 id="Как работает CSS">Как работает CSS</h1>
+          <div class="section-content">
+            <p>Мы уже изучили основы CSS, для чего он нужен и как создавать простые таблицы стилей. В этом уроке мы посмотрим, как браузер обрабатывает CSS и HTML и выводит содержимое на веб-страницу.</p>
+          </div>
+        </section>
+  
+  <section aria-labelledby="Как работает CSS?">
+          <h2 id="Как работает CSS?"><span class="hint" data-tooltip="Ну чет не очень понял.">Как работает CSS?</span></h2>
+          <div class="section-content">
+            <p>Когда браузер отображает документ, он должен совместить его содержимое с его стилями. Этот процесс идёт в несколько этапов, о которых мы сейчас поговорим. Держите в уме, что это очень упрощённая версия того как браузер действительно загружает веб-страницу, а также то, что разные браузеры делают это по разному. Но, происходит, грубо говоря, следующее:</p>
+            <ol>
+              <li>Браузер получает HTML-страницу (например, из Интернета)</li>
+              <li>Преобразует <a href="https://developer.mozilla.org/ru/docs/Glossary/HTML">HTML</a> в <a href="https://developer.mozilla.org/ru/docs/Glossary/DOM">DOM</a> (Document Object Model). DOM (или DOM-дерево) - это представление страницы в памяти компьютера. Подробнее на DOM мы остановимся чуть позже.</li>
+              <li>Затем браузер забирает все ресурсы и описания, связанные с HTML-документом, например: встроенные картинки, видео ... и  стили CSS! JavaScript присоединяется чуть позже и мы пока не будем говорить об этом, чтобы все не усложнять.</li>
+              <li>После этого браузер анализирует полученный CSS код, сортирует описанные там правила в зависимости от их селекторов и раскладывает их в различные «корзины»: элементы, классы, идентификаторы(ID) и т.п. Основываясь на найденных селекторах браузер понимает какие правила относятся к определённым «узлам» в DOM-дереве и применяет их по мере необходимости (этот промежуточный шаг называют «формированием дерева представления» или «формированием дерева рендеринга»)</li>
+              <li>Дерево представления (render tree) формируется в том порядке, в каком оно затем должно будет отображаться, когда все правила будут применены.</li>
+              <li>Затем происходит визуальное отображение контента на странице (этот этап называется «отрисовкой»)</li>                 
+            </ol>
+    <p>Диаграмма демонстрирует этот процесс.</p><img src="../images/Browser_simple_rendering_pipeline__ru.png"></div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

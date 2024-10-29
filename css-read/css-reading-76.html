@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Свойства и значения">
+          <h2 id="Свойства и значения">Свойства и значения</h2>
+          <div class="section-content">
+            <p>Если говорить в общем, CSS строится на двух его составляющих:</p>
+            <dl>
+              <dt>Свойства </dt>
+              <dd>Определяют, какую характеристику вы желаете изменить (например, <code>font-size</code>, <code>width</code>, <code>background-color</code>).
+      </dd><dt>Значения</dt>
+              <dd>Это величина свойства, определяющая, как и/или насколько вы желаете изменить свойство.
+            </dd></dl>
+    <p>На изображении внизу выделены свойство и его значение. Здесь свойство — <code>color</code>, а его значение — <code>blue</code>.</p><img style="width: 60%" src="../images/declaration.png"><p>Свойство вкупе со значением называется CSS-объявлением. CSS-объявления помещаются внутри блока объявлений CSS. Ниже показан наш CSS-код с выделенным блоком объявлений.</p><img style="width: 60%" src="../images/declaration-block.png"><p>Наконец блок объявлений воссоединяется с селекторами, образуя CSS-правила. Наше изображение содержит два правила — одно для селектора <code>h1</code>, другое для селектора <code>p</code>. Правило для <code>h1</code> выделено.</p><img style="width: 60%" src="../images/rules.png"><p>Установление значений для CSS-свойств — вот суть языка CSS. Движок CSS определяет, какие объявления применять к каждому элементу на странице, чтобы соответствующим образом размещать и стилизовать его. Необходимо запомнить, что и свойства, и значения чувствительны к регистру. Пара свойство–значение разделяется двоеточием (<code>:</code>).</p>
+    <p><strong>Попробуйте подобрать нужные значения к следующим свойствам, а свойства добавить в ваш код:</strong></p>
+    <ol>
+              <li><code>font-size</code></li>
+              <li><code>width</code></li>
+              <li><code>background-color</code></li>
+              <li><code>color</code></li>
+              <li><code>border</code></li>
+            </ol>
+    <div class="note notecard" style="background-color:#ffe9ed" id="red_background">
+              <p><strong>Важно</strong>: Если свойство или значение не определено, то объявление считается недействительным — и будет попросту проигнорировано.</p>
+            </div>
+    <div class="note notecard" style="background-color:#ffe9ed" id="sect4">
+              <p><strong>Важно</strong>: В CSS (и прочих веб-стандартах) американское написание является стандартом. Например, <code>color</code> надо всегда писать <code>color</code>; британский вариант <code>colour</code> не будет работать.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

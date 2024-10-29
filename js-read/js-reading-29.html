@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Введение в JavaScript">
+			
+          <h1 id="Введение в JavaScript"><span id="hint2" class="hint" data-tooltip="Здесь я не все понял, надо будет перечитать после полного прочтения учебника.">Введение в JavaScript</span></h1>
+          <div class="spaced-repetitions">			                   				                 
+    </div>
+    <div class="section-content">
+            <p>Давайте посмотрим, что такого особенного в JavaScript, чего можно достичь с его помощью и какие другие технологии хорошо с ним работают.</p>
+          </div>
+        </section>
+  
+  <section aria-labelledby="Что такое JavaScript?">
+          <h2 id="Что такое JavaScript?">Что такое JavaScript?</h2>
+          <div class="section-content">
+            <p>Изначально <em>JavaScript</em> был создан, чтобы «сделать веб-страницы живыми».</p>
+            <p>Программы на этом языке называются <em>скриптами</em>. Они могут встраиваться в HTML и выполняться автоматически при загрузке веб-страницы.</p>
+            <p>Скрипты распространяются и выполняются, как простой текст. Им не нужна специальная подготовка или <span class="meaning" data-tooltip="Преобразование исходного кода компьютерной программы в машинный бинарный код, исполняемый центральным процессором или виртуальной машиной">компиляция</span> для запуска.</p>
+
+            <p>Это отличает JavaScript от другого языка – <a href="https://ru.wikipedia.org/wiki/Java">Java</a>.</p>
+            
+    <div class="note notecard" id="transparent-js">
+              <div class="important_type">Почему JavaScript?</div>
+      <p>Когда JavaScript создавался, у него было другое имя – «LiveScript». Однако, язык Java был очень популярен в то время, и было решено, что позиционирование JavaScript как «младшего брата» Java будет полезно.</p>
+      <p>Со временем JavaScript стал полностью независимым языком со своей собственной спецификацией, называющейся <a href="https://ru.wikipedia.org/wiki/ECMAScript">ECMAScript</a>, и сейчас не имеет никакого отношения к Java.</p>
+            </div>			
+    <p>Сегодня JavaScript может выполняться не только в браузере, но и на сервере или на любом другом устройстве, которое имеет специальную программу, называющуюся <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA_JavaScript">«движком» JavaScript</a>.</p>
+            <p>У браузера есть собственный движок, который иногда называют «виртуальная машина JavaScript».</p>
+            <p>Разные движки имеют разные «кодовые имена». Например:</p>
+            <ul>
+              <li><a href="https://ru.wikipedia.org/wiki/V8_(%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA_JavaScript)">V8</a> – в Chrome, Opera и Edge.</li>
+              <li><a href="https://ru.wikipedia.org/wiki/SpiderMonkey">SpiderMonkey</a> – в Firefox.</li>
+              <li>…Ещё есть «Chakra» для IE, «JavaScriptCore», «Nitro» и «SquirrelFish» для Safari и т.д.</li>
+            </ul>
+    <p>Эти названия полезно знать, так как они часто используются в статьях для разработчиков. Мы тоже будем их использовать. Например, если «функциональность X поддерживается V8», тогда «Х», скорее всего, работает в Chrome, Opera и Edge.</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Как работают движки?</div>
+              <p>Движки сложны. Но основы понять легко.</p>
+              <ol>
+                <li>Движок (встроенный, если это браузер) читает («<span class="meaning" data-tooltip="производить синтаксический анализ, анализировать, разбирать">парсит</span>») текст скрипта.</li>
+                <li>Затем он преобразует («компилирует») скрипт в машинный язык.</li>
+                <li>После этого машинный код запускается и работает достаточно быстро.</li>
+              </ol>
+      <p>Движок применяет оптимизации на каждом этапе. Он даже просматривает скомпилированный скрипт во время его работы, анализируя проходящие через него данные, и применяет оптимизации к машинному коду, полагаясь на полученные знания. В результате скрипты работают очень быстро.</p>
+            </div>
+    </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
