@@ -68,7 +68,7 @@
                   data-tooltip="При помощи: <code>margin: 0 auto;</code>">центрирует себя</span> в доступном
                 пространстве.
                 Если окно браузера ниже этой ширины, содержимое устанавливается в <span class="meaning"
-                  data-tooltip="Если экран будет уменьшаться, то атоматически будет уменьшаться например текст, в 100% от ширины">100%</span>
+                  data-tooltip="Если экран будет уменьшаться, то текст не будет выходить за рамки экрана.">100%</span>
                 от ширины экрана.</li>
               <li>Изображение в шапке всегда будет оставаться <span class="meaning"
                   data-tooltip="Вроде при помощи: <code>background-position: center;</code>">в центре</span> тега
@@ -84,7 +84,7 @@
                 изображения,
                 то
                 изображения начинают <span class="meaning"
-                  data-tooltip="<code>max-width: 100%;</code><p></p>Только не пойму зачем нужен <code>max</code>, без него тоже работает">сжиматься</span>
+                  data-tooltip="<p><code>max-width: 100%;</code></p><p>Так тоже работает: <code>width: 100%;</code></p>">сжиматься</span>
                 и остаются всегда внутри body и не выступают за его пределы.</li>
               <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en-us"&gt;
@@ -475,11 +475,11 @@ width: 320px;
                 href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/responsive.html">responsive.html</a>
               выглядит так:
             </p>
-            <pre><code class="language-html">&lt;picture&gt;
-&lt;source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg"&gt;
-&lt;source media="(min-width: 800px)" srcset="elva-800w.jpg"&gt;
-&lt;img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva"&gt;
-&lt;/picture&gt;</code></pre>
+            <pre class="language-html" tabindex="0"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name meaning" data-tooltip='<p>Вместо <code>media</code>, можно использовать <code>sizes</code>.</p><p>Таким образом можно выбрать одно из нескольких изображений, которое соответствует размеру, и одно из нескольких обрезанных изображений. Я так понял.</p> <iframe style="height:20rem" src="iframe/iframe1.html"></iframe>'>media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(max-width: 799px)<span class="token punctuation">"</span></span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>elva-480w-close-portrait.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 800px)<span class="token punctuation">"</span></span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>elva-800w.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>elva-800w.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Chris standing up holding his daughter Elva<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">&gt;</span></span></pre>
             <ul>
               <li>Элемент <code>&lt;source&gt;</code> принимает атрибут <code>media</code>, который содержит
                 медиа-условие;
