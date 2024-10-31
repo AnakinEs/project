@@ -19,21 +19,18 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
-        <h1 id="HTML Формы"><a target="_blank" href="https://html5css.ru/html/html_forms.php">HTML Формы</a></h1>
-        <p>Пример HTML-формы</p>
-        <iframe style="height:19rem" src="iframes/iframe1.html"></iframe>
-
-        <section aria-labelledby="Элемент &lt;form&gt;">
-          <h2 id="Элемент &lt;form&gt;">Элемент <code>&lt;form&gt;</code></h2>
+        <section aria-labelledby="Входной сигнал переключателя">
+          <h2 id="Входной сигнал переключателя">Входной сигнал переключателя</h2>
           <div class="section-content">
-            <p>Элемент HTML <code>&lt;form&gt;</code> определяет форму, которая используется для сбора данных пользователя:</p>
+            <p><code>&lt;input type="radio"&gt;</code> Определяет переключатель.</p>
+            <p>Переключатели позволяют пользователю выбрать одно из ограниченного числа вариантов:</p>
             <pre><code class="language-html">&lt;form&gt;
-.
-form elements
-.
+  &lt;input type="radio" name="gender" value="male" checked&gt; Male&lt;br&gt;
+  &lt;input type="radio" name="gender" value="female"&gt; Female&lt;br&gt;
+  &lt;input type="radio" name="gender" value="other"&gt; Other
 &lt;/form&gt;</code></pre>
-            <p>HTML-форма содержит <strong>элементы формы</strong>.</p>
-            <p>Элементы формы представляют собой различные типы входных элементов, такие как текстовые поля, флажки, переключатели, кнопки отправки и многое другое.</p>
+            <p>Таким образом, HTML-код выше будет отображаться в браузере:</p>
+            <iframe style="height:7rem" src="iframes/iframe3.html"></iframe>
           </div>
         </section>
       </article>

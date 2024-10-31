@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../s/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Атрибут Action">
+          <h2 id="Атрибут Action">Атрибут Action</h2>
+          <div class="section-content">
+            <p>Атрибут <code>action</code> определяет действие, выполняемое при отправке формы.</p>
+            <p>Обычно данные формы отправляются на веб-страницу на сервере, когда пользователь щелкает кнопку Submit.</p>
+            <p>В приведенном выше примере данные формы отправляются на страницу на сервере под названием "/action_page.php". Эта страница содержит сценарий на стороне сервера, обрабатывающий данные формы:</p>
+            <pre><code class="language-html">&lt;form action="/action_page.php"&gt;</code></pre>
+            <p>Если атрибут <code>action</code> опущен, действие устанавливается на текущую страницу.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

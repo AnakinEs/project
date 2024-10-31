@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../s/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Целевой атрибут">
+          <h2 id="Целевой атрибут">Целевой атрибут</h2>
+          <div class="section-content">
+            <p>Атрибут <code>target</code> указывает, будет ли отправленный результат открыт в новой вкладке обозревателя, фрейме или в текущем окне.</p>
+            <p>По умолчанию используется значение <code>"_self"</code>, означающее, что форма будет отправлена в текущем окне.</p>
+            <p>Чтобы сделать результат формы открытым в новой вкладке обозревателя, используйте значение <code>"_blank"</code>:</p>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The target Attribute&lt;/h2&gt;
+&lt;p&gt;When submitting this form, the result will be opened in a new browser tab:&lt;/p&gt;
+
+&lt;form action="/action_page.php" target="_blank"&gt;
+  First name:&lt;br&gt;
+  &lt;input type="text" name="firstname" value="Mickey"&gt;
+  &lt;br&gt;
+  Last name:&lt;br&gt;
+  &lt;input type="text" name="lastname" value="Mouse"&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt; 
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            <p>Другими юридическими значениями являются "<code><span class="hint" data-tooltip="Не совсем понял. Загружает страницу во фрейм-родитель, если фреймов нет, то это значение работает как _self.">_parent</span></code>", "<code><span  class="hint" data-tooltip="Не совсем понял. Отменяет все фреймы и загружает страницу в полном окне браузера, если фреймов нет, то это значение работает как _self.">_top</span></code>" или имя, представляющее имя <span class="hint" data-tooltip="Не понял">IFRAME</span>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

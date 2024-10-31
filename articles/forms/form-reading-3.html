@@ -19,21 +19,21 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
-        <h1 id="HTML Формы"><a target="_blank" href="https://html5css.ru/html/html_forms.php">HTML Формы</a></h1>
-        <p>Пример HTML-формы</p>
-        <iframe style="height:19rem" src="iframes/iframe1.html"></iframe>
-
-        <section aria-labelledby="Элемент &lt;form&gt;">
-          <h2 id="Элемент &lt;form&gt;">Элемент <code>&lt;form&gt;</code></h2>
+        <section aria-labelledby="Ввод текста">
+          <h2 id="Ввод текста">Ввод текста</h2>
           <div class="section-content">
-            <p>Элемент HTML <code>&lt;form&gt;</code> определяет форму, которая используется для сбора данных пользователя:</p>
+            <p><code>&lt;input type="text"&gt;</code> Определяет однострочное поле ввода для text input:</p>
             <pre><code class="language-html">&lt;form&gt;
-.
-form elements
-.
+  First name:&lt;br&gt;
+  &lt;input type="text" name="firstname"&gt;&lt;br&gt;
+  Last name:&lt;br&gt;
+  &lt;input type="text" name="lastname"&gt;
 &lt;/form&gt;</code></pre>
-            <p>HTML-форма содержит <strong>элементы формы</strong>.</p>
-            <p>Элементы формы представляют собой различные типы входных элементов, такие как текстовые поля, флажки, переключатели, кнопки отправки и многое другое.</p>
+            <p>Так будет выглядеть в браузере:</p>
+            <iframe style="height:8rem" src="iframes/iframe2.html"></iframe>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Сама форма не видна. Также обратите внимание, что ширина текстового поля по умолчанию составляет 20 символов.</p>
+            </div>
           </div>
         </section>
       </article>
