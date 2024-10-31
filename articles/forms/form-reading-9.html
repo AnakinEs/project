@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Когда использовать Get?">
+          <h2 id="Когда использовать Get?">Когда использовать Get?</h2>
+          <div class="section-content">
+            <p>Метод по умолчанию при отправке данных формы GET.</p>
+            <p>Однако при использовании Get, отправленные данные формы будут <strong>видны в поле адрес страницы</strong>:</p>
+            <pre><code class="language-html">/action_page.php?firstname=Mickey&lastname=Mouse</code></pre>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Заметки о Get:</div>
+              <ul>
+                <li>Добавление данных формы в URL-адрес в парах "имя/значение"</li>
+                <li>Длина URL ограничена (около 3000 символов)</li>
+                <li>Никогда не используйте Get для отправки конфиденциальных данных! (будет отображаться в URL)</li>
+                <li>Полезно для представлений форм, где пользователь хочет <span id="hint4" class="hint" data-tooltip="Не понял">закладка результат</span></li>
+                <li>Get лучше для незащищенных данных, таких как строки запроса в Google</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

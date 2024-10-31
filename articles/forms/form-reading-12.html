@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Группирование данных формы с помощью &lt;fieldset&gt;">
+          <h2 id="Группирование данных формы с помощью &lt;fieldset&gt;">Группирование данных формы с помощью &lt;fieldset&gt;</h2>
+          <div class="section-content">
+            <p>Элемент <code>&lt;fieldset&gt;</code> используется для группирования связанных данных в форме.</p>
+            <p>Элемент <code>&lt;legend&gt;</code> определяет заголовок для <code>&lt;fieldset&gt;</code> Элемент.</p>
+            <pre><code class="language-html">&lt;form action="/action_page.php"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Personal information:&lt;/legend&gt;
+    First name:&lt;br&gt;
+    &lt;input type="text" name="firstname" value="Mickey"&gt;&lt;br&gt;
+    Last name:&lt;br&gt;
+    &lt;input type="text" name="lastname" value="Mouse"&gt;&lt;br&gt;&lt;br&gt;
+    &lt;input type="submit" value="Submit"&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            <p>Таким образом, HTML-код выше будет отображаться в браузере:</p>
+            <iframe style="height:15rem" src="iframes/iframe6.html"></iframe>
+            <p>Вот список атрибутов <code>&lt;form&gt;</code>:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Атрибут</th>
+                  <th>Описание</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td>accept-charset</td>
+                    <td>Задает кодировку, используемую в отправленной форме (по умолчанию: кодировка страницы).</td>
+                  </tr>
+
+                  <tr>
+                    <td>action</td>
+                    <td>Указывает адрес (URL) для отправки формы (по умолчанию: страница отправки).</td>
+                  </tr>
+
+                  <tr>
+                    <td>autocomplete</td>
+                    <td>Указывает, должен ли обозреватель Автозаполнение формы (по умолчанию: on).</td>
+                  </tr>
+
+                  <tr>
+                    <td>enctype</td>
+                    <td>Задает кодировку отправленных данных (по умолчанию: URL-кодировка).</td>
+                  </tr>
+
+                  <tr>
+                    <td>method</td>
+                    <td>Указывает метод HTTP, используемый при отправке формы (по умолчанию: Get).</td>
+                  </tr>
+
+                  <tr>
+                    <td>name</td>
+                    <td>Задает имя, используемое для идентификации формы (для использования DOM: Document.Forms.Name).</td>
+                  </tr>
+
+                  <tr>
+                    <td>novalidate</td>
+                    <td>Указывает, что обозреватель не должен проверять форму.</td>
+                  </tr>
+
+                  <tr>
+                    <td>target</td>
+                    <td>Указывает целевой объект адреса в атрибуте Action (по умолчанию: _self).</td>
+                  </tr>
+                </tbody>
+            </table>
+            <p>Вы узнаете больше о атрибутах формы в следующих главах.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

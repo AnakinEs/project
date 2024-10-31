@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Атрибут Name">
+          <h2 id="Атрибут Name">Атрибут Name</h2>
+          <div class="section-content">
+            <p>Каждое поле ввода должно иметь атрибут <code>name</code> для отправки.</p>
+            <p>Если атрибут <code>name</code> опущен, данные этого поля ввода не будут отправлены вообще.</p>
+            <p>В этом примере будет передаваться только поле ввода "Фамилия":</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The name Attribute&lt;/h2&gt;
+
+&lt;form action="/action_page.php"&gt;
+  First name:&lt;br&gt;
+  &lt;input type="text" value="Mickey"&gt;
+  &lt;br&gt;
+  Last name:&lt;br&gt;
+  &lt;input type="text" name="lastname" value="Mouse"&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt; 
+
+&lt;p&gt;If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".&lt;/p&gt;
+
+&lt;p&gt;Notice that the value of the "First name" field will not be submitted, because the input element does not have a name attribute.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:20rem" src="iframes/iframe5.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
