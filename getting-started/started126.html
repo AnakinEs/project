@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,22 +37,37 @@
         </style>
         
         <style>
-            span {
-  border: 1px solid black;
-  background-color: lime;
+            body {
+  width: 500px;
+  margin: 0 auto;
+}
+
+p {
+    background-color: rgb(207,232,220);
+    border: 2px solid rgb(79,185,227);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.positioned {
+  position: relative;
+  background: rgba(255,84,104,.3);
+  border: 2px solid rgb(255,84,104);
+  top: 30px;
+  left: 30px;
 }
         </style>
         
-        <title>Как работает CSS - добавление_css_в_dom - code sample</title>
+        <title>Введение в CSS вёрстку - relative_1 - code sample</title>
     </head>
     <body>
         
-            <p>
-  Let's use:
-  <span>Cascading</span>
-  <span>Style</span>
-  <span>Sheets</span>
-</p>
+            <h1>Relative positioning</h1>
+
+<p>I am a basic block level element.</p>
+<p class="positioned">This is my relatively positioned element.</p>
+<p>I am a basic block level element.</p>
         
         
     </body>

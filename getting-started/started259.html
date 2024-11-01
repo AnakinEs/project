@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="menu">Меню (нажми меня)</button>
+
+  <script>
+    menu.onclick = function () {
+      alert(1);
+
+      // alert("вложенное событие")
+      menu.dispatchEvent(new CustomEvent("menu-open", {
+        bubbles: true
+      }));
+
+      alert(2);
+    };
+
+    document.addEventListener('menu-open', () => alert('вложенное событие'))
+  </script>
+</body>
+
+</html>

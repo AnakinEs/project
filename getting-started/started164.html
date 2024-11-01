@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- добавим стили mocha для отображения результатов -->
+  <link rel="stylesheet" href="G:/Мой диск/Изучение/Программирование/Code/getting-started/css/mocha.css">
+  <!-- добавляем сам фреймворк mocha -->
+  <script src="G:/Мой диск/Изучение/Программирование/Code/getting-started/js/mocha.js"></script>
+  <script>
+    // включаем режим тестирования в стиле BDD
+    mocha.setup('bdd');
+  </script>
+  <!-- добавим chai -->
+  <script src="G:/Мой диск/Изучение/Программирование/Code/getting-started/js/chai.js"></script>
+  <script>
+    // chai предоставляет большое количество функций. Объявим assert глобально
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+
+  <script>
+    function pow(x, n) {
+      let result = 1;
+
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+
+      return result;
+    }
+  </script>
+
+  <!-- скрипт со спецификацией (describe, it...) -->
+  <script src="G:/Мой диск/Изучение/Программирование/Code/js/test3.js"></script>
+
+  <!-- элемент с id="mocha" будет содержать результаты тестов -->
+  <div id="mocha"></div>
+
+  <!-- запускаем тесты! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

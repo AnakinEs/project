@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form name="my">
+    <input name="one" value="1">
+    <input name="two" value="2">
+  </form>
+  
+  <script>
+    // получаем форму
+    let form = document.forms.my; // <form name="my"> element
+  
+    // получаем элемент
+    let elem = form.elements.one; // <input name="one"> element
+  
+    // alert(elem.value); // 1
+  </script>
+</body>
+</html>

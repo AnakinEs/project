@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Элемент &lt;textarea&gt;">
+          <h2 id="Элемент &lt;textarea&gt;">Элемент &lt;textarea&gt;</h2>
+          <div class="section-content">
+            <p><code>&lt;textarea&gt;</code> элемент определяет многострочное поле ввода (область текста):</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Textarea&lt;/h2&gt;
+&lt;p&gt;The textarea element defines a multi-line input field.&lt;/p&gt;
+
+&lt;form action="/action_page.php"&gt;
+  &lt;textarea name="message" rows="10" cols="30"&gt;The cat was playing in the garden.&lt;/textarea&gt;
+  &lt;br&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:22rem" src="iframes/iframe12.html"></iframe>
+            <p>Атрибут <code>rows</code> указывает видимое число строк в текстовой области.</p>
+            <p>Атрибут <code>cols</code> определяет видимую ширину текстовой области.</p>
+            <p>Можно также определить размер текстовой области с помощью CSS:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Styling Textarea&lt;/h2&gt;
+&lt;p&gt;Use CSS to change the size of the textarea:&lt;/p&gt;
+
+&lt;form action="/action_page.php"&gt;
+  &lt;textarea name="message" style="width:200px; height:600px;"&gt;The cat was playing in the garden.&lt;/textarea&gt;
+  &lt;br&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:49rem" src="iframes/iframe13.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

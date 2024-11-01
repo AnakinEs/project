@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="HTML5 &lt;Output&gt; элемент">
+          <h2 id="HTML5 &lt;Output&gt; элемент"><span id="hint6" class="hint" data-tooltip="Надо изучать, ниче не понятно">HTML5 &lt;Output&gt; элемент</span></h2>
+          <div class="section-content">
+            <p>Элемент <code>&lt;output&gt;</code> представляет результат вычисления (как один, выполняемый сценарием).</p>
+            <p>Выполните вычисление и Покажите результат в элементе <code>&lt;output&gt;</code>:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The output Element&lt;/h2&gt;
+&lt;p&gt;The output element represents the result of a calculation.&lt;/p&gt;
+
+&lt;form action="/action_page.php"
+oninput="x.value=parseInt(a.value)+parseInt(b.value)"&gt;
+  0
+  &lt;input type="range" id="a" name="a" value="50"&gt;
+  100 +
+  &lt;input type="number" id="b" name="b" value="50"&gt;
+  =
+  &lt;output name="x" for="a b"&gt;&lt;/output&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The output element is not supported in Edge 12 or Internet Explorer and earlier versions.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:16rem" src="../../getting-started/started297.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

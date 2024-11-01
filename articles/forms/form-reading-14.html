@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Элемент &lt;select&gt;">
+          <h2 id="Элемент &lt;select&gt;">Элемент &lt;select&gt;</h2>
+          <div class="section-content">
+            <p><code>&lt;select&gt;</code> элемент определяет <strong>раскрывающийся список</strong>:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The select Element&lt;/h2&gt;
+&lt;p&gt;The select element defines a drop-down list:&lt;/p&gt;
+
+&lt;form action="/action_page.php"&gt;
+  &lt;select name="cars"&gt;
+    &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+    &lt;option value="saab"&gt;Saab&lt;/option&gt;
+    &lt;option value="fiat"&gt;Fiat&lt;/option&gt;
+    &lt;option value="audi"&gt;Audi&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:13rem" src="iframes/iframe8.html"></iframe>
+            <p>Элементы <code>&lt;option&gt;</code> определяют параметр, который может быть выбран.</p>
+            <p>По умолчанию выбирается первый элемент в раскрывающемся списке.</p>
+            <p>Чтобы определить предварительно выбранный параметр, добавьте атрибут <code>selected</code> к параметру:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Pre-selected Option&lt;/h2&gt;
+&lt;p&gt;You can preselect an option with the selected attribute.&lt;/p&gt;
+
+&lt;form action="/action_page.php"&gt;
+  &lt;select name="cars"&gt;
+    &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+    &lt;option value="saab"&gt;Saab&lt;/option&gt;
+    &lt;option value="fiat" selected&gt;Fiat&lt;/option&gt;
+    &lt;option value="audi"&gt;Audi&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:13rem" src="iframes/iframe9.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

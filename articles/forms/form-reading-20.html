@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="HTML5 &lt;DataList&gt; элемент">
+          <h2 id="HTML5 &lt;DataList&gt; элемент">HTML5 &lt;DataList&gt; элемент</h2>
+          <div class="section-content">
+            <p>Элемент <code>&lt;datalist&gt;</code> задает список предварительно определенных параметров для элемента <code>&lt;input&gt;</code>.</p>
+            <p>Пользователи увидят раскрывающийся список предварительно определенных параметров при вводе данных.</p>
+            <p>Атрибут <code>list</code> элемента <code>&lt;input&gt;</code> должен ссылаться на <code>id</code> атрибут элемента <code>&lt;datalist&gt;</code>.</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The datalist Element&lt;/h2&gt;
+&lt;p&gt;The datalist element specifies a list of pre-defined options for an input element.&lt;/p&gt;
+
+&lt;form action="/action_page.php"&gt;
+  &lt;input list="browsers" name="browser"&gt;
+  &lt;datalist id="browsers"&gt;
+    &lt;option value="Internet Explorer"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Opera"&gt;
+    &lt;option value="Safari"&gt;
+  &lt;/datalist&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; The datalist tag is not supported in Safari or IE9 (and earlier).&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:15rem" src="iframes/iframe14.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

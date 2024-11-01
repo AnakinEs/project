@@ -1,0 +1,22 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  
+</head>
+
+<body>
+  <div id="elem">
+    <div id="elem-content">Элемент</div>
+  </div>
+  
+  <script>
+    // elem - ссылка на элемент с id="elem"
+    elem.style.background = 'red';
+  
+    // внутри id="elem-content" есть дефис, так что такой id не может служить именем переменной
+    // ...но мы можем обратиться к нему через квадратные скобки: window['elem-content']
+  </script>
+  
+</body>
+</html>
