@@ -28,6 +28,37 @@
             <pre><code class="language-html">&lt;form action="/action_page.php" method="post"&gt;</code></pre>
           </div>
         </section>
+        <section aria-labelledby="Когда использовать Get?">
+          <h2 id="Когда использовать Get?">Когда использовать Get?</h2>
+          <div class="section-content">
+            <p>Метод по умолчанию при отправке данных формы GET.</p>
+            <p>Однако при использовании Get, отправленные данные формы будут <strong>видны в поле адрес страницы</strong>:</p>
+            <pre><code class="language-html">/action_page.php?firstname=Mickey&lastname=Mouse</code></pre>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Заметки о Get:</div>
+              <ul>
+                <li>Добавление данных формы в URL-адрес в парах "имя/значение"</li>
+                <li>Длина URL ограничена (около 3000 символов)</li>
+                <li>Никогда не используйте Get для отправки конфиденциальных данных! (будет отображаться в URL)</li>
+                <li>Полезно для представлений форм, где пользователь хочет <span id="hint4" class="hint" data-tooltip="Не понял">закладка результат</span></li>
+                <li>Get лучше для незащищенных данных, таких как строки запроса в Google</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section aria-labelledby="Когда использовать POST?">
+          <h2 id="Когда использовать POST?">Когда использовать POST?</h2>
+          <div class="section-content">
+            <p>Всегда используйте POST, если данные формы содержат конфиденциальную или личную информацию. Метод POST не отображает отправленные данные формы в поле адрес страницы.</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Примечания на столбе:</div>
+              <ul>
+                <li>POST не имеет ограничений по размеру и может использоваться для отправки больших объемов данных.</li>
+                <li>Форма представлений с POST <span id="hint5" class="hint" data-tooltip="Не понял">не может быть Закладка</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </article>
     </main>
   </div>
