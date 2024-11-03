@@ -19,37 +19,28 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
-        <h1 id="HTML Типы входных данных">HTML Типы входных данных</h1>
-        <p>В этой главе описываются различные типы входных данных для элемента <code>&lt;input&gt;</code>.</p>
-
-        <section aria-labelledby="Текст типа ввода">
-          <h2 id="Текст типа ввода">Текст типа ввода</h2>
+        <section aria-labelledby="Сброс типа ввода">
+          <h2 id="Сброс типа ввода">Сброс типа ввода</h2>
           <div class="section-content">
-            <p><code>&lt;input type="text"&gt;</code> определяет одно <strong>строчное текстовое поле ввода:</strong></p>
-            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h2&gt;Text field&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;input type="text"&lt;/strong&gt; defines a one-line text input field:&lt;/p&gt;
+            <p><code>&lt;input type="reset"&gt;</code> Определяет кнопку сброса , которая сбрасывает все значения формы в значения по умолчанию:</p>
+            <pre><code class="language-html">&lt;h2&gt;Reset Button&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type="reset"&lt;/strong&gt; defines a reset button that will reset all form values to their default values:&lt;/p&gt;
 
 &lt;form action="/action_page.php"&gt;
 First name:&lt;br&gt;
-&lt;input type="text" name="firstname"&gt;
+&lt;input type="text" name="firstname" value="Mickey"&gt;
 &lt;br&gt;
 Last name:&lt;br&gt;
-&lt;input type="text" name="lastname"&gt;
+&lt;input type="text" name="lastname" value="Mouse"&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;input type="submit"&gt;
-&lt;/form&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;input type="reset"&gt;
+&lt;/form&gt; 
 
-&lt;p&gt;Note that the form itself is not visible.&lt;/p&gt;
-&lt;p&gt;Also note that the default width of a text field is 20 characters.&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;p&gt;If you change the input values and then click the "Reset" button, the form-data will be reset to the default values.&lt;/p&gt;</code></pre>
             <p>Таким образом, HTML-код выше будет отображаться в браузере:</p>
-            <iframe style="height:22rem" src="iframes/iframe15.html"></iframe>
+            <iframe style="height:20rem" src="iframes/iframe19.html"></iframe>
+            <p>При изменении входных значений и нажатии кнопки "Сброс" данные формы будут сброшены на значения по умолчанию.</p>
           </div>
         </section>
       </article>

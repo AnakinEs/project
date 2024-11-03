@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Цвет входного типа">
+          <h2 id="Цвет входного типа">Цвет входного типа</h2>
+          <div class="section-content">
+            <p><code>&lt;input type="color"&gt;</code> используется для полей ввода, которые должны содержать цвет.</p>
+            <p>В зависимости от поддержки обозревателя в поле ввода может отображаться палитра цветов.</p>
+            <pre><code class="language-html">&lt;h2&gt;Color Picker&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type="color"&lt;/strong&gt; is used for input fields that should contain a color.&lt;/p&gt;
+&lt;p&gt;Depending on browser support:&lt;br&gt;A color picker can pop-up when you enter the input field.&lt;/p&gt;
+
+&lt;form action="/action_page.php"&gt;
+  Select your favorite color:
+  &lt;input type="color" name="favcolor" value="#ff0000"&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; type="color" is not supported in Internet Explorer 11 and earlier versions or Safari 9.1 and earlier versions.&lt;/p&gt;</code></pre>
+            <iframe style="height:17rem" src="iframes/iframe23.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Тип ввода Дата">
+          <h2 id="Тип ввода Дата">Тип ввода Дата</h2>
+          <div class="section-content">
+            <p><code>&lt;input type=&quot;date&quot;&gt;</code> используется для полей ввода, которые должны содержать дату.</p>
+            <p>В зависимости от поддержки обозревателя в поле ввода может отображаться выбор даты.</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Date Field&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type=&quot;date&quot;&lt;/strong&gt; is used for input fields that should contain a date.&lt;/p&gt;
+&lt;p&gt;Depending on browser support:&lt;br&gt;A date picker can pop-up when you enter the input field.&lt;p&gt;
+
+&lt;form action=&quot;/action_page.php&quot;&gt;
+  Birthday:
+  &lt;input type=&quot;date&quot; name=&quot;bday&quot;&gt;
+  &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; type=&quot;date&quot; is not supported in Internet Explorer 11 and earlier versions.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:17rem" src="../getting-started/started298.html"></iframe>
+            <p>Можно также использовать атрибуты <code>min</code> и <code>max</code> для добавления ограничений дат:</p>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Date Field Restrictions&lt;/h2&gt;
+&lt;p&gt;Use the min and max attributes to add restrictions to dates:&lt;/p&gt;
+
+&lt;form action=&quot;/action_page.php&quot;&gt;
+Enter a date before 1980-01-01:&lt;br&gt;
+&lt;input type=&quot;date&quot; name=&quot;bday&quot; max=&quot;1979-12-31&quot;&gt;&lt;br&gt;&lt;br&gt;
+Enter a date after 2000-01-01:&lt;br&gt;
+&lt;input type=&quot;date&quot; name=&quot;bday&quot; min=&quot;2000-01-02&quot;&gt;&lt;br&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot;&gt; 
+&lt;/form&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; type=&quot;date&quot; is not supported in Internet Explorer 11 and earlier versions.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:21rem" src="../getting-started/started299.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

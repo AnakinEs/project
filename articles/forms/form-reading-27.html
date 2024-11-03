@@ -19,37 +19,23 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
-        <h1 id="HTML Типы входных данных">HTML Типы входных данных</h1>
-        <p>В этой главе описываются различные типы входных данных для элемента <code>&lt;input&gt;</code>.</p>
-
-        <section aria-labelledby="Текст типа ввода">
-          <h2 id="Текст типа ввода">Текст типа ввода</h2>
+        <section aria-labelledby='Флажок "тип ввода"'>
+          <h2 id='Флажок "тип ввода"'>Флажок "тип ввода"</h2>
           <div class="section-content">
-            <p><code>&lt;input type="text"&gt;</code> определяет одно <strong>строчное текстовое поле ввода:</strong></p>
-            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h2&gt;Text field&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;input type="text"&lt;/strong&gt; defines a one-line text input field:&lt;/p&gt;
+            <p><code>&lt;input type="checkbox"&gt;</code> Определяет <strong>CheckBox</strong>.</p>
+            <p>Флажки позволяют пользователю выбрать ноль или более вариантов ограниченного числа вариантов.</p>
+            <pre><code class="language-html">&lt;h2&gt;Checkboxes&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type="checkbox"&lt;/strong&gt; defines a checkbox:&lt;/p&gt;
 
 &lt;form action="/action_page.php"&gt;
-First name:&lt;br&gt;
-&lt;input type="text" name="firstname"&gt;
+&lt;input type="checkbox" name="vehicle1" value="Bike"&gt;I have a bike
 &lt;br&gt;
-Last name:&lt;br&gt;
-&lt;input type="text" name="lastname"&gt;
+&lt;input type="checkbox" name="vehicle2" value="Car"&gt;I have a car 
 &lt;br&gt;&lt;br&gt;
 &lt;input type="submit"&gt;
-&lt;/form&gt;
-
-&lt;p&gt;Note that the form itself is not visible.&lt;/p&gt;
-&lt;p&gt;Also note that the default width of a text field is 20 characters.&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/form&gt;</code></pre>
             <p>Таким образом, HTML-код выше будет отображаться в браузере:</p>
-            <iframe style="height:22rem" src="iframes/iframe15.html"></iframe>
+            <iframe style="height:15rem" src="iframes/iframe21.html"></iframe>
           </div>
         </section>
       </article>
