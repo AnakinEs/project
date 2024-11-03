@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Ограничения ввода">
+          <h2 id="Ограничения ввода">Ограничения ввода</h2>
+          <div class="section-content">
+            <p>Ниже приведен список некоторых распространенных ограничений ввода (некоторые из них являются новыми в HTML5):</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Атрибут</th>
+                  <th>Описание</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td>disabled</td>
+                    <td>Указывает, что поле ввода должно быть отключено</td>
+                  </tr>
+                  <tr>
+                    <td class="html5badge">max</td>
+                    <td>Задает максимальное значение для поля ввода</td>
+                  </tr>
+                  <tr>
+                    <td>maxlength</td>
+                    <td>Указывает максимальное число символов для поля ввода</td>
+                  </tr>
+                  <tr>
+                    <td class="html5badge">min</td>
+                    <td>Задает минимальное значение для поля ввода</td>
+                  </tr>
+                  <tr>
+                    <td class="html5badge">pattern</td>
+                    <td>Задает регулярное выражение для проверки входного значения на</td>
+                  </tr>
+                  <tr>
+                    <td>readonly</td>
+                    <td>Указывает, что поле ввода предназначено только для чтения (не может быть изменено)</td>
+                  </tr>
+                  <tr>
+                    <td class="html5badge">required</td>
+                    <td>Указывает, что поле ввода является обязательным (должно быть заполнено)</td>
+                  </tr>
+                  <tr>
+                    <td>size</td>
+                    <td>Задает ширину (в символах) поля ввода</td>
+                  </tr>
+                  <tr>
+                    <td class="html5badge">step</td>
+                    <td>Задает юридические интервалы номеров для поля ввода</td>
+                  </tr>
+                  <tr>
+                    <td>value</td>
+                    <td>Задает значение по умолчанию для поля ввода</td>
+                  </tr>
+                </tbody>
+            </table>
+            <p>Подробнее об ограничениях ввода вы узнаете в следующей главе.</p>
+            <p>В следующем примере отображается числовое поле ввода, в котором можно ввести значение от 0 до 100 в шагах 10. Значение по умолчанию равно 30:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Numeric Steps&lt;/h2&gt;
+&lt;p&gt;Depending on browser support:&lt;br&gt;Fixed steps will apply in the input field.&lt;/p&gt;
+
+&lt;form action=&quot;/action_page.php&quot;&gt;
+  Quantity:
+  &lt;input type=&quot;number&quot; name=&quot;quantity&quot;
+   min=&quot;0&quot; max=&quot;100&quot; step=&quot;10&quot; value=&quot;30&quot;&gt;
+  &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt;type=&quot;number&quot; is not supported in IE9 and earlier.
+&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:15rem" src="../getting-started/started304.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

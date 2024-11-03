@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Тип ввода отправить">
+          <h2 id="Тип ввода отправить">Тип ввода отправить</h2>
+          <div class="section-content">
+            <p><code>&lt;input type="submit"&gt;</code> Определяет кнопку для <strong>Отправка</strong> данных формы в <strong>обработчик форм</strong>.</p>
+            <p>Обработчик форм обычно является серверной страницей со сценарием для обработки входных данных.</p>
+            <p>Обработчик формы указан в атрибуте <code>action</code> формы:</p>
+            <pre><code class="language-html">&lt;h2&gt;Submit Button&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type="submit"&lt;/strong&gt; defines a button for submitting form data to a form-handler:&lt;/p&gt;
+
+&lt;form action="/action_page.php"&gt;
+First name:&lt;br&gt;
+&lt;input type="text" name="firstname" value="Mickey"&gt;
+&lt;br&gt;
+Last name:&lt;br&gt;
+&lt;input type="text" name="lastname" value="Mouse"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt; 
+
+&lt;p&gt;If you click "Submit", the form-data will be sent to a page called "/action_page.php".&lt;/p&gt;</code></pre>
+            <p>Таким образом, HTML-код выше будет отображаться в браузере:</p>
+            <iframe style="height:20rem" src="iframes/iframe17.html"></iframe>
+            <p>Если опустить атрибут value кнопки Submit, кнопка получит текст по умолчанию:</p>
+            <pre><code class="language-html">&lt;form action="/action_page.php"&gt;
+First name:&lt;br&gt;
+&lt;input type="text" name="firstname" value="Mickey"&gt;
+&lt;br&gt;
+Last name:&lt;br&gt;
+&lt;input type="text" name="lastname" value="Mouse"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;input type="submit"&gt;
+&lt;/form&gt;</code></pre>
+            <iframe style="height:11rem" src="iframes/iframe18.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Диапазон входного типа">
+          <h2 id="Диапазон входного типа">Диапазон входного типа</h2>
+          <div class="section-content">
+            <p><code>&lt;input type=&quot;range&quot;&gt;</code> определяет элемент управления для ввода числа, точное значение которого не имеет значения (например, элемент управления <span id="hint9" class="hint" data-tooltip="Слайдер. Не понял">Slider</span>). Диапазон по умолчанию &mdash; от 0 до 100. Однако можно установить ограничения на то, какие номера принимаются с атрибутами <code>min</code>, <code>max</code> и <code>step</code>:</p>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Range Field&lt;/h2&gt;
+&lt;p&gt;Depending on browser support:&lt;br&gt;The input type &quot;range&quot; can be displayed as a slider control.&lt;p&gt;
+
+&lt;form action=&quot;/action_page.php&quot; method=&quot;get&quot;&gt;
+  Points:
+  &lt;input type=&quot;range&quot; name=&quot;points&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;
+  &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;p&gt;
+&lt;b&gt;Note:&lt;/b&gt;
+type=&quot;range&quot; is not supported in Internet Explorer 9 and earlier versions.
+&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:15rem" src="../getting-started/started305.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

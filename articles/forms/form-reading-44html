@@ -19,9 +19,26 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
-        
+        <section aria-labelledby="Атрибут типа ввода HTML">
+          <h2 id="Атрибут типа ввода HTML">Атрибут типа ввода HTML</h2>
+          <div class="section-content">
+            <table>
+              <thead>
+                <tr>
+                  <th>Тег</th>
+                  <th>Описание</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;input type=&quot;&quot;&gt;</code></td>
+                    <td>Указывает тип ввода для отображения</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </section>
       </article>
     </main>
   </div>
 </body>
-<iframe style="height:1500px; width:100%; border:none;" src="https://anakines.github.io/project\articles\forms\form-reading-0.html"></iframe>

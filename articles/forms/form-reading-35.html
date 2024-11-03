@@ -19,31 +19,31 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
-        <section aria-labelledby="Входной тип DateTime-локальный">
-          <h2 id="Входной тип DateTime-локальный">Входной тип DateTime-локальный</h2>
+        <section aria-labelledby="Тип входного месяца">
+          <h2 id="Тип входного месяца">Тип входного месяца</h2>
           <div class="section-content">
-            <p><code>&lt;input type=&quot;datetime-local&quot;&gt;</code> задает поле ввода даты и времени без часового пояса.</p>
+            <p><code>&lt;input type=&quot;month&quot;&gt;</code> позволяет пользователю выбрать месяц и год.</p>
             <p>В зависимости от поддержки обозревателя в поле ввода может отображаться выбор даты.</p>
             <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
 
-&lt;h2&gt;Local Date Field&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;input type=&quot;datetime-local&quot;&lt;/strong&gt; specifies a date and time input field, with no time zone.&lt;/p&gt;
+&lt;h2&gt;Month Field&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type=&quot;month&quot;&lt;/strong&gt; allows the user to select a month and year.&lt;/p&gt;
 &lt;p&gt;Depending on browser support:&lt;br&gt;A date picker can pop-up when you enter the input field.&lt;/p&gt;
 
 &lt;form action=&quot;/action_page.php&quot;&gt;
-  Birthday (date and time):
-  &lt;input type=&quot;datetime-local&quot; name=&quot;bdaytime&quot;&gt;
-  &lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
+  Birthday (month and year):
+  &lt;input type=&quot;month&quot; name=&quot;bdaymonth&quot;&gt;
+  &lt;input type=&quot;submit&quot;&gt;
 &lt;/form&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; type=&quot;datetime-local&quot; is not supported in Firefox, or Internet Explorer 12 and earlier versions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; type=&quot;month&quot; is not supported in Firefox, or Internet Explorer 11 and earlier versions.&lt;/p&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            <iframe style="height:17rem" src="../../getting-started/started300.html"></iframe>
+            <iframe style="height:20rem" src="../getting-started/started302.html"></iframe>
           </div>
         </section>
       </article>

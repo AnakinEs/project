@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Тип ввода электронной почты">
+          <h2 id="Тип ввода электронной почты">Тип ввода электронной почты</h2>
+          <div class="section-content">
+            <p><code>&lt;input type=&quot;email&quot;&gt;</code> используется для полей ввода, которые должны содержать адрес электронной почты.</p>
+            <p>В зависимости от поддержки браузера, адрес электронной почты может быть автоматически проверен при отправке.</p>
+            <p>Некоторые смартфоны распознают тип электронной почты и добавляют ". com" на клавиатуре для сопоставления ввода электронной почты.</p>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Email Field&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type=&quot;email&quot;&lt;/strong&gt; is used for input fields that should contain an e-mail address:&lt;/p&gt;
+
+&lt;form action=&quot;/action_page.php&quot;&gt;
+  E-mail:
+  &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;
+  &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;p&gt;
+&lt;b&gt;Note:&lt;/b&gt;type=&quot;email&quot; is not supported in IE9 and earlier.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:13rem" src="../getting-started/started301.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

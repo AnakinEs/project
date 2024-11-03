@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="URL-адрес типа ввода">
+          <h2 id="URL-адрес типа ввода">URL-адрес типа ввода</h2>
+          <div class="section-content">
+            <p><code>&lt;input type=&quot;url&quot;&gt;</code> используется для полей ввода, которые должны содержать URL-адрес.</p>
+            <p>В зависимости от поддержки браузера, поле URL может быть автоматически проверено при отправке.</p>
+            <p>Некоторые смартфоны распознают тип URL-адреса и добавляют ". com" к клавиатуре для сопоставления ввода URL-адреса.</p>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;URL Field&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;input type=&quot;url&quot;&lt;/strong&gt; is used for input fields that should contain a URL address:&lt;/p&gt;
+
+&lt;form action=&quot;/action_page.php&quot;&gt;
+  Add your homepage:
+  &lt;input type=&quot;url&quot; name=&quot;homepage&quot;&gt;
+  &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt;
+The type=&quot;url&quot; is not supported in IE9 and earlier versions.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <iframe style="height:13rem" src="../getting-started/started309.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
