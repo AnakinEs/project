@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Атрибуты min и Max">
+          <h2 id="Атрибуты min и Max">Атрибуты min и Max</h2>
+          <div class="section-content">
+            <p>Атрибуты <code>min</code> и <code>max</code> определяют минимальное и максимальное значения для элемента <code>&lt;input&gt;</code>.</p>
+            <p>Атрибуты <code>min</code> и <code>max</code> работают со следующими типами ввода: число, диапазон, Дата, DateTime-Local, месяц, время и неделя.</p>
+            <p><code>&lt;input&gt;</code> элементы с минимальными и максимальными значениями:</p>
+            <pre><code class="language-html">Enter a date before 1980-01-01:
+&lt;input type=&quot;date&quot; name=&quot;bday&quot; max=&quot;1979-12-31&quot;&gt;
+
+Enter a date after 2000-01-01:
+&lt;input type=&quot;date&quot; name=&quot;bday&quot; min=&quot;2000-01-02&quot;&gt;
+
+Quantity (between 1 and 5):
+&lt;input type=&quot;number&quot; name=&quot;quantity&quot; min=&quot;1&quot; max=&quot;5&quot;&gt;</code></pre>
+            <iframe style="height:6rem" src="iframes/iframe29.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+<iframe style="height:1500px; width:100%; border:none;" src="https://anakines.github.io/project\articles\forms\form-reading-66.html"></iframe>

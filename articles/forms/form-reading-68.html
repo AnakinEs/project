@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Атрибут pattern">
+          <h2 id="Атрибут pattern">Атрибут pattern</h2>
+          <div class="section-content">
+            <p>Атрибут <code>pattern</code> задает регулярное выражение, для которого проверяется значение элемента <code>&lt;input&gt;</code>.</p>
+            <p>Атрибут <code>pattern</code> работает со следующими типами ввода: текстом, поиском, URL-адресом, тел, электронной почтой и паролем.</p>
+            <p><strong>Совет:</strong> Используйте атрибут Global <a href="https://html5css.ru/tags/att_global_title.php">Title</a> для описания шаблона, чтобы помочь пользователю.</p>
+            <p><strong>Совет:</strong> Узнайте больше о <a href="https://html5css.ru/js/js_regexp.php">регулярных выражениях</a> в нашем учебнике по JavaScript.</p>
+            <p>Поле ввода, которое может содержать только три буквы (без цифр или специальных символов):</p>
+            <pre><code class="language-html">Country code: &lt;input type=&quot;text&quot; name=&quot;country_code&quot; pattern=&quot;[A-Za-z]{3}&quot; title=&quot;Three letter country code&quot;&gt;</code></pre>
+            <iframe style="height:5rem" src="iframes/iframe31.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+<iframe style="height:1500px; width:100%; border:none;" src="https://anakines.github.io/project\articles\forms\form-reading-68.html"></iframe>

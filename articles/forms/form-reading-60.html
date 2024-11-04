@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Атрибут форменктипе">
+          <h2 id="Атрибут форменктипе">Атрибут форменктипе</h2>
+          <div class="section-content">
+            <p>Атрибут <code>formenctype</code> указывает, как данные формы <span id="hint14" class="hint" data-tooltip="Не понял">должны кодироваться</span> при отправке (только для форм с методом = "Post").</p>
+            <p>Атрибут <code>formenctype</code> переопределяет атрибут Enctype элемента <code>&lt;form&gt;</code>.</p>
+            <p>Атрибут <code>formenctype</code> используется с <code>type="submit"</code> и <code>type="image"</code>.</p>
+            <p>Отправьте форму-данные, закодированные по умолчанию (первая кнопка Submit), и закодированные как "составные/формы-данные" (вторая кнопка Submit):</p>
+            <pre><code class="language-html">&lt;form action=&quot;/action_page_binary.php&quot; method=&quot;post&quot;&gt;
+  First name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;&lt;br&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+  &lt;input type=&quot;submit&quot; formenctype=&quot;multipart/form-data&quot;
+  value=&quot;Submit as Multipart/form-data&quot;&gt;
+&lt;/form&gt;</code></pre>
+            <iframe style="height:6rem" src="../../getting-started/started320.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+<iframe style="height:1500px; width:100%; border:none;" src="https://anakines.github.io/project\articles\forms\form-reading-60.html"></iframe>

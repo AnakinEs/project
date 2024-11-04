@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../../css/prism.css" rel="stylesheet">
+  <script src="../../js/prism.js"></script>
+  <script src="../../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Атрибут автозаполнения">
+          <h2 id="Атрибут автозаполнения">Атрибут автозаполнения</h2>
+          <div class="section-content">
+            <p>Атрибут <code>autocomplete</code> указывает, должна ли форма или поле ввода иметь Автозаполнение или выключить.</p>
+            <p>Когда Автозаполнение включен, браузер автоматически завершает входные значения, основываясь на значениях, введенных пользователем ранее.</p>
+            <p><strong>Совет:</strong> Можно иметь Автозаполнение "on" для формы и "OFF" для определенных полей ввода или наоборот.</p>
+            <p>Атрибут <code>autocomplete</code> работает с <code>&lt;form&gt;</code> и следующими типами <code>&lt;input&gt;</code>: текстом, поиском, URL, тел, электронной почтой, паролем, <span id="hint11" class="hint" data-tooltip="Не понял">датепиккерс</span>, диапазоном и цветом.</p>
+            <p>HTML-форма с автозаполнением on (и Off для одного поля ввода):</p>
+            <pre><code class="language-html">&lt;form action=&quot;/action_page.php&quot; autocomplete=&quot;on&quot;&gt;
+  First name:&lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;&lt;br&gt;
+  Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot;&gt;&lt;br&gt;
+  E-mail: &lt;input type=&quot;email&quot; name=&quot;email&quot; autocomplete=&quot;off&quot;&gt;&lt;br&gt;
+  &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+            <iframe style="height:9rem" src="../../getting-started/started316.html"></iframe>
+            <p><strong>Совет:</strong> В некоторых браузерах вам может понадобиться <span id="hint12" class="hint" data-tooltip="Не совсем понял">активировать функцию автозаполнения</span>, чтобы это работало.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+<iframe style="height:1500px; width:100%; border:none;" src="https://anakines.github.io/project\articles\forms\form-reading-55.html"></iframe>
