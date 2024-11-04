@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Итого5">
+          <h2 id="Итого5">Итого</h2>
+          <div class="section-content">
+            <p>В JavaScript есть 8 основных типов.</p>
+            <ul>
+              <li><code>number</code> для любых чисел: целочисленных или чисел с плавающей точкой; целочисленные
+                значения ограничены диапазоном <code>±(253-1)</code>.</li>
+              <li><code>bigint</code> для целых чисел произвольной длины.</li>
+              <li><code>string</code> для строк. Строка может содержать ноль или больше символов, нет отдельного
+                символьного типа.</li>
+              <li><code>boolean</code> для <code>true</code>/<code>false</code>.</li>
+              <li><code>null</code> для неизвестных значений – отдельный тип, имеющий одно значение
+                <code>null</code>.
+              </li>
+              <li><code>undefined</code> для неприсвоенных значений – отдельный тип, имеющий одно значение
+                <code>undefined</code>.
+              </li>
+              <li><code>object</code> для более сложных структур данных.</li>
+              <li><code>symbol</code> для уникальных идентификаторов.</li>
+            </ul>
+            <p>Оператор <code>typeof</code> позволяет нам увидеть, какой тип данных сохранён в переменной.</p>
+            <ul>
+              <li>Имеет две формы: <code>typeof x</code> или <code>typeof(x)</code>.</li>
+              <li>Возвращает строку с именем типа. Например, <code>"string"</code>.</li>
+              <li>Для <code>null</code> возвращается <code>"object"</code> – это ошибка в языке, на самом деле это
+                не
+                объект.</li>
+            </ul>
+            <p>В следующих главах мы сконцентрируемся на примитивных значениях, а когда познакомимся с ними,
+              перейдём
+              к объектам.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Число">
+          <h2 id="Число">Число</h2>
+          <div class="section-content">
+            <pre><code class="language-js">let n = 123;
+n = 12.345;</code></pre>
+            <p><strong>Числовой</strong> тип данных (<code>number</code>) представляет как целочисленные значения,
+              так
+              и числа с плавающей точкой.</p>
+            <p>Существует множество операций для чисел, например, умножение <code>*</code>, деление <code>/</code>,
+              сложение <code>+</code>, вычитание <code>-</code> и так далее.</p>
+            <p>Кроме обычных чисел, существуют так называемые «специальные числовые значения», которые относятся к
+              этому типу данных: <code>Infinity</code>, <code>-Infinity</code> и <code>NaN</code>.</p>
+            <ul>
+              <li>
+                <p><code>Infinity</code> представляет собой математическую <a
+                    href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C#%D0%92_%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5">бесконечность</a>
+                  ∞. Это особое значение, которое больше любого числа.</p>
+                <p>Мы можем получить его в результате деления на ноль:</p>
+                <pre><code class="language-js">alert( 1 / 0 ); // Infinity</code></pre>
+                <p>Или задать его явно:</p>
+                <pre><code class="language-js">alert( Infinity ); // Infinity</code></pre>
+              </li>
+              <li>
+                <p><code>NaN</code> означает вычислительную ошибку. Это результат неправильной или неопределённой
+                  математической операции, например:</p>
+                <pre><code class="language-js">alert( "не число" / 2 ); // NaN, такое деление является ошибкой</code></pre>
+                <p>Значение <code>NaN</code> «прилипчиво». Любая математическая операция с <code>NaN</code>
+                  возвращает
+                  <code>NaN</code>:
+                </p>
+                <pre><code class="language-js">alert( NaN + 1 ); // NaN
+alert( 3 * NaN ); // NaN
+alert( "не число" / 2 - 1 ); // NaN</code></pre>
+                <p>Если где-то в математическом выражении есть <code>NaN</code>, то оно распространяется на весь
+                  результат (есть только одно исключение: <code>NaN ** 0</code> равно <code>1</code>).</p>
+              </li>
+            </ul>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Математические операции – безопасны</div>
+              <p>Математические операции в JavaScript «безопасны». Мы можем делать что угодно: делить на ноль,
+                обращаться с нечисловыми строками как с числами и т.д.</p>
+              <p>Скрипт никогда не остановится с фатальной ошибкой (не «умрёт»). В худшем случае мы получим
+                <code>NaN</code> как результат выполнения.
+              </p>
+            </div>
+            <p>Специальные числовые значения относятся к типу «число». Конечно, это не числа в привычном значении
+              этого слова.</p>
+            <p>Подробнее о работе с числами мы поговорим в главе <a
+                href="https://learn.javascript.ru/number">Числа</a>.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

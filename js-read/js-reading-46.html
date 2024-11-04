@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Шаблонные строки">
+          <h3 id="Шаблонные строки">Шаблонные строки</h3>
+          <div class="section-content">
+            <p>Что выведет этот скрипт?</p>
+            <pre><code class="language-js">let name = "Ilya";
+
+alert( `hello ${1}` ); // ?
+
+alert( `hello ${"name"}` ); // ?
+
+alert( `hello ${name}` ); // ?</code></pre>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <ol>
+                <p>Обратные кавычки позволяют вставить выражение внутри <code>${...}</code> в строку.</p>
+                <pre><code class="language-js">let name = "Ilya";
+    
+// выражение - число 1
+alert( `hello ${1}` ); // hello 1
+
+// выражение - строка "name"
+alert( `hello ${"name"}` ); // hello name
+
+// выражение - переменная, вставим её в строку
+alert( `hello ${name}` ); // hello Ilya</code></pre>
+              </ol>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

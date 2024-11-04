@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Значение «undefined»">
+          <h2 id="Значение «undefined»">Значение «undefined»</h2>
+          <div class="section-content">
+            <p>Специальное значение <code>undefined</code> также стоит особняком. Оно формирует тип из самого себя
+              так
+              же, как и <code>null</code>.</p>
+            <p>Оно означает, что «значение не было присвоено».</p>
+            <p>Если переменная объявлена, но ей не присвоено никакого значения, то её значением будет
+              <code>undefined</code>:
+            </p>
+            <pre><code class="language-js">let age;
+
+alert(age); // выведет "undefined"</code></pre>
+            <p>Технически мы можем присвоить значение <code>undefined</code> любой переменной:</p>
+            <pre><code class="language-js">let age = 123;
+
+// изменяем значение на undefined
+age = undefined;
+
+alert(age); // "undefined"</code></pre>
+            <p>…Но так делать не рекомендуется. Обычно <code>null</code> используется для присвоения переменной
+              «пустого» или «неизвестного» значения, а <code>undefined</code> – для проверок, была ли переменная
+              назначена.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="BigInt">
+          <h2 id="BigInt">BigInt</h2>
+          <div class="section-content">
+            <p>В JavaScript тип «number» не может содержать числа больше, чем <code>(253-1)</code> (т. е.
+              <code>9007199254740991</code>), или меньше, чем <code>-(253-1)</code> для отрицательных чисел. Это
+              техническое ограничение вызвано их внутренним представлением.
+            </p>
+            <p>Для большинства случаев этого достаточно. Но иногда нам нужны действительно гигантские числа,
+              например,
+              в криптографии или при использовании метки времени («timestamp») с микросекундами.</p>
+            <p>Тип <code>BigInt</code> был добавлен в JavaScript, чтобы дать возможность работать с целыми числами
+              произвольной длины.</p>
+            <p>Чтобы создать значение типа <code>BigInt</code>, необходимо добавить <code>n</code> в конец числового
+              литерала:</p>
+            <pre><code class="language-js">// символ "n" в конце означает, что это BigInt
+const bigInt = 1234567890123456789012345678901234567890n;</code></pre>
+            <p>Так как <code>BigInt</code>-числа нужны достаточно редко, мы рассмотрим их в отдельной главе <a
+                href="https://learn.javascript.ru/bigint">BigInt</a>. Ознакомьтесь с ней, когда вам понадобятся
+              настолько большие числа.</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Поддержка</div>
+              <p>В данный момент <code>BigInt</code> поддерживается только в браузерах Firefox, Chrome, Edge и
+                Safari,
+                но не поддерживается в IE.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
