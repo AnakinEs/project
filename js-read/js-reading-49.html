@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="confirm">
+          <h2 id="confirm">confirm</h2>
+          <div class="section-content">
+            <p>Синтаксис:</p>
+            <pre><code class="language-js">result = confirm(question);</code></pre>
+            <p>Функция <code>confirm</code> отображает модальное окно с текстом вопроса <code>question</code> и
+              двумя
+              кнопками: OK и Отмена.</p>
+            <p>Результат – <code>true</code>, если нажата кнопка OK. В других случаях – <code>false</code>.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">let isBoss = confirm("Ты здесь главный?");
+
+alert( isBoss ); // true, если нажата OK</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

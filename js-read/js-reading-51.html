@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Простая страница">
+          <h3 id="Простая страница">Простая страница</h3>
+          <div class="section-content">
+            <p>Создайте страницу, которая спрашивает имя у пользователя и выводит его.</p>
+            <p class=""><a href="#" onclick="event.preventDefault(); runDemo(this)"><span id="hint8" class="hint"
+                  data-tooltip="Эта ссылка реализована через JS, как раберусь позжу сделаю как на том сайте">Запустить
+                  демо</span></a></p>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <ol>
+                <p>JavaScript-код:</p>
+                <pre><code class="language-js">let name = prompt("Ваше имя?", "");
+alert(name);</code></pre>
+                <p>Вся страница:</p>
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;script&gt;
+'use strict';
+
+let name = prompt("Ваше имя?", "");
+alert(name);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </ol>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
