@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Численное преобразование">
+          <h2 id="Численное преобразование">Численное преобразование</h2>
+          <div class="section-content">
+            <p>Численное преобразование происходит в математических функциях и выражениях.</p>
+            <p>Например, когда операция деления <code>/</code> применяется не к числу:</p>
+            <pre><code class="language-js">alert( "6" / "2" ); // 3, строки преобразуются в числа</code></pre>
+            <p>Мы можем использовать функцию <code>Number(value)</code>, чтобы явно преобразовать <code>value</code>
+              к
+              числу:</p>
+            <pre><code class="language-js">let str = "123";
+alert(typeof str); // string
+
+let num = Number(str); // становится числом 123
+
+alert(typeof num); // number</code></pre>
+            <p>Явное преобразование часто применяется, когда мы ожидаем получить число из строкового контекста,
+              например из текстовых полей форм.</p>
+            <p>Если строка не может быть явно приведена к числу, то результатом преобразования будет
+              <code>NaN</code>.
+              Например:
+            </p>
+            <pre><code class="language-js">let age = Number("Любая строка вместо числа");
+
+alert(age); // NaN, преобразование не удалось</code></pre>
+            <p>Правила численного преобразования:</p>
+            <table>
+              <colgroup>
+                <col class="one_column">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Значение</th>
+                  <th>Преобразуется в…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>undefined</code></td>
+                  <td><code>NaN</code></td>
+                </tr>
+                <tr>
+                  <td><code>null</code></td>
+                  <td><code>0</code></td>
+                </tr>
+                <tr>
+                  <td><code>true</code> / <code>false</code> </td>
+                  <td><code>1</code> / <code>0</code></td>
+                </tr>
+                <tr>
+                  <td><code>string</code></td>
+                  <td>Пробельные символы по краям обрезаются. Далее, если остаётся пустая строка, то получаем
+                    <code>0</code>, иначе из непустой строки «считывается» число. При ошибке результат
+                    <code>NaN</code>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Примеры:</p>
+            <pre><code class="language-js">alert( Number("   123   ") ); // 123
+alert( Number("123z") );      // NaN (ошибка чтения числа на месте символа "z")
+alert( Number(true) );        // 1
+alert( Number(false) );       // 0</code></pre>
+            <p>Учтите, что <code>null</code> и <code>undefined</code> ведут себя по-разному. Так, <code>null</code>
+              становится нулём, тогда как <code>undefined</code> приводится к <code>NaN</code>.</p>
+            <p>Большинство математических операторов также производит данное преобразование, как мы увидим в
+              следующей
+              главе.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Итого7">
+          <h2 id="Итого7">Итого</h2>
+          <div class="section-content">
+            <p>Существует 3 наиболее широко используемых преобразования: строковое, численное и логическое.</p>
+            <p><strong><code>Строковое</code></strong> – Происходит, когда нам нужно что-то вывести. Может быть
+              вызвано с помощью <code>String(value)</code>. Для примитивных значений работает очевидным образом.</p>
+            <p><strong><code>Численное</code></strong> – Происходит в математических операциях. Может быть вызвано с
+              помощью <code>Number(value)</code>.</p>
+            <p>Преобразование подчиняется правилам:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Значение</th>
+                  <th>Становится…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>undefined</code></td>
+                  <td><code>NaN</code></td>
+                </tr>
+                <tr>
+                  <td><code>null</code></td>
+                  <td><code>0</code></td>
+                </tr>
+                <tr>
+                  <td><code>true</code> / <code>false</code> </td>
+                  <td><code>1</code> / <code>0</code></td>
+                </tr>
+                <tr>
+                  <td><code>string</code></td>
+                  <td>Пробельные символы по краям обрезаются. Далее, если остаётся пустая строка, то получаем
+                    <code>0</code>, иначе из непустой строки «считывается» число. При ошибке результат
+                    <code>NaN</code>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong><code>Логическое</code></strong> – Происходит в логических операциях. Может быть вызвано с
+              помощью <code>Boolean(value)</code>.</p>
+            <p>Подчиняется правилам:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Значение</th>
+                  <th>Становится…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code>, <code>null</code>, <code>undefined</code>, <code>NaN</code>, <code>""</code>
+                  </td>
+                  <td><code>false</code></td>
+                </tr>
+                <tr>
+                  <td>любое другое значение</td>
+                  <td><code>true</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Большую часть из этих правил легко понять и запомнить. Особые случаи, в которых часто допускаются
+              ошибки:</p>
+            <ul>
+              <li><code>undefined</code> при численном преобразовании становится <code>NaN</code>, не
+                <code>0</code>.
+              </li>
+              <li><code>"0"</code> и строки из одних пробелов типа <code>" "</code> при логическом преобразовании
+                всегда <code>true</code>.</li>
+            </ul>
+            <p>В этой главе мы не говорили об объектах. Мы вернёмся к ним позже, в главе <a href="">Преобразование
+                объектов в примитивы</a>, посвящённой только объектам, сразу после того, как узнаем больше про
+              основы
+              JavaScript.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

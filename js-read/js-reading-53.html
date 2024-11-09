@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Строковое преобразование">
+          <h2 id="Строковое преобразование">Строковое преобразование</h2>
+          <div class="section-content">
+            <p>Строковое преобразование происходит, когда требуется представление чего-либо в виде строки.</p>
+            <p>Например, <code>alert(value)</code> преобразует значение к строке.</p>
+            <p>Также мы можем использовать функцию <code>String(value)</code>, чтобы преобразовать значение к
+              строке:
+            </p>
+            <pre><code class="language-js">let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // теперь value это строка "true"
+alert(typeof value); // string</code></pre>
+            <p>Преобразование происходит очевидным образом. <code>false</code> становится <code>"false"</code>,
+              <code>null</code> становится <code>"null"</code> и т.п.
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
