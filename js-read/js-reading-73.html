@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Преобразование типов2">
+          <h3 id="Преобразование типов2">Преобразование типов</h3>
+          <div class="section-content">
+            <p>Какой результат будет у выражений ниже?</p>
+            <pre><code class="language-js">"" + 1 + 0
+"" - 1 + 0
+true + false
+6 / "3"
+"2" * "3"
+4 + 5 + "px"
+"$" + 4 + 5
+"4" - 2
+"4px" - 2
+"  -9  " + 5
+"  -9  " - 5
+null + 1
+undefined + 1
+" \t \n" - 2</code></pre>
+            <p>Подумайте как следует, запишите ответы и сверьтесь с решением.</p>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <div>
+                <pre><code class="language-js">"" + 1 + 0 = "10" // (1)
+"" - 1 + 0 = -1 // (2)
+true + false = 1
+6 / "3" = 2
+"2" * "3" = 6
+4 + 5 + "px" = "9px"
+"$" + 4 + 5 = "$45"
+"4" - 2 = 2
+"4px" - 2 = NaN
+"  -9  " + 5 = "  -9  5" // (3)
+"  -9  " - 5 = -14 // (4)
+null + 1 = 1 // (5)
+undefined + 1 = NaN // (6)
+" \t \n" - 2 = -2 // (7)</code></pre>
+                <ol>
+                  <li>Сложение со строкой <code>"" + 1</code> преобразует <code>1</code> к строке:
+                    <code>"" + 1 = "1"</code>, и в следующем случае <code>"1" + 0</code> работает то же самое
+                    правило.
+                  </li>
+                  <li>Вычитание <code>-</code> (как и большинство математических операторов) работает только с
+                    числами, пустая строка <code>""</code> приводится к <code>0</code>.</li>
+                  <li>Сложение со строкой превращает число <code>5</code> в строку и добавляет к строке.</li>
+                  <li>Вычитание всегда преобразует к числу, значит строка <code>" -9 "</code> становится числом
+                    <code>-9</code> (пробелы по краям обрезаются).
+                  </li>
+                  <li><code>null</code> становится <code>0</code> после численного преобразования.</li>
+                  <li><code>undefined</code> становится <code>NaN</code> после численного преобразования.</li>
+                  <li>Пробельные символы, такие как <code>\t</code> и <code>\n</code>, по краям строки
+                    игнорируются
+                    при преобразовании в число, так что строка <code>" \t \n"</code>, аналогично пустой строке,
+                    становится <code>0</code> после численного преобразования.</li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

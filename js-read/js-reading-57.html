@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Базовые операторы, математика">
+          <h1 id="Базовые операторы, математика">Базовые операторы, математика</h1>
+          <div class="section-content">
+            <p>Многие операторы знакомы нам ещё со школы: сложение <code>+</code>, умножение <code>*</code>,
+              вычитание
+              <code>-</code> и так далее.
+            </p>
+            <p>В этой главе мы начнём с простых операторов, а потом сконцентрируемся на специфических для JavaScript
+              аспектах, которые не проходят в школьном курсе арифметики.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Термины: «унарный», «бинарный», «операнд»">
+          <h2 id="Термины: «унарный», «бинарный», «операнд»">Термины: «унарный», «бинарный», «операнд»</h2>
+          <div class="section-content">
+            <p>Прежде, чем мы двинемся дальше, давайте разберёмся с терминологией.</p>
+            <ul>
+              <li><em>Операнд</em> – то, к чему применяется оператор. Например, в умножении <code>5 * 2</code> есть
+                два операнда: левый операнд равен <code>5</code>, а правый операнд равен <code>2</code>. Иногда их
+                называют «аргументами» вместо «операндов».</li>
+              <li><em>Унарным</em> называется оператор, который применяется к одному операнду. Например, оператор
+                унарный минус <code>"-"</code> меняет знак числа на противоположный:</li>
+              <pre><code class="language-js">let x = 1;
+
+x = -x;
+alert( x ); // -1, применили унарный минус</code></pre>
+              <li>
+                <p><em>Бинарным</em> называется оператор, который применяется к двум операндам. Тот же минус
+                  существует и в бинарной форме:</p>
+              </li>
+              <pre><code class="language-js">let x = 1, y = 3;
+alert( y - x ); // 2, бинарный минус вычитает значения</code></pre>
+              <p>Формально, в последних примерах мы говорим о двух разных операторах, использующих один символ:
+                оператор отрицания (унарный оператор, который обращает знак) и оператор вычитания (бинарный
+                оператор,
+                который вычитает одно число из другого).</p>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

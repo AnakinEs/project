@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Сложение строк при помощи бинарного +">
+          <h2 id="Сложение строк при помощи бинарного +">Сложение строк при помощи бинарного +</h2>
+          <div class="section-content">
+            <p>Давайте рассмотрим специальные возможности операторов JavaScript, которые выходят за рамки школьной
+              арифметики.</p>
+            <p>Обычно при помощи плюса <code>'+'</code> складывают числа.</p>
+            <p>Но если бинарный оператор <code>'+'</code> применить к строкам, то он их объединяет в одну:</p>
+            <pre><code class="language-js">let s = "моя" + "строка";
+alert(s); // моястрока</code></pre>
+            <p>Обратите внимание, если хотя бы один операнд является строкой, то второй будет также преобразован в
+              строку.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">alert( '1' + 2 ); // "12"
+alert( 2 + '1' ); // "21"</code></pre>
+            <p>Как видите, не важно, первый или второй операнд является строкой.</p>
+            <p>Вот пример посложнее:</p>
+            <pre><code class="language-js">alert(2 + 2 + '1' ); // будет "41", а не "221"</code></pre>
+            <p>Здесь операторы работают один за другим. Первый <code>+</code> складывает два числа и возвращает
+              <code>4</code>, затем следующий <code>+</code> объединяет результат со строкой, производя действие
+              <code>4 + '1' = '41'</code>.
+            </p>
+            <p>Сложение и преобразование строк — это особенность бинарного плюса <code>+</code>. Другие
+              арифметические
+              операторы работают только с числами и всегда преобразуют операнды в числа.</p>
+            <p>Например, вычитание и деление:</p>
+            <pre><code class="language-js">alert( 6 - '2' ); // 4, '2' приводится к числу
+alert( '6' / '2' ); // 3, оба операнда приводятся к числам</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

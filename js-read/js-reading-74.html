@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Исправьте сложение">
+          <h3 id="Исправьте сложение"><span id="hint13" class="hint"
+              data-tooltip="По анки последнюю задачу эту добавил">Исправьте сложение</span></h3>
+          <div class="section-content">
+            <p>Ниже приведён код, который запрашивает у пользователя два числа и показывает их сумму.</p>
+            <p>Он работает неправильно. Код в примере выводит <code>12</code> (для значения полей по умолчанию).
+            </p>
+            <p>В чём ошибка? Исправьте её. Результат должен быть <code>3</code>.</p>
+            <pre><code class="language-js">let a = prompt("Первое число?", 1);
+let b = prompt("Второе число?", 2);
+
+alert(a + b); // 12</code></pre>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <p>Причина в том, что окно запроса возвращает пользовательский ввод как строку.</p>
+              <p>Поэтому переменные получают значения <code>"1"</code> и <code>"2"</code> соответственно.</p>
+              <pre><code class="language-js">let a = "1"; // prompt("Первое число?", 1);
+let b = "2"; // prompt("Второе число?", 2);
+
+alert(a + b); // 12</code></pre>
+              <p>Нам нужно привести строки к числам перед применением оператора <code>+</code>. Например, с
+                помощью
+                <code>Number()</code> или вставки <code>+</code> перед ними.
+              </p>
+              <p>Вставить <code>+</code> можно прямо перед <code>prompt</code>:</p>
+              <pre><code class="language-js">let a = +prompt("Первое число?", 1);
+let b = +prompt("Второе число?", 2);
+
+alert(a + b); // 3</code></pre>
+              <p>Или внутри <code>alert</code>:</p>
+              <pre><code class="language-js">let a = prompt("Первое число?", 1);
+let b = prompt("Второе число?", 2);
+
+alert(+a + +b); // 3</code></pre>
+              <p>В последнем варианте унарный и бинарный <code>+</code> используются вместе. Выглядит забавно,
+                правда?</p>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

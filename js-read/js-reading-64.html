@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Присваивание">
+          <h2 id="Присваивание">Присваивание</h2>
+          <div class="section-content">
+            <p>Давайте отметим, что в таблице приоритетов также есть оператор присваивания <code>=</code>. У него
+              один
+              из самых низких приоритетов: <code>2</code>.</p>
+            <p>Именно поэтому, когда переменной что-либо присваивают, например, <code>x = 2 * 2 + 1</code>, то
+              сначала
+              выполнится арифметика, а уже затем произойдёт присваивание <code>=</code> с сохранением результата в
+              <code>x</code>.
+            </p>
+            <pre><code class="language-js">let x = 2 * 2 + 1;
+
+alert( x ); // 5</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

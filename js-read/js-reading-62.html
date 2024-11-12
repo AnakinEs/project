@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Приведение к числу, унарный +">
+          <h2 id="Приведение к числу, унарный +">Приведение к числу, унарный +</h2>
+          <div class="section-content">
+            <p>Плюс <code>+</code> существует в двух формах: бинарной, которую мы использовали выше, и унарной.</p>
+            <p>Унарный, то есть применённый к одному значению, плюс <code>+</code> ничего не делает с числами. Но
+              если
+              операнд не число, унарный плюс преобразует его в число.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">// Не влияет на числа
+let x = 1;
+alert( +x ); // 1
+
+let y = -2;
+alert( +y ); // -2
+
+// Преобразует не числа в числа
+alert( +true ); // 1
+alert( +"" );   // 0</code></pre>
+            <p>На самом деле это то же самое, что и <code>Number(...)</code>, только короче.</p>
+            <p>Необходимость преобразовывать строки в числа возникает очень часто. Например, обычно значения полей
+              HTML-формы — это строки. А что, если их нужно, к примеру, сложить?</p>
+            <p>Бинарный плюс сложит их как строки:</p>
+            <pre><code class="language-js">let apples = "2";
+let oranges = "3";
+
+alert( apples + oranges ); // "23", так как бинарный плюс объединяет строки</code></pre>
+            <p>Поэтому используем унарный плюс, чтобы преобразовать к числу:</p>
+            <pre><code class="language-js">let apples = "2";
+let oranges = "3";
+
+// оба операнда предварительно преобразованы в числа
+alert( +apples + +oranges ); // 5
+
+// более длинный вариант
+// alert( Number(apples) + Number(oranges) ); // 5</code></pre>
+            <p>С точки зрения математика, такое изобилие плюсов выглядит странным. Но с точки зрения программиста
+              тут
+              нет ничего особенного: сначала выполнятся унарные плюсы, которые приведут строки к числам, а затем
+              бинарный <code>'+'</code> их сложит.</p>
+            <p>Почему унарные плюсы выполнились до бинарного сложения? Как мы сейчас увидим, дело в их приоритете.
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

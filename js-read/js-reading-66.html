@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Присваивание по цепочке">
+          <h2 id="Присваивание по цепочке">Присваивание по цепочке</h2>
+          <div class="section-content">
+            <p>Рассмотрим ещё одну интересную возможность: цепочку присваиваний.</p>
+            <pre><code class="language-js">let a, b, c;
+
+a = b = c = 2 + 2;
+
+alert( a ); // 4
+alert( b ); // 4
+alert( c ); // 4</code></pre>
+            <p>Такое присваивание работает справа налево. Сначала вычисляется самое правое выражение
+              <code>2 + 2</code>, и затем результат присваивается переменным слева: <code>c</code>, <code>b</code> и
+              <code>a</code>. В конце у всех переменных будет одно значение.
+            </p>
+            <p>Опять-таки, чтобы код читался легче, лучше разделять подобные конструкции на несколько строчек:</p>
+            <pre><code class="language-js">c = 2 + 2;
+b = c;
+a = c;</code></pre>
+            <p>Польза от такого стиля особенно ощущается при быстром просмотре кода.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

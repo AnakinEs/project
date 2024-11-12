@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Постфиксная и префиксная формы">
+          <h3 id="Постфиксная и префиксная формы">Постфиксная и префиксная формы</h3>
+          <div class="section-content">
+            <p>Чему будут равны переменные <code>a</code>, <code>b</code>, <code>c</code> и <code>d</code> в
+              примере
+              ниже?</p>
+            <pre><code class="language-js">let a = 1, b = 1;
+
+let c = ++a; // ?
+let d = b++; // ?</code></pre>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <ol>
+                <p>Ответ:</p>
+                <ul>
+                  <li>a = 2</li>
+                  <li>b = 2</li>
+                  <li>c = 2</li>
+                  <li>d = 1</li>
+                </ul>
+                <pre><code class="language-js">let a = 1, b = 1;
+
+alert( ++a ); // 2, префиксная форма возвращает новое значение
+alert( b++ ); // 1, постфиксная форма возвращает старое значение
+
+alert( a ); // 2, значение увеличено один раз
+alert( b ); // 2, значение увеличено один раз</code></pre>
+              </ol>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

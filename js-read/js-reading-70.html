@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Оператор «запятая»">
+          <h2 id="Оператор «запятая»">Оператор «запятая»</h2>
+          <div class="section-content">
+            <p>Оператор «запятая» (<code>,</code>) редко применяется и является одним из самых необычных. Иногда он
+              используется для написания более короткого кода, поэтому нам нужно знать его, чтобы понимать, что при
+              этом происходит.</p>
+            <p>Оператор «запятая» предоставляет нам возможность вычислять несколько выражений, разделяя их запятой
+              <code>,</code>. Каждое выражение выполняется, но возвращается результат только последнего.
+            </p>
+            <p>Например:</p>
+            <pre><code class="language-js">let a = (1 + 2, 3 + 4);
+
+alert( a ); // 7 (результат вычисления 3 + 4)</code></pre>
+            <p>Первое выражение <code>1 + 2</code> выполняется, а результат отбрасывается. Затем идёт
+              <code>3 + 4</code>, выражение выполняется и возвращается результат.
+            </p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Запятая имеет очень низкий приоритет</div>
+              <p>Пожалуйста, обратите внимание, что оператор <code>,</code> имеет очень низкий приоритет, ниже
+                <code>=</code>, поэтому скобки важны в приведённом выше примере.
+              </p>
+              <p>Без них в <code>a = 1 + 2, 3 + 4</code> сначала выполнится <code>+</code>, суммируя числа в
+                <code>a = 3, 7</code>, затем оператор присваивания <code>=</code> присвоит <code>a = 3</code>, а то,
+                что идёт дальше, будет игнорировано. Всё так же, как в <code>(a = 1 + 2), 3 + 4</code>.
+              </p>
+            </div>
+
+
+            <p>Зачем нам оператор, который отбрасывает всё, кроме последнего выражения?</p>
+            <p>Иногда его используют в составе более сложных конструкций, чтобы сделать несколько действий в одной
+              строке.</p>
+            <p><span id="hint12" class="hint"
+                data-tooltip="Я здесь не пойму. Через запятую написано несколько выражений. И должна по идее возвратиться только последняя. Но почему дальше переменная a где то используется?
+
+Оператор = ведь тоже возвращает результат. Т.е в переменной a сохранилось значение 1. Соответственно если оно сохранилось, т.е вернулось, то может использоваться еще где то, не смотря на то, что по идее должна отбросится.">Например</span>:
+            </p>
+            <pre><code class="language-js">// три операции в одной строке
+for (a = 1, b = 3, c = a * b; a < 10; a++) {
+...
+}</code></pre>
+            <p>Такие трюки используются во многих JavaScript-фреймворках. Вот почему мы упоминаем их. Но обычно они
+              не
+              улучшают читабельность кода, поэтому стоит хорошо подумать, прежде чем их использовать.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

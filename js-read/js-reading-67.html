@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Сокращённая арифметика с присваиванием">
+          <h2 id="Сокращённая арифметика с присваиванием">Сокращённая арифметика с присваиванием</h2>
+          <div class="section-content">
+            <p>Часто нужно применить оператор к переменной и сохранить результат в ней же.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">let n = 2;
+n = n + 5;
+n = n * 2;</code></pre>
+            <p>Эту запись можно укоротить при помощи совмещённых операторов <code>+=</code> и <code>*=</code>:</p>
+            <pre><code class="language-js">let n = 2;
+n += 5; // теперь n = 7 (работает как n = n + 5)
+n *= 2; // теперь n = 14 (работает как n = n * 2)
+
+alert( n ); // 14</code></pre>
+            <p>Подобные краткие формы записи существуют для всех арифметических и побитовых операторов:
+              <code>/=</code>, <code>-=</code> и так далее.
+            </p>
+            <p>Вызов с присваиванием имеет в точности такой же приоритет, как обычное присваивание, то есть
+              выполнится
+              после большинства других операций:</p>
+            <pre><code class="language-js">let n = 2;
+
+n *= 3 + 5;
+
+alert( n ); // 16  (сначала выполнится правая часть, выражение идентично n *= 8)</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Приоритет операторов">
+          <h2 id="Приоритет операторов">Приоритет операторов</h2>
+          <div class="section-content">
+            <p>В том случае, если в выражении есть несколько операторов – порядок их выполнения определяется
+              <em>приоритетом</em>, или, другими словами, существует определённый порядок выполнения операторов.
+            </p>
+            <p>Из школы мы знаем, что умножение в выражении <code>1 + 2 * 2</code> выполнится раньше сложения. Это
+              как
+              раз и есть «приоритет». Говорят, что умножение имеет более высокий приоритет, чем сложение.</p>
+            <p>Скобки важнее, чем приоритет, так что, если мы не удовлетворены порядком по умолчанию, мы можем
+              использовать их, чтобы изменить приоритет. Например, написать <code>(1 + 2) * 2</code>.</p>
+            <p>В JavaScript много операторов. Каждый оператор имеет соответствующий номер приоритета. Тот, у кого
+              это
+              число больше, – выполнится раньше. Если приоритет одинаковый, то порядок выполнения – слева направо.
+            </p>
+            <p>Отрывок из <a
+                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">таблицы
+                приоритетов</a> (нет необходимости всё запоминать, обратите внимание, что приоритет унарных
+              операторов
+              выше, чем соответствующих бинарных):</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Приоритет</th>
+                  <th>Название</th>
+                  <th>Обозначение</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>унарный плюс</td>
+                  <td>+</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>унарный минус</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>возведение в степень</td>
+                  <td>**</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>умножение</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>деление</td>
+                  <td>/</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>сложение</td>
+                  <td>+</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>вычитание</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>присваивание</td>
+                  <td>=</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Так как «унарный плюс» имеет приоритет <code>15</code>, который выше, чем <code>12</code> у
+              «сложения»
+              (бинарный плюс), то в выражении <code>"+apples + +oranges"</code> сначала выполнятся унарные плюсы, а
+              затем сложение.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Инкремент/декремент">
+          <h2 id="Инкремент/декремент">Инкремент/декремент</h2>
+          <div class="section-content">
+            <p>Одной из наиболее частых числовых операций является увеличение или уменьшение на единицу.</p>
+            <p>Для этого существуют даже специальные операторы:</p>
+            <ul>
+              <li><strong>Инкремент</strong> <code>++</code> увеличивает переменную на 1:</li>
+              <pre><code class="language-js">let counter = 2;
+counter++;        // работает как counter = counter + 1, просто запись короче
+alert( counter ); // 3</code></pre>
+              <li><strong>Декремент</strong> <code>--</code> уменьшает переменную на 1:</li>
+              <pre><code class="language-js">let counter = 2;
+counter--;        // работает как counter = counter - 1, просто запись короче
+alert( counter ); // 1</code></pre>
+            </ul>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Важно:</div>
+              <p>Инкремент/декремент можно применить только к переменной. Попытка использовать его на значении, типа
+                5++, приведёт к ошибке.</p>
+            </div>
+            <p>Операторы <code>++</code> и <code>--</code> могут быть расположены не только после, но и до
+              переменной.
+            </p>
+            <ul>
+              <li>Когда оператор идёт после переменной — это «постфиксная форма»: <code>counter++</code>.</li>
+              <li>«Префиксная форма» — это когда оператор идёт перед переменной: <code>++counter</code>.</li>
+            </ul>
+            <p>Обе эти инструкции делают одно и то же: увеличивают <code>counter</code> на <code>1</code>.</p>
+            <p>Есть ли разница между ними? Да, но увидеть её мы сможем, только если будем использовать значение,
+              которое возвращают <code>++/--</code>.</p>
+            <p>Давайте проясним этот момент. Как мы знаем, все операторы возвращают значение. Операторы
+              инкремента/декремента не исключение. Префиксная форма возвращает новое значение, в то время как
+              постфиксная форма возвращает старое (до увеличения/уменьшения числа).</p>
+            <p>Чтобы увидеть разницу, вот небольшой пример:</p>
+            <pre><code class="language-js">let counter = 1;
+let a = ++counter; // (*)
+
+alert(a); // 2</code></pre>
+            <p>В строке <code>(*)</code> префиксная форма <code>++counter</code> увеличивает <code>counter</code> и
+              возвращает новое значение <code>2</code>. Так что <code>alert</code> покажет <code>2</code>.</p>
+            <p>Теперь посмотрим на постфиксную форму:</p>
+            <pre><code class="language-js">let counter = 1;
+let a = counter++; // (*) меняем ++counter на counter++
+
+alert(a); // 1</code></pre>
+            <p>В строке <code>(*)</code> <em>постфиксная</em> форма <code>counter++</code> также увеличивает
+              <code>counter</code>, но возвращает старое значение (которое было до увеличения). Так что
+              <code>alert</code> покажет <code>1</code>.
+            </p>
+            <p>Подведём итоги:</p>
+            <ul>
+              <li>Если результат оператора не используется, а нужно только увеличить/уменьшить переменную, тогда без
+                разницы, какую форму использовать:</li>
+              <pre><code class="language-js">let counter = 0;
+counter++;
+++counter;
+alert( counter ); // 2, обе строки сделали одно и то же</code></pre>
+              <li>Если хочется тут же использовать результат, то нужна префиксная форма:</li>
+              <pre><code class="language-js">let counter = 0;
+alert( ++counter ); // 1</code></pre>
+              <li>Если нужно увеличить и при этом получить значение переменной до увеличения – нужна постфиксная
+                форма:</li>
+              <pre><code class="language-js">let counter = 0;
+alert( counter++ ); // 0</code></pre>
+            </ul>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Инкремент/декремент можно использовать в любых выражениях</div>
+              <p>Операторы <code>++/--</code> могут также использоваться внутри выражений. Их приоритет выше, чем у
+                большинства других арифметических операций.</p>
+              <p>Например:</p>
+              <pre><code class="language-js">let counter = 1;
+alert( 2 * ++counter ); // 4</code></pre>
+              <p>Сравните с:</p>
+              <pre><code class="language-js">let counter = 1;
+alert( 2 * counter++ ); // 2, потому что counter++ возвращает "старое" значение</code></pre>
+              <p>Хотя технически здесь всё в порядке, такая запись обычно делает код менее читабельным. Одна строка
+                выполняет множество действий – нехорошо.</p>
+              <p>При беглом чтении кода можно с лёгкостью пропустить такой <code>counter++</code>, и будет
+                неочевидно,
+                что переменная увеличивается.</p>
+              <p>Лучше использовать стиль «одна строка – одно действие»:</p>
+              <pre><code class="language-js">let counter = 1;
+alert( 2 * counter );
+counter++;</code></pre>
+              <p></p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
