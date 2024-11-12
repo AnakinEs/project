@@ -50,15 +50,13 @@ alert( a ); // 7 (результат вычисления 3 + 4)</code></pre>
             <p>Зачем нам оператор, который отбрасывает всё, кроме последнего выражения?</p>
             <p>Иногда его используют в составе более сложных конструкций, чтобы сделать несколько действий в одной
               строке.</p>
-            <p><span id="hint12" class="hint"
-                data-tooltip="Я здесь не пойму. Через запятую написано несколько выражений. И должна по идее возвратиться только последняя. Но почему дальше переменная a где то используется?
-
-Оператор = ведь тоже возвращает результат. Т.е в переменной a сохранилось значение 1. Соответственно если оно сохранилось, т.е вернулось, то может использоваться еще где то, не смотря на то, что по идее должна отбросится.">Например</span>:
+            <p>Например:
             </p>
-            <pre><code class="language-js">// три операции в одной строке
-for (a = 1, b = 3, c = a * b; a < 10; a++) {
-...
-}</code></pre>
+            <pre class="language-js" tabindex="0"><span class="token comment">// три операции в одной строке</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> c <span class="token operator"><span class="meaning" data-tooltip="Получается возвращается значение <code>3</code>. Но оно нигде здесь не используется, судя по всему.">=</span></span> a <span class="token operator">*</span> b<span class="token punctuation">;</span> a <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> a<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token operator">...</span>
+<span class="token punctuation">}</span></pre>
+            
             <p>Такие трюки используются во многих JavaScript-фреймворках. Вот почему мы упоминаем их. Но обычно они
               не
               улучшают читабельность кода, поэтому стоит хорошо подумать, прежде чем их использовать.</p>
