@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Сравнение строк">
+          <h2 id="Сравнение строк">Сравнение строк</h2>
+          <div class="section-content">
+            <p>Чтобы определить, что одна строка больше другой, JavaScript использует «алфавитный» или
+              «лексикографический» порядок.</p>
+            <p>Другими словами, строки сравниваются посимвольно.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">alert( 'Я' > 'А' ); // true
+alert( 'Коты' > 'Кода' ); // true
+alert( 'Сонный' > 'Сон' ); // true</code></pre>
+            <p>Алгоритм сравнения двух строк довольно прост:</p>
+            <ol>
+              <li>Сначала сравниваются первые символы строк.</li>
+              <li>Если первый символ первой строки больше (меньше), чем первый символ второй, то первая строка
+                больше
+                (меньше) второй. Сравнение завершено.</li>
+              <li>Если первые символы равны, то таким же образом сравниваются уже вторые символы строк.</li>
+              <li>Сравнение продолжается, пока не закончится одна из строк.</li>
+              <li>Если обе строки заканчиваются одновременно, то они равны. Иначе, большей считается более длинная
+                строка.</li>
+            </ol>
+            <p>В примерах выше сравнение <code>'Я' > 'А'</code> завершится на первом шаге, тогда как строки
+              <code>'Коты'</code> и <code>'Кода'</code> будут сравниваться посимвольно:
+            </p>
+            <ol>
+              <li><code>К</code> равна <code>К</code>.</li>
+              <li><code>о</code> равна <code>о</code>.</li>
+              <li><code>т</code> больше, чем <code>д</code>. На этом сравнение заканчивается. Первая строка больше.
+              </li>
+            </ol>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Используется кодировка Unicode, а не настоящий алфавит</div>
+              <p>Приведённый выше алгоритм сравнения похож на алгоритм, используемый в словарях и телефонных книгах,
+                но между ними есть и различия.</p>
+              <p>Например, в JavaScript имеет значение регистр символов. Заглавная буква <code>"A"</code> не равна
+                строчной <code>"a"</code>. Какая же из них больше? Строчная <code>"a"</code>. Почему? Потому что
+                строчные буквы имеют больший код во внутренней таблице кодирования, которую использует JavaScript
+                (Unicode). Мы ещё поговорим о внутреннем представлении строк и его влиянии в главе <a
+                  href="https://learn.javascript.ru/string">Строки</a>.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Строгое сравнение">
+          <h2 id="Строгое сравнение">Строгое сравнение</h2>
+          <div class="section-content">
+            <p>Использование обычного сравнения <code>==</code> может вызывать проблемы. Например, оно не отличает
+              <code>0</code> от <code>false</code>:
+            </p>
+            <pre><code class="language-js">alert( 0 == false ); // true</code></pre>
+            <p>Та же проблема с пустой строкой:</p>
+            <pre><code class="language-js">alert( '' == false ); // true</code></pre>
+            <p>Это происходит из-за того, что операнды разных типов преобразуются оператором <code>==</code> к
+              числу.
+              В итоге, и пустая строка, и <code>false</code> становятся нулём.</p>
+            <p>Как же тогда отличать <code>0</code> от <code>false</code>?</p>
+            <p><strong>Оператор строгого равенства <code>===</code> проверяет равенство без приведения
+                типов.</strong>
+            </p>
+            <p>Другими словами, если <code>a</code> и <code>b</code> имеют разные типы, то проверка
+              <code>a === b</code> немедленно возвращает <code>false</code> без попытки их преобразования.
+            </p>
+            <p>Давайте проверим:</p>
+            <pre><code class="language-js">alert( 0 === false ); // false, так как сравниваются разные типы</code></pre>
+            <p>Ещё есть оператор строгого неравенства <code>!==</code>, аналогичный <code>!=</code>.</p>
+            <p>Оператор строгого равенства дольше писать, но он делает код более очевидным и оставляет меньше места
+              для ошибок.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

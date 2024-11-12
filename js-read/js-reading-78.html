@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Сравнение разных типов">
+          <h2 id="Сравнение разных типов">Сравнение разных типов</h2>
+          <div class="section-content">
+            <p>При сравнении значений разных типов JavaScript приводит каждое из них к числу.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">alert( '2' > 1 ); // true, строка '2' становится числом 2
+alert( '01' == 1 ); // true, строка '01' становится числом 1</code></pre>
+            <p>Логическое значение <code>true</code> становится <code>1</code>, а <code>false</code> –
+              <code>0</code>.
+            </p>
+            <p>Например:</p>
+            <pre><code class="language-js">alert( true == 1 ); // true
+alert( false == 0 ); // true</code></pre>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Забавное следствие</div>
+              <p>Возможна следующая ситуация:</p>
+              <ul>
+                <li>Два значения равны.</li>
+                <li>Одно из них <code>true</code> как логическое значение, другое – <code>false</code>.</li>
+              </ul>
+              <p>Например:</p>
+              <pre><code class="language-js">let a = 0;
+alert( Boolean(a) ); // false
+
+let b = "0";
+alert( Boolean(b) ); // true
+
+alert(a == b); // true!</code></pre>
+              <p>С точки зрения JavaScript, результат ожидаем. Равенство преобразует значения, используя числовое
+                преобразование, поэтому <code>"0"</code> становится <code>0</code>. В то время как явное
+                преобразование с помощью <code>Boolean</code> использует другой набор правил.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

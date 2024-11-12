@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Операторы сравнения2">
+          <h3 id="Операторы сравнения2">Операторы сравнения</h3>
+          <div class="section-content">
+            <p>Каким будет результат этих выражений?</p>
+            <pre><code class="language-js">5 &gt; 4
+"ананас" &gt; "яблоко"
+"2" &gt; "12"
+undefined == null
+undefined === null
+null == "\n0\n"
+null === +"\n0\n"</code></pre>
+
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <div>
+                <pre><code class="language-js">5 &gt; 4 → true
+"ананас" &gt; "яблоко" → false
+"2" &gt; "12" → true
+undefined == null → true
+undefined === null → false
+null == "\n0\n" → false
+null === +"\n0\n" → false</code></pre>
+                <p>Разъяснения:</p>
+                <ol>
+                  <li>Очевидно, <code>true</code>.</li>
+                  <li>Используется посимвольное сравнение, поэтому <code>false</code>. <code>"а"</code> меньше,
+                    чем
+                    <code>"я"</code>.
+                  </li>
+                  <li>Снова посимвольное сравнение. Первый символ первой строки <code>"2"</code> больше, чем
+                    первый
+                    символ второй <code>"1"</code>.</li>
+                  <li>Специальный случай. Значения <code>null</code> и <code>undefined</code> равны только друг
+                    другу при нестрогом сравнении.</li>
+                  <li>Строгое сравнение разных типов, поэтому <code>false</code>.</li>
+                  <li>Аналогично <code>(4)</code>, <code>null</code> равен только <code>undefined</code>.</li>
+                  <li>Строгое сравнение разных типов.</li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

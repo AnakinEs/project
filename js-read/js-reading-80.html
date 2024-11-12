@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Сравнение с null и undefined">
+          <h2 id="Сравнение с null и undefined">Сравнение с null и undefined</h2>
+          <div class="section-content">
+            <p>Поведение <code>null</code> и <code>undefined</code> при сравнении с другими значениями — особое:</p>
+            <p><strong>При строгом равенстве <code>===</code></strong></p>
+            <p>Эти значения различны, так как различны их типы.</p>
+            <pre><code class="language-js">alert( null === undefined ); // false</code></pre>
+            <p><strong>При нестрогом равенстве <code>==</code></strong></p>
+            <p>Эти значения равны друг другу и не равны никаким другим значениям. Это специальное правило языка.</p>
+            <pre><code class="language-js">alert( null == undefined ); // true</code></pre>
+            <p><strong>При использовании математических операторов и других операторов сравнения
+                <code>&lt; &gt; &lt;= &gt;=</code></strong></p>
+            <p>Значения <code>null/undefined</code> преобразуются к числам: <code>null</code> становится
+              <code>0</code>, а <code>undefined</code> – <code>NaN</code>.
+            </p>
+            <p>Посмотрим, какие забавные вещи случаются, когда мы применяем эти правила. И, что более важно, как
+              избежать ошибок при их использовании.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

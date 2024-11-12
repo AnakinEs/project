@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Несравненное значение undefined">
+          <h2 id="Несравненное значение undefined">Несравненное значение undefined</h2>
+          <div class="section-content">
+            <p>Значение <code>undefined</code> несравнимо с другими значениями:</p>
+            <pre><code class="language-js">alert( undefined &gt; 0 ); // false (1)
+alert( undefined &lt; 0 ); // false (2)
+alert( undefined == 0 ); // false (3)</code></pre>
+            <p>Почему же сравнение <code>undefined</code> с нулём всегда ложно?</p>
+            <p>На это есть следующие причины:</p>
+            <ul>
+              <li>Сравнения <code>(1)</code> и <code>(2)</code> возвращают <code>false</code>, потому что
+                <code>undefined</code> преобразуется в <code>NaN</code>, а <code>NaN</code> – это специальное
+                числовое
+                значение, которое возвращает <code>false</code> при любых сравнениях.
+              </li>
+              <li>Нестрогое равенство <code>(3)</code> возвращает <code>false</code>, потому что
+                <code>undefined</code> равно только <code>null</code>, <code>undefined</code> и ничему больше.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

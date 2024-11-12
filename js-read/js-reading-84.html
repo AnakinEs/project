@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Итого8">
+          <h2 id="Итого8">Итого</h2>
+          <div class="section-content">
+            <ul>
+              <li>Операторы сравнения возвращают значения логического типа.</li>
+              <li>Строки сравниваются посимвольно в лексикографическом порядке.</li>
+              <li>Значения разных типов при сравнении приводятся к числу. Исключением является сравнение с помощью
+                операторов строгого равенства/неравенства.</li>
+              <li>Значения <code>null</code> и <code>undefined</code> равны <code>==</code> друг другу и не равны
+                любому другому значению.</li>
+              <li>Будьте осторожны при использовании операторов сравнений вроде <code>&gt;</code> и
+                <code>&lt;</code>
+                с переменными, которые могут принимать значения <code>null/undefined</code>. Хорошей идеей будет
+                сделать отдельную проверку на <code>null/undefined</code>.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
