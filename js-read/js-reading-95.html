@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Покажите знак числа">
+          <h3 id="Покажите знак числа">Покажите знак числа</h3>
+          <div class="section-content">
+            <p>Используя конструкцию <code>if..else</code>, напишите код, который получает число через
+              <code>prompt</code>, а затем выводит в <code>alert</code>:
+            </p>
+            <ul>
+              <li><code>1</code>, если значение больше нуля,</li>
+              <li><code>-1</code>, если значение меньше нуля,</li>
+              <li><code>0</code>, если значение равно нулю.</li>
+            </ul>
+            <p>Предполагается, что пользователь вводит только числа.</p>
+            <p><a href="getting-started/started158.html">Демо в новом окне</a></p>
+            <details>
+              <summary class="solution">
+                <li class="task__solution" type="button">решение</li>
+              </summary>
+              <div>
+                <pre><code class="language-js">let value = prompt('Введите число', 0);
+
+if (value &gt; 0) {
+alert( 1 );
+} else if (value &lt; 0) {
+alert( -1 );
+} else {
+alert( 0 );
+}</code></pre>
+              </div>
+            </details>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

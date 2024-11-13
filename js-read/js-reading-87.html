@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Преобразование к логическому типу">
+          <h2 id="Преобразование к логическому типу">Преобразование к логическому типу</h2>
+          <div class="section-content">
+            <p>Инструкция <code>if (…)</code> вычисляет выражение в скобках и преобразует результат к логическому
+              типу.</p>
+            <p>Давайте вспомним правила преобразования типов из главы <a
+                href="https://learn.javascript.ru/type-conversions">Преобразование типов</a>:</p>
+            <ul>
+              <li>Число <code>0</code>, пустая строка <code>""</code>, <code>null</code>, <code>undefined</code> и
+                <code>NaN</code> становятся <code>false</code>. Из-за этого их называют «ложными» («falsy»)
+                значениями.
+              </li>
+              <li>Остальные значения становятся <code>true</code>, поэтому их называют «правдивыми» («truthy»).</li>
+            </ul>
+            <p>Таким образом, код при таком условии никогда не выполнится:</p>
+            <pre><code class="language-js">if (0) { // 0 is falsy
+...
+}</code></pre>
+            <p>…а при таком – выполнится всегда:</p>
+            <pre><code class="language-js">if (1) { // 1 is truthy
+...
+}</code></pre>
+            <p>Мы также можем передать заранее вычисленное в переменной логическое значение в <code>if</code>,
+              например так:</p>
+            <pre><code class="language-js">let condition = (year == 2015); // преобразуется к true или false
+
+if (condition) {
+...
+}</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

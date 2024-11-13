@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Условный оператор „?“">
+          <h2 id="Условный оператор „?“">Условный оператор „?“</h2>
+          <div class="section-content">
+            <p>Иногда нам нужно определить переменную в зависимости от условия.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">let accessAllowed;
+let age = prompt('Сколько вам лет?', '');
+
+if (age &gt; 18) {
+accessAllowed = true;
+} else {
+accessAllowed = false;
+}
+
+alert(accessAllowed);</code></pre>
+            <p>Так называемый «условный» оператор «вопросительный знак» позволяет нам сделать это более коротким и
+              простым способом.</p>
+            <p>Оператор представлен знаком вопроса <code>?</code>. Его также называют «тернарный», так как этот
+              оператор, единственный в своём роде, имеет три аргумента.</p>
+            <p>Синтаксис:</p>
+            <pre><code class="language-js">let result = условие ? значение1 : значение2;</code></pre>
+            <p>Сначала вычисляется <code>условие</code>: если оно истинно, тогда возвращается
+              <code>значение1</code>,
+              в противном случае – <code>значение2</code>.
+            </p>
+            <p>Например:</p>
+            <pre><code class="language-js">let accessAllowed = (age &gt; 18) ? true : false;</code></pre>
+            <p>Технически, мы можем опустить круглые скобки вокруг <code>age &gt; 18</code>. Оператор
+              вопросительного
+              знака имеет низкий приоритет, поэтому он выполняется после сравнения <code>&gt;</code>.</p>
+            <p>Этот пример будет делать то же самое, что и предыдущий:</p>
+            <pre><code class="language-js">// оператор сравнения "age &gt; 18" выполняется первым в любом случае
+// (нет необходимости заключать его в скобки)
+let accessAllowed = age &gt; 18 ? true : false;</code></pre>
+            <p>Но скобки делают код более простым для восприятия, поэтому мы рекомендуем их использовать.</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">На заметку:</div>
+              <p>В примере выше вы можете избежать использования оператора вопросительного знака <code>?</code>,
+                т.к.
+                сравнение само по себе уже возвращает <code>true/false</code>:</p>
+              <pre><code class="language-js">// то же самое
+let accessAllowed = age &gt; 18;</code></pre>
+            </div>
+            <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Условное ветвление: if, '?'">
+          <h1 id="Условное ветвление: if, '?'">Условное ветвление: if, '?'</h1>
+          <div class="section-content">
+            <p>Иногда нам нужно выполнить различные действия в зависимости от условий.</p>
+            <p>Для этого мы можем использовать инструкцию <code>if</code> и условный оператор <code>?</code>,
+              который
+              также называют оператором «вопросительный знак».</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Инструкция «if»">
+          <h2 id="Инструкция «if»">Инструкция «if»</h2>
+          <div class="section-content">
+            <p>Инструкция <code>if(...)</code> вычисляет условие в скобках и, если результат <code>true</code>, то
+              выполняет блок кода.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">let year = prompt('В каком году была опубликована спецификация ECMAScript-2015?', '');
+
+if (year == 2015) alert( 'Вы правы!' );</code></pre>
+            <p>В примере выше, условие – это простая проверка на равенство (<code>year == 2015</code>), но оно может
+              быть и гораздо более сложным.</p>
+            <p>Если мы хотим выполнить более одной инструкции, то нужно заключить блок кода в фигурные скобки:</p>
+            <pre><code class="language-js">if (year == 2015) {
+alert( "Правильно!" );
+alert( "Вы такой умный!" );
+}</code></pre>
+            <p>Мы рекомендуем использовать фигурные скобки <code>{}</code> всегда, когда вы используете инструкцию
+              <code>if</code>, даже если выполняется только одна команда. Это улучшает читаемость кода.
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

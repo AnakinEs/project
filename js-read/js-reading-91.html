@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Несколько операторов „?“">
+          <h2 id="Несколько операторов „?“">Несколько операторов „?“</h2>
+          <div class="section-content">
+            <p>Последовательность операторов вопросительного знака <code>?</code> позволяет вернуть значение,
+              которое
+              зависит от более чем одного условия.</p>
+            <p>Например:</p>
+            <pre><code class="language-js">let age = prompt('Возраст?', 18);
+
+let message = (age &lt; 3) ? 'Здравствуй, малыш!' :
+(age &lt; 18) ? 'Привет!' :
+(age &lt; 100) ? 'Здравствуйте!' :
+'Какой необычный возраст!';
+
+alert( message );</code></pre>
+            <p>Поначалу может быть сложно понять, что происходит. Но при ближайшем рассмотрении мы видим, что это
+              обычная последовательная проверка:</p>
+            <ol>
+              <li>Первый знак вопроса проверяет <code>age &lt; 3</code>.</li>
+              <li>Если верно – возвращает <code>'Здравствуй, малыш!'</code>. В противном случае, проверяет выражение
+                после двоеточия „:“, вычисляет <code>age &lt; 18</code>.</li>
+              <li>Если это верно – возвращает <code>'Привет!'</code>. В противном случае, проверяет выражение после
+                следующего двоеточия „:“, вычисляет <code>age &lt; 100</code>.</li>
+              <li>Если это верно – возвращает <code>'Здравствуйте!'</code>. В противном случае, возвращает выражение
+                после последнего двоеточия – <code>'Какой необычный возраст!'</code>.</li>
+            </ol>
+            <p>Вот как это выглядит при использовании <code>if..else</code>:</p>
+            <pre><code class="language-js">if (age &lt; 3) {
+message = 'Здравствуй, малыш!';
+} else if (age &lt; 18) {
+message = 'Привет!';
+} else if (age &lt; 100) {
+message = 'Здравствуйте!';
+} else {
+message = 'Какой необычный возраст!';
+}</code></pre>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
