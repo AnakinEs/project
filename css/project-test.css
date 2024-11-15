@@ -732,6 +732,12 @@ code .meaning, code .hint {
 
 /* Картинки */
 
+@media screen and (max-width: 799px) {
+  img {
+    width: 100%;
+  }
+}
+
 img {
   display: block;	
   margin-bottom: 1.5rem;
