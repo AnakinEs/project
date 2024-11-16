@@ -737,6 +737,11 @@ code .meaning, code .hint {
     width: 100%;
   }
 }
+@media screen and (min-width: 799px) {
+  img {
+    width: 60%;
+  }
+}
 
 img {
   display: block;	
@@ -744,7 +749,6 @@ img {
   border: 0.1rem solid #cdcdcd; 
   padding: 0.3rem;
   border-radius: 0.25rem;
-  width: 100%;
   box-sizing: border-box; 
   caret-color: transparent; 
 }
