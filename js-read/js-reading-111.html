@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Проверка логина">
+                <h3 id="Проверка логина">Проверка логина</h3>
+                <div class="section-content">
+                  <p>Напишите код, который будет спрашивать логин с помощью <code>prompt</code>.</p>
+                  <p>Если посетитель вводит «Админ», то <code>prompt</code> запрашивает пароль, если ничего не введено
+                    или
+                    нажата клавиша <kbd>Esc</kbd> – показать «Отменено», в противном случае отобразить «Я вас не знаю».
+                  </p>
+                  <p>Пароль проверять так:</p>
+                  <ul>
+                    <li>Если введён пароль «Я главный», то выводить «Здравствуйте!»,</li>
+                    <li>Иначе – «Неверный пароль»,</li>
+                    <li>При отмене – «Отменено».</li>
+                  </ul>
+                  <p>Блок-схема:</p>
+                  <img style="width:100%" src="../svg/ifelse_task.svg">
+                  <p>Для решения используйте вложенные блоки <code>if</code>. Обращайте внимание на стиль и читаемость
+                    кода.</p>
+                  <p>Подсказка: передача пустого ввода в приглашение <code>prompt</code> возвращает пустую строку
+                    <code>''</code>. Нажатие клавиши <kbd>Esc</kbd> во время запроса возвращает <code>null</code>.
+                  </p>
+                  <p><a href=""><span id="hint14" class="hint"
+                        data-tooltip="Не знаю как сделать, так же как на том сайте">Запустить демо</span></a></p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">let userName = prompt("Кто там?", '');
+
+if (userName === 'Админ') {
+
+  let pass = prompt('Пароль?', '');
+
+  if (pass === 'Я главный') {
+    alert( 'Здравствуйте!' );
+  } else if (pass === '' || pass === null) {
+    alert( 'Отменено' );
+  } else {
+    alert( 'Неверный пароль' );
+  }
+
+} else if (userName === '' || userName === null) {
+  alert( 'Отменено' );
+} else {
+  alert( "Я вас не знаю" );
+}</code></pre>
+                      <p>Обратите внимание на вертикальные отступы внутри блоков <code>if</code>. Они технически не
+                        требуются, но делают код более читаемым.</p>
+
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

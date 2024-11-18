@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby='Вопрос о "if"'>
+                <h3 id='Вопрос о "if"'>Вопрос о "if"</h3>
+                <div class="section-content">
+                  <p>Какие из перечисленных ниже <code>alert</code> выполнятся?</p>
+                  <p>Какие конкретно значения будут результатами выражений в условиях <code>if(...)</code>?</p>
+                  <pre><code class="language-js">if (-1 || 0) alert( 'first' );
+if (-1 &amp;&amp; 0) alert( 'second' );
+if (null || -1 &amp;&amp; 1) alert( 'third' );</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Ответ: первое и третье выполнятся.</p>
+                      <p>Подробности:</p>
+                      <pre><code class="language-js">// Выполнится.
+// Результат -1 || 0 = -1, в логическом контексте true
+if (-1 || 0) alert( 'first' );
+
+// Не выполнится
+// -1 &amp;&amp; 0 = 0,  в логическом контексте false
+if (-1 &amp;&amp; 0) alert( 'second' );
+
+// Выполнится
+// оператор &amp;&amp; имеет больший приоритет, чем ||
+// так что -1 &amp;&amp; 1 выполнится раньше
+// вычисления: null || -1 &amp;&amp; 1  -&gt;  null || 1  -&gt;  1
+if (null || -1 &amp;&amp; 1) alert( 'third' );</code></pre>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Что выведет alert (ИЛИ)?2">
+                <h3 id="Что выведет alert (ИЛИ)?2">Что выведет alert (ИЛИ)?</h3>
+                <div class="section-content">
+                  <p>Что выведет код ниже?</p>
+                  <pre><code class="language-js">alert( alert(1) || 2 || alert(3) );</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Ответ: сначала <code>1</code>, затем <code>2</code>.</p>
+                      <pre><code class="language-js">alert( alert(1) || 2 || alert(3) );</code></pre>
+                      <p>Вызов <code>alert</code> не возвращает значения, или, иначе говоря, возвращает
+                        <code>undefined</code>.
+                      </p>
+                      <ol>
+                        <li>Первый оператор ИЛИ <code>||</code> выполнит первый <code>alert(1)</code>.</li>
+                        <li>Получит <code>undefined</code> и пойдёт дальше, ко второму операнду в поисках истинного
+                          значения.</li>
+                        <li>Так как второй операнд <code>2</code> является истинным, то вычисления завершатся,
+                          результатом
+                          <code>undefined || 2</code> будет <code>2</code>, которое будет выведено внешним
+                          <code>alert( .... )</code>.
+                        </li>
+                      </ol>
+                      <p>Второй оператор <code>||</code> не будет выполнен, выполнение до <code>alert(3)</code> не
+                        дойдёт,
+                        поэтому <code>3</code> выведено не будет.</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

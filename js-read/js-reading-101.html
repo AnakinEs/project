@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="И «&&» находит первое ложное значение">
+              <h2 id="И «&&» находит первое ложное значение">И «&&» находит первое ложное значение</h2>
+              <div class="section-content">
+                <p>При нескольких подряд операторах И:</p>
+                <pre><code class="language-js">result = value1 &amp;&amp; value2 &amp;&amp; value3;</code></pre>
+                <p>Оператор <code>&&</code> выполняет следующие действия:</p>
+                <ul>
+                  <li>Вычисляет операнды слева направо.</li>
+                  <li>Каждый операнд преобразует в логическое значение. Если результат <code>false</code>,
+                    останавливается
+                    и возвращает исходное значение этого операнда.</li>
+                  <li>Если все операнды были истинными, возвращается последний.</li>
+                </ul>
+                <p>Другими словами, И возвращает первое ложное значение. Или последнее, если ничего не найдено.</p>
+                <p>Вышеуказанные правила схожи с поведением ИЛИ. Разница в том, что И возвращает первое <em>ложное</em>
+                  значение, а ИЛИ –  первое <em>истинное</em>.</p>
+                <p>Примеры:</p>
+                <pre><code class="language-js">// Если первый операнд истинный,
+// И возвращает второй:
+alert( 1 &amp;&amp; 0 ); // 0
+alert( 1 &amp;&amp; 5 ); // 5
+
+// Если первый операнд ложный,
+// И возвращает его. Второй операнд игнорируется
+alert( null &amp;&amp; 5 ); // null
+alert( 0 &amp;&amp; "no matter what" ); // 0</code></pre>
+                <p>Можно передать несколько значений подряд. В таком случае возвратится первое «ложное» значение, на
+                  котором остановились вычисления.</p>
+                <pre><code class="language-js">alert( 1 &amp;&amp; 2 &amp;&amp; null &amp;&amp; 3 ); // null</code></pre>
+                <p>Когда все значения верны, возвращается последнее</p>
+                <pre><code class="language-js">alert( 1 &amp;&amp; 2 &amp;&amp; 3 ); // 3</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Приоритет оператора <code>&&</code> больше, чем у <code>||</code></div>
+                  <p>Приоритет оператора И <code>&&</code> больше, чем ИЛИ <code>||</code>, так что он выполняется
+                    раньше.
+                  </p>
+                  <p>Таким образом, код <code>a && b || c && d</code> по существу такой же, как если бы выражения
+                    <code>&&</code> были в круглых скобках: <code>(a && b) || (c && d)</code>.
+                  </p>
+                </div>
+                <p>Как и оператор ИЛИ <code>||</code>, И <code>&&</code> иногда может заменять <code>if</code>.</p>
+                <p>К примеру:</p>
+                <pre><code class="language-js">let x = 1;
+
+(x &gt; 0) &amp;&amp; alert( 'Greater than zero!' );</code></pre>
+                <p>Действие в правой части <code>&&</code> выполнится только в том случае, если до него дойдут
+                  вычисления.
+                  То есть, <code>alert</code> сработает, если в левой части (<code>x > 0</code>) будет
+                  <code>true</code>.
+                </p>
+                <p>Получился аналог:</p>
+                <pre><code class="language-js">let x = 1;
+
+if (x &gt; 0) {
+  alert( 'Greater than zero!' );
+}</code></pre>
+                <p>Однако, как правило, вариант с <code>if</code> лучше читается и воспринимается.</p>
+                <p>Он более очевиден, поэтому лучше использовать его.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

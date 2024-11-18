@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Проверка значения вне диапазона">
+                <h3 id="Проверка значения вне диапазона">Проверка значения вне диапазона</h3>
+                <div class="section-content">
+                  <p>Напишите условие <code>if</code> для проверки, что значение переменной <code>age</code> НЕ
+                    находится
+                    в диапазоне <code>14</code> и <code>90</code> включительно.</p>
+                  <p>Напишите два варианта: первый с использованием оператора НЕ <code>!</code>, второй – без этого
+                    оператора.</p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Первый вариант:</p>
+                      <pre><code class="language-js">if (!(age &gt;= 14 &amp;&amp; age &lt;= 90))</code></pre>
+                      <p>Второй вариант:</p>
+                      <pre><code class="language-js">if (age &lt; 14 || age &gt; 90)</code></pre>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>
