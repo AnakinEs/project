@@ -1078,6 +1078,14 @@ iframe{
   margin-bottom: 1.5rem;
 }
 
+@media screen and (max-width: 799px) {
+  iframe{
+    overflow: scroll;
+  }
+}
+
+
+
 /* details div > :last-child {
   margin-bottom: 1rem;
 } */
