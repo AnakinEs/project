@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Итого10">
+              <h2 id="Итого10">Итого</h2>
+              <div class="section-content">
+                <p>Мы рассмотрели 3 вида циклов:</p>
+                <ul>
+                  <li><code>while</code> – Проверяет условие перед каждой итерацией.</li>
+                  <li><code>do..while</code> – Проверяет условие после каждой итерации.</li>
+                  <li><code>for (;;)</code> – Проверяет условие перед каждой итерацией, есть возможность задать
+                    дополнительные настройки.</li>
+                </ul>
+                <p>Чтобы организовать бесконечный цикл, используют конструкцию <code>while (true)</code>. При этом он,
+                  как
+                  и любой другой цикл, может быть прерван директивой <code>break</code>.</p>
+                <p>Если на данной итерации цикла делать больше ничего не надо, но полностью прекращать цикл не следует –
+                  используют директиву <code>continue</code>.</p>
+                <p>Обе этих директивы поддерживают метки, которые ставятся перед циклом. Метки – единственный способ для
+                  <code>break/continue</code> выйти за пределы текущего цикла, повлиять на выполнение внешнего.
+                </p>
+                <p>Заметим, что метки не позволяют прыгнуть в произвольное место кода, в JavaScript нет такой
+                  возможности.
+                </p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Какие значения выведет цикл for?">
+                <h3 id="Какие значения выведет цикл for?">Какие значения выведет цикл for?</h3>
+                <div class="section-content">
+                  <p>Для каждого цикла запишите, какие значения он выведет. Потом сравните с ответом.</p>
+                  <p>Оба цикла выведут <code>alert</code> с одинаковыми значениями или нет?</p>
+                  <ol>
+                    <li>Постфиксная форма:</li>
+                    <pre><code class="language-js">for (let i = 0; i &lt; 5; i++) alert( i );</code></pre>
+                    <li>Префиксная форма:</li>
+                    <pre><code class="language-js">for (let i = 0; i &lt; 5; ++i) alert( i );</code></pre>
+                  </ol>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p><strong>Ответ: от <code>0</code> до <code>4</code> в обоих случаях.</strong></p>
+                      <pre><code class="language-js">for (let i = 0; i &lt; 5; ++i) alert( i );
+
+for (let i = 0; i &lt; 5; i++) alert( i );</code></pre>
+                      <p>Такой результат обусловлен алгоритмом работы <code>for</code>:</p>
+                      <ol>
+                        <li>Выполнить единожды присваивание <code>i = 0</code> перед чем-либо (начало).</li>
+                        <li>Проверить условие <code>i &lt; 5</code></li>
+                        <li>Если <code>true</code> – выполнить тело цикла <code>alert(i)</code>, и затем
+                          <code>i++</code>
+                        </li>
+                      </ol>
+                      <p>Увеличение <code>i++</code> выполняется отдельно от проверки условия <code>(2)</code>, значение
+                        <code>i</code> при этом не используется, поэтому нет никакой разницы между <code>i++</code> и
+                        <code>++i</code>.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

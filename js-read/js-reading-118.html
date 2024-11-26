@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Переход к следующей итерации: continue">
+              <h2 id="Переход к следующей итерации: continue">Переход к следующей итерации: continue</h2>
+              <div class="section-content">
+                <p>Директива <code>continue</code> – «облегчённая версия» <code>break</code>. При её выполнении цикл не
+                  прерывается, а переходит к следующей итерации (если условие все ещё равно <code>true</code>).</p>
+                <p>Её используют, если понятно, что на текущем повторе цикла делать больше нечего.</p>
+                <p>Например, цикл ниже использует <code>continue</code>, чтобы выводить только нечётные значения:</p>
+                <pre><code class="language-js">for (let i = 0; i &lt; 10; i++) {
+
+  // если true, пропустить оставшуюся часть тела цикла
+  if (i % 2 == 0) continue;
+
+  alert(i); // 1, затем 3, 5, 7, 9
+}</code></pre>
+                <p>Для чётных значений <code>i</code>, директива <code>continue</code> прекращает выполнение тела цикла
+                  и
+                  передаёт управление на следующую итерацию <code>for</code> (со следующим числом). Таким образом
+                  <code>alert</code> вызывается только для нечётных значений.
+                </p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Директива <code>continue</code> позволяет избегать вложенности</div>
+                  <p>Цикл, который обрабатывает только нечётные значения, мог бы выглядеть так:</p>
+                  <pre><code class="language-js">for (let i = 0; i &lt; 10; i++) {
+
+  if (i % 2) {
+    alert( i );
+  }
+
+}</code></pre>
+                  <p>С технической точки зрения он полностью идентичен. Действительно, вместо <code>continue</code>
+                    можно
+                    просто завернуть действия в блок <code>if</code>.</p>
+                  <p>Однако мы получили дополнительный уровень вложенности фигурных скобок. Если код внутри
+                    <code>if</code> более длинный, то это ухудшает читаемость, в отличие от варианта с
+                    <code>continue</code>.
+                  </p>
+                </div>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Нельзя использовать <code>break/continue</code> справа от оператора „?“
+                  </div>
+                  <p>Обратите внимание, что эти синтаксические конструкции не являются выражениями и не могут быть
+                    использованы с тернарным оператором <code>?</code>. В частности, использование таких директив, как
+                    <code>break/continue</code>, вызовет ошибку.
+                  </p>
+                  <p>Например, если мы возьмём этот код:</p>
+                  <pre><code class="language-js">if (i &gt; 5) {
+  alert(i);
+} else {
+  continue;
+}</code></pre>
+                  <p>…и перепишем его, используя вопросительный знак:</p>
+                  <pre><code class="language-js">(i &gt; 5) ? alert(i) : continue; // continue здесь приведёт к ошибке</code></pre>
+                  <p>…то будет синтаксическая ошибка.</p>
+                  <p>Это ещё один повод не использовать оператор вопросительного знака <code>?</code> вместо
+                    <code>if</code>.
+                  </p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

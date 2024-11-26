@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Цикл «for»">
+              <h2 id="Цикл «for»">Цикл «for»</h2>
+              <div class="section-content">
+                <p>Более сложный, но при этом самый распространённый цикл — цикл <code>for</code>.</p>
+                <p>Выглядит он так:</p>
+                <pre><code class="language-js">for (начало; условие; шаг) {
+  // ... тело цикла ...
+}</code></pre>
+                <p>Давайте разберёмся, что означает каждая часть, на примере. Цикл ниже выполняет <code>alert(i)</code>
+                  для <code>i</code> от <code>0</code> до (но не включая) <code>3</code>:</p>
+                <pre><code class="language-js">for (let i = 0; i &lt; 3; i++) { // выведет 0, затем 1, затем 2
+  alert(i);
+}</code></pre>
+                <p>Рассмотрим конструкцию <code>for</code> подробней:</p>
+                <table>
+                  <colgroup>
+                    <col style="width:8rem;">
+                    <col style="width:8rem;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th colspan="3">часть</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>начало</td>
+                      <td><code>let i = 0</code></td>
+                      <td>Выполняется один раз при входе в цикл</td>
+                    </tr>
+                    <tr>
+                      <td>условие</td>
+                      <td><code>i &lt; 3</code></td>
+                      <td>Проверяется перед каждой итерацией цикла. Если оно вычислится в <code>false</code>, цикл
+                        остановится.</td>
+                    </tr>
+                    <tr>
+                      <td>тело</td>
+                      <td><code>alert(i)</code></td>
+                      <td>Выполняется снова и снова, пока условие вычисляется в <code>true</code>.</td>
+                    </tr>
+                    <tr>
+                      <td>шаг</td>
+                      <td><code>i++</code></td>
+                      <td>Выполняется после тела цикла на каждой итерации перед проверкой условия.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>В целом, алгоритм работы цикла выглядит следующим образом:</p>
+                <pre><code class="language-js">Выполнить *начало*
+→ (Если *условие* == true → Выполнить *тело*, Выполнить *шаг*)
+→ (Если *условие* == true → Выполнить *тело*, Выполнить *шаг*)
+→ (Если *условие* == true → Выполнить *тело*, Выполнить *шаг*)
+→ ...</code></pre>
+                <p>То есть, начало выполняется один раз, а затем каждая итерация заключается в проверке условия, после
+                  которой выполняется тело и шаг.</p>
+                <p>Если тема циклов для вас нова, может быть полезным вернуться к примеру выше и воспроизвести его
+                  работу
+                  на листе бумаги, шаг за шагом.</p>
+                <p>Вот в точности то, что происходит в нашем случае:</p>
+                <pre><code class="language-js">// for (let i = 0; i &lt; 3; i++) alert(i)
+
+// Выполнить начало
+let i = 0;
+// Если условие == true → Выполнить тело, Выполнить шаг
+if (i &lt; 3) { alert(i); i++ }
+// Если условие == true → Выполнить тело, Выполнить шаг
+if (i &lt; 3) { alert(i); i++ }
+// Если условие == true → Выполнить тело, Выполнить шаг
+if (i &lt; 3) { alert(i); i++ }
+// ...конец, потому что теперь i == 3</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Встроенное объявление переменной</div>
+                  <p>В примере переменная счётчика <code>i</code> была объявлена прямо в цикле. Это так называемое
+                    «встроенное» объявление переменной. Такие переменные существуют только внутри цикла.</p>
+                  <pre><code class="language-js">for (let i = 0; i &lt; 3; i++) {
+  alert(i); // 0, 1, 2
+}
+alert(i); // ошибка, нет такой переменной</code></pre>
+                  <p>Вместо объявления новой переменной мы можем использовать уже существующую:</p>
+                  <pre><code class="language-js">let i = 0;
+
+for (i = 0; i &lt; 3; i++) { // используем существующую переменную
+  alert(i); // 0, 1, 2
+}
+
+alert(i); // 3, переменная доступна, т.к. была объявлена снаружи цикла</code></pre>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

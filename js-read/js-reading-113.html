@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Циклы while и for">
+              <h1 id="Циклы while и for">Циклы while и for</h1>
+              <div class="section-content">
+                <p>При написании скриптов зачастую встаёт задача сделать однотипное действие много раз.</p>
+                <p>Например, вывести товары из списка один за другим. Или просто перебрать все числа от <code>1</code>
+                  до
+                  <code>10</code> и для каждого выполнить одинаковый код.
+                </p>
+                <p>Для многократного повторения одного участка кода предусмотрены циклы.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Цикл «while»">
+              <h2 id="Цикл «while»">Цикл «while»</h2>
+              <div class="section-content">
+                <p>Цикл <code>while</code> имеет следующий синтаксис:</p>
+                <pre><code class="language-js">while (condition) {
+  // код
+  // также называемый "телом цикла"
+}</code></pre>
+                <p>Код из тела цикла выполняется, пока условие <code>condition</code> истинно.</p>
+                <p>Например, цикл ниже выводит <code>i</code>, пока <code>i &lt; 3</code>:</p>
+                <pre><code class="language-js">let i = 0;
+while (i &lt; 3) { // выводит 0, затем 1, затем 2
+  alert( i );
+  i++;
+}</code></pre>
+                <p>Одно выполнение тела цикла по-научному называется <em>итерация</em>. Цикл в примере выше совершает
+                  три
+                  итерации.</p>
+                <p>Если бы строка <code>i++</code> отсутствовала в примере выше, то цикл бы повторялся (в теории) вечно.
+                  На практике, конечно, браузер не позволит такому случиться, он предоставит пользователю возможность
+                  остановить «подвисший» скрипт, а JavaScript на стороне сервера придётся «убить» процесс.</p>
+                <p>Любое выражение или переменная может быть условием цикла, а не только сравнение: условие
+                  <code>while</code> вычисляется и преобразуется в логическое значение.
+                </p>
+                <p>Например, <code>while (i)</code> – более краткий вариант <code>while (i != 0)</code>:</p>
+                <pre><code class="language-js">let i = 3;
+while (i) { // когда i будет равно 0, условие станет ложным, и цикл остановится
+  alert( i );
+  i--;
+}</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Фигурные скобки не требуются для тела цикла из одной строки</div>
+                  <p>Если тело цикла состоит лишь из одной инструкции, мы можем опустить фигурные скобки
+                    <code>{…}</code>:
+                  </p>
+                  <pre><code class="language-js">let i = 3;
+while (i) alert(i--);</code></pre>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

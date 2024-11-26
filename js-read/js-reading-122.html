@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Какие значения выведет цикл while?">
+                <h3 id="Какие значения выведет цикл while?">Какие значения выведет цикл while?</h3>
+                <div class="section-content">
+                  <p>Для каждого цикла запишите, какие значения он выведет. Потом сравните с ответом.</p>
+                  <p>Оба цикла выводят <code>alert</code> с одинаковыми значениями или нет?</p>
+                  <ol>
+                    <li>Префиксный вариант <code>++i</code>:</li>
+                    <pre><code class="language-js">let i = 0;
+while (++i &lt; 5) alert( i );</code></pre>
+                    <li>Постфиксный вариант <code>i++</code></li>
+                    <pre><code class="language-js">let i = 0;
+while (i++ &lt; 5) alert( i );</code></pre>
+                  </ol>
+
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Задача демонстрирует, как постфиксные/префиксные варианты могут повлиять на результат, когда
+                        используются в сравнениях.</p>
+                      <ol>
+                        <li>
+                          <p><strong>От 1 до 4</strong></p>
+                          <pre><code class="language-js">let i = 0;
+while (++i &lt; 5) alert( i );</code></pre>
+                          <p>Первое значение: <code>i = 1</code>, так как операция <code>++i</code> сначала увеличит
+                            <code>i</code>, а потом уже произойдёт сравнение и выполнение <code>alert</code>.
+                          </p>
+                          <p>Далее <code>2, 3, 4…</code> Значения выводятся одно за другим. Для каждого значения сначала
+                            происходит увеличение, а потом – сравнение, так как <code>++</code> стоит перед переменной.
+                          </p>
+                          <p>При <code>i = 4</code> произойдёт увеличение <code>i</code> до <code>5</code>, а потом
+                            сравнение <code>while (5 &lt; 5)</code> – это неверно. Поэтому на этом цикл остановится, и
+                            значение <code>5</code> выведено не будет.</p>
+                        </li>
+                        <li>
+                          <p><strong>От 1 до 5</strong></p>
+                          <pre><code class="language-js">let i = 0;
+while (i++ &lt; 5) alert( i );</code></pre>
+                          <p>Первое значение: <code>i = 1</code>. Остановимся на нём подробнее. Оператор
+                            <code>i++</code>
+                            увеличивает <code>i</code>, возвращая старое значение, так что в сравнении
+                            <code>i++ &lt; 5</code> будет участвовать старое <code>i = 0</code>.
+                          </p>
+                          <p>Но последующий вызов <code>alert</code> уже не относится к этому выражению, так что получит
+                            новый <code>i = 1</code>.</p>
+                          <p>Далее <code>2, 3, 4…</code> Для каждого значения сначала происходит сравнение, а потом –
+                            увеличение, и затем срабатывание <code>alert</code>.</p>
+                          <p>Окончание цикла: при <code>i = 4</code> произойдёт сравнение <code>while (4 &lt; 5)</code>
+                            –
+                            верно, после этого сработает <code>i++</code>, увеличив <code>i</code> до <code>5</code>,
+                            так
+                            что значение <code>5</code> будет выведено. Оно станет последним.</p>
+                          <p>Значение <code>i = 5</code> последнее, потому что на следующем шаге
+                            <code>while (5 &lt; 5)</code> ложно.
+                          </p>
+                        </li>
+                      </ol>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

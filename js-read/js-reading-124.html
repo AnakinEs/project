@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Выведите чётные числа">
+                <h3 id="Выведите чётные числа">Выведите чётные числа</h3>
+                <div class="section-content">
+                  <p>При помощи цикла <code>for</code> выведите чётные числа от <code>2</code> до <code>10</code>.</p>
+                  <p><a href=""><span id="hint15" class="hint" data-tooltip="не знаю как сделать">Запустить
+                        демо</span></a>
+                  </p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">for (let i = 2; i &lt;= 10; i++) {
+  if (i % 2 == 0) {
+    alert( i );
+  }
+}</code></pre>
+                      <p>Для проверки на чётность мы здесь используем оператор получения остатка от деления
+                        <code>%</code>.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

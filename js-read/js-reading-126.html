@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Повторять цикл, пока ввод неверен">
+                <h3 id="Повторять цикл, пока ввод неверен">Повторять цикл, пока ввод неверен</h3>
+                <div class="section-content">
+                  <p>Напишите цикл, который предлагает <code>prompt</code> ввести число, большее <code>100</code>. Если
+                    посетитель ввёл другое число – попросить ввести ещё раз, и так далее.</p>
+                  <p>Цикл должен спрашивать число пока либо посетитель не введёт число, большее <code>100</code>, либо
+                    не
+                    нажмёт кнопку Отмена (ESC).</p>
+                  <p>Предполагается, что посетитель вводит только числа. Предусматривать обработку нечисловых строк в
+                    этой
+                    задаче необязательно.</p>
+                  <p><a href=""><span id="hint16" ; class="hint" data-tooltip="Не знаю как сделать">Запустить
+                        демо</span></a>
+                  </p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">let num;
+
+do {
+  num = prompt("Введите число больше 100?", 0);
+} while (num &lt;= 100 &amp;&amp; num);</code></pre>
+                      <p>Цикл <code>do..while</code> повторяется, пока верны две проверки:</p>
+                      <ol>
+                        <li>Проверка <code>num &lt;= 100</code> – то есть, введённое число всё ещё меньше
+                          <code>100</code>.
+                        </li>
+                        <li>Проверка <code>&&</code> num вычисляется в <code>false</code>, когда <code>num</code> имеет
+                          значение <code>null</code> или пустая строка <code>''</code>. В этом случае цикл
+                          <code>while</code> тоже нужно прекратить.
+                        </li>
+                      </ol>
+                      <p>Кстати, сравнение <code>num &lt;= 100</code> при вводе <code>null</code> даст
+                        <code>true</code>,
+                        так что вторая проверка необходима.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

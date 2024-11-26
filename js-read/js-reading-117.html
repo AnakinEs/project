@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Прерывание цикла: «break»">
+              <h2 id="Прерывание цикла: «break»">Прерывание цикла: «break»</h2>
+              <div class="section-content">
+                <p>Обычно цикл завершается при вычислении <em>условия</em> в <code>false</code>.</p>
+                <p>Но мы можем выйти из цикла в любой момент с помощью специальной директивы <code>break</code>.</p>
+                <p>Например, следующий код подсчитывает сумму вводимых чисел до тех пор, пока посетитель их вводит, а
+                  затем – выдаёт:</p>
+                <pre><code class="language-js">let sum = 0;
+
+while (true) {
+
+  let value = +prompt("Введите число", '');
+
+  if (!value) break; // (*)
+
+  sum += value;
+
+}
+alert( 'Сумма: ' + sum );</code></pre>
+                <p>Директива <code>break</code> в строке <code>(*)</code> полностью прекращает выполнение цикла и
+                  передаёт
+                  управление на строку за его телом, то есть на <code>alert</code>.</p>
+                <p>Вообще, сочетание «бесконечный цикл + <code>break</code>» – отличная штука для тех ситуаций, когда
+                  условие, по которому нужно прерваться, находится не в начале или конце цикла, а посередине или даже в
+                  нескольких местах его тела.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

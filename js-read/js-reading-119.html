@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Метки для break/continue">
+              <h2 id="Метки для break/continue">Метки для break/continue</h2>
+              <div class="section-content">
+                <p>Бывает, нужно выйти одновременно из нескольких уровней цикла сразу.</p>
+                <p>Например, в коде ниже мы проходимся циклами по <code>i</code> и <code>j</code>, запрашивая с помощью
+                  <code>prompt</code> координаты <code>(i, j)</code> с <code>(0,0)</code> до <code>(2,2)</code>:
+                </p>
+                <pre><code class="language-js">for (let i = 0; i &lt; 3; i++) {
+
+  for (let j = 0; j &lt; 3; j++) {
+
+    let input = prompt(`Значение на координатах (${i},${j})`, '');
+
+    // Что если мы захотим перейти к Готово (ниже) прямо отсюда?
+
+  }
+}
+
+alert('Готово!');</code></pre>
+                <p>Нам нужен способ остановить выполнение если пользователь отменит ввод.</p>
+                <p>Обычный <code>break</code> после <code>input</code> лишь прервёт внутренний цикл, но этого
+                  недостаточно. Достичь желаемого поведения можно с помощью меток.</p>
+                <p>Метка имеет вид идентификатора с двоеточием перед циклом:</p>
+                <pre><code class="language-js">labelName: for (...) {
+  ...
+}</code></pre>
+                <p>Вызов <code>break &lt;labelName&gt;</code> в цикле ниже ищет ближайший внешний цикл с такой меткой и
+                  переходит в его конец.</p>
+                <pre><code class="language-js">outer: for (let i = 0; i &lt; 3; i++) {
+
+  for (let j = 0; j &lt; 3; j++) {
+
+    let input = prompt(`Значение на координатах (${i},${j})`, '');
+
+    // если пустая строка или Отмена, то выйти из обоих циклов
+    if (!input) break outer; // (*)
+
+    // сделать что-нибудь со значениями...
+  }
+}
+
+alert('Готово!');</code></pre>
+                <p>В примере выше это означает, что вызовом <code>break outer</code> будет разорван внешний цикл до
+                  метки
+                  с именем <code>outer</code>, и управление перейдёт со строки, помеченной <code>(*)</code>, к
+                  <code>alert('Готово!')</code>.
+                </p>
+                <p>Можно размещать метку на отдельной строке:</p>
+                <pre><code class="language-js">outer:
+for (let i = 0; i &lt; 3; i++) { ... }</code></pre>
+                <p>Директива <code>continue</code> также может быть использована с меткой. В этом случае управление
+                  перейдёт на следующую итерацию цикла с меткой.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Метки не позволяют «прыгнуть» куда угодно</div>
+                  <p>Метки не дают возможности передавать управление в произвольное место кода.</p>
+                  <p>Например, нет возможности сделать следующее:</p>
+                  <pre><code class="language-js">break label; // не прыгает к метке ниже
+
+label: for (...)</code></pre>
+                  <p>Вызов <code>break/continue</code> возможен только внутри цикла, и метка должна находиться где-то
+                    выше
+                    этой директивы.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

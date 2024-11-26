@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Последнее значение цикла">
+                <h3 id="Последнее значение цикла">Последнее значение цикла</h3>
+                <div class="section-content">
+                  <p>Какое последнее значение выведет этот код? Почему?</p>
+                  <pre><code class="language-js">let i = 3;
+
+while (i) {
+  alert( i-- );
+}</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Ответ: <code>1</code>.</p>
+                      <pre><code class="language-js">let i = 3;
+
+while (i) {
+  alert( i-- );
+}</code></pre>
+                      <p>Каждое выполнение цикла уменьшает <code>i</code>. Проверка <code>while(i)</code> остановит цикл
+                        при <code>i = 0</code>.</p>
+                      <p>Соответственно, будет такая последовательность шагов цикла («развернём» цикл):</p>
+                      <pre><code class="language-js">let i = 3;
+
+alert(i--); // выведет 3, затем уменьшит i до 2
+
+alert(i--) // выведет 2, затем уменьшит i до 1
+
+alert(i--) // выведет 1, затем уменьшит i до 0
+
+// все, проверка while(i) не даст выполняться циклу дальше</code></pre>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

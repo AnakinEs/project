@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Цикл «do…while»">
+              <h2 id="Цикл «do…while»">Цикл «do…while»</h2>
+              <div class="section-content">
+                <p>Проверку условия можно разместить под телом цикла, используя специальный синтаксис
+                  <code>do..while</code>:
+                </p>
+                <pre><code class="language-js">do {
+  // тело цикла
+} while (condition);</code></pre>
+                <p>Цикл сначала выполнит тело, а затем проверит условие <code>condition</code>, и пока его значение
+                  равно
+                  <code>true</code>, он будет выполняться снова и снова.
+                </p>
+                <p>Например:</p>
+                <pre><code class="language-js">let i = 0;
+do {
+  alert( i );
+  i++;
+} while (i &lt; 3); </code></pre>
+                <p>Такая форма синтаксиса оправдана, если вы хотите, чтобы тело цикла выполнилось <strong>хотя бы один
+                    раз</strong>, даже если условие окажется ложным. На практике чаще используется форма с предусловием:
+                  <code>while(…)</code> <code>{…}</code>.
+                </p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

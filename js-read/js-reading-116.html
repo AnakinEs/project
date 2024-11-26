@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Пропуск частей «for»">
+              <h2 id="Пропуск частей «for»">Пропуск частей «for»</h2>
+              <div class="section-content">
+                <p>Любая часть <code>for</code> может быть пропущена.</p>
+                <p>Для примера, мы можем пропустить <code>начало</code> если нам ничего не нужно делать перед стартом
+                  цикла.</p>
+                <p>Вот так:</p>
+                <pre><code class="language-js">let i = 0; // мы уже имеем объявленную i с присвоенным значением
+
+for (; i &lt; 3; i++) { // нет необходимости в "начале"
+  alert( i ); // 0, 1, 2
+}</code></pre>
+                <p>Можно убрать и <code>шаг</code>:</p>
+                <pre><code class="language-js">let i = 0;
+     
+for (; i &lt; 3;) {
+  alert( i++ );
+}</code></pre>
+                <p>Это сделает цикл аналогичным <code>while (i &lt; 3)</code>.</p>
+                <p>А можно и вообще убрать всё, получив бесконечный цикл:</p>
+                <pre><code class="language-js">for (;;) {
+  // будет выполняться вечно
+}</code></pre>
+                <p>При этом сами точки с запятой <code>;</code> обязательно должны присутствовать, иначе будет ошибка
+                  синтаксиса.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
