@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Оператор нулевого слияния (??)">
+              <h1 id="Оператор нулевого слияния (??)">Оператор нулевого слияния (??)</h1>
+              <div class="section-content">
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Новая возможность</div>
+                  <p>Эта возможность была добавлена в язык недавно. В старых браузерах может понадобиться <a
+                      href="https://learn.javascript.ru/polyfills">полифил</a>.</p>
+                </div>
+                <p>Оператор нулевого слияния представляет собой два вопросительных знака <code>??</code>.</p>
+                <p>Так как он обрабатывает <code>null</code> и <code>undefined</code> одинаковым образом, то для этой
+                  статьи мы введём специальный термин. Для краткости будем говорить, что значение «определено», если оно
+                  не равняется ни <code>null</code>, ни <code>undefined</code>.</p>
+                <p>Результат выражения <code>a ?? b</code> будет следующим:</p>
+                <ul>
+                  <li>если <code>a</code> определено, то <code>a</code>,</li>
+                  <li>если <code>a</code> не определено, то <code>b</code>.</li>
+                </ul>
+                <p>Иначе говоря, оператор <code>??</code> возвращает первый аргумент, если он не
+                  <code>null/undefined</code>, иначе второй.
+                </p>
+                <p>Оператор нулевого слияния не является чем-то принципиально новым. Это всего лишь удобный синтаксис,
+                  как
+                  из двух значений получить одно, которое «определено».</p>
+                <p>Вот как можно переписать выражение <code>result = a ?? b</code>, используя уже знакомые нам
+                  операторы:
+                </p>
+                <pre><code class="language-js">result = (a !== null &amp;&amp; a !== undefined) ? a : b;</code></pre>
+                <p>Теперь должно быть абсолютно ясно, что делает <code>??</code>. Давайте посмотрим, где это может быть
+                  полезно.</p>
+                <p>Как правило, оператор <code>??</code> нужен для того, чтобы задать значение по умолчанию для
+                  потенциально неопределённой переменной.</p>
+                <p>Например, здесь мы отобразим <code>user</code>, если её значение не <code>null/undefined</code>, в
+                  противном случае <code>Аноним</code>:</p>
+                <pre><code class="language-js">let user;
+
+alert(user ?? "Аноним"); // Аноним (user не существует)</code></pre>
+                <p>А вот пример, когда <code>user</code> присвоено значение:</p>
+                <pre><code class="language-js">let user = "Иван";
+
+alert(user ?? "Аноним"); // Иван (user существует)</code></pre>
+                <p>Кроме этого, можно записать последовательность из операторов <code>??</code>, чтобы получить первое
+                  значение из списка, которое не является <code>null/undefined</code>.</p>
+                <p>Допустим, у нас есть данные пользователя в переменных <code>firstName</code>, <code>lastName</code>
+                  или
+                  <code>nickName</code>. Все они могут не существовать, если пользователь решил не вводить
+                  соответствующие
+                  значение.
+                </p>
+                <p>Мы хотели бы отобразить имя пользователя, используя одну из этих переменных, или показать «Аноним»,
+                  если все они <code>null/undefined</code>.</p>
+                <p>Для этого воспользуемся оператором <code>??</code>:</p>
+                <pre><code class="language-js">let firstName = null;
+let lastName = null;
+let nickName = "Суперкодер";
+
+// показывает первое значение, которое определено:
+alert(firstName ?? lastName ?? nickName ?? "Аноним"); // Суперкодер</code></pre>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-112.html"></iframe>

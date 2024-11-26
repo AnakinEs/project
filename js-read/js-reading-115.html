@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Использование ?? вместе с && или ||">
+              <h2 id="Использование ?? вместе с && или ||">Использование ?? вместе с && или ||</h2>
+              <div class="section-content">
+                <p>По соображениям безопасности JavaScript запрещает использование оператора <code>??</code> вместе с
+                  <code>&&</code> и <code>||</code>, если приоритет явно не указан при помощи круглых скобок.
+                </p>
+                <p>Выполнение следующего кода приведёт к синтаксической ошибке:</p>
+                <pre><code class="language-js">let x = 1 &amp;&amp; 2 ?? 3; // Синтаксическая ошибка</code></pre>
+                <p>Это, безусловно спорное, ограничение было добавлено в спецификацию языка с целью избежать программные
+                  ошибки, когда люди начнут переходить с <code>||</code> на <code>??</code>.</p>
+                <p>Используйте скобки, чтобы обойти это ограничение:</p>
+                <pre><code class="language-js">let x = (1 &amp;&amp; 2) ?? 3; // Работает без ошибок
+
+alert(x); // 2</code></pre>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-115.html"></iframe>

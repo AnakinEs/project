@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Итого9">
+              <h2 id="Итого9">Итого</h2>
+              <div class="section-content">
+                <ul>
+                  <li>
+                    <p>Оператор нулевого слияния <code>??</code> — это быстрый способ выбрать первое «определённое»
+                      значение из списка.</p>
+                    <p>Используется для присвоения переменным значений по умолчанию:</p>
+                    <pre><code class="language-js">// будет height=100, если переменная height равна null или undefined
+height = height ?? 100;</code></pre>
+                    <p></p>
+                    <p></p>
+                  </li>
+                  <li>
+                    <p>Оператор <code>??</code> имеет очень низкий приоритет, лишь немного выше, чем у <code>?</code> и
+                      <code>=</code>, поэтому при использовании его в выражении, скорее всего, потребуются скобки.
+                    </p>
+                  </li>
+                  <li>
+                    <p>Запрещено использовать вместе с <code>||</code> или <code>&&</code> без явно указанного
+                      приоритета,
+                      то есть без скобок.</p>
+                  </li>
+                </ul>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-116.html"></iframe>
