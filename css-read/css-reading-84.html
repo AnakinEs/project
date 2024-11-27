@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+                <section aria-labelledby="Изменение размеров фонового изображения">
+          <h3 id="Изменение размеров фонового изображения"><a href="#Изменение размеров фонового изображения">Изменение
+              размеров фонового изображения</a></h3>
+          <div class="section-content">
+            <p>В приведённом выше примере у нас есть большое изображение, которое в конечном итоге было обрезано, так
+              как оно больше, чем элемент, фоном которого оно является. В этом случае мы могли бы использовать свойство
+              <code>background-size</code>, которое может принимать значения <a
+                href="https://developer.mozilla.org/ru/docs/Web/CSS/length">длины</a> или в <a
+                href="https://developer.mozilla.org/ru/docs/Web/CSS/percentage">процентах</a>, чтобы размер изображения
+              соответствовал размеру фона.
+            </p>
+            <p>Вы также можете использовать ключевые слова:</p>
+            <ul>
+              <li><code>cover</code> — браузер сделает изображение достаточно большим, чтобы оно полностью заполнило
+                блок, сохраняя при этом соотношение сторон. В этом случае часть изображения, скорее всего, окажется за
+                пределами блока.</li>
+              <li><code>contain</code> — браузер сделает изображение нужного размера, чтобы поместиться в блоке. В этом
+                случае могут появиться пробелы с обеих сторон или сверху и снизу изображения, если соотношение сторон
+                изображения отличается от соотношения сторон блока.</li>
+            </ul>
+            <p>Ниже я применил значения длины к размерам изображения. Глядите, как это исказило изображение.</p>
+            <p>В приведённом ниже примере я использовал большое изображение из ранее рассмотренного примера и указал
+              значения длины, чтобы определить его размер внутри блока. Вы можете посмотреть, как это исказило
+              изображение.</p>
+            <p>Попробуйте следующее.</p>
+            <ul>
+              <li>Измените значения длины, используемые для изменения размера фона.</li>
+              <li>Измените значение длины на <code>background-size: cover</code> или
+                <code>background-size: contain</code>.
+              </li>
+              <li>Если ваше изображение меньше размеров блока, вы можете изменить значение свойства
+                <code>background-repeat</code>, чтобы повторить изображение.
+              </li>
+            </ul>
+            <iframe style="height:50rem" src="../getting-started/started50.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

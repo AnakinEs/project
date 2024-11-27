@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Использование сокращённого свойства background">
+          <h3 id="Использование сокращённого свойства background"><a
+              href="#Использование сокращённого свойства background">Использование сокращённого свойства background</a>
+          </h3>
+          <div class="section-content">
+            <p>Как я упоминал в начале этого урока, вы часто будете видеть фон, заданный с помощью свойства
+              <code>background</code>. Это сокращение позволяет вам одновременно устанавливать все различные свойства.
+            </p>
+            <p>При использовании нескольких фонов необходимо указать все свойства для первого фона, а затем добавить
+              следующий фон после запятой. В приведённом ниже примере у нас есть градиент с размером и положением, затем
+              фоновое изображение со значением <code>no-repeat</code> и положением, затем цвет.</p>
+            <p>При записи сокращённых значений фонового изображения необходимо соблюдать несколько правил, например:</p>
+            <ul>
+              <li><code>background-color</code> можно указывать только после последней запятой.</li>
+              <li>Значения <code>background-size</code> могут быть включены только сразу после
+                <code>background-position</code>, разделённые символом '/', например: <code>center/80%</code>.
+              </li>
+            </ul>
+            <p>Посетите страницу MDN свойства, чтобы увидеть полное описание.</p>
+            <iframe style="height:50rem" src="../getting-started/started54.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

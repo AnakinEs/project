@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Границы">
+          <h2 id="Границы"><a href="#Границы">Границы</a></h2>
+          <div class="section-content">
+            <p>Изучая Блочную модель, мы обнаружили, как границы влияют на размер нашего блока. В этом уроке мы
+              рассмотрим, как творчески использовать границы. Обычно, когда мы добавляем границы к элементу с помощью
+              CSS, мы используем сокращённое свойство, которое устанавливает цвет, ширину и стиль границы в одной строке
+              CSS.</p>
+            <p>Мы можем установить границу для всех четырёх сторон блока с помощью <code>border</code>:</p>
+            <pre><code class="language-css">.box {
+  border: 1px solid black;
+}</code></pre>
+            <p>Или мы можем нацеливаться на один край блока, например:</p>
+            <pre><code class="language-css">.box {
+  border-top: 1px solid black;
+}</code></pre>
+            <p>Индивидуальные свойства этих сокращений будут следующими:</p>
+            <pre><code class="language-css">.box {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}</code></pre>
+            <p>И более детально:</p>
+            <pre><code class="language-css">.box {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: black;
+}</code></pre>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: Свойства границ <code>top</code>, <code>right</code>, <code>bottom</code>,
+                и <code>left</code> также имеют сопоставленные логические свойства, которые относятся к режиму написания
+                документа (например, текст слева направо, справа налево или сверху вниз). Мы рассмотрим их в следующем
+                уроке, который касается работы с разными направлениями текста.</p>
+            </div>
+            <p>Есть множество стилей, которые вы можете использовать для границ. В приведённом ниже примере мы
+              использовали разные стили границ для четырёх сторон моего блока. Поиграйте со стилем, шириной и цветом
+              границы, чтобы увидеть, как они работают.</p>
+            <iframe style="height:47rem" src="../getting-started/started55.html"></iframe>
+            <p></p>
+            <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

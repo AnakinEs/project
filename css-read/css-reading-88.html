@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Закрепление фона">
+          <h3 id="Закрепление фона"><a href="#Закрепление фона">Закрепление фона</a></h3>
+          <div class="section-content">
+            <p>Другая опция, которую можно применить к фону, - это указать, как он будет прокручиваться при прокрутке
+              содержимого. Это контролируется с помощью свойства <code>background-attachment</code>, которое может
+              принимать следующие значения:</p>
+            <ul>
+              <li><code>scroll</code>: Заставляет элементы фона прокручиваться при прокрутке страницы. Если содержимое
+                элемента прокручивается, фон не перемещается. Фактически, фон фиксируется в той же позиции на странице,
+                поэтому он прокручивается по мере прокрутки страницы.</li>
+              <li>
+                <code><span class="hint" data-tooltip="Делает фоновое изображение элемента неподвижным, даже при прокрутке самой страницы.">fixed</span></code>:
+                Фиксирует элементы фона в области просмотра, чтобы он не прокручивался при прокрутке страницы или
+                содержимого элемента. Фон всегда будет оставаться на одном и том же месте на экране.
+              </li>
+              <li>
+                <code><span class="hint" data-tooltip="Фон фиксируется с учётом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон выходящий за рамки элемента остаётся на месте.">local</span></code>:
+                Это значение было добавлено позже (оно поддерживается только в Internet Explorer 9+, тогда как другие
+                поддерживаются в IE4+), потому что значение <code>scroll</code> довольно запутанно и во многих случаях
+                действительно не делает то, что вы хотите. Значение <code>local</code> фиксирует фон для элемента, к
+                которому он применён, поэтому, когда вы прокручиваете элемент, фон прокручивается вместе с ним.
+              </li>
+            </ul>
+            <p>Свойство <code>background-attachment</code> действует только тогда, когда есть контент для прокрутки,
+              поэтому мы сделали пример, чтобы продемонстрировать различия между тремя значениями - взгляните на <a
+                href="https://mdn.github.io/learning-area/css/styling-boxes/backgrounds/background-attachment.html">background-attachment.html</a>
+              (также смотри <a
+                href="https://github.com/mdn/learning-area/tree/main/css/styling-boxes/backgrounds">исходный код</a>
+              здесь).</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Закруглённые углы">
+          <h3 id="Закруглённые углы"><a href="#Закруглённые углы">Закруглённые углы</a></h3>
+          <div class="section-content">
+            <p>Закругление углов блока достигается с помощью свойства <code>border-radius</code> и связанных свойств,
+              которые относятся к каждому углу блока. В качестве значения могут использоваться два значения длины или
+              процента: первое значение определяет горизонтальный радиус, а второе - вертикальный радиус. Чаще задают
+              только одно значение, которое используется для обоих.</p>
+            <p>Например, чтобы сделать все четыре угла блока радиусом 10px:</p>
+            <pre><code class="language-css">.box {
+  border-radius: 10px;
+}</code></pre>
+            <p>Или, чтобы верхний правый угол имел горизонтальный радиус 1em и вертикальный радиус 10%:</p>
+            <pre><code class="language-css">.box {
+  border-top-right-radius: 1em 10%;
+}</code></pre>
+            <p>В примере ниже мы установили все четыре угла, а затем изменили значения для верхнего правого угла, чтобы
+              сделать его другим. Вы можете поиграть со значениями, чтобы изменить углы. Взгляните на страницу свойств
+              для <code>border-radius</code> чтобы увидеть доступные варианты синтаксиса.</p>
+            <iframe style="height:47rem" src="../getting-started/started56.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

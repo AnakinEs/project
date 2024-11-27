@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Позиционирование фонового изображения">
+          <h3 id="Позиционирование фонового изображения"><a
+              href="#Позиционирование фонового изображения">Позиционирование фонового изображения</a></h3>
+          <div class="section-content">
+            <p>Свойство <code>background-position</code> позволяет вам изменять позицию, в которой фоновое изображение
+              появляется в блоке. При этом используется система координат, в которой левый верхний угол блока равен
+              (<code>0,0</code>), а сам блок располагается вдоль горизонтальной (<code>x</code>) и вертикальной
+              (<code>y</code>) осей.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: По умолчанию значение <code>background-position</code> равно
+                (<code>0,0</code>).</p>
+            </div>
+            <p>Обычно свойство <code>background-position</code> задают в виде двух последовательных значений — значение
+              по горизонтали, за которым следует значение по вертикали.</p>
+            <p>Вы можете использовать такие ключевые слова, как <code>top</code> и <code>right</code> (с остальными
+              можете ознакомиться на странице <code>background-position</code>):</p>
+            <pre><code class="language-css">.box {
+  background-image: url(star.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+}</code></pre>
+            <p>Допустимы значения длины и процентные:</p>
+            <pre><code class="language-css">.box {
+  background-image: url(star.png);
+  background-repeat: no-repeat;
+  background-position: 20px 10%;
+}</code></pre>
+            <p>Вы также можете смешивать значения ключевых слов с длинами или процентами, например:</p>
+            <pre><code class="language-css">.box {
+  background-image: url(star.png);
+  background-repeat: no-repeat;
+  background-position: top 20px;
+}</code></pre>
+            <p>И наконец, вы также можете использовать синтаксис с четырьмя значениями, чтобы указать расстояние от
+              определённых краёв блока - единица длины в данном случае представляет собой смещение от значения ключевого
+              слова. Итак, в CSS ниже мы сместили фон на 20 пикселей сверху и на 10 пикселей справа:</p>
+            <pre><code class="language-css">.box {
+  background-image: url(star.png);
+  background-repeat: no-repeat;
+  background-position: top 20px right 10px;
+}</code></pre>
+            <p>Используйте приведённый ниже пример, чтобы поэкспериментировать с этими значениями и переместить звезду
+              внутри блока.</p>
+            <iframe style="height:38rem" src="../getting-started/started51.html"></iframe>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: <code>background-position</code> — это сокращение для
+                <code>background-position-x</code> и <code>background-position-y</code>, которые позволяют вам
+                устанавливать различные значения положения по оси индивидуально.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
