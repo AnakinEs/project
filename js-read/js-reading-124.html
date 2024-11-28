@@ -23,9 +23,17 @@
                 <h3 id="Выведите чётные числа">Выведите чётные числа</h3>
                 <div class="section-content">
                   <p>При помощи цикла <code>for</code> выведите чётные числа от <code>2</code> до <code>10</code>.</p>
-                  <p><a href=""><span id="hint15" class="hint" data-tooltip="не знаю как сделать">Запустить
-                        демо</span></a>
-                  </p>
+                  <p><a href="#1" id="#1" onclick="honest()">Запустить демо</a></p>
+                  
+                  <script>
+                    function honest() {
+                      for (let i = 2; i <= 10; i++) {
+                        if (i % 2 == 0) {
+                          alert( i );
+                        }
+                      }
+                    }
+                  </script>
                   <details>
                     <summary class="solution">
                       <li class="task__solution" type="button">решение</li>
