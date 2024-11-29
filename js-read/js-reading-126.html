@@ -30,9 +30,16 @@
                   <p>Предполагается, что посетитель вводит только числа. Предусматривать обработку нечисловых строк в
                     этой
                     задаче необязательно.</p>
-                  <p><a href=""><span id="hint16" ; class="hint" data-tooltip="Не знаю как сделать">Запустить
-                        демо</span></a>
-                  </p>
+                    <p><a href="#2" id="#2" onclick="promp()">Запустить демо</a></p>
+                    <script>
+                      function promp(params) {
+                        let num;
+  
+                        do {
+                          num = prompt("Введите число больше 100?", 0);
+                        } while (num <= 100 && num);
+                      }
+                    </script>
                   <details>
                     <summary class="solution">
                       <li class="task__solution" type="button">решение</li>
