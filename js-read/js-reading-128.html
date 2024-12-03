@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby='Конструкция "switch"'>
+              <h1 id='Конструкция "switch"'>Конструкция "switch"</h1>
+              <div class="section-content">
+                <p>Конструкция <code>switch</code> заменяет собой сразу несколько <code>if</code>.</p>
+                <p>Она представляет собой более наглядный способ сравнить выражение сразу с несколькими вариантами.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Синтаксис">
+              <h2 id="Синтаксис">Синтаксис</h2>
+              <div class="section-content">
+                <p>Конструкция <code>switch</code> имеет один или более блок <code>case</code> и необязательный блок
+                  <code>default</code>.
+                </p>
+                <p>Выглядит она так:</p>
+                <pre><code class="language-js">switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}</code></pre>
+                <ul>
+                  <li>Переменная <code>x</code> проверяется на строгое равенство первому значению <code>value1</code>,
+                    затем второму <code>value2</code> и так далее.</li>
+                  <li>Если соответствие установлено – <code>switch</code> начинает выполняться от соответствующей
+                    директивы <code>case</code> и далее, до ближайшего <code>break</code> (или до конца
+                    <code>switch</code>).
+                  </li>
+                  <li>Если ни один <code>case</code> не совпал – выполняется (если есть) вариант <code>default</code>.
+                  </li>
+                </ul>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

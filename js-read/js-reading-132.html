@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby='Напишите "if", аналогичный "switch"'>
+                <h3 id='Напишите "if", аналогичный "switch"'>Напишите "if", аналогичный "switch"</h3>
+                <div class="section-content">
+                  <p>Напишите <code>if..else</code>, соответствующий следующему <code>switch</code>:</p>
+                  <pre><code class="language-js">switch (browser) {
+  case 'Edge':
+    alert( "You've got the Edge!" );
+    break;
+
+  case 'Chrome':
+  case 'Firefox':
+  case 'Safari':
+  case 'Opera':
+    alert( 'Okay we support these browsers too' );
+    break;
+
+  default:
+    alert( 'We hope that this page looks ok!' );
+}</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Если совсем точно следовать работе <code>switch</code>, то <code>if</code> должен выполнять
+                        строгое сравнение <code>'==='</code>.</p>
+                      <p>Впрочем, для таких строк, подойдёт и обычное сравнение <code>'=='</code>.</p>
+                      <pre><code class="language-js">if(browser == 'Edge') {
+  alert("You've got the Edge!");
+} else if (browser == 'Chrome'
+ || browser == 'Firefox'
+ || browser == 'Safari'
+ || browser == 'Opera') {
+  alert( 'Okay we support these browsers too' );
+} else {
+  alert( 'We hope that this page looks ok!' );
+}</code></pre>
+                      <p>Обратите внимание: конструкция <code>browser == 'Chrome' || browser == 'Firefox' ...</code>
+                        разбита на несколько строк для лучшей читаемости.</p>
+                      <p>Но всё равно запись через <code>switch</code> нагляднее.</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

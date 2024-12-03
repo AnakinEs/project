@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby='Переписать условия "if" на "switch"'>
+                <h3 id='Переписать условия "if" на "switch"'>Переписать условия "if" на "switch"</h3>
+                <div class="section-content">
+                  <p>Перепишите код с использованием одной конструкции <code>switch</code>:</p>
+                  <pre><code class="language-js">const number = +prompt('Введите число между 0 и 3', '');
+
+if (number === 0) {
+  alert('Вы ввели число 0');
+}
+
+if (number === 1) {
+  alert('Вы ввели число 1');
+}
+
+if (number === 2 || number === 3) {
+  alert('Вы ввели число 2, а может и 3');
+}</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Первые две проверки – обычный <code>case</code>, третья разделена на два <code>case</code>:</p>
+                      <pre><code class="language-js">const number = +prompt('Введите число между 0 и 3', '');
+
+switch (number) {
+  case 0:
+    alert('Вы ввели число 0');
+    break;
+
+  case 1:
+    alert('Вы ввели число 1');
+    break;
+
+  case 2:
+  case 3:
+    alert('Вы ввели число 2, а может и 3');
+    break;
+}</code></pre>
+                      <p>Обратите внимание: <code>break</code> внизу не обязателен, но ставится по «правилам хорошего
+                        тона».</p>
+                      <p>Допустим, он не стоит. Есть шанс, что в будущем нам понадобится добавить в конец ещё один
+                        <code>case</code>, например <code>case 4</code>, и мы, вполне вероятно, забудем этот
+                        <code>break</code> поставить. В результате выполнение <code>case 2/case 3</code> продолжится на
+                        <code>case 4</code> и будет ошибка.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

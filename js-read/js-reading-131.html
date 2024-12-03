@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Тип имеет значение">
+              <h2 id="Тип имеет значение">Тип имеет значение</h2>
+              <div class="section-content">
+                <p>Нужно отметить, что проверка на равенство всегда строгая. Значения должны быть одного типа, чтобы
+                  выполнялось равенство.</p>
+                <p>Для примера, давайте рассмотрим следующий код:</p>
+                <pre><code class="language-js">let arg = prompt("Введите число?");
+switch (arg) {
+  case '0':
+  case '1':
+    alert( 'Один или ноль' );
+    break;
+
+  case '2':
+    alert( 'Два' );
+    break;
+
+  case 3:
+    alert( 'Никогда не выполнится!' );
+    break;
+  default:
+    alert( 'Неизвестное значение' );
+}</code></pre>
+                <ol>
+                  <li>Для <code>'0'</code> и <code>'1'</code> выполнится первый <code>alert</code>.</li>
+                  <li>Для <code>'2'</code> – второй <code>alert</code>.</li>
+                  <li>Но для <code>3</code>, результат выполнения <code>prompt</code> будет строка <code>"3"</code>,
+                    которая не соответствует строгому равенству <code>===</code> с числом <code>3</code>. Таким образом,
+                    мы имеем «мёртвый код» в <code>case 3</code>! Выполнится вариант <code>default</code>.</li>
+                </ol>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
