@@ -59,6 +59,136 @@
                 </ul>
               </div>
             </section>
+            <section aria-labelledby="Пример работы">
+              <h2 id="Пример работы">Пример работы</h2>
+              <div class="section-content">
+                <p>Пример использования <code>switch</code> (сработавший код выделен):</p>
+                <pre><code class="language-js">let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert( 'Маловато' );
+    break;
+  case 4:
+    alert( 'В точку!' );
+    break;
+  case 5:
+    alert( 'Перебор' );
+    break;
+  default:
+    alert( "Нет таких значений" );
+}</code></pre>
+                <p>Здесь оператор <code>switch</code> последовательно сравнит <code>a</code> со всеми вариантами из
+                  <code>case</code>.
+                </p>
+                <p>Сначала <code>3</code>, затем – так как нет совпадения – <code>4</code>. Совпадение найдено, будет
+                  выполнен этот вариант, со строки <code>alert( 'В точку!' )</code> и далее, до ближайшего
+                  <code>break</code>, который прервёт выполнение.
+                </p>
+                <p><strong>Если <code>break</code> нет, то выполнение пойдёт ниже по следующим <code>case</code>, при
+                    этом
+                    остальные проверки игнорируются.</strong></p>
+                <p>Пример без <code>break</code>:</p>
+                <pre><code class="language-js">let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert( 'Маловато' );
+  case 4:
+    alert( 'В точку!' );
+  case 5:
+    alert( 'Перебор' );
+  default:
+    alert( "Нет таких значений" );
+}</code></pre>
+                <p>В примере выше последовательно выполнятся три <code>alert</code>:</p>
+                <pre><code class="language-js">alert( 'В точку!' );
+alert( 'Перебор' );
+alert( "Нет таких значений" );</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Любое выражение может быть аргументом для <code>switch/case</code></div>
+                  <p>И <code>switch</code> и <code>case</code> допускают любое выражение в качестве аргумента.</p>
+                  <p>Например:</p>
+                  <pre><code class="language-js">let a = "1";
+let b = 0;
+
+switch (+a) {
+  case b + 1:
+    alert("Выполнится, т.к. значением +a будет 1, что в точности равно b+1");
+    break;
+
+  default:
+    alert("Это не выполнится");
+}</code></pre>
+                  <p>В этом примере выражение <code>+a</code> вычисляется в <code>1</code>, что совпадает с выражением
+                    <code>b + 1</code> в <code>case</code>, и следовательно, код в этом блоке будет выполнен.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Группировка «case»">
+              <h2 id="Группировка «case»">Группировка «case»</h2>
+              <div class="section-content">
+                <p>Несколько вариантов <code>case</code>, использующих один код, можно группировать.</p>
+                <p>Для примера, выполним один и тот же код для <code>case 3</code> и <code>case 5</code>, сгруппировав
+                  их:
+                </p>
+                <pre><code class="language-js">let a = 3;
+
+switch (a) {
+  case 4:
+    alert('Правильно!');
+    break;
+
+  case 3: // (*) группируем оба case
+  case 5:
+    alert('Неправильно!');
+    alert("Может вам посетить урок математики?");
+    break;
+
+  default:
+    alert('Результат выглядит странновато. Честно.');
+}</code></pre>
+                <p>Теперь оба варианта <code>3</code> и <code>5</code> выводят одно сообщение.</p>
+                <p>Возможность группировать <code>case</code> – это побочный эффект того, как <code>switch/case</code>
+                  работает без <code>break</code>. Здесь выполнение <code>case 3</code> начинается со строки
+                  <code>(*)</code> и продолжается в <code>case 5</code>, потому что отсутствует <code>break</code>.
+                </p>
+              </div>
+            </section>
+            <section aria-labelledby="Тип имеет значение">
+              <h2 id="Тип имеет значение">Тип имеет значение</h2>
+              <div class="section-content">
+                <p>Нужно отметить, что проверка на равенство всегда строгая. Значения должны быть одного типа, чтобы
+                  выполнялось равенство.</p>
+                <p>Для примера, давайте рассмотрим следующий код:</p>
+                <pre><code class="language-js">let arg = prompt("Введите число?");
+switch (arg) {
+  case '0':
+  case '1':
+    alert( 'Один или ноль' );
+    break;
+
+  case '2':
+    alert( 'Два' );
+    break;
+
+  case 3:
+    alert( 'Никогда не выполнится!' );
+    break;
+  default:
+    alert( 'Неизвестное значение' );
+}</code></pre>
+                <ol>
+                  <li>Для <code>'0'</code> и <code>'1'</code> выполнится первый <code>alert</code>.</li>
+                  <li>Для <code>'2'</code> – второй <code>alert</code>.</li>
+                  <li>Но для <code>3</code>, результат выполнения <code>prompt</code> будет строка <code>"3"</code>,
+                    которая не соответствует строгому равенству <code>===</code> с числом <code>3</code>. Таким образом,
+                    мы имеем «мёртвый код» в <code>case 3</code>! Выполнится вариант <code>default</code>.</li>
+                </ol>
+              </div>
+            </section>
       </article>
     </main>
   </div>
