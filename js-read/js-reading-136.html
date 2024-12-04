@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Внешние переменные">
+              <h2 id="Внешние переменные">Внешние переменные</h2>
+              <div class="section-content">
+                <p>У функции есть доступ к внешним переменным, например:</p>
+                <pre><code class="language-js">let userName = 'Вася';
+
+function showMessage() {
+  let message = 'Привет, ' + userName;
+  alert(message);
+}
+
+showMessage(); // Привет, Вася</code></pre>
+                <p>Функция обладает полным доступом к внешним переменным и может изменять их значение.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let userName = 'Вася';
+
+function showMessage() {
+  userName = "Петя"; // (1) изменяем значение внешней переменной
+
+  let message = 'Привет, ' + userName;
+  alert(message);
+}
+
+alert( userName ); // Вася перед вызовом функции
+
+showMessage();
+
+alert( userName ); // Петя, значение внешней переменной было изменено функцией</code></pre>
+                <p>Внешняя переменная используется, только если внутри функции нет такой локальной.</p>
+                <p>Если одноимённая переменная объявляется внутри функции, тогда она перекрывает внешнюю. Например, в
+                  коде
+                  ниже функция использует локальную переменную <code>userName</code>. Внешняя будет проигнорирована:</p>
+                <pre><code class="language-js">let userName = 'Вася';
+
+function showMessage() {
+  let userName = "Петя"; // объявляем локальную переменную
+
+  let message = 'Привет, ' + userName; // Петя
+  alert(message);
+}
+
+// функция создаст и будет использовать свою собственную локальную переменную userName
+showMessage();
+
+alert( userName ); // Вася, не изменилась, функция не трогала внешнюю переменную</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Глобальные переменные</div>
+                  <p>Переменные, объявленные снаружи всех функций, такие как внешняя переменная <code>userName</code> в
+                    вышеприведённом коде – называются <em>глобальными</em>.</p>
+                  <p><em>Глобальные переменные</em> видимы для любой функции (если только их не перекрывают одноимённые
+                    локальные переменные).</p>
+                  <p>Желательно сводить использование глобальных переменных к минимуму. В современном коде обычно мало
+                    или
+                    совсем нет глобальных переменных. Хотя они иногда полезны для хранения важнейших «общепроектовых»
+                    данных.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

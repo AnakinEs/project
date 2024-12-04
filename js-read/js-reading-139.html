@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Возврат значения">
+              <h2 id="Возврат значения">Возврат значения</h2>
+              <div class="section-content">
+                <p>Функция может вернуть результат, который будет передан в вызвавший её код.</p>
+                <p>Простейшим примером может служить функция сложения двух чисел:</p>
+                <pre><code class="language-js">function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert( result ); // 3</code></pre>
+                <p>Директива <code>return</code> может находиться в любом месте тела функции. Как только выполнение
+                  доходит до этого места, функция останавливается, и значение возвращается в вызвавший её код
+                  (присваивается переменной <code>result</code> выше).</p>
+                <p>Вызовов <code>return</code> может быть несколько, например:</p>
+                <pre><code class="language-js">function checkAge(age) {
+  if (age &gt; 18) {
+    return true;
+  } else {
+    return confirm('А родители разрешили?');
+  }
+}
+
+let age = prompt('Сколько вам лет?', 18);
+
+if ( checkAge(age) ) {
+  alert( 'Доступ получен' );
+} else {
+  alert( 'Доступ закрыт' );
+}</code></pre>
+                <p>Возможно использовать <code>return</code> и без значения. Это приведёт к немедленному выходу из
+                  функции.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">function showMovie(age) {
+  if ( !checkAge(age) ) {
+    return;
+  }
+
+  alert( "Вам показывается кино" ); // (*)
+  // ...
+}</code></pre>
+                <p>В коде выше, если <code>checkAge(age)</code> вернёт <code>false</code>, <code>showMovie</code> не
+                  выполнит <code>alert</code>.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Результат функции с пустым <code>return</code> или без него –
+                    <code>undefined</code>
+                  </div>
+                  <p>Если функция не возвращает значения, это всё равно, как если бы она возвращала
+                    <code>undefined</code>:
+                  </p>
+                  <pre><code class="language-js">function doNothing() { /* пусто */ }
+
+alert( doNothing() === undefined ); // true</code></pre>
+                  <p>Пустой <code>return</code> аналогичен <code>return undefined</code>:</p>
+                  <pre><code class="language-js">function doNothing() {
+  return;
+}
+
+alert( doNothing() === undefined ); // true</code></pre>
+                </div>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Никогда не добавляйте перевод строки между <code>return</code> и его
+                    значением</div>
+                  <p>Для длинного выражения в <code>return</code> может быть заманчиво разместить его на нескольких
+                    отдельных строках, например так:</p>
+                  <pre><code class="language-js">return
+ (some + long + expression + or + whatever * f(a) + f(b))</code></pre>
+                  <p>Код не выполнится, потому что интерпретатор JavaScript подставит точку с запятой после
+                    <code>return</code>. Для него это будет выглядеть так:
+                  </p>
+                  <pre><code class="language-js">return;
+ (some + long + expression + or + whatever * f(a) + f(b))</code></pre>
+                  <p>Таким образом, это фактически стало пустым <code>return</code>.</p>
+                  <p>Если мы хотим, чтобы возвращаемое выражение занимало несколько строк, нужно начать его на той же
+                    строке, что и <code>return</code>. Или, хотя бы, поставить там открывающую скобку, вот так:</p>
+                  <pre><code class="language-js">return (
+  some + long + expression
+  + or +
+  whatever * f(a) + f(b)
+  )</code></pre>
+                  <p>И тогда всё сработает, как задумано.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

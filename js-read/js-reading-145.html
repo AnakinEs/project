@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функция min(a, b)">
+                <h3 id="Функция min(a, b)">Функция min(a, b)</h3>
+                <div class="section-content">
+                  <p>Напишите функцию <code>min(a,b)</code>, которая возвращает меньшее из чисел <code>a</code> и
+                    <code>b</code>.
+                  </p>
+                  <p>Пример вызовов:</p>
+                  <pre><code class="language-js">min(2, 5) == 2
+min(3, -1) == -1
+min(1, 1) == 1</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Вариант решения с использованием <code>if</code>:</p>
+                      <pre><code class="language-js">function min(a, b) {
+  if (a &lt; b) {
+    return a;
+  } else {
+    return b;
+  }
+}</code></pre>
+                      <p>Вариант решения с оператором <code>?</code>:</p>
+                      <pre><code class="language-js">function min(a, b) {
+  return a &lt; b ? a : b;
+}</code></pre>
+                      <p>P.S. В случае равенства <code>a == b</code> не имеет значения, что возвращать.</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

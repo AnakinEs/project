@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Параметры по умолчанию">
+              <h2 id="Параметры по умолчанию">Параметры по умолчанию</h2>
+              <div class="section-content">
+                <p>Если параметр не указан, то его значением становится <code>undefined</code>.</p>
+                <p>Например, вышеупомянутая функция <code>showMessage(from, text)</code> может быть вызвана с одним
+                  аргументом:</p>
+                <pre><code class="language-js">showMessage("Аня");</code></pre>
+                <p>Это не приведёт к ошибке. Такой вызов выведет <code>"*Аня*: undefined"</code>. В вызове не указан
+                  параметр <code>text</code>, поэтому предполагается, что <code>text === undefined</code>.</p>
+                <p>Если мы хотим задать параметру <code>text</code> значение по умолчанию, мы должны указать его после
+                  <code>=</code>:
+                </p>
+                <pre><code class="language-js">function showMessage(from, text = "текст не добавлен") {
+  alert( from + ": " + text );
+}
+
+showMessage("Аня"); // Аня: текст не добавлен</code></pre>
+                <p>Теперь, если параметр <code>text</code> не указан, его значением будет
+                  <code>"текст не добавлен"</code>
+                </p>
+                <p>В данном случае <code>"текст не добавлен"</code> это строка, но на её месте могло бы быть и более
+                  сложное выражение, которое бы вычислялось и присваивалось при отсутствии параметра. Например:</p>
+                <pre><code class="language-js">function showMessage(from, text = anotherFunction()) {
+  // anotherFunction() выполнится только если не передан text
+  // результатом будет значение text
+}</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Вычисление параметров по умолчанию</div>
+                  <p>В JavaScript параметры по умолчанию вычисляются каждый раз, когда функция вызывается без
+                    соответствующего параметра.</p>
+                  <p>В примере выше <code>anotherFunction()</code> будет вызываться каждый раз, когда
+                    <code>showMessage()</code> вызывается без параметра <code>text</code>.
+                  </p>
+                </div>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Использование параметров по умолчанию в ранних версиях JavaScript</div>
+                  <p>Ранние версии JavaScript не поддерживали параметры по умолчанию. Поэтому существуют альтернативные
+                    способы, которые могут встречаться в старых скриптах.</p>
+                  <p>Например, явная проверка на <code>undefined</code>:</p>
+                  <pre><code class="language-js">function showMessage(from, text) {
+  if (text === undefined) {
+    text = 'текст не добавлен';
+  }
+
+  alert( from + ": " + text );
+}</code></pre>
+                  <p>…Или с помощью оператора <code>||</code>:</p>
+                  <pre><code class="language-js">function showMessage(from, text) {
+  // Если значение text ложно, тогда присвоить параметру text значение по умолчанию
+  // заметим, что при этом пустая строка text === "" будет также считаться отсутствующим значением
+  text = text || 'текст не добавлен';
+  ...
+}</code></pre>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

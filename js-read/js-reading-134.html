@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функции">
+              <h1 id="Функции">Функции</h1>
+              <div class="section-content">
+                <p>Зачастую нам надо повторять одно и то же действие во многих частях программы.</p>
+                <p>Например, необходимо красиво вывести сообщение при приветствии посетителя, при выходе посетителя с
+                  сайта, ещё где-нибудь.</p>
+                <p>Чтобы не повторять один и тот же код во многих местах, придуманы функции. Функции являются основными
+                  «строительными блоками» программы.</p>
+                <p>Примеры встроенных функций вы уже видели – это <code>alert(message)</code>,
+                  <code>prompt(message, default)</code> и <code>confirm(question)</code>. Но можно создавать и свои.
+                </p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Объявление функции">
+              <h2 id="Объявление функции">Объявление функции</h2>
+              <div class="section-content">
+                <p>Для создания функций мы можем использовать объявление функции.</p>
+                <p>Пример объявления функции:</p>
+                <pre><code class="language-js">function showMessage() {
+  alert( 'Всем привет!' );
+}</code></pre>
+                <p>Вначале идёт ключевое слово <code>function</code>, после него имя функции, затем список параметров в
+                  круглых скобках через запятую (в вышеприведённом примере он пустой) и, наконец, код функции, также
+                  называемый «телом функции», внутри фигурных скобок.</p>
+                <pre><code class="language-js">function имя(параметры) {
+  ...тело...
+}</code></pre>
+                <p>Наша новая функция может быть вызвана по её имени: <code>showMessage()</code>.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">function showMessage() {
+  alert( 'Всем привет!' );
+}
+
+showMessage();
+showMessage();</code></pre>
+                <p>Вызов <code>showMessage()</code> выполняет код функции. Здесь мы увидим сообщение дважды.</p>
+                <p>Этот пример явно демонстрирует одно из главных предназначений функций: избавление от дублирования
+                  кода.
+                </p>
+                <p>Если понадобится поменять сообщение или способ его вывода – достаточно изменить его в одном месте: в
+                  функции, которая его выводит.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

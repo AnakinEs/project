@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby='Обязателен ли "else"?'>
+                <h3 id='Обязателен ли "else"?'>Обязателен ли "else"?</h3>
+                <div class="section-content">
+                  <p>Следующая функция возвращает <code>true</code>, если параметр <code>age</code> больше
+                    <code>18</code>.
+                  </p>
+                  <p>В ином случае она запрашивает подтверждение через <code>confirm</code> и возвращает его результат:
+                  </p>
+                  <pre><code class="language-js">function checkAge(age) {
+  if (age &gt; 18) {
+    return true;
+  } else {
+    // ...
+    return confirm('Родители разрешили?');
+  }
+}</code></pre>
+                  <p>Будет ли эта функция работать как-то иначе, если убрать <code>else</code>?</p>
+                  <pre><code class="language-js">function checkAge(age) {
+  if (age &gt; 18) {
+    return true;
+  }
+  // ...
+  return confirm('Родители разрешили?');
+}</code></pre>
+                  <p>Есть ли хоть одно отличие в поведении этого варианта?</p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Оба варианта функций работают одинаково, отличий нет.</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

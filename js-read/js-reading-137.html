@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Параметры">
+              <h2 id="Параметры">Параметры</h2>
+              <div class="section-content">
+                <p>Мы можем передать внутрь функции любую информацию, используя параметры (также называемые
+                  <em>аргументами функции</em>).
+                </p>
+                <p>В нижеприведённом примере функции передаются два параметра: <code>from</code> и <code>text</code>.
+                </p>
+                <pre><code class="language-js">function showMessage(from, text) { // аргументы: from, text
+  alert(from + ': ' + text);
+}
+
+showMessage('Аня', 'Привет!'); // Аня: Привет! (*)
+showMessage('Аня', "Как дела?"); // Аня: Как дела? (**)</code></pre>
+                <p>Когда функция вызывается в строках <code>(*)</code> и <code>(**)</code>, переданные значения
+                  копируются
+                  в локальные переменные <code>from</code> и <code>text</code>. Затем они используются в теле функции.
+                </p>
+                <p>Вот ещё один пример: у нас есть переменная <code>from</code>, и мы передаём её функции. Обратите
+                  внимание: функция изменяет значение <code>from</code>, но это изменение не видно снаружи. Функция
+                  всегда
+                  получает только копию значения:</p>
+                <pre><code class="language-js">function showMessage(from, text) {
+
+  from = '*' + from + '*'; // немного украсим "from"
+
+  alert( from + ': ' + text );
+}
+
+let from = "Аня";
+
+showMessage(from, "Привет"); // *Аня*: Привет
+
+// значение "from" осталось прежним, функция изменила значение локальной переменной
+alert( from ); // Аня</code></pre>
+                <p>Значение передаваемое в качестве параметра функции, также называется <em>аргументом</em>.</p>
+                <p>Другими словами:</p>
+                <p>Параметр – это переменная, указанная в круглых скобках в объявлении функции. Аргумент – это значение,
+                  которое передаётся функции при её вызове.</p>
+                <p>Мы объявляем функции со списком параметров, затем вызываем их, передавая аргументы.</p>
+                <p>В приведённом выше примере можно было бы сказать: "функция <code>showMessage</code> объявляется с
+                  двумя
+                  параметрами, затем вызывается с двумя аргументами: <code>from</code> и <code>"Привет"</code>".</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

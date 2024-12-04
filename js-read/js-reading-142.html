@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Итого11">
+              <h2 id="Итого11">Итого</h2>
+              <div class="section-content">
+                <p>Объявление функции имеет вид:</p>
+                <pre><code class="language-js">function имя(параметры, через, запятую) {
+  /* тело, код функции */
+}</code></pre>
+                <ul>
+                  <li>Передаваемые значения копируются в параметры функции и становятся локальными переменными.</li>
+                  <li>Функции имеют доступ к внешним переменным. Но это работает только изнутри наружу. Код вне функции
+                    не
+                    имеет доступа к её локальным переменным.</li>
+                  <li>Функция может возвращать значение. Если этого не происходит, тогда результат равен
+                    <code>undefined</code>.
+                  </li>
+                </ul>
+                <p>Для того, чтобы сделать код более чистым и понятным, рекомендуется использовать локальные переменные
+                  и
+                  параметры функций, не пользоваться внешними переменными.</p>
+                <p>Функция, которая получает параметры, работает с ними и затем возвращает результат, гораздо понятнее
+                  функции, вызываемой без параметров, но изменяющей внешние переменные, что чревато побочными эффектами.
+                </p>
+                <p>Именование функций:</p>
+                <ul>
+                  <li>Имя функции должно понятно и чётко отражать, что она делает. Увидев её вызов в коде, вы должны тут
+                    же понимать, что она делает, и что возвращает.</li>
+                  <li>Функция – это действие, поэтому её имя обычно является глаголом.</li>
+                  <li>Есть много общепринятых префиксов, таких как: <code>create…</code>, <code>show…</code>,
+                    <code>get…</code>, <code>check…</code> и т.д. Пользуйтесь ими как подсказками, поясняющими, что
+                    делает
+                    функция.
+                  </li>
+                </ul>
+                <p>Функции являются основными строительными блоками скриптов. Мы рассмотрели лишь основы функций в
+                  JavaScript, но уже сейчас можем создавать и использовать их. Это только начало пути. Мы будем
+                  неоднократно возвращаться к функциям и изучать их всё более и более глубоко.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

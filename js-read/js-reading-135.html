@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Локальные переменные">
+              <h2 id="Локальные переменные">Локальные переменные</h2>
+              <div class="section-content">
+                <p>Переменные, объявленные внутри функции, видны только внутри этой функции.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">function showMessage() {
+  let message = "Привет, я JavaScript!"; // локальная переменная
+
+  alert( message );
+}
+
+showMessage(); // Привет, я JavaScript!
+
+alert( message ); // &lt;-- будет ошибка, т.к. переменная видна только внутри функции</code></pre>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

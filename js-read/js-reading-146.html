@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функция pow(x,n)">
+                <h3 id="Функция pow(x,n)">Функция pow(x,n)</h3>
+                <div class="section-content">
+                  <p>Напишите функцию <code>pow(x,n)</code>, которая возвращает <code>x</code> в степени <code>n</code>.
+                    Иначе говоря, умножает <code>x</code> на себя <code>n</code> раз и возвращает результат.</p>
+                  <pre><code class="language-js">pow(3, 2) = 3 * 3 = 9
+pow(3, 3) = 3 * 3 * 3 = 27
+pow(1, 100) = 1 * 1 * ...* 1 = 1</code></pre>
+                  <p>Создайте страницу, которая запрашивает <code>x</code> и <code>n</code>, а затем выводит результат
+                    <code>pow(x,n)</code>.
+                  </p>
+                  <p><a href=""><span id="hint18" ; class="hint" data-tooltip="Не знаю как сделать">Запустить
+                        демо</span></a>
+                  </p>
+                  <p>P.S. В этой задаче функция обязана поддерживать только натуральные значения <code>n</code>, т.е.
+                    целые от <code>1</code> и выше.</p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">function pow(x, n) {
+  let result = x;
+
+  for (let i = 1; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt("x?", '');
+let n = prompt("n?", '');
+
+if (n &lt; 1) {
+  alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+} else {
+  alert( pow(x, n) );
+}</code></pre>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>

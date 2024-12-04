@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функции == Комментарии">
+              <h2 id="Функции == Комментарии">Функции == Комментарии</h2>
+              <div class="section-content">
+                <p>Функции должны быть короткими и делать только что-то одно. Если это что-то большое, имеет смысл
+                  разбить
+                  функцию на несколько меньших. Иногда следовать этому правилу непросто, но это определённо хорошее
+                  правило.</p>
+                <p>Небольшие функции не только облегчают тестирование и отладку – само существование таких функций
+                  выполняет роль хороших комментариев!</p>
+                <p>Например, сравним ниже две функции <code>showPrimes(n)</code>. Каждая из них выводит <a
+                    href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE">простое
+                    число</a> до <code>n</code>.</p>
+                <p>Первый вариант использует метку <code>nextPrime</code>:</p>
+                <pre><code class="language-js">function showPrimes(n) {
+  nextPrime: for (let i = 2; i &lt; n; i++) {
+
+    for (let j = 2; j &lt; i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+
+    alert( i ); // простое
+  }
+}</code></pre>
+                <p>Второй вариант использует дополнительную функцию <code>isPrime(n)</code> для проверки на простое:</p>
+                <pre><code class="language-js">function showPrimes(n) {
+
+  for (let i = 2; i &lt; n; i++) {
+    if (!isPrime(i)) continue;
+
+    alert(i);  // простое
+  }
+}
+
+function isPrime(n) {
+  for (let i = 2; i &lt; n; i++) {
+    if ( n % i == 0) return false;
+  }
+  return true;
+}</code></pre>
+                <p>Второй вариант легче для понимания, не правда ли? Вместо куска кода мы видим название действия
+                  (<code>isPrime</code>). Иногда разработчики называют такой код <em>самодокументируемым</em>.</p>
+                <p>Таким образом, допустимо создавать функции, даже если мы не планируем повторно использовать их. Такие
+                  функции структурируют код и делают его более понятным.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
