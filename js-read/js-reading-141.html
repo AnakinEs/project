@@ -32,32 +32,34 @@
                     href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE">простое
                     число</a> до <code>n</code>.</p>
                 <p>Первый вариант использует метку <code>nextPrime</code>:</p>
-                <pre><code class="language-js">function showPrimes(n) {
-  nextPrime: for (let i = 2; i &lt; n; i++) {
+                
+                <pre class="language-js" tabindex="0"><span class="token keyword">function</span> <span class="token function"><span class="meaning" data-tooltip="показывать Простые числа">showPrimes</span></span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">nextPrime</span><span class="token operator">:</span> <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    for (let j = 2; j &lt; i; j++) {
-      if (i % j == 0) continue nextPrime;
-    }
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">continue</span> nextPrime<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    alert( i ); // простое
-  }
-}</code></pre>
+    <span class="token function">alert</span><span class="token punctuation">(</span> i <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// простое</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre>
                 <p>Второй вариант использует дополнительную функцию <code>isPrime(n)</code> для проверки на простое:</p>
-                <pre><code class="language-js">function showPrimes(n) {
+                
+                <pre class="language-js" tabindex="0"><span class="token keyword">function</span> <span class="token function">showPrimes</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  for (let i = 2; i &lt; n; i++) {
-    if (!isPrime(i)) continue;
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isPrime</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
 
-    alert(i);  // простое
-  }
-}
+    <span class="token function">alert</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// простое</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-function isPrime(n) {
-  for (let i = 2; i &lt; n; i++) {
-    if ( n % i == 0) return false;
-  }
-  return true;
-}</code></pre>
+<span class="token keyword">function</span> <span class="token function"><span class="meaning" data-tooltip="является Простое число">isPrime</span></span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> n <span class="token operator">%</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></pre>
                 <p>Второй вариант легче для понимания, не правда ли? Вместо куска кода мы видим название действия
                   (<code>isPrime</code>). Иногда разработчики называют такой код <em>самодокументируемым</em>.</p>
                 <p>Таким образом, допустимо создавать функции, даже если мы не планируем повторно использовать их. Такие
