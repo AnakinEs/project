@@ -26,6 +26,20 @@
                 <p>Например, вышеупомянутая функция <code>showMessage(from, text)</code> может быть вызвана с одним
                   аргументом:</p>
                 <pre><code class="language-js">showMessage("Аня");</code></pre>
+                <p>Вышеупомянутая функция:</p>
+                <pre><code class="language-js">function showMessage(from, text) {
+
+  from = '*' + from + '*'; // немного украсим "from"
+
+  alert( from + ': ' + text );
+}
+
+let from = "Аня";
+
+showMessage(from, "Привет"); // *Аня*: Привет
+
+// значение "from" осталось прежним, функция изменила значение локальной переменной
+alert( from ); // Аня</code></pre>
                 <p>Это не приведёт к ошибке. Такой вызов выведет <code>"*Аня*: undefined"</code>. В вызове не указан
                   параметр <code>text</code>, поэтому предполагается, что <code>text === undefined</code>.</p>
                 <p>Если мы хотим задать параметру <code>text</code> значение по умолчанию, мы должны указать его после
