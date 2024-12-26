@@ -225,9 +225,9 @@ section section h3 { // зачем я это правило сдесь зада�
     
   }
 
-  html{
+  /* html{
     overflow: hidden;
-  }
+  } */
 }
 
 @media screen and (min-width: 800px) {  /* 800px или  больше*/ 
@@ -921,8 +921,18 @@ kbd {
   width: 0; 	
 }
 
-details > div > :first-child {
-  margin-top: 1.5rem;
+
+
+@media screen and (min-width: 800px) {
+  details > div > :first-child {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  details > div > :first-child {
+    margin-top: 0.5rem;
+  }
 }
 
 /* ............................................................................................................................................................................*/
@@ -1170,13 +1180,25 @@ details details h4 {
 
 /* Рамка для кнопки решение */
 
-details > div {
-  padding-left: 1rem;
-  border: 0.1rem solid #cdcdcd;
-  border-radius: 0.25rem;
-  margin-bottom: 1.5rem !important;
-  margin-top: 0.5rem !important;
-  padding: 0 1.5rem 0 1.5rem !important;
+@media screen and (min-width: 800px) {
+  details > div {
+    padding-left: 1rem;
+    border: 0.1rem solid #cdcdcd;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    padding: 0 1.5rem 0 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  details > div {
+    padding-left: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    padding: 0;
+  }
 }
 
 
