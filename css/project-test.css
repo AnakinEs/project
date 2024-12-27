@@ -1,6 +1,6 @@
 
 /* Тело */ 
-@media screen and (min-width:720px) {
+@media screen and (min-width:1560px) {
   body {
     font: 1.2em Helvetica, Arial, sans-serif;
     margin: 20px;
@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 1599px) {
   body {
     font: 1.2em Helvetica, Arial, sans-serif;
     padding: 0;
@@ -24,7 +24,7 @@
   letter-spacing: 0.02rem;  
 }
 
-@media screen and (min-width:720px) {
+@media screen and (min-width:1560px) {
   .main-wrapper {
     display: flex;
     column-gap: 3%;
@@ -207,7 +207,7 @@ section section h3 { // зачем я это правило сдесь зада�
 
 /* Основное содержание */
 
-@media screen and (max-width: 719px) { /* 200px или меньше */
+@media screen and (max-width: 1599px) { /* 200px или меньше */
   
   .main_content p, 
   .main_content dl { 
@@ -229,7 +229,7 @@ section section h3 { // зачем я это правило сдесь зада�
   } */
 }
 
-@media screen and (min-width:720px) {  /* 800px или  больше*/ 
+@media screen and (min-width:1560px) {  /* 800px или  больше*/ 
   
   .main_content p, 
   .main_content dl { 
@@ -266,7 +266,7 @@ section section h3 { // зачем я это правило сдесь зада�
   
   
 
-  @media screen and (min-width:720px) {
+  @media screen and (min-width:1560px) {
     .main_content ul,
     .main_content ol {
       margin-top: 0;
@@ -279,7 +279,7 @@ section section h3 { // зачем я это правило сдесь зада�
     }
   }
   
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 1599px) {
     .main_content ul,
     .main_content ol {
       font-size: 0.95rem;
@@ -511,7 +511,7 @@ section section h3 { // зачем я это правило сдесь зада�
 
   
 
-  @media screen and (min-width:720px) {
+  @media screen and (min-width:1560px) {
     ul>li:before {
       content: "\25CF";
       float: left;
@@ -520,7 +520,7 @@ section section h3 { // зачем я это правило сдесь зада�
     }
   }
   
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 1599px) {
     ul>li:before {
       content: "\25CF";
       float: left;
@@ -566,7 +566,7 @@ details {
 
 
 
-@media screen and (min-width:720px) {
+@media screen and (min-width:1560px) {
   .tooltip {
     position: fixed;
     padding: 1rem 1rem;
@@ -582,7 +582,7 @@ details {
   }
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 1599px) {
   .tooltip {
     position: fixed;
     padding: 1rem 1rem; 
@@ -598,7 +598,7 @@ details {
   }
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 1599px) {
   .tooltip {
     max-width: 100%;  
   }
@@ -731,7 +731,7 @@ code .meaning, code .hint {
 
 /* Картинки */
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 1599px) {
   img {
     width: 100%;
   }
@@ -922,13 +922,13 @@ kbd {
 
 
 
-@media screen and (min-width:720px) {
+@media screen and (min-width:1560px) {
   details > div > :first-child {
     margin-top: 1.5rem;
   }
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 1599px) {
   details > div > :first-child {
     margin-top: 0.5rem;
   }
@@ -1087,7 +1087,7 @@ iframe{
   margin-bottom: 1.5rem;
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 1599px) {
   iframe{
     overflow: scroll;
   }
@@ -1179,7 +1179,7 @@ details details h4 {
 
 /* Рамка для кнопки решение */
 
-@media screen and (min-width:720px) {
+@media screen and (min-width:1560px) {
   details > div {
     padding-left: 1rem;
     border: 0.1rem solid #cdcdcd;
@@ -1190,7 +1190,7 @@ details details h4 {
   }
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 1599px) {
   details > div {
     padding-left: 1rem;
     border-radius: 0.25rem;
