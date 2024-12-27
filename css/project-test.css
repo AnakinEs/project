@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 720px) {
   body {
     font: 1.2em Helvetica, Arial, sans-serif;
     margin: 0;
@@ -208,7 +208,7 @@ section section h3 { // зачем я это правило сдесь зада�
 
 /* Основное содержание */
 
-@media screen and (max-width: 799px) { /* 799px или меньше */
+@media screen and (max-width: 720px) { /* 720px или меньше */
   
   .main_content p, 
   .main_content dl { 
@@ -280,7 +280,7 @@ section section h3 { // зачем я это правило сдесь зада�
     }
   }
   
-  @media screen and (max-width: 799px) {
+  @media screen and (max-width: 720px) {
     .main_content ul,
     .main_content ol {
       font-size: 0.95rem;
@@ -521,7 +521,7 @@ section section h3 { // зачем я это правило сдесь зада�
     }
   }
   
-  @media screen and (max-width: 799px) {
+  @media screen and (max-width: 720px) {
     ul>li:before {
       content: "\25CF";
       float: left;
@@ -583,7 +583,7 @@ details {
   }
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 720px) {
   .tooltip {
     position: fixed;
     padding: 1rem 1rem; 
@@ -599,7 +599,7 @@ details {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 720px) {
   .tooltip {
     max-width: 100%;  
   }
@@ -732,12 +732,12 @@ code .meaning, code .hint {
 
 /* Картинки */
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 720px) {
   img {
     width: 100%;
   }
 }
-@media screen and (min-width: 799px) {
+@media screen and (min-width: 720px) {
   img {
     width: 60%;
   }
@@ -929,7 +929,7 @@ kbd {
   }
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 720px) {
   details > div > :first-child {
     margin-top: 0.5rem;
   }
@@ -1088,7 +1088,7 @@ iframe{
   margin-bottom: 1.5rem;
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 720px) {
   iframe{
     overflow: scroll;
   }
@@ -1191,7 +1191,7 @@ details details h4 {
   }
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 720px) {
   details > div {
     padding-left: 1rem;
     border-radius: 0.25rem;
