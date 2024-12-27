@@ -1093,6 +1093,12 @@ iframe{
   }
 }
 
+@media screen and (min-width: 720px) {
+  iframe{
+    overflow: scroll;
+  }
+}
+
 
 
 /* details div > :last-child {
