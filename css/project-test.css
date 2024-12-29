@@ -244,7 +244,7 @@ section section h3 { // зачем я это правило сдесь зада�
     /* flex: 2.6; */	
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 60%;
     font-family: "Roboto", "Verdana", "serif", "Georgia";
   }
 
@@ -411,7 +411,7 @@ section section h3 { // зачем я это правило сдесь зада�
 }
 
 .main {
-  width: 50%;
+  width: 60%;
   font-family: "Roboto", "Verdana", "serif", "Georgia";
 }
 
