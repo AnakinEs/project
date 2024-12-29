@@ -34,6 +34,24 @@
             </div>
           </div>
         </section>
+        <section aria-labelledby="Строковое преобразование">
+          <h2 id="Строковое преобразование">Строковое преобразование</h2>
+          <div class="section-content">
+            <p>Строковое преобразование происходит, когда требуется представление чего-либо в виде строки.</p>
+            <p>Например, <code>alert(value)</code> преобразует значение к строке.</p>
+            <p>Также мы можем использовать функцию <code>String(value)</code>, чтобы преобразовать значение к
+              строке:
+            </p>
+            <pre><code class="language-js">let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // теперь value это строка "true"
+alert(typeof value); // string</code></pre>
+            <p>Преобразование происходит очевидным образом. <code>false</code> становится <code>"false"</code>,
+              <code>null</code> становится <code>"null"</code> и т.п.
+            </p>
+          </div>
+        </section>
       </article>
     </main>
   </div>
