@@ -28,9 +28,9 @@
 let age = prompt('Сколько вам лет?', '');
 
 if (age &gt; 18) {
-accessAllowed = true;
+  accessAllowed = true;
 } else {
-accessAllowed = false;
+  accessAllowed = false;
 }
 
 alert(accessAllowed);</code></pre>
@@ -74,9 +74,9 @@ let accessAllowed = age &gt; 18;</code></pre>
             <pre><code class="language-js">let age = prompt('Возраст?', 18);
 
 let message = (age &lt; 3) ? 'Здравствуй, малыш!' :
-(age &lt; 18) ? 'Привет!' :
-(age &lt; 100) ? 'Здравствуйте!' :
-'Какой необычный возраст!';
+  (age &lt; 18) ? 'Привет!' :
+  (age &lt; 100) ? 'Здравствуйте!' :
+  'Какой необычный возраст!';
 
 alert( message );</code></pre>
             <p>Поначалу может быть сложно понять, что происходит. Но при ближайшем рассмотрении мы видим, что это
@@ -92,13 +92,13 @@ alert( message );</code></pre>
             </ol>
             <p>Вот как это выглядит при использовании <code>if..else</code>:</p>
             <pre><code class="language-js">if (age &lt; 3) {
-message = 'Здравствуй, малыш!';
+  message = 'Здравствуй, малыш!';
 } else if (age &lt; 18) {
-message = 'Привет!';
+  message = 'Привет!';
 } else if (age &lt; 100) {
-message = 'Здравствуйте!';
+  message = 'Здравствуйте!';
 } else {
-message = 'Какой необычный возраст!';
+  message = 'Какой необычный возраст!';
 }</code></pre>
           </div>
         </section>
@@ -110,7 +110,7 @@ message = 'Какой необычный возраст!';
             <pre><code class="language-js">let company = prompt('Какая компания создала JavaScript?', '');
 
 (company == 'Netscape') ?
-alert('Верно!') : alert('Неправильно.');</code></pre>
+  alert('Верно!') : alert('Неправильно.');</code></pre>
             <p>В зависимости от условия <code>company == 'Netscape'</code>, будет выполнена либо первая, либо вторая
               часть после <code>?</code>.</p>
             <p>Здесь мы не присваиваем результат переменной. Вместо этого мы выполняем различный код в зависимости
@@ -123,9 +123,9 @@ alert('Верно!') : alert('Неправильно.');</code></pre>
             <pre><code class="language-js">let company = prompt('Какая компания создала JavaScript?', '');
 
 if (company == 'Netscape') {
-alert('Верно!');
+  alert('Верно!');
 } else {
-alert('Неправильно.');
+  alert('Неправильно.');
 }</code></pre>
             <p>При чтении глаза сканируют код по вертикали. Блоки кода, занимающие несколько строк, воспринимаются
               гораздо легче, чем длинный горизонтальный набор инструкций.</p>
