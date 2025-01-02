@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Свойство overflow">
+          <h2 id="Свойство overflow"><a href="#Свойство overflow">Свойство overflow</a></h2>
+          <div class="section-content">
+            <p>Свойство <code>overflow</code> позволяет взять под контроль переполнение элемента и подсказать браузеру,
+              как он должен себя вести. Значение overflow по умолчанию – <code>visible</code>, что означает -
+              «показывать контент, когда он выходит за границы блока».</p>
+            <p>Чтобы обрезать контент выходящий за пределы блока, вы можете установить <code>overflow: hidden</code>.
+              Это свойство делает именно то, о чём говорит: <span class="hint"
+                data-tooltip="В данном случае скрывается только если высота не достаточная а не ширина. Ширина скрывается только если слово длиннее чем сам блок.">скрывает
+                выходящий за пределы контент.</span> Помните, что это может сделать часть содержимого невидимым.
+              Используйте данное значение только в том случае, если скрытие содержимого не вызовет проблем.</p>
+            <iframe style="height:42rem" src="../getting-started/started66.html"></iframe>
+            <p>Возможно, что при возникновении переполнения вместо скрытия вы захотите отобразить полосы прокрутки. При
+              использовании <code>overflow: scroll</code> браузеры с видимыми полосами прокрутки всегда будут отображать
+              их, даже если содержимого недостаточно для возникновения перекрытия. Это позволяет сохранить целостность
+              раскладки, так как полосы прокрутки не будут появляться и пропадать в зависимости от количества
+              содержимого в контейнере.</p>
+            <p>Удалите часть содержимого из поля ниже. Обратите внимание, что полосы прокрутки остаются, даже если
+              прокрутка не требуется.</p>
+            <iframe style="height:42rem" src="../getting-started/started67.html"></iframe>
+            <p>В приведённом выше примере нам нужно прокручивать содержимое только по оси <code>y</code>, однако мы
+              получаем полосы прокрутки по обеим осям. Вы можете использовать свойство <code>overflow-y</code>, которое
+              позволяет прокручивать содержимое только по оси <code>y</code>.</p>
+            <iframe style="height:42rem" src="../getting-started/started68.html"></iframe>
+            <p>Вы также можете установить прокрутку по оси x с помощью <code>overflow-x</code>, но это не рекомендуемый
+              способ отображения длинных слов! Если у вас есть длинное слово в маленьком поле, вы можете использовать
+              свойства <code>word-break</code> или <code>overflow-wrap</code>. Кроме того, некоторые методы, описанные в
+              разделе <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS">Изменение
+                размеров в CSS</a>, могут помочь вам создавать блоки, которые лучше масштабируются с различным объемом
+              содержимого.</p>
+            <iframe style="height:38rem" src="../getting-started/started69.html"></iframe>
+            <p>Как и в случае со <code>scroll</code>, вы получаете полосу прокрутки независимо от того, достаточно ли
+              содержимого для её появления.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Примечание</strong>: вы можете точно задать прокрутку по осям x и y, используя свойство
+                <code>overflow</code>, передав два значения. Первое значение будет относиться к <code>overflow-x</code>,
+                а второе — к <code>overflow-y</code>. Если передать одно значение, то <code>overflow-x</code> и
+                <code>overflow-y</code> получат одинаковые значения. Например, <code>overflow: scroll hidden</code>
+                устанавливает <code>overflow-x</code> в <code>scroll</code> и <code>overflow-y</code> в
+                <code>hidden</code>.
+              </p>
+            </div>
+            <p>Если вы хотите, чтобы полосы прокрутки отображались только тогда, когда содержимого больше, чем может
+              поместиться в поле, используйте <code>overflow: auto</code>. Это позволяет браузеру автоматически
+              определять, следует ли отображать полосы прокрутки.</p>
+            <p>В приведённом ниже примере уменьшите количество содержимого так, чтобы оно поместилось в поле. Вы должны
+              увидеть, что полосы прокрутки исчезнут.</p>
+            <iframe style="height:35em" src="../getting-started/started70.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Нежелательное переполнение в веб-разработке">
+          <h2 id="Нежелательное переполнение в веб-разработке"><a
+              href="#Нежелательное переполнение в веб-разработке">Нежелательное переполнение в веб-разработке</a></h2>
+          <div class="section-content">
+            <p>Современные методы раскладки (описанные в разделе <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout">CSS раскладка</a>) справляются с
+              переполнением очень хорошо вне зависимости от того, сколько контента будет на веб-странице.</p>
+            <p>Это не всегда было нормой. В прошлом некоторые сайты были построены с блоками фиксированной высоты для
+              выравнивания нижних границ блоков. Тем не менее эти блоки могли не иметь ничего общего между собой. Это
+              была хрупкая конструкция. В устаревших приложениях вы можете встретить блок, в котором содержимое
+              перекрывает другое содержимое на странице. Теперь вы понимаете, что это происходит из-за переполнения. В
+              идеале вы должны провести рефакторинг разметки, чтобы не полагаться на блоки с фиксированной высотой.</p>
+            <p>При разработке сайта всегда помните о переполнении. Тестируйте дизайны как с большим, так и с малым
+              количеством контента. Проверяйте различные размеры шрифта текстов. Убедитесь, что ваш CSS работает
+              надёжно. Изменение значения overflow для скрытия содержимого или добавления полос прокрутки, должно
+              использоваться только при необходимости (например там, где вы хотите использовать прокручиваемый блок).
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
