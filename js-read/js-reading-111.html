@@ -20,7 +20,7 @@
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
         <section aria-labelledby="Проверка логина">
-                <h3 id="Проверка логина">Проверка логина</h3>
+                <h3 id="Проверка логина"><a href="https://anakines.github.io/project/js-read/js-reading-111.html">Проверка логина</a></h3>
                 <div class="section-content">
                   <p>Напишите код, который будет спрашивать логин с помощью <code>prompt</code>.</p>
                   <p>Если посетитель вводит «Админ», то <code>prompt</code> запрашивает пароль, если ничего не введено
@@ -40,8 +40,30 @@
                   <p>Подсказка: передача пустого ввода в приглашение <code>prompt</code> возвращает пустую строку
                     <code>''</code>. Нажатие клавиши <kbd>Esc</kbd> во время запроса возвращает <code>null</code>.
                   </p>
-                  <p><a href=""><span id="hint14" class="hint"
-                        data-tooltip="Не знаю как сделать, так же как на том сайте">Запустить демо</span></a></p>
+                  <p><a onclick="event.preventDefault(); loginVerification()" href="#">Запустить демо</a></p>
+                  <script>
+                    function loginVerification() {
+                      let userName = prompt("Кто там?", '');
+
+                      if (userName === 'Админ') {
+                      
+                        let pass = prompt('Пароль?', '');
+                      
+                        if (pass === 'Я главный') {
+                          alert( 'Здравствуйте!' );
+                        } else if (pass === '' || pass === null) {
+                          alert( 'Отменено' );
+                        } else {
+                          alert( 'Неверный пароль' );
+                        }
+                      
+                      } else if (userName === '' || userName === null) {
+                        alert( 'Отменено' );
+                      } else {
+                        alert( "Я вас не знаю" );
+                      }
+                    }
+                  </script>
                   <details>
                     <summary class="solution">
                       <li class="task__solution" type="button">решение</li>
