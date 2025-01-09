@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+                    <section aria-labelledby="Function Expression">
+              <h1 id="Function Expression">Function Expression</h1>
+              <div class="section-content">
+                <p>Функция в JavaScript – это не магическая языковая структура, а особого типа значение.</p>
+                <p>Синтаксис, который мы использовали до этого, называется <em>Function Declaration</em> (Объявление
+                  Функции):</p>
+                <pre><code class="language-js">function sayHi() {
+  alert( "Привет" );
+}</code></pre>
+                <p>Существует ещё один синтаксис создания функций, который называется <em>Function Expression</em>
+                  (Функциональное Выражение).</p>
+                <p>Оно выглядит вот так:</p>
+                <pre><code class="language-js">let sayHi = function() {
+  alert( "Привет" );
+};</code></pre>
+                <p>В коде выше функция создаётся и явно присваивается переменной, как любое другое значение. По сути без
+                  разницы, как мы определили функцию, это просто значение, хранимое в переменной <code>sayHi</code>.</p>
+                <p>Смысл обоих примеров кода одинаков: "создать функцию и поместить её значение в переменную
+                  <code>sayHi</code>".
+                </p>
+                <p>Мы можем даже вывести это значение с помощью <code>alert</code>:</p>
+                <pre><code class="language-js">function sayHi() {
+  alert( "Привет" );
+}
+
+alert( sayHi ); // выведет код функции</code></pre>
+                <p>Обратите внимание, что последняя строка не вызывает функцию <code>sayHi</code>, после её имени нет
+                  круглых скобок. Существуют языки программирования, в которых любое упоминание имени функции совершает
+                  её
+                  вызов. JavaScript – не один из них.</p>
+                <p>В JavaScript функции – это значения, поэтому мы и обращаемся с ними, как со значениями. Код выше
+                  выведет строковое представление функции, которое является её исходным кодом.</p>
+                <p>Конечно, функция – не обычное значение, в том смысле, что мы можем вызвать его при помощи скобок:
+                  <code>sayHi()</code>.
+                </p>
+                <p>Но всё же это значение. Поэтому мы можем делать с ним то же самое, что и с любым другим значением.
+                </p>
+                <p>Мы можем скопировать функцию в другую переменную:</p>
+                <pre><code class="language-js">function sayHi() {   // (1) создаём
+  alert( "Привет" );
+}
+
+let func = sayHi;    // (2) копируем
+
+func(); // Привет    // (3) вызываем копию (работает)!
+sayHi(); // Привет   //     прежняя тоже работает (почему бы нет)</code></pre>
+                <p>Давайте подробно разберём всё, что тут произошло:</p>
+                <ol>
+                  <li>Объявление Function Declaration <code>(1)</code> создало функцию и присвоило её значение
+                    переменной
+                    с именем <code>sayHi</code>.</li>
+                  <li>В строке <code>(2)</code> мы скопировали её значение в переменную <code>func</code>. Обратите
+                    внимание (ещё раз): нет круглых скобок после <code>sayHi</code>. Если бы они были, то выражение
+                    <code>func = sayHi()</code> записало бы <em>результат вызова</em> <code>sayHi()</code> в переменную
+                    <code>func</code>, а не саму <em>функцию</em> <code>sayHi</code>.
+                  </li>
+                  <li>Теперь функция может быть вызвана с помощью обеих переменных <code>sayHi()</code> и
+                    <code>func()</code>.
+                  </li>
+                </ol>
+                <p>Заметим, что мы могли бы использовать и Function Expression для того, чтобы создать
+                  <code>sayHi</code>
+                  в первой строке:
+                </p>
+                <pre><code class="language-js">let sayHi = function() {
+  alert( "Привет" );
+};
+
+let func = sayHi;
+// ...</code></pre>
+                <p>Результат был бы таким же.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Зачем нужна точка с запятой в конце?</div>
+                  <p>У вас мог возникнуть вопрос: Почему в Function Expression ставится точка с запятой <code>;</code>
+                    на
+                    конце, а в Function Declaration нет:</p>
+                  <pre><code class="language-js">function sayHi() {
+  // ...
+}
+
+let sayHi = function() {
+  // ...
+};</code></pre>
+                  <p>Ответ прост:</p>
+                  <ul>
+                    <li>Нет необходимости в <code>;</code> в конце блоков кода и синтаксических конструкций, которые их
+                      используют, таких как <code>if { ... }</code>, <code>for { }</code>, <code>function f { }</code> и
+                      т.д.</li>
+                    <li>Function Expression использует внутри себя инструкции присваивания <code>let sayHi = ...;</code>
+                      как значение. Это не блок кода, а выражение с присваиванием. Таким образом, точка с запятой не
+                      относится непосредственно к Function Expression, она лишь завершает инструкцию.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

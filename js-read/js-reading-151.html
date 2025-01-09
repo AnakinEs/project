@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Несколько одинаковых функций">
+              <h2 id="Несколько одинаковых функций"><span class="meaning"
+                  data-tooltip="Это свои рассуждения. Может быть ошибаюсь.">Несколько одинаковых функций</span></h2>
+              <div class="section-content">
+                <p>Если создать несколько функций Function Declaration с одними и теми же именами, всегда будет
+                  выполнена
+                  последняя функция.</p>
+                <p>Но если создать несколько функция Function Expression с одними и теми же именами, все функции будут
+                  взаимонезависимы, они все будут выполнены.</p>
+                <p>Такое поведение объесняется тем, что Function Declaration создаются интерпретатором до выполнения
+                  кода,
+                  во время инициализации, а Function Expression создается во время выполнения выражения, как только
+                  интерпретатор дойдет до строчки с функцией в коде.</p>
+                <p>Нужная последняя функция Function Declaration будет выбрана интерпретатором во время инициализации.
+                  Function Expression создается по порядку, как только дойдет до строчки кода. Будет создана и выполена
+                  одна функция, далее с тем же именем создана и выполена другая, и так далее. По сути одна и та же
+                  переменная перезаписывается на другую функцию после ее создания и завершения.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

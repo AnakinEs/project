@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Function Expression в сравнении с Function Declaration">
+              <h2 id="Function Expression в сравнении с Function Declaration">Function Expression в сравнении с Function
+                Declaration</h2>
+              <div class="section-content">
+                <p>Давайте разберём ключевые отличия Function Declaration от Function Expression.</p>
+                <p>Во-первых, синтаксис: как определить, что есть что в коде.</p>
+                <ul>
+                  <li>Function Declaration: функция объявляется отдельной конструкцией «function…» в основном потоке
+                    кода.
+                  </li>
+                  <pre><code class="language-js">// Function Declaration
+function sum(a, b) {
+  return a + b;
+}</code></pre>
+                  <li>Function Expression: функция, созданная внутри другого выражения или синтаксической конструкции. В
+                    данном случае функция создаётся в правой части «выражения присваивания» <code>=</code>:</li>
+                  <pre><code class="language-js">// Function Expression
+let sum = function(a, b) {
+  return a + b;
+};</code></pre>
+                </ul>
+                <p>Более тонкое отличие состоит, в том, <em>когда</em> создаётся функция движком JavaScript.</p>
+                <p><strong>Function Expression создаётся, когда выполнение доходит до него, и затем уже может
+                    использоваться.</strong></p>
+                <p>После того, как поток выполнения достигнет правой части выражения присваивания
+                  <code>let sum = function…</code> – с этого момента, функция считается созданной и может быть
+                  использована (присвоена переменной, вызвана и т.д. ).
+                </p>
+                <p>С Function Declaration всё иначе.</p>
+                <p><strong>Function Declaration можно использовать во всем скрипте (или блоке кода, если функция
+                    объявлена
+                    в блоке).</strong></p>
+                <p>Другими словами, когда движок JavaScript готовится выполнять скрипт или блок кода, прежде всего он
+                  ищет
+                  в нём Function Declaration и создаёт все такие функции. Можно считать этот процесс «стадией
+                  инициализации».</p>
+                <p>И только после того, как все объявления Function Declaration будут обработаны, продолжится
+                  выполнение.
+                </p>
+                <p>В результате, функции, созданные, как Function Declaration могут быть вызваны раньше своих
+                  определений.
+                </p>
+                <p>Например, так будет работать:</p>
+                <pre><code class="language-js">sayHi("Вася"); // Привет, Вася
+
+function sayHi(name) {
+  alert( `Привет, ${name}` );
+}</code></pre>
+                <p>Функция <code>sayHi</code> была создана, когда движок JavaScript подготавливал скрипт к выполнению, и
+                  такая функция видна повсюду в этом скрипте.</p>
+                <p>…Если бы это было Function Expression, то такой код вызвал бы ошибку:</p>
+                <pre><code class="language-js">sayHi("Вася"); // ошибка!
+
+let sayHi = function(name) {  // (*) магии больше нет
+  alert( `Привет, ${name}` );
+};</code></pre>
+                <p>Функции, объявленные при помощи Function Expression, создаются тогда, когда выполнение доходит до
+                  них.
+                  Это случится только на строке, помеченной звёздочкой <code>(*)</code>. Слишком поздно.</p>
+                <p>Ещё одна важная особенность Function Declaration заключается в их блочной области видимости.</p>
+                <p><strong>В строгом режиме, когда Function Declaration находится в блоке <code>{...}</code>, функция
+                    доступна везде внутри блока. Но не снаружи него.</strong></p>
+                <p>Для примера давайте представим, что нам нужно создать функцию <code>welcome()</code> в зависимости от
+                  значения переменной <code>age</code>, которое мы получим во время выполнения кода. И затем запланируем
+                  использовать её когда-нибудь в будущем.</p>
+                <p>Такой код, использующий Function Declaration, работать не будет:</p>
+                <pre><code class="language-js">let age = prompt("Сколько Вам лет?", 18);
+
+// в зависимости от условия объявляем функцию
+if (age &lt; 18) {
+
+  function welcome() {
+    alert("Привет!");
+  }
+
+} else {
+
+  function welcome() {
+    alert("Здравствуйте!");
+  }
+
+}
+
+// ...не работает
+welcome(); // Error: welcome is not defined</code></pre>
+                <p>Это произошло, так как объявление Function Declaration видимо только внутри блока кода, в котором
+                  располагается.</p>
+                <p>Вот ещё один пример:</p>
+                <pre><code class="language-js">let age = 16; // присвоим для примера 16
+
+if (age &lt; 18) {
+  welcome();               // \   (выполнится)
+                           //  |
+  function welcome() {     //  |
+    alert("Привет!");      //  |  Function Declaration доступно
+  }                        //  |  во всём блоке кода, в котором объявлено
+                           //  |
+  welcome();               // /   (выполнится)
+
+} else {
+
+  function welcome() {
+    alert("Здравствуйте!");
+  }
+}
+
+// здесь фигурная скобка закрывается,
+// поэтому Function Declaration, созданные внутри блока кода выше -- недоступны отсюда.
+
+welcome(); // Ошибка: welcome is not defined</code></pre>
+                <p>Что можно сделать, чтобы <code>welcome</code> была видима снаружи <code>if</code>?</p>
+                <p>Верным подходом будет воспользоваться функцией, объявленной при помощи Function Expression, и
+                  присвоить
+                  значение <code>welcome</code> переменной, объявленной снаружи <code>if</code>, что обеспечит нам
+                  нужную
+                  видимость.</p>
+                <p>Такой код работает, как ожидалось:</p>
+                <pre><code class="language-js">let age = prompt("Сколько Вам лет?", 18);
+
+let welcome;
+
+if (age &lt; 18) {
+
+  welcome = function() {
+    alert("Привет!");
+  };
+
+} else {
+
+  welcome = function() {
+    alert("Здравствуйте!");
+  };
+
+}
+
+welcome(); // теперь всё в порядке</code></pre>
+                <p>Можно упростить этот код ещё сильнее, используя условный оператор <code>?</code>:</p>
+                <pre><code class="language-js">let age = prompt("Сколько Вам лет?", 18);
+
+let welcome = (age &lt; 18) ?
+  function() { alert("Привет!"); } :
+  function() { alert("Здравствуйте!"); };
+
+welcome(); // теперь всё в порядке</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Когда использовать Function Declaration, а когда Function Expression?
+                  </div>
+                  <p>Как правило, если нам понадобилась функция, в первую очередь нужно рассматривать синтаксис Function
+                    Declaration, который мы использовали до этого. Он даёт нам больше свободы в том, как мы можем
+                    организовывать код. Функции, объявленные таким образом, можно вызывать до их объявления.</p>
+                  <p>Также функции вида <code>function f(…) {…}</code> чуть более заметны в коде, чем
+                    <code>let f = function(…) {…}</code>. Function Declaration легче «ловятся глазами».
+                  </p>
+                  <p>…Но если Function Declaration нам не подходит по какой-то причине (мы рассмотрели это в примере
+                    выше), то можно использовать объявление при помощи Function Expression.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

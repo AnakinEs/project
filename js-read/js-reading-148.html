@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функции-«колбэки»">
+              <h2 id="Функции-«колбэки»">Функции-«колбэки»</h2>
+              <div class="section-content">
+                <p>Рассмотрим ещё примеры функциональных выражений и передачи функции как значения.</p>
+                <p>Давайте напишем функцию <code>ask(question, yes, no)</code> с тремя параметрами:</p>
+                <dl>
+                  <dt><code><strong>question</strong></code></dt>
+                  <dd>Текст вопроса</dt>
+
+                  <dt><code><strong>yes</strong></code></dt>
+                  <dd>Функция, которая будет вызываться, если ответ будет «Yes»</dt>
+
+                  <dt><code><strong>no</strong></code></dt>
+                  <dd>Функция, которая будет вызываться, если ответ будет «No»</dt>
+                </dl>
+                <p>Наша функция должна задать вопрос <code>question</code> и, в зависимости от того, как ответит
+                  пользователь, вызвать <code>yes()</code> или <code>no()</code>:</p>
+                <pre><code class="language-js">function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "Вы согласны." );
+}
+
+function showCancel() {
+  alert( "Вы отменили выполнение." );
+}
+
+// использование: функции showOk, showCancel передаются в качестве аргументов ask
+ask("Вы согласны?", showOk, showCancel);</code></pre>
+                <p>На практике подобные функции очень полезны. Основное отличие «реальной» функции <code>ask</code> от
+                  примера выше будет в том, что она использует более сложные способы взаимодействия с пользователем, чем
+                  простой вызов <code>confirm</code>. В браузерах такие функции обычно отображают красивые диалоговые
+                  окна. Но это уже другая история.</p>
+                <p><strong>Аргументы функции <code>ask</code> ещё называют функциями-колбэками или просто
+                    <em>колбэками</em>.</strong></p>
+                <p>Ключевая идея в том, что мы передаём функцию и ожидаем, что она вызовется обратно (от англ. «call
+                  back»
+                  – обратный вызов) когда-нибудь позже, если это будет необходимо. В нашем случае, <code>showOk</code>
+                  становится <em>колбэком</em> для ответа «yes», а <code>showCancel</code> – для ответа «no».</p>
+                <p>Мы можем переписать этот пример значительно короче, используя Function Expression:</p>
+                <pre><code class="language-js">function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+);</code></pre>
+                <p>Здесь функции объявляются прямо внутри вызова <code>ask(...)</code>. У них нет имён, поэтому они
+                  называются <em>анонимными</em>. Такие функции недоступны снаружи <code>ask</code> (потому что они не
+                  присвоены переменным), но это как раз то, что нам нужно.</p>
+                <p>Подобный код, появившийся в нашем скрипте выглядит очень естественно, в духе JavaScript.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Функция – это значение, представляющее «действие»</div>
+                  <p>Обычные значения, такие как строки или числа представляют собой <em>данные</em>.</p>
+                  <p>Функции, с другой стороны, можно воспринимать как «действия».</p>
+                  <p>Мы можем передавать их из переменной в переменную и запускать, когда захотим.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
