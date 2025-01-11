@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Итого13">
+              <h2 id="Итого13">Итого</h2>
+              <div class="section-content">
+                <p>Стрелочные функции очень удобны для простых действий, особенно для однострочных.</p>
+                <p>Они бывают двух типов:</p>
+                <ol>
+                  <li>Без фигурных скобок: <code>(...args) => expression</code> – правая сторона выражение: функция
+                    вычисляет его и возвращает результат. Скобки можно не ставить, если аргумент только один:
+                    <code>n => n * 2</code>.
+                  </li>
+                  <li>С фигурными скобками: <code>(...args) => { body }</code> – скобки позволяют нам писать несколько
+                    инструкций внутри функции, но при этом необходимо явно вызывать <code>return</code>, чтобы вернуть
+                    значение.</li>
+                </ol>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

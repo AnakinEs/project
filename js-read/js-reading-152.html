@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Стрелочные функции, основы">
+              <h1 id="Стрелочные функции, основы">Стрелочные функции, основы</h1>
+              <div class="section-content">
+                <p>Существует ещё один очень простой и лаконичный синтаксис для создания функций, который часто лучше,
+                  чем
+                  Function Expression.</p>
+                <p>Он называется «функции-стрелки» или «стрелочные функции» (arrow functions), т.к. выглядит следующим
+                  образом:</p>
+                <pre><code class="language-js">let func = (arg1, arg2, ...argN) =&gt; expression;</code></pre>
+                <p>Это создаёт функцию <code>func</code>, которая принимает аргументы <code>arg1..argN</code>, затем
+                  вычисляет <code>expression</code> в правой части с их использованием и возвращает результат.</p>
+                <p>Другими словами, это сокращённая версия:</p>
+                <pre><code class="language-js">let func = function(arg1, arg2, ...argN) {
+  return expression;
+};</code></pre>
+                <p>Давайте рассмотрим конкретный пример:</p>
+                <pre><code class="language-js">let sum = (a, b) =&gt; a + b;
+
+/* Эта стрелочная функция представляет собой более короткую форму:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+
+alert( sum(1, 2) ); // 3</code></pre>
+                <p>Как вы можете видеть, <code>(a, b) => a + b</code> задаёт функцию, которая принимает два аргумента с
+                  именами <code>a</code> и <code>b</code>. И при выполнении она вычисляет выражение <code>a + b</code> и
+                  возвращает результат.</p>
+                <ul>
+                  <li>Если у нас только один аргумент, то круглые скобки вокруг параметров можно опустить, сделав запись
+                    ещё короче:</li>
+                  <pre><code class="language-js">let double = n =&gt; n * 2;
+// примерно тоже что и: let double = function(n) { return n * 2 }
+
+alert( double(3) ); // 6</code></pre>
+                  <li>Если аргументов нет, круглые скобки будут пустыми, но они должны присутствовать:</li>
+                  <pre><code class="language-js"></code>let sayHi = () =&gt; alert("Hello!");
+
+sayHi(); // <span id="hint19"; class="hint" data-tooltip="В данном случае получается что результат не возвращается, а просто выполняется функция.">"Hello"</span></pre>
+                </ul>
+                <p>Стрелочные функции можно использовать так же, как и Function Expression.</p>
+                <p>Например, для динамического создания функции:</p>
+                <pre><code class="language-js">let age = prompt("Сколько Вам лет?", 18);
+
+let welcome = (age &lt; 18) ?
+  () =&gt; alert('Привет!') :
+  () =&gt; alert("Здравствуйте!");
+
+welcome();</code></pre>
+                <p>Поначалу стрелочные функции могут показаться необычными и даже трудночитаемыми, но это быстро пройдёт
+                  по мере того, как глаза привыкнут к этим конструкциям.</p>
+                <p>Они очень удобны для простых однострочных действий, когда лень писать много слов.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

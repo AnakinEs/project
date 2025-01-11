@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Многострочные стрелочные функции">
+              <h2 id="Многострочные стрелочные функции">Многострочные стрелочные функции</h2>
+              <div class="section-content">
+                <p>Стрелочные функции, которые мы видели до этого, были очень простыми. Они брали аргументы слева от
+                  <code>=&gt;</code> и вычисляли и возвращали выражение справа.
+                </p>
+                <p>Иногда нам нужна более сложная функция, с несколькими выражениями и инструкциями. Это также возможно,
+                  нужно лишь заключить их в фигурные скобки. При этом важное отличие – в том, что в таких скобках для
+                  возврата значения нужно использовать <code>return</code> (как в обычных функциях).</p>
+                <p>Вроде этого:</p>
+                <pre><code class="language-js">let sum = (a, b) =&gt; {  // фигурная скобка, открывающая тело многострочной функции
+  let result = a + b;
+  return result; // если мы используем фигурные скобки, то нам нужно явно указать "return"
+};
+
+alert( sum(1, 2) ); // 3</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Дальше – больше</div>
+                  <p>Здесь мы представили главной целью стрелочных функций краткость. Но это ещё не всё!</p>
+                  <p>Стрелочные функции обладают и другими интересными возможностями.</p>
+                  <p>Чтобы изучить их более подробно, нам сначала нужно познакомиться с некоторыми другими аспектами
+                    JavaScript, поэтому мы вернёмся к стрелочным функциям позже, в главе <a
+                      href="https://learn.javascript.ru/arrow-functions">Повторяем стрелочные функции</a>.</p>
+                  <p>А пока мы можем использовать их для простых однострочных действий и колбэков.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
