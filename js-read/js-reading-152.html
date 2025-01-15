@@ -56,9 +56,9 @@ alert( sum(1, 2) ); // 3</code></pre>
 
 alert( double(3) ); // 6</code></pre>
                   <li>Если аргументов нет, круглые скобки будут пустыми, но они должны присутствовать:</li>
-                  <pre><code class="language-js"></code>let sayHi = () =&gt; alert("Hello!");
+                  <pre class="language-js" tabindex="0"><span class="token keyword">let</span> <span class="token function-variable function">sayHi</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-sayHi(); // <span id="hint19"; class="hint" data-tooltip="В данном случае получается что результат не возвращается, а просто выполняется функция.">"Hello"</span></pre>
+<span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// <span class="meaning" data-tooltip="Вызов <code>alert</code> не возвращает значения, или, иначе говоря, возвращает <code>undefined</code>. Но этот <code>undefined</code> в данном случае нигде не сохраняем, и как итог есть просто вызов <code>alert</code>.">"Hello"</span></span></pre>
                 </ul>
                 <p>Стрелочные функции можно использовать так же, как и Function Expression.</p>
                 <p>Например, для динамического создания функции:</p>
