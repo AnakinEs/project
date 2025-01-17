@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Functions">
+          <h2 id="Functions"><a href="#Functions">Functions</a></h2>
+          <div class="section-content">
+            <p>The final type of value we will take a look at is the group of values known as functions. In programming,
+              a function is a reusable section of code that can be run multiple times to complete a repetitive task with
+              minimum effort on the part of both the developer and the computer. Functions are usually associated with
+              languages like JavaScript, Python, or C++, but they do exist in CSS too, as property values. We've already
+              seen functions in action in the Colors section — <code>rgb()</code>, <code>hsl()</code>, etc. The value
+              used to return an image from a file — <code>url()</code> — is also a function.</p>
+            <p>A value that behaves more like something you might find in a traditional programming language is the
+              <code>calc()</code> CSS function. This function gives you the ability to do simple calculations inside
+              your CSS. It's particularly useful if you want to work out values that you can't define when writing the
+              CSS for your project, and need the browser to work out for you at runtime.
+            </p>
+            <p>For example, below we are using <code>calc()</code> to make the box <code>20% + 100px</code> wide. The
+              20% is calculated from the width of the parent container <code>.wrapper</code> and so will change if that
+              width changes. We can't do this calculation beforehand because we don't know what 20% of the parent will
+              be, so we use <code>calc()</code> to tell the browser to do it for us.</p>
+            <iframe style="height:35rem" src="getting-started/started91.html"></iframe>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

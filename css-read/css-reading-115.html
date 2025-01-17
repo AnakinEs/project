@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="HSL and HSLA values">
+          <h3 id="HSL and HSLA values"><a href="#HSL and HSLA values">HSL and HSLA values</a></h3>
+          <div class="section-content">
+            <p>Slightly less well-supported than RGB is the HSL color model (not supported on old versions of IE), which
+              was implemented after much interest from designers. Instead of red, green, and blue values, the
+              <code>hsl()</code> function accepts hue, saturation, and lightness values, which are used to distinguish
+              between the 16.7 million colors, but in a different way:
+            </p>
+            <ul>
+              <li><strong>Hue</strong>: The base shade of the color. This takes a value between 0 and 360, representing
+                the angles round a color wheel.</li>
+              <li><strong>Saturation</strong>: How saturated is the color? This takes a value from 0–100%, where 0 is no
+                color (it will appear as a shade of grey), and 100% is full color saturation</li>
+              <li><strong>Lightness</strong>: How light or bright is the color? This takes a value from 0–100%, where 0
+                is no light (it will appear completely black) and 100% is full light (it will appear completely white)
+              </li>
+            </ul>
+            <p>We can update the RGB example to use HSL colors like this:</p>
+            <iframe style="height:50rem" src="getting-started/started86.html"></iframe>
+            <p>Just as RGB has RGBA, HSL has an HSLA equivalent, which gives you the same ability to specify the alpha
+              channel. I've demonstrated this below by changing my RGBA example to use HSLA colors.</p>
+            <iframe style="height:55rem" src="getting-started/started87.html"></iframe>
+            <p>You can use any of these color values in your projects. It is likely that for most projects you will
+              decide on a color palette and then use those colors — and your chosen method of specifying color —
+              throughout the whole project. You can mix and match color models, however for consistency it is usually
+              best if your entire project uses the same one!</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Images">
+          <h2 id="Images"><a href="#Images">Images</a></h2>
+          <div class="section-content">
+            <p>The <code>&lt;image&gt;</code> data type is used wherever an image is a valid value. This can be an
+              actual image file pointed to via a <code>url()</code> function, or a gradient.</p>
+            <p>In the example below we have demonstrated an image and a gradient in use as a value for the CSS
+              <code>background-image</code> property.
+            </p>
+            <iframe style="height:55rem" src="getting-started/started88.html"></iframe>
+            <div class="note notecard" id="sect4">
+              <p><strong>Note</strong>: there are some other possible values for <code>&lt;image&gt;</code>, however
+                these are newer and currently have poor browser support. Check out the page on MDN for the
+                <code>&lt;image&gt;</code> data type if you want to read about them.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

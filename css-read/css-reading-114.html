@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="RGB и RGBA значения">
+          <h3 id="RGB и RGBA значения"><a href="#RGB и RGBA значения">RGB и RGBA значения</a></h3>
+          <div class="section-content">
+            <p>Третья схема, о которой мы здесь поговорим это RGB. Значения RGB это функция — <code>rgb()</code> —
+              которой даётся три параметра представляющих каналы красного, зелёного и синего значений цветов, во многом
+              так же, как hex-значения. Отличие с RGB является то, что каждый канал представлен не двумя hex-цифрами, а
+              десятичным числом между 0 и 255 — что отчасти проще в понимании.</p>
+            <p>Давайте перепишем наш последний пример используя RGB цвета:</p>
+            <iframe style="height:50rem" src="getting-started/started84.html"></iframe>
+            <p>А также вы можете использовать цвета RGBA — что работает в точности, как и цвета RGB и то есть вы можете
+              использовать любое значение RGB, однако существует четвёртое значение, которое представляет альфа канал
+              цвета, которое контролирует мутность. Если вы установите это значение на <code>0</code>, то это сделает
+              цвет полностью прозрачным, тогда как <code>1</code> сделает его полностью мутным. Значения между дают вам
+              разные уровни прозрачности.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong>Внимание</strong>: Настройка альфа канала в цвете имеет одно ключевое различие в использовании
+                свойства <code>opacity</code> которое мы рассматривали ранее. когда вы используете мутность вы делаете
+                элемент и все внутри него мутным, тогда как при использовании цвета RGBA вы делаете мутным только тот
+                цвет который вы специфицируете.</p>
+            </div>
+            <p>In the example below I have added a background image to the containing block of our colored boxes. I have
+              then set the boxes to have different opacity values — notice how the background shows through more when
+              the alpha channel value is smaller.</p>
+            <iframe style="height:55rem" src="getting-started/started85.html"></iframe>
+            <p>In this example, try changing the alpha channel values to see how it affects the color output.</p>
+            <div class="note notecard" id="sect4">
+              <p><strong><span class="hint" data-tooltip="Чет не совсем понятно">Note</span></strong>: At some point
+                modern browsers were updated so that <code>rgba()</code> and <code>rgb()</code>, and <code>hsl()</code>
+                and <code>hsla()</code> (see below), became pure aliases of each other and started to behave exactly the
+                same. So for example both <code>rgba()</code> and <code>rgb()</code> accept colors with and without
+                alpha channel values. Try changing the above example's <code>rgba()</code> functions to
+                <code>rgb()</code> and see if the colors still work! Which style you use is up to you, but separating
+                out non-transparent and transparent color definitions to use the different functions gives (very)
+                slightly better browser support and can act as a visual indicator of where transparent colors are being
+                defined in your code.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

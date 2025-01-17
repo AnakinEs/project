@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Проценты">
+          <h3 id="Проценты"><a href="#Проценты">Проценты</a></h3>
+          <div class="section-content">
+            <p>Во многих случаях проценты обрабатываются таким же образом, как и длина. С процентами фишка в том, что
+              они всегда устанавливаются относительно некоторого другого значения. Например, если вы установите
+              <code>font-size</code> элемента как проценты, то это будет процент от <code>font-size</code> родительского
+              элемента. Если вы используете процент для значения <code>width</code> (ширина), то это будет процент от
+              <code>width</code> родителя.
+            </p>
+            <p>В примере ниже два блока с размерами в процентах и два с размерами в пикселях имеющих одинаковые имена
+              классов. Оба набора имеют ширину 200px и 40% соответственно.</p>
+            <p>Различие в том, что второй набор блоков находится внутри обёртки которая имеет ширину 400 пикселей.
+              Второй блок шириной в 200px имеет ту же ширину что и первый, но второй 40 процентный блок теперь имеет 40%
+              от 400px — намного уже чем первый.</p>
+            <p>Попробуйте изменить ширину обёртки (.wrapper) или процентное значение чтобы увидеть, как это работает.
+            </p>
+            <iframe style="height:60rem" src="getting-started/started80.html"></iframe>
+            <p>В следующем примере размер шрифта установлен в процентах. Каждый <code>&lt;li&gt;</code> имеет
+              <code>font-size 80%</code>, поэтому элементы вложенного списка становятся прогрессивно меньше так как они
+              наследуют свои размеры от родителя.
+            </p>
+            <iframe style="height:47rem" src="getting-started/started81.html"></iframe>
+            <p>Обратите внимание, в то время как многие значения принимают как длину, так и проценты, существуют те,
+              которые принимают только длину. Вы можете посмотреть какие значения допустимы на справочной странице
+              свойств MDN. Если допустимые значения включают <code>&lt;length-percentage&gt;</code>, тогда вы можете
+              использовать и длину, и проценты. Если же допустимые значения включают только <code>&lt;length&gt;</code>,
+              то использование процентов невозможно.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>

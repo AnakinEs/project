@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Абсолютные единицы длины">
+          <h3 id="Абсолютные единицы длины"><a href="#Абсолютные единицы длины">Абсолютные единицы длины</a></h3>
+          <div class="section-content">
+            <p>Ниже приведены все единицы абсолютной длины — они не являются относительными к чему-либо и обычно
+              считаются всегда одинакового размера.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Единицы</th>
+                  <th>Название</th>
+                  <th><span class="hint" data-tooltip="Чет тут все непонятно">Эквивалент</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>cm</code></td>
+                  <td>Centimeters/Сантиметры</td>
+                  <td>1cm = 96px/2.54</td>
+                </tr>
+                <tr>
+                  <td><code>mm</code></td>
+                  <td>Millimeters/Миллиметры</td>
+                  <td>1mm = 1/10th of 1cm</td>
+                </tr>
+                <tr>
+                  <td><code>Q</code></td>
+                  <td>Quarter-millimeters/Четверть-мм</td>
+                  <td>1Q = 1/40th of 1cm</td>
+                </tr>
+                <tr>
+                  <td><code>in</code></td>
+                  <td>Inches/Дюймы</td>
+                  <td>1in = 2.54cm = 96px</td>
+                </tr>
+                <tr>
+                  <td><code>pc</code></td>
+                  <td>Picas/Пики</td>
+                  <td>1pc = 1/6th of 1in</td>
+                </tr>
+                <tr>
+                  <td><code>pt</code></td>
+                  <td>Points/Точки</td>
+                  <td>1pt = 1/72th of 1in</td>
+                </tr>
+                <tr>
+                  <td><code>px</code></td>
+                  <td>Pixels/Пиксели</td>
+                  <td>1px = 1/96th of 1in</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Большинство из этих значений больше полезны при использовании печати, чем для вывода на экран. Например,
+              мы обычно не используем <code>cm</code> (сантиметры) на экране. Единственное значение которое вы в
+              основном будете использовать это <code>px</code> (пиксели).</p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
