@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Циклы">
+              <h2 id="Циклы">Циклы</h2>
+              <div class="section-content">
+                <ul>
+                  <li>Мы изучили три вида циклов:</li>
+                  <pre><code class="language-js">// 1
+while (condition) {
+  ...
+}
+
+// 2
+do {
+  ...
+} while (condition);
+
+// 3
+for(let i = 0; i &lt; 10; i++) {
+  ...
+}</code></pre>
+                  <li>Переменная, объявленная в цикле <code>for(let...)</code>, видна только внутри цикла. Но мы также
+                    можем опустить <code>let</code> и переиспользовать существующую переменную.</li>
+                  <li>Директивы <code>break/continue</code> позволяют выйти из цикла/текущей итерации. Используйте метки
+                    для выхода из вложенных циклов.</li>
+                </ul>
+                <p>Подробности: <a href="https://learn.javascript.ru/while-for">Циклы while и for</a>.</p>
+                <p>Позже мы изучим ещё виды циклов для работы с объектами.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

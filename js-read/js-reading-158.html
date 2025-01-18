@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Переменные2">
+              <h2 id="Переменные2">Переменные</h2>
+              <div class="section-content">
+                <p>Можно объявить при помощи:</p>
+                <ul>
+                  <li><code>let</code></li>
+                  <li><code>const</code> (константа, т.е. изменению не подлежит)</li>
+                  <li><code>var</code> (устаревший способ, подробности позже)</li>
+                </ul>
+                <p>Имя переменной может включать:</p>
+                <ol>
+                  <li>Буквы и цифры, однако цифра не может быть первым символом.</li>
+                  <li>Символы <code>$</code> и <code>_</code> используются наряду с буквами.</li>
+                  <li>Иероглифы и символы нелатинского алфавита также допустимы, но обычно не используются.</li>
+                </ol>
+                <p>Переменные типизируются динамически. В них могут храниться любые значения:</p>
+                <pre><code class="language-js">let x = 5;
+x = "Вася";</code></pre>
+                <p>Всего существует 8 типов данных:</p>
+                <ul>
+                  <li><code>number</code> для целых и вещественных чисел,</li>
+                  <li><code>bigint</code> для работы с целыми числами произвольной длины,</li>
+                  <li><code>string</code> для строк,</li>
+                  <li><code>boolean</code> для логических значений истинности или ложности: <code>true/false</code>,
+                  </li>
+                  <li><code>null</code> – тип с единственным значением <code>null</code>, т.е. «пустое значение» или
+                    «значение не существует»,</li>
+                  <li><code>undefined</code> – тип с единственным значением <code>undefined</code>, т.е. «значение не
+                    задано»,</li>
+                  <li><code>object</code> и <code>symbol</code> – сложные структуры данных и уникальные идентификаторы;
+                    их
+                    мы ещё не изучили.</li>
+                </ul>
+                <p>Оператор <code>typeof</code> возвращает тип значения переменной, с двумя исключениями:</p>
+                <pre><code class="language-js">typeof null == "object" // ошибка в языке
+typeof function(){} == "function" // именно для функций</code></pre>
+                <p>Подробности: <a href="https://learn.javascript.ru/variables">Переменные</a>, <a
+                    href="https://learn.javascript.ru/types">Типы данных</a>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

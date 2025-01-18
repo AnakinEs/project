@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Строгий режим">
+              <h2 id="Строгий режим">Строгий режим</h2>
+              <div class="section-content">
+                <p>Чтобы по максимуму использовать возможности современного JavaScript, все скрипты рекомендуется
+                  начинать
+                  с добавления директивы <code>"use strict"</code>.</p>
+                <pre><code class="language-js">'use strict';
+
+...</code></pre>
+                <p>Эту директиву следует размещать в первой строке скрипта или в начале тела функции.</p>
+                <p>Без <code>"use strict"</code> код также запустится, но некоторые возможности будут работать в «режиме
+                  совместимости» со старыми версиями языка JavaScript. Нам же предпочтительнее современное поведение.
+                </p>
+                <p>Некоторые конструкции языка (например, классы, которые нам ещё предстоит изучить) включают строгий
+                  режим по умолчанию.</p>
+                <p>Подробности: <a href="https://learn.javascript.ru/strict-mode">Строгий режим — "use strict"</a>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

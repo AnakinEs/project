@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Взаимодействие с посетителем">
+              <h2 id="Взаимодействие с посетителем">Взаимодействие с посетителем</h2>
+              <div class="section-content">
+                <p>В качестве рабочей среды мы используем браузер, так что простейшими функциями взаимодействия с
+                  посетителем являются:</p>
+                <dl>
+                  <dt><code><strong>prompt(question, [default])</strong></code></dt>
+                  <dd>Задаёт вопрос <code>question</code> и возвращает то, что ввёл посетитель, либо <code>null</code>,
+                    если посетитель нажал на кнопку «Отмена».</dt>
+
+                  <dt><strong><code>confirm(question)</code></strong></dt>
+                  <dd>Задаёт вопрос <code>question</code> и предлагает выбрать «ОК» или «Отмена». Выбор возвращается в
+                    формате <code>true/false</code>.</dt>
+
+                  <dt><strong><code>alert(message)</code></strong></dt>
+                  <dd>Выводит сообщение <code>message</code>.</dt>
+                </dl>
+                <p>Все эти функции показывают <em>модальные окна</em>, они останавливают выполнение кода и не позволяют
+                  посетителю взаимодействовать со страницей, пока не будет дан ответ на вопрос.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let userName = prompt("Введите имя", "Алиса");
+let isTeaWanted = confirm("Вы хотите чаю?");
+
+alert( "Посетитель: " + userName ); // Алиса
+alert( "Чай: " + isTeaWanted ); // true</code></pre>
+                <p>Подробности: <a href="https://learn.javascript.ru/alert-prompt-confirm">Взаимодействие: alert,
+                    prompt,
+                    confirm</a>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

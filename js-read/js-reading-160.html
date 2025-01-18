@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Операторы">
+              <h2 id="Операторы">Операторы</h2>
+              <div class="section-content">
+                <p>JavaScript поддерживает следующие операторы:</p>
+                <dl>
+                  <dt><strong>Арифметические</strong></dt>
+                  <dd>
+                    <p>Простые <code>* + - /</code>, а также деление по модулю <code>%</code> и возведение в степень
+                      <code>**</code>.
+                    </p>
+                    <p>Бинарный плюс <code>+</code> объединяет строки. А если одним из операндов является строка, то
+                      второй тоже будет конвертирован в строку:</p>
+                    <pre><code class="language-js">alert( '1' + 2 ); // '12', строка
+alert( 1 + '2' ); // '12', строка</code></pre>
+                    </dt>
+
+                  <dt><strong>Операторы присваивания</strong></dt>
+                  <dd>
+                    <p>Простые <code>a = b</code> и составные <code>a *= 2</code>.</p>
+                    </dt>
+
+                  <dt><strong>Битовые операции</strong></dt>
+                  <dd>
+                    <p>Битовые операторы работают с 32-битными целыми числами на самом низком, побитовом уровне.
+                      Подробнее
+                      об их использовании можно прочитать на ресурсе <a
+                        href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_Operators#%D0%B1%D0%B8%D1%82%D0%BE%D0%B2%D1%8B%D0%B5_(%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%80%D1%8F%D0%B4%D0%BD%D1%8B%D0%B5)_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">MDN</a>
+                      и в разделе <a href="https://learn.javascript.ru/bitwise-operators">Побитовые операторы</a>.</p>
+                    </dt>
+
+                  <dt><strong>Условный оператор</strong></dt>
+                  <dd>
+                    <p>Единственный оператор с тремя параметрами: <code>cond ? resultA : resultB</code>. Если условие
+                      <code>cond</code> истинно, возвращается <code>resultA</code>, иначе – <code>resultB</code>.
+                    </p>
+                    </dt>
+
+                  <dt><strong>Логические операторы</strong></dt>
+                  <dd>
+                    <p>Логические И <code>&&</code>, ИЛИ <code>||</code> используют так называемое «ленивое вычисление»
+                      и
+                      возвращают значение, на котором оно остановилось (не обязательно <code>true</code> или
+                      <code>false</code>). Логическое НЕ <code>!</code> конвертирует операнд в логический тип и
+                      возвращает
+                      инвертированное значение.
+                    </p>
+                    </dt>
+
+                  <dt><strong>Оператор нулевого слияния</strong></dt>
+                  <dd>
+                    <p>Оператор <code>??</code> предоставляет способ выбора определённого значения из списка переменных.
+                      Результатом <code>a ?? b</code> будет <code>a</code>, если только оно не равно
+                      <code>null/undefined</code>, тогда <code>b</code>.
+                    </p>
+                    </dt>
+
+                  <dt><strong>Сравнение</strong></dt>
+                  <dd>
+                    <p>Проверка на равенство <code>==</code> значений разных типов конвертирует их в число (за
+                      исключением
+                      <code>null</code> и <code>undefined</code>, которые могут равняться только друг другу), так что
+                      примеры ниже равны:
+                    </p>
+                    <pre><code class="language-js">alert( 0 == false ); // true
+alert( 0 == '' ); // true</code></pre>
+                    <p>Другие операторы сравнения тоже конвертируют значения разных типов в числовой тип.</p>
+                    <p>Оператор строгого равенства <code>===</code> не выполняет конвертирования: разные типы для него
+                      всегда означают разные значения.</p>
+                    <p>Значения <code>null</code> и <code>undefined</code> особенные: они равны <code>==</code> только
+                      друг другу, но не равны ничему ещё.</p>
+                    <p>Операторы сравнения больше/меньше сравнивают строки посимвольно, остальные типы конвертируются в
+                      число.</p>
+                    </dt>
+
+                  <dt><strong>Другие операторы</strong></dt>
+                  <dd>
+                    <p>Существуют и другие операторы, такие как запятая.</p>
+                    <p>Подробности: <a href="https://learn.javascript.ru/operators">Базовые операторы, математика</a>,
+                      <a href="https://learn.javascript.ru/comparison">Операторы сравнения</a>, <a
+                        href="https://learn.javascript.ru/logical-operators">Логические операторы</a>, <a
+                        href="https://learn.javascript.ru/nullish-coalescing-operator">Оператор нулевого слияния
+                        (??)</a>.
+                    </p>
+                    </dt>
+                </dl>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

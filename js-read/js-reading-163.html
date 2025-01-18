@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Функции2">
+              <h2 id="Функции2">Функции</h2>
+              <div class="section-content">
+                <p>Мы рассмотрели три способа создания функции в JavaScript:</p>
+                <ol>
+                  <li>Function Declaration: функция в основном потоке кода</li>
+                  <pre><code class="language-js">function sum(a, b) {
+  let result = a + b;
+
+  return result;
+}</code></pre>
+                  <li>Function Expression: функция как часть выражения</li>
+                  <pre><code class="language-js">let sum = function(a, b) {
+  let result = a + b;
+
+  return result;
+};</code></pre>
+                  <li>Стрелочные функции:</li>
+                  <pre><code class="language-js">// выражение в правой части
+let sum = (a, b) =&gt; a + b;
+
+// многострочный код в фигурных скобках { ... }, здесь нужен return:
+let sum = (a, b) =&gt; {
+  // ...
+  return a + b;
+}
+
+// без аргументов
+let sayHi = () =&gt; alert("Привет");
+
+// с одним аргументом
+let double = n =&gt; n * 2;</code></pre>
+                </ol>
+                <ul>
+                  <li>У функций могут быть локальные переменные: т.е. объявленные в теле функции. Такие переменные
+                    видимы
+                    только внутри функции.</li>
+                  <li>У параметров могут быть значения по умолчанию: <code>function sum(a = 1, b = 2) {...}</code>.</li>
+                  <li>Функции всегда что-нибудь возвращают. Если нет оператора <code>return</code>, результатом будет
+                    <code>undefined</code>.
+                  </li>
+                </ul>
+                <p>Подробности: <a href="https://learn.javascript.ru/function-basics">Функции</a>, <a
+                    href="https://learn.javascript.ru/javascript-specials">Стрелочные функции, основы</a>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

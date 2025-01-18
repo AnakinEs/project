@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Особенности JavaScript">
+              <h1 id="Особенности JavaScript">Особенности JavaScript</h1>
+              <div class="section-content">
+                <p>Давайте кратко повторим изученный материал и отметим наиболее «тонкие» моменты.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Структура кода2">
+              <h2 id="Структура кода2">Структура кода</h2>
+              <div class="section-content">
+                <p>Инструкции разделяются точкой с запятой:</p>
+                <pre><code class="language-js">alert('Привет'); alert('Мир');</code></pre>
+                <p>Как правило, перевод строки также интерпретируется как разделитель, так тоже будет работать:</p>
+                <pre><code class="language-js">alert('Привет')
+alert('Мир')</code></pre>
+                <p>Это так называемая «автоматическая вставка точки с запятой». Впрочем, она не всегда срабатывает,
+                  например:</p>
+                <pre><code class="language-js">alert("После этого сообщения ждите ошибку")
+
+[1, 2].forEach(alert)</code></pre>
+                <p>Большинство руководств по стилю кода рекомендуют ставить точку с запятой после каждой инструкции.</p>
+                <p>Точка с запятой не требуется после блоков кода {…} и синтаксических конструкций с ними, таких как,
+                  например, циклы:</p>
+                <pre><code class="language-js">function f() {
+  // после объявления функции необязательно ставить точку с запятой
+}
+
+for(;;) {
+  // после цикла точка с запятой также необязательна
+}</code></pre>
+                <p>…Впрочем, если даже мы и поставим «лишнюю» точку с запятой, ошибки не будет. Она просто будет
+                  проигнорирована.</p>
+                <p>Подробности: <a href="https://learn.javascript.ru/structure">Структура кода</a>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
