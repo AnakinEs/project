@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Writing modes and block and inline layout">
+          <h2 id="Writing modes and block and inline layout"><a
+              href="#Writing modes and block and inline layout">Writing modes and block and inline layout</a></h2>
+          <div class="section-content">
+            <p>We have already discussed <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#block_and_inline_boxes">block
+                and inline layout</a>, and the fact that some things display as block elements and others as inline
+              elements. As we have seen described above, block and inline is tied to the writing mode of the document,
+              and not the physical screen. Blocks are only displayed from the top to the bottom of the page if you are
+              using a writing mode that displays text horizontally, such as English.</p>
+            <p>If we look at an example this will become clearer. In this next example I have two boxes that contain a
+              heading and a paragraph. The first uses <code>writing-mode: horizontal-tb</code>, a writing mode that is
+              written horizontally and from the top of the page to the bottom. The second uses
+              <code>writing-mode: vertical-rl</code>; this is a writing mode that is written vertically and from right
+              to left.
+            </p>
+            <iframe style="height:70rem" src="../getting-started/started59.html"></iframe>
+            <p>When we switch the writing mode, we are changing which direction is block and which is inline. In a
+              <code>horizontal-tb</code> writing mode the block direction runs from top to bottom; in a
+              <code>vertical-rl</code> writing mode the block direction runs right-to-left horizontally. So the
+              <strong>block dimension</strong> is always the direction blocks are displayed on the page in the writing
+              mode in use. The <strong>inline dimension</strong> is always the direction a sentence flows.
+            </p>
+            <p>This figure shows the two dimensions when in a horizontal writing mode.</p>
+            <img alt="" src="../images/horizontal-tb.png" loading="lazy">
+            <p>This figure shows the two dimensions in a vertical writing mode.</p>
+            <img alt="" src="../images/vertical.png" loading="lazy">
+            <p>Once you start to look at CSS layout, and in particular the newer layout methods, this idea of block and
+              inline becomes very important. We will revisit it later on.</p>
+            <p></p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
