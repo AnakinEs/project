@@ -50,7 +50,7 @@
               <code>writing-mode: vertical-rl</code>. Теперь текст идёт вертикально. Вертикальный текст часто
               используется в графическом дизайне и может быть способом добавить более интересный вид вашему веб-дизайну.
             </p>
-            <iframe style="height:50rem" src="getting-started/started58.html"></iframe>
+            <iframe style="height:50rem" src="../getting-started/started58.html"></iframe>
             <p>Три возможных значения свойства <code>writing-mode</code>:</p>
             <ul>
               <li><code>horizontal-tb</code>: Направление потока блока сверху вниз. Предложения идут горизонтально.</li>
@@ -80,7 +80,7 @@
               <code>writing-mode: vertical-rl</code>; this is a writing mode that is written vertically and from right
               to left.
             </p>
-            <iframe style="height:70rem" src="getting-started/started59.html"></iframe>
+            <iframe style="height:70rem" src="../getting-started/started59.html"></iframe>
             <p>When we switch the writing mode, we are changing which direction is block and which is inline. In a
               <code>horizontal-tb</code> writing mode the block direction runs from top to bottom; in a
               <code>vertical-rl</code> writing mode the block direction runs right-to-left horizontally. So the
@@ -88,9 +88,9 @@
               mode in use. The <strong>inline dimension</strong> is always the direction a sentence flows.
             </p>
             <p>This figure shows the two dimensions when in a horizontal writing mode.</p>
-            <img alt="" src="images/horizontal-tb.png" loading="lazy">
+            <img alt="" src="../images/horizontal-tb.png" loading="lazy">
             <p>This figure shows the two dimensions in a vertical writing mode.</p>
-            <img alt="" src="images/vertical.png" loading="lazy">
+            <img alt="" src="../images/vertical.png" loading="lazy">
             <p>Once you start to look at CSS layout, and in particular the newer layout methods, this idea of block and
               inline becomes very important. We will revisit it later on.</p>
             <p></p>
@@ -123,7 +123,7 @@
               with <code>vertical-rl</code>. I have given both of these boxes a <code>width</code>. You can see that
               when the box is in the vertical writing mode, it still has a width, and this is causing the text to
               overflow.</p>
-            <iframe style="height:70rem" src="getting-started/started60.html"></iframe>
+            <iframe style="height:70rem" src="../getting-started/started60.html"></iframe>
             <p>What we really want in this scenario, is to essentially swap height and width along with the writing
               mode. When we're in a vertical writing mode we want the box to expand in the block dimension just like it
               does in the horizontal mode.</p>
@@ -137,7 +137,7 @@
               how this works in the example below where we have replaced <code>width</code> with
               <code>inline-size</code>.
             </p>
-            <iframe style="height:65rem" src="getting-started/started61.html"></iframe>
+            <iframe style="height:65rem" src="../getting-started/started61.html"></iframe>
           </div>
         </section>
 
@@ -164,7 +164,7 @@
                 their physical direction, whereas the logical properties switch with the writing mode.</strong></p>
             <p><strong>You can also see that the <code>&lt;h2&gt;</code> has a black <code>border-bottom</code>. Can you
                 work out how to make that bottom border always go below the text in both writing modes?</strong></p>
-            <iframe style="height:83rem" src="getting-started/started62.html"></iframe>
+            <iframe style="height:83rem" src="../getting-started/started62.html"></iframe>
             <p>There are a huge number of properties when you consider all of the individual border longhands, and you
               can see all of the mapped properties on the MDN page for <a
                 href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">Logical Properties and
@@ -185,7 +185,7 @@
             </p>
             <p><strong>Change the writing mode on this example to <code>vertical-rl</code> to see what happens to the
                 image. Change <code>inline-start</code> to <code>inline-end</code> to change the float.</strong></p>
-            <iframe style="height:64rem" src="getting-started/started63.html"></iframe>
+            <iframe style="height:64rem" src="../getting-started/started63.html"></iframe>
             <p>Here we are also using logical margin values to ensure the margin is in the correct place no matter what
               the writing mode is.</p>
           </div>
