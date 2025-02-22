@@ -19,6 +19,7 @@
   <div class="main-wrapper">
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        
         <section aria-labelledby="Изменение направления текста">
           <h1 id="Изменение направления текста"><a href="#Изменение направления текста2">Изменение направления
               текста</a></h1>
@@ -33,6 +34,185 @@
               разные направления называются режимами письма. По мере того, как вы продвигаетесь в обучении и начинаете
               работать с макетом, понимание режимов письма будет вам очень полезно, поэтому мы сейчас и познакомимся с
               ними.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Какие бывают режимы письма?">
+          <h2 id="Какие бывают режимы письма?"><a href="#Какие бывают режимы письма?">Какие бывают режимы письма?</a>
+          </h2>
+          <div class="section-content">
+            <p>Режим письма в CSS определяет, идёт ли текст по горизонтали или по вертикали. Свойство
+              <code>writing-mode</code> позволяет нам переключаться из одного режима письма в другой. Для этого вам не
+              обязательно работать на языке, который использует режим вертикального письма - вы также можете изменить
+              режим письма частей вашего макета для творческих целей.
+            </p>
+            <p>В приведённом ниже примере заголовок отображается с использованием
+              <code>writing-mode: vertical-rl</code>. Теперь текст идёт вертикально. Вертикальный текст часто
+              используется в графическом дизайне и может быть способом добавить более интересный вид вашему веб-дизайну.
+            </p>
+            <iframe style="height:50rem" src="getting-started/started58.html"></iframe>
+            <p>Три возможных значения свойства <code>writing-mode</code>:</p>
+            <ul>
+              <li><code>horizontal-tb</code>: Направление потока блока сверху вниз. Предложения идут горизонтально.</li>
+              <li><code>vertical-rl</code>: Направление потока блоков справа налево. Предложения идут вертикально.</li>
+              <li><code><span class="hint" data-tooltip="Че то не работает у меня в коде">vertical-lr</span></code>:
+                Направление потока блока слева направо. Предложения идут вертикально.</li>
+            </ul>
+            <p>Таким образом, свойство <code>writing-mode</code> на самом деле устанавливает направление, в котором
+              элементы уровня блока отображаются на странице - сверху вниз, справа налево или слева направо. Это затем
+              определяет направление движения текста в предложениях.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Writing modes and block and inline layout">
+          <h2 id="Writing modes and block and inline layout"><a
+              href="#Writing modes and block and inline layout">Writing modes and block and inline layout</a></h2>
+          <div class="section-content">
+            <p>We have already discussed <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#block_and_inline_boxes">block
+                and inline layout</a>, and the fact that some things display as block elements and others as inline
+              elements. As we have seen described above, block and inline is tied to the writing mode of the document,
+              and not the physical screen. Blocks are only displayed from the top to the bottom of the page if you are
+              using a writing mode that displays text horizontally, such as English.</p>
+            <p>If we look at an example this will become clearer. In this next example I have two boxes that contain a
+              heading and a paragraph. The first uses <code>writing-mode: horizontal-tb</code>, a writing mode that is
+              written horizontally and from the top of the page to the bottom. The second uses
+              <code>writing-mode: vertical-rl</code>; this is a writing mode that is written vertically and from right
+              to left.
+            </p>
+            <iframe style="height:70rem" src="getting-started/started59.html"></iframe>
+            <p>When we switch the writing mode, we are changing which direction is block and which is inline. In a
+              <code>horizontal-tb</code> writing mode the block direction runs from top to bottom; in a
+              <code>vertical-rl</code> writing mode the block direction runs right-to-left horizontally. So the
+              <strong>block dimension</strong> is always the direction blocks are displayed on the page in the writing
+              mode in use. The <strong>inline dimension</strong> is always the direction a sentence flows.
+            </p>
+            <p>This figure shows the two dimensions when in a horizontal writing mode.</p>
+            <img alt="" src="images/horizontal-tb.png" loading="lazy">
+            <p>This figure shows the two dimensions in a vertical writing mode.</p>
+            <img alt="" src="images/vertical.png" loading="lazy">
+            <p>Once you start to look at CSS layout, and in particular the newer layout methods, this idea of block and
+              inline becomes very important. We will revisit it later on.</p>
+            <p></p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Direction">
+          <h3 id="Direction"><a href="#Direction">Direction</a></h3>
+          <div class="section-content">
+            <p>In addition to writing mode we also have text direction. As mentioned above, some languages such as
+              Arabic are written horizontally, but right-to-left. This is not something you are likely to use in a
+              creative sense — if you simply want to line something up on the right there are other ways to do so —
+              however it is important to understand this as part of the nature of CSS. The web is not just for languages
+              that are displayed left-to-right!</p>
+            <p>Due to the fact that writing mode and direction of text can change, newer CSS layout methods do not refer
+              to left and right, and top and bottom. Instead they will talk about start and end along with this idea of
+              inline and block. Don't worry too much about that right now, but keep these ideas in mind as you start to
+              look at layout; you will find it really helpful in your understanding of CSS.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Logical properties and values">
+          <h2 id="Logical properties and values"><a href="#Logical properties and values">Logical properties and
+              values</a></h2>
+          <div class="section-content">
+            <p>The reason to talk about writing modes and direction at this point in your learning however, is because
+              of the fact we have already looked at a lot of properties which are tied to the physical dimensions of the
+              screen, and make most sense when in a horizontal writing mode.</p>
+            <p>Let's take a look at our two boxes again — one with a <code>horizontal-tb</code> writing mode and one
+              with <code>vertical-rl</code>. I have given both of these boxes a <code>width</code>. You can see that
+              when the box is in the vertical writing mode, it still has a width, and this is causing the text to
+              overflow.</p>
+            <iframe style="height:70rem" src="getting-started/started60.html"></iframe>
+            <p>What we really want in this scenario, is to essentially swap height and width along with the writing
+              mode. When we're in a vertical writing mode we want the box to expand in the block dimension just like it
+              does in the horizontal mode.</p>
+            <p>To make this easier, CSS has recently developed a set of mapped properties. These essentially replace
+              physical properties — things like <code>width</code> and <code>height</code> — with
+              <strong>logical</strong>, or <strong>flow relative</strong> versions.
+            </p>
+            <p>The property mapped to <code>width</code> when in a horizontal writing mode is called
+              <code>inline-size</code> — it refers to the size in the inline dimension. The property for
+              <code>height</code> is named <code>block-size</code> and is the size in the block dimension. You can see
+              how this works in the example below where we have replaced <code>width</code> with
+              <code>inline-size</code>.
+            </p>
+            <iframe style="height:65rem" src="getting-started/started61.html"></iframe>
+          </div>
+        </section>
+
+        <section aria-labelledby="Logical margin, border, and padding properties">
+          <h3 id="Logical margin, border, and padding properties"><a
+              href="#Logical margin, border, and padding properties">Logical margin, border, and padding properties</a>
+          </h3>
+          <div class="section-content">
+            <p>In the last two lessons we have learned about the CSS box model, and CSS borders. In the margin, border,
+              and padding properties you will find many instances of physical properties, for example
+              <code>margin-top</code>, <code>padding-left</code>, and <code>border-bottom</code>. In the same way that
+              we have mappings for width and height there are mappings for these properties.
+            </p>
+            <p>The <code>margin-top</code> property is mapped to <code>margin-block-start</code> — this will always
+              refer to the margin at the start of the block dimension.</p>
+            <p>The <code>padding-left</code> property maps to <code>padding-inline-start</code>, the padding that is
+              applied to the start of the inline direction. This will be where sentences start in that writing mode. The
+              <code>border-bottom</code> property maps to <code>border-block-end</code>, which is the border at the end
+              of the block dimension.
+            </p>
+            <p>You can see a comparison between physical and logical properties below.</p>
+            <p><strong>If you change the writing mode of the boxes by switching the <code>writing-mode</code> property
+                on <code>.box</code> to <code>vertical-rl</code>, you will see how the physical properties stay tied to
+                their physical direction, whereas the logical properties switch with the writing mode.</strong></p>
+            <p><strong>You can also see that the <code>&lt;h2&gt;</code> has a black <code>border-bottom</code>. Can you
+                work out how to make that bottom border always go below the text in both writing modes?</strong></p>
+            <iframe style="height:83rem" src="getting-started/started62.html"></iframe>
+            <p>There are a huge number of properties when you consider all of the individual border longhands, and you
+              can see all of the mapped properties on the MDN page for <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">Logical Properties and
+                Values</a>.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Logical values">
+          <h3 id="Logical values"><a href="#Logical values">Logical values</a></h3>
+          <div class="section-content">
+            <p>We have so far looked at logical property names. There are also some properties that take physical values
+              of <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>. These values also
+              have mappings, to logical values — <code>block-start</code>, <code>inline-end</code>,
+              <code>block-end</code>, and <code>inline-start</code>.
+            </p>
+            <p>For example, you can float an image left to cause text to wrap round the image. You could replace
+              <code>left</code> with <code>inline-start</code> as shown in the example below.
+            </p>
+            <p><strong>Change the writing mode on this example to <code>vertical-rl</code> to see what happens to the
+                image. Change <code>inline-start</code> to <code>inline-end</code> to change the float.</strong></p>
+            <iframe style="height:64rem" src="getting-started/started63.html"></iframe>
+            <p>Here we are also using logical margin values to ensure the margin is in the correct place no matter what
+              the writing mode is.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Should you use physical or logical properties?">
+          <h3 id="Should you use physical or logical properties?"><a
+              href="#Should you use physical or logical properties?">Should you use physical or logical properties?</a>
+          </h3>
+          <div class="section-content">
+            <p>The logical properties and values are newer than their physical equivalents, and therefore have only
+              recently been implemented in browsers. You can check any property page on MDN to see how far back the
+              browser support goes. If you are not using multiple writing modes then for now you might prefer to use the
+              physical versions. However, ultimately we expect that people will transition to the logical versions for
+              most things, as they make a lot of sense once you start also dealing with layout methods such as flexbox
+              and grid.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="Summary">
+          <h2 id="Summary"><a href="#Summary">Summary</a></h2>
+          <div class="section-content">
+            <p>The concepts explained in this lesson are becoming increasingly important in CSS. An understanding of the
+              block and inline direction — and how text flow changes with a change in writing mode — will be very useful
+              going forward. It will help you in understanding CSS even if you never use a writing mode other than a
+              horizontal one.</p>
+            <p>In the next module we will take a good look at overflow in CSS.</p>
           </div>
         </section>
       </article>
