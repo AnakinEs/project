@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Панель «Исходный код» («Sources»)">
+              <h2 id="Панель «Исходный код» («Sources»)">Панель «Исходный код» («Sources»)</h2>
+              <div class="section-content">
+                <p>Версия Chrome, установленная у вас, может выглядеть немного иначе, однако принципиальных отличий не
+                  будет.</p>
+                <ul>
+                  <li>Работая в Chrome, откройте <a href="../getting-started/started159.html">тестовую страницу</a>.</li>
+                  <li>Включите инструменты разработчика, нажав <kbd>F12</kbd> (Mac: <kbd>Cmd+Opt+I</kbd>).</li>
+                  <li>Щёлкните по панели <code>Sources</code> («исходный код»).</li>
+                </ul>
+                <p>При первом запуске получаем следующее:</p>
+                <img src="../svg/chrome-open-sources.svg">
+                <p>Кнопка-переключатель <span class="devtools" style="background-position:-172px -98px"></span> откроет
+                  вкладку со списком файлов.</p>
+                <p>Кликните на неё и выберите <code>hello.js</code> в дереве файлов. Вот что появится:</p>
+                <img src="../svg/chrome-tabs.svg">
+                <p>Интерфейс состоит из трёх зон:</p>
+                <ol>
+                  <li>В зоне <strong>File Navigator</strong> (панель для навигации файлов) показаны файлы HTML,
+                    JavaScript, CSS, включая изображения, используемые на странице. Здесь также могут быть файлы
+                    различных
+                    расширений Chrome.</li>
+                  <li>Зона <strong>Code Editor</strong> (редактор кода) показывает исходный код.</li>
+                  <li>Наконец, зона <strong>JavaScript Debugging</strong> (панель отладки JavaScript) отведена для
+                    отладки, скоро мы к ней вернёмся.</li>
+                </ol>
+                <p>Чтобы скрыть список ресурсов и освободить экранное место для исходного кода, щёлкните по тому же
+                  переключателю <span class="devtools" style="background-position:-172px -122px"></span>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

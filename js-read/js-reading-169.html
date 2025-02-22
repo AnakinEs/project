@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Остановимся и оглядимся">
+              <h2 id="Остановимся и оглядимся">Остановимся и оглядимся</h2>
+              <div class="section-content">
+                <p>В нашем примере функция <code>hello()</code> вызывается во время загрузки страницы, поэтому для
+                  начала
+                  отладки (после того, как мы поставили точки останова) проще всего её перезагрузить. Нажмите
+                  <kbd>F5</kbd> (Windows, Linux) или <kbd>Cmd+R</kbd> (Mac).
+                </p>
+                <p>Выполнение прервётся на четвёртой строчке (где находится точка останова):</p>
+                <img src="../svg/chrome-sources-debugger-pause.svg">
+                <p>Чтобы понять, что происходит в коде, щёлкните по стрелочкам справа:</p>
+                <ol>
+                  <li>
+                    <p><strong><code>Watch</code> – показывает текущие значения для любых выражений.</strong></p>
+                    <p><span id="hint21" ; class="hint" data-tooltip="Ни че не понял">Вы можете нажать на <code>+</code>
+                        и ввести
+                        выражение. Отладчик покажет его значение, автоматически пересчитывая его в процессе
+                        выполнения.</span></p>
+                  </li>
+                  <li>
+                    <p><strong><code>Call Stack</code> – показывает цепочку вложенных вызовов.</strong></p>
+                    <p>В текущий момент отладчик находится внутри вызова <code>hello()</code>, вызываемого скриптом в
+                      <code>index.html</code> (там нет функции, поэтому она называется “анонимной”).
+                    </p>
+                    <p>Если вы нажмёте на элемент стека (например, «anonymous»), отладчик перейдёт к соответствующему
+                      коду, и нам представляется возможность его проанализировать.</p>
+                  </li>
+                  <li>
+                    <p><strong><code>Scope</code> показывает текущие переменные.</strong></p>
+                    <p><code>Local</code> показывает локальные переменные функций, а их значения подсвечены прямо в
+                      исходном коде.</p>
+                    <p>В <code>Global</code> перечисляются глобальные переменные (то есть вне каких-либо функций).</p>
+                    <p>Там также есть ключевое слово <code>this</code>, которое мы ещё не изучали, но скоро изучим.</p>
+                  </li>
+                </ol>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
