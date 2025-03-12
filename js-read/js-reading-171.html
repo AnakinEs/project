@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Размещение функций">
+              <h2 id="Размещение функций">Размещение функций</h2>
+              <div class="section-content">
+                <p>Если вы пишете несколько вспомогательных функций, а затем используемый ими код, то существует три
+                  способа организации функций.</p>
+                <ol>
+                  <li>Объявить функции <em>перед</em> кодом, который их вызовет:</li>
+                  <pre><code class="language-js">// объявление функций
+function createElement() {
+  ...
+}
+
+function setHandler(elem) {
+  ...
+}
+
+function walkAround() {
+  ...
+}
+
+// код, который использует их
+let elem = createElement();
+setHandler(elem);
+walkAround();</code></pre>
+                  <li>Сначала код, затем функции</li>
+                  <pre><code class="language-js">// код, использующий функции
+let elem = createElement();
+setHandler(elem);
+walkAround();
+
+// --- вспомогательные функции ---
+function createElement() {
+  ...
+}
+
+function setHandler(elem) {
+  ...
+}
+
+function walkAround() {
+  ...
+}</code></pre>
+                  <li>Смешанный стиль: функция объявляется там, где она используется впервые.</li>
+                </ol>
+                <p>В большинстве случаев второй вариант является предпочтительным.</p>
+                <p>Это потому, что при чтении кода мы сначала хотим знать, <em>что он делает</em>. Если сначала идёт
+                  код,
+                  то это тут же становится понятно. И тогда, может быть, нам вообще не нужно будет читать функции,
+                  особенно если их имена хорошо подобраны.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-171.html"></iframe>

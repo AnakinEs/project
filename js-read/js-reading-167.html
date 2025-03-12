@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Длина строки">
+              <h2 id="Длина строки">Длина строки</h2>
+              <div class="section-content">
+                <p>Никто не любит читать длинные горизонтальные строки кода. Лучше всего разбивать их, например:</p>
+                <pre><code class="language-js">// обратные кавычки ` позволяют разделять строку на части
+let str = `
+  Рабочая группа TC39 организации Ecma International -
+  это группа JavaScript-разработчиков, теоретиков и авторов движков JavaScript,
+  которые вместе с сообществом занимаются поддержкой и развитием языка JavaScript.
+`;</code></pre>
+                <p>Или для if:</p>
+                <pre><code class="language-js">if (
+  id === 123 &amp;&amp;
+  moonPhase === 'Waning Gibbous' &amp;&amp;
+  zodiacSign === 'Libra'
+) {
+  letTheSorceryBegin();
+}</code></pre>
+                <p>Максимальную длину строки согласовывают в команде. Обычно это <code>80</code> или <code>120</code>
+                  символов.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-167.html"></iframe>

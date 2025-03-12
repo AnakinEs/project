@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Автоматизированные средства проверки (линтеры)">
+              <h2 id="Автоматизированные средства проверки (линтеры)">Автоматизированные средства проверки (линтеры)
+              </h2>
+              <div class="section-content">
+                <p>Автоматизированные средства проверки, так называемые «линтеры» – это инструменты, которые могут
+                  автоматически проверять стиль вашего кода и вносить предложения по его улучшению.</p>
+                <p>Самое замечательное в них то, что проверка стиля может также найти программные ошибки, такие как
+                  опечатки в именах переменных или функций. Из-за этой особенности использовать линтер рекомендуется,
+                  даже
+                  если вы не хотите придерживаться какого-то конкретного «стиля кода».</p>
+                <p>Вот некоторые известные инструменты для проверки:</p>
+                <ul>
+                  <li><a href="https://www.jslint.com/">JSLint</a> – проверяет код на соответствие <a
+                      href="https://www.jslint.com/index.html">стилю JSLint</a>, в онлайн-интерфейсе вверху можно ввести
+                    код, а внизу – различные настройки проверки, чтобы попробовать её в действии.</li>
+                  <li><a href="https://jshint.com/">JSHint</a> – больше проверок, чем в JSLint.</li>
+                  <li><a href="https://eslint.org/">ESLint</a> – пожалуй, самый современный линтер.</li>
+                </ul>
+                <p>Все они, в общем-то, работают. Автор пользуется <a href="https://eslint.org/">ESLint</a>.</p>
+                <p>Большинство линтеров интегрированы со многими популярными редакторами: просто включите плагин в
+                  редакторе и настройте стиль.</p>
+                <p>Например, для ESLint вы должны выполнить следующее:</p>
+                <ol>
+                  <li>Установите <a href="https://nodejs.org/en/">Node.JS</a>.</li>
+                  <li>Установите ESLint с помощью команды <code>npm install -g eslint</code> (npm – установщик пакетов
+                    JavaScript).</li>
+                  <li>Создайте файл конфигурации с именем <code>.eslintrc</code> в корне вашего JavaScript-проекта (в
+                    папке, содержащей все ваши файлы).</li>
+                  <li>Установите/включите плагин для вашего редактора, который интегрируется с ESLint. У большинства
+                    редакторов он есть.</li>
+                </ol>
+                <p>Вот пример файла <code>.eslintrc</code>:</p>
+                <pre><code class="language-js">{
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "no-console": 0,
+    "indent": ["warning", 2]
+  }
+}</code></pre>
+                <p>Здесь директива <code>"extends"</code> означает, что конфигурация основана на наборе настроек
+                  «eslint:recommended». После этого мы уточняем наши собственные.</p>
+                <p>Кроме того, возможно загрузить наборы правил стиля из сети и расширить их. Смотрите <a
+                    href="https://eslint.org/docs/latest/user-guide/getting-started">https://eslint.org/docs/user-guide/getting-started</a>
+                  для получения более подробной информации об установке.</p>
+                <p>Также некоторые среды разработки имеют встроенные линтеры, возможно, удобные, но не такие гибкие в
+                  настройке, как ESLint.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-173.html"></iframe>

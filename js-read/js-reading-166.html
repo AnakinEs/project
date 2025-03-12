@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Фигурные скобки">
+              <h2 id="Фигурные скобки">Фигурные скобки</h2>
+              <div class="section-content">
+                <p>В большинстве JavaScript проектов фигурные скобки пишутся в так называемом «египетском» стиле с
+                  открывающей скобкой на той же строке, что и соответствующее ключевое слово – не на новой строке. Перед
+                  открывающей скобкой должен быть пробел, как здесь:</p>
+                <pre><code class="language-js">if (condition) {
+  // делай это
+  // ...и это
+  // ...и потом это
+}</code></pre>
+                <p>А что если у нас однострочная запись, типа <code>if (condition) doSomething()</code>, должны ли мы
+                  использовать фигурные скобки?</p>
+                <p>Вот различные варианты расстановки скобок с комментариями, посмотрите сами, какой вам кажется самым
+                  читаемым:</p>
+                <ol>
+                  <li>😠 Такое иногда бывает в коде начинающих. Плохо, фигурные скобки не нужны:</li>
+                  <pre><code class="language-js">if (n &lt; 0) {alert(`Степень ${n} не поддерживается`);}</code></pre>
+                  <li>😠 Никогда не разделяйте строки без фигурных скобок, можно ненароком сделать ошибку при добавлении
+                    строк:</li>
+                  <pre><code class="language-js">if (n &lt; 0)
+  alert(`Степень ${n} не поддерживается`);</code></pre>
+                  <li>😏 В одну строку без скобок – приемлемо, если эта строка короткая:</li>
+                  <pre><code class="language-js">if (n &lt; 0) alert(`Степень ${n} не поддерживается`);</code></pre>
+                  <li>😃 Самый лучший вариант:</li>
+                  <pre><code class="language-js">if (n &lt; 0) {
+  alert(`Степень ${n} не поддерживается`);
+}</code></pre>
+                </ol>
+                <p>Для очень короткого кода допустима одна строка. Например: <code>if (cond) return null</code>. Но блок
+                  кода (последний вариант) обычно всё равно читается лучше.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-166.html"></iframe>

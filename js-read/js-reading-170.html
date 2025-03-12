@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Уровни вложенности">
+              <h2 id="Уровни вложенности">Уровни вложенности</h2>
+              <div class="section-content">
+                <p>Уровней вложенности должно быть немного.</p>
+                <p>Например, в цикле бывает полезно использовать директиву <code>continue</code>, чтобы избежать лишней
+                  вложенности.</p>
+                <p>Например, вместо добавления вложенного условия <code>if</code>, как здесь:</p>
+                <pre><code class="language-js">for (let i = 0; i &lt; 10; i++) {
+  if (cond) {
+    ... // &lt;- ещё один уровень вложенности
+  }
+}</code></pre>
+                <p>Мы можем написать:</p>
+                <pre><code class="language-js">for (let i = 0; i &lt; 10; i++) {
+  if (!cond) continue;
+  ...  // &lt;- нет лишнего уровня вложенности
+}</code></pre>
+                <p>Аналогичная ситуация – с <code>if/else</code> и <code>return</code>.</p>
+                <p>Например, две нижеследующие конструкции идентичны.</p>
+                <p>Первая:</p>
+                <pre><code class="language-js">function pow(x, n) {
+  if (n &lt; 0) {
+    alert("Отрицательные значения 'n' не поддерживаются");
+  } else {
+    let result = 1;
+
+    for (let i = 0; i &lt; n; i++) {
+      result *= x;
+    }
+
+    return result;
+  }
+}</code></pre>
+                <p>Вторая:</p>
+                <pre><code class="language-js">function pow(x, n) {
+  if (n &lt; 0) {
+    alert("Отрицательные значения 'n' не поддерживаются");
+    return;
+  }
+
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}</code></pre>
+                <p>Второй вариант является более читабельным, потому что «особый случай» <code>n &lt; 0</code>
+                  обрабатывается на ранней стадии. После проверки можно переходить к «основному» потоку кода без
+                  необходимости увеличения вложенности.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-170.html"></iframe>

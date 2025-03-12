@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Плохой стиль">
+                <h3 id="Плохой стиль">Плохой стиль</h3>
+                <div class="section-content">
+                  <p>Какие недостатки вы видите в стиле написания кода этого примера?</p>
+                  <pre><code class="language-js">function pow(x,n)
+{
+  let result=1;
+  for(let i=0;i&lt;n;i++) {result*=x;}
+  return result;
+}
+
+let x=prompt("x?",''), n=prompt("n?",'')
+if (n&lt;=0)
+{
+  alert(`Степень ${n} не поддерживается, введите целую степень, большую 0`);
+}
+else
+{
+  alert(pow(x,n))
+}</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Вы могли заметить следующие недостатки, сверху вниз:</p>
+                      <pre><code class="language-js">function pow(x,n)  // &lt;- отсутствует пробел между аргументами
+{  // &lt;- фигурная скобка на отдельной строке
+  let result=1;   // &lt;- нет пробелов вокруг знака =
+  for(let i=0;i&lt;n;i++) {result*=x;}   // &lt;- нет пробелов
+  // содержимое скобок { ... } лучше вынести на отдельную строку
+  return result;
+}
+
+let x=prompt("x?",''), n=prompt("n?",'') // &lt;-- технически допустимо,
+// но лучше написать в 2 строки, также нет пробелов и точки с запятой
+if (n&lt;0)  // &lt;- нет пробелов, стоит добавить отступ в одну строку сверху
+{   // &lt;- фигурная скобка на отдельной строке
+  // ниже - слишком длинная строка, лучше разбить для улучшения читаемости
+  alert(`Степень ${n} не поддерживается, введите целую степень, большую 0`);
+}
+else // &lt;- можно на одной строке, вместе: "} else {"
+{
+  alert(pow(x,n))  // вложенный вызов функции, нет пробелов и точки с запятой
+}</code></pre>
+                      <p>Исправленный вариант:</p>
+                      <pre><code class="language-js">function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt("x?", "");
+let n = prompt("n?", "");
+
+if (n &lt; 0) {
+  alert(`Степень ${n} не поддерживается,
+    введите целую степень, большую 0`);
+} else {
+  alert( pow(x, n) );
+}</code></pre>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+</body>
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-175.html"></iframe>
