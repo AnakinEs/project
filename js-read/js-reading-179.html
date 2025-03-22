@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Рецепт: создавайте функции">
+              <h2 id="Рецепт: создавайте функции">Рецепт: создавайте функции</h2>
+              <div class="section-content">
+                <p>И если мы имеем такой длинный кусок кода:</p>
+                <pre><code class="language-js">// здесь мы добавляем виски
+for(let i = 0; i &lt; 10; i++) {
+  let drop = getWhiskey();
+  smell(drop);
+  add(drop, glass);
+}
+
+// здесь мы добавляем сок
+for(let t = 0; t &lt; 3; t++) {
+  let tomato = getTomato();
+  examine(tomato);
+  let juice = press(tomato);
+  add(juice, glass);
+}
+
+// ...</code></pre>
+                <p>То будет лучше отрефакторить его с использованием функций:</p>
+                <pre><code class="language-js">addWhiskey(glass);
+addJuice(glass);
+
+function addWhiskey(container) {
+  for(let i = 0; i &lt; 10; i++) {
+    let drop = getWhiskey();
+    //...
+  }
+}
+
+function addJuice(container) {
+  for(let t = 0; t &lt; 3; t++) {
+    let tomato = getTomato();
+    //...
+  }
+}</code></pre>
+                <p>Здесь комментарии тоже не нужны: функции сами говорят, что делают (если вы понимаете английский
+                  язык).
+                  И ещё, структура кода лучше, когда он разделён на части. Понятно, что делает каждая функция, что она
+                  принимает и что возвращает.</p>
+                <p>В реальности мы не можем полностью избежать «объясняющих» комментариев. Существуют сложные алгоритмы.
+                  И
+                  есть хитрые уловки для оптимизации. Но в целом мы должны стараться писать простой и
+                  самодокументированный код.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
