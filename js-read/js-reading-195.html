@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Мощные функции!">
+              <h2 id="Мощные функции!">Мощные функции!</h2>
+              <div class="section-content">
+                <blockquote class="quote">
+                  <p>Дао везде и во всём,<br> и справа, и слева.</p>
+                  <cite class="quote__author">Лао-цзы</cite>
+                </blockquote>
+                <p>Не ограничивайте действия функции тем, что написано в её названии. Будьте шире.</p>
+                <p>Например, функция <code>validateEmail(email)</code> может, кроме проверки e-mail на правильность,
+                  выводить сообщение об ошибке и просить заново ввести e-mail.</p>
+                <p>Выберите хотя бы пару дополнительных действий, кроме основного назначения функции. Главное – они
+                  должны
+                  быть неочевидны из названия функции. Истинный ниндзя-разработчик сделает так, что они будут неочевидны
+                  и
+                  из кода тоже.</p>
+                <p><strong>Объединение нескольких смежных действий в одну функцию защитит ваш код от повторного
+                    использования.</strong></p>
+                <p>Представьте, что другому разработчику нужно только проверить адрес, а сообщение – не выводить. Ваша
+                  функция <code>validateEmail(email)</code>, которая делает и то и другое, ему не подойдёт. И он не
+                  прервёт вашу медитацию вопросами о ней.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

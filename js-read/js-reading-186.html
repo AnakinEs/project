@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Будьте абстрактны при выборе имени.">
+              <h2 id="Будьте абстрактны при выборе имени.">Будьте абстрактны при выборе имени.</h2>
+              <div class="section-content">
+                <blockquote class="quote">
+                  <p>Лучший кувшин лепят всю жизнь,<br> Высокая музыка неподвластна слуху,<br> Великий образ не имеет
+                    формы.</p>
+                  <cite class="quote__author">Лао-цзы</cite>
+                </blockquote>
+                <p>При выборе имени старайтесь применить максимально абстрактное слово, например <code>obj</code>,
+                  <code>data</code>, <code>value</code>, <code>item</code>, <code>elem</code> и т.п.
+                </p>
+                <ul>
+                  <li>
+                    <p><strong>Идеальное имя для переменной: <code>data</code></strong>. Используйте это имя везде, где
+                      можно. В конце концов, каждая переменная содержит <em>данные</em>, не правда ли?</p>
+                    <p>…Но что делать, если имя <code>data</code> уже занято? Попробуйте <code>value</code>, оно не
+                      менее
+                      универсально. Ведь каждая переменная содержит <em>значение</em>.</p>
+                  </li>
+                  <li>
+                    <p><strong>Называйте переменную по типу данных, которые она хранит: <code>str</code>,
+                        <code>num</code>…</strong></p>
+                    <p>Попробуйте! Сделают ли такие имена интереснее разработку? Как ни странно, да и намного!</p>
+                    <p>Казалось бы, название переменной содержит информацию, говорит о том, что в переменной – число,
+                      объект или массив… С другой стороны, <strong>когда непосвящённый будет разбирать этот код – он с
+                        удивлением обнаружит, что информации нет!</strong></p>
+                    <p>Ведь как раз тип легко понять, запустив отладчик и посмотрев, что внутри. Но в чём смысл этой
+                      переменной? Что за массив/объект/число в ней хранится? Без долгой медитации над кодом тут не
+                      обойтись!</p>
+                  </li>
+                  <li>
+                    <p><strong>…Но что делать, если и эти имена закончились?</strong> Просто добавьте цифру:
+                      <code>data1</code>, <code>item2</code>, <code>elem5</code>…
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

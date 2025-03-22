@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Хитрые синонимы">
+              <h2 id="Хитрые синонимы">Хитрые синонимы</h2>
+              <div class="section-content">
+                <blockquote class="quote">
+                  <p>Очень трудно найти чёрную кошку в тёмной комнате, особенно, когда её там нет.</p>
+                  <cite class="quote__author">Конфуций</cite>
+                </blockquote>
+                <p><strong>Чтобы было не скучно – используйте похожие названия для обозначения одинаковых
+                    действий.</strong></p>
+                <p>Например, если метод показывает что-то на экране – начните его название с <code>display..</code>
+                  (скажем, <code>displayElement</code>), а в другом месте объявите аналогичный метод как
+                  <code>show..</code> (<code>showFrame</code>).
+                </p>
+                <p><strong>Как бы намекните этим, что существует тонкое различие между способами показа в этих методах,
+                    хотя на самом деле его нет.</strong></p>
+                <p>По возможности, договоритесь с членами своей команды. Если Вася в своих классах использует
+                  <code>display..</code>, то Валера – обязательно <code>render..</code>, а Петя – <code>paint..</code>.
+                </p>
+                <p>…И напротив, если есть две функции с важными отличиями – используйте одно и то же слово для их
+                  описания! Например, с <code>print..</code>. можно начать метод печати на принтере
+                  <code>printPage</code>, а также – метод добавления текста на страницу <code>printText</code>.
+                </p>
+                <p>А теперь пусть читающий код думает: «Куда же выводит сообщение printMessage?». Особый шик – добавить
+                  элемент неожиданности. Пусть <code>printMessage</code> выводит не туда, куда все, а в новое окно!</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

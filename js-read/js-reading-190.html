@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Повторно используйте имена">
+              <h2 id="Повторно используйте имена">Повторно используйте имена</h2>
+              <div class="section-content">
+                <blockquote class="quote">
+                  <p>Когда целое разделено, его частям<br> нужны имена.<br> Уже достаточно имён.<br> Нужно знать, когда
+                    остановиться.</p>
+                  <cite class="quote__author">Лао-цзы</cite>
+                </blockquote>
+                <p>По возможности, повторно используйте имена переменных, функций и свойств. Просто записывайте в них
+                  новые значения.</p>
+                <p>Добавляйте новое имя, только если это абсолютно необходимо. В функции старайтесь обойтись только теми
+                  переменными, которые были переданы как параметры.</p>
+                <p>Это не только затруднит идентификацию того, что сейчас находится в переменной, но и сделает почти
+                  невозможным поиск места, в котором конкретное значение было присвоено.</p>
+                <p>Цель – развить интуицию и память читающего код программиста. Ну, а пока интуиция слаба, он может
+                  построчно анализировать код и конспектировать изменения переменных для каждой ветки исполнения.</p>
+                <p><strong>Продвинутый вариант этого подхода – незаметно (!) подменить переменную на нечто похожее,
+                    например:</strong></p>
+                <pre><code class="language-js">function ninjaFunction(elem) {
+  // 20 строк кода, работающего с elem
+
+  elem = clone(elem);
+
+  // ещё 20 строк кода, работающего с elem!
+}</code></pre>
+                <p>Программист, пожелавший добавить действия с <code>elem</code> во вторую часть функции, будет удивлён.
+                  Лишь во время отладки, посмотрев весь код, он с удивлением обнаружит, что, оказывается, имел дело с
+                  клоном!</p>
+                <p>Регулярные встречи с этим приёмом на практике говорят: защититься невозможно. Эффективно даже против
+                  опытного ниндзи.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

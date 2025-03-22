@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Внимание… Сюр-при-из!">
+              <h2 id="Внимание… Сюр-при-из!">Внимание… Сюр-при-из!</h2>
+              <div class="section-content">
+                <p>Есть функции, название которых говорит о том, что они ничего не меняют. Например,
+                  <code>isReady()</code>, <code>checkPermission()</code>, <code>findTags()</code>… Предполагается, что
+                  при
+                  вызове они произведут некие вычисления или найдут и возвратят полезные данные, но при этом их не
+                  изменят. В трактатах это называется «отсутствие сторонних эффектов».
+                </p>
+                <p><strong>По-настоящему красивый приём – делать в таких функциях что-нибудь полезное, заодно с
+                    процессом
+                    проверки. Что именно – совершенно неважно.</strong></p>
+                <p>Удивление и ошеломление, которое возникнет у вашего коллеги, когда он увидит, что функция с названием
+                  на <code>is..</code>, <code>check..</code> или <code>find..</code>. что-то меняет – несомненно,
+                  расширит
+                  его границы разумного!</p>
+                <p><strong>Ещё одна вариация такого подхода – возвращать нестандартное значение.</strong></p>
+                <p>Ведь общеизвестно, что is… и check… обычно возвращают true/false. Продемонстрируйте оригинальное
+                  мышление. Пусть вызов <code>checkPermission</code> возвращает не результат <code>true/false</code>, а
+                  объект с результатами проверки! А что, полезно.</p>
+                <p>Те же разработчики, кто попытается написать проверку <code>if (checkPermission(..))</code>, будут
+                  весьма удивлены результатом. Ответьте им: «Надо читать документацию!». И перешлите эту статью.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
