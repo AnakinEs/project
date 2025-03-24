@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Спецификация в действии">
+              <h2 id="Спецификация в действии"><span id="hint24" ; class="hint"
+                  data-tooltip="Че то вообще сложно и не понятно.">Спецификация в действии</span></h2>
+              <div class="section-content">
+                <p>В этой главе мы будем пользоваться следующими JavaScript-библиотеками для тестов:</p>
+                <ul>
+                  <li><a href="https://mochajs.org/">Mocha</a> – основной фреймворк. Он предоставляет общие функции
+                    тестирования, такие как <code>describe</code> и <code>it</code>, а также функцию запуска тестов.
+                  </li>
+                  <li><a href="https://www.chaijs.com/">Chai</a> – библиотека, предоставляющая множество функций
+                    проверки
+                    утверждений. Пока мы будем использовать только <code>assert.equal</code>.</li>
+                  <li><a href="https://sinonjs.org/">Sinon</a> – библиотека, позволяющая наблюдать за функциями,
+                    эмулировать встроенные функции и многое другое. Нам она пригодится позднее.</li>
+                </ul>
+                <p>Эти библиотеки подходят как для тестирования внутри браузера, так и на стороне сервера. Мы рассмотрим
+                  вариант с браузером.</p>
+                <p>Полная HTML-страница с этими библиотеками и спецификацией функции <code>pow</code>:</p>
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;!-- добавим стили mocha для отображения результатов --&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"&gt;
+  &lt;!-- добавляем сам фреймворк mocha --&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // включаем режим тестирования в стиле BDD
+    mocha.setup('bdd');
+  &lt;/script&gt;
+  &lt;!-- добавим chai --&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // chai предоставляет большое количество функций. Объявим assert глобально
+    let assert = chai.assert;
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;script&gt;
+    function pow(x, n) {
+      /* Здесь будет реализация функции, пока пусто */
+    }
+  &lt;/script&gt;
+
+  &lt;!-- скрипт со спецификацией (describe, it...) --&gt;
+  &lt;script src="test.js"&gt;&lt;/script&gt;
+
+  &lt;!-- элемент с id="mocha" будет содержать результаты тестов --&gt;
+  &lt;div id="mocha"&gt;&lt;/div&gt;
+
+  &lt;!-- запускаем тесты! --&gt;
+  &lt;script&gt;
+    mocha.run();
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+                <p>Условно страницу можно разделить на пять частей:</p>
+                <ol>
+                  <li>Тег <code>&lt;head&gt;</code> содержит сторонние библиотеки и стили для тестов.</li>
+                  <li>Тег <code>&lt;script&gt;</code> содержит тестируемую функцию, в нашем случае – <code>pow</code>.
+                  </li>
+                  <li>Тесты – в нашем случае внешний скрипт <code>test.js</code>, который содержит спецификацию
+                    <code>describe("pow", ...)</code>, представленную выше.
+                  </li>
+                  <li>HTML-элемент <code>&lt;div id=&quot;mocha&quot;&gt;</code> будет использован фреймворком Mocha для
+                    вывода результатов тестирования.</li>
+                  <li>Запуск тестов производится командой <code>mocha.run()</code>.</li>
+                </ol>
+                <p>Результаты:</p>
+                <iframe style="height:19rem" src="getting-started/started161.html"></iframe>
+                <p>Пока что тест завершается ошибкой. Это логично, потому что у нас пустая функция <code>pow</code>, так
+                  что <code>pow(2,3)</code> возвращает <code>undefined</code> вместо <code>8</code>.</p>
+                <p>На будущее отметим, что существуют более высокоуровневые фреймворки для тестирования, такие как <a
+                    href="https://karma-runner.github.io/latest/index.html">karma</a> и другие. С их помощью легко
+                  сделать
+                  автозапуск множества тестов.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

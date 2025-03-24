@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Улучшаем спецификацию">
+              <h2 id="Улучшаем спецификацию">Улучшаем спецификацию</h2>
+              <div class="section-content">
+                <p>Конечно, мы сжульничали. Функция не работает. Попытка посчитать <code>pow(3, 3)</code> даст
+                  некорректный результат, однако тесты проходят.</p>
+                <p>…Такая ситуация вполне типична, она случается на практике. Тесты проходят, но функция работает
+                  неправильно. Наша спецификация не идеальна. Нужно дополнить её тестами.</p>
+                <p>Давайте добавим ещё один тест, чтобы посмотреть, что <code>pow(3, 3) = 27</code>.</p>
+                <p>У нас есть два пути организации тестов:</p>
+                <ol>
+                  <li>
+                    <p>Первый – добавить ещё один <code>assert</code> в существующий <code>it</code>:</p>
+                    <pre><code class="language-js">describe("pow", function() {
+
+  it("возводит число в степень n", function() {
+    assert.equal(pow(2, 3), 8);
+    assert.equal(pow(3, 3), 27);
+  });
+
+});</code></pre>
+                  </li>
+                  <li>
+                    <p>Второй – написать два теста:</p>
+                    <pre><code class="language-js">describe("pow", function() {
+
+  it("2 в степени 3 будет 8", function() {
+    assert.equal(pow(2, 3), 8);
+  });
+
+  it("3 в степени 3 будет 27", function() {
+    assert.equal(pow(3, 3), 27);
+  });
+
+});</code></pre>
+                  </li>
+                </ol>
+                <p>Принципиальная разница в том, что когда один из <code>assert</code> выбрасывает ошибку, то выполнение
+                  <code>it</code> блока тут же прекращается. Таким образом, если первый <code>assert</code> выбросит
+                  ошибку, результат работы второго <code>assert</code> мы уже не узнаем.
+                </p>
+                <p>Разделять тесты предпочтительнее, так как мы получаем больше информации о том, что конкретно пошло не
+                  так.</p>
+                <p>Помимо этого есть одно хорошее правило, которому стоит следовать.</p>
+                <p><strong>Один тест проверяет одну вещь.</strong></p>
+                <p>Если вы посмотрите на тест и увидите в нём две независимые проверки, то такой тест лучше разделить на
+                  два более простых.</p>
+                <p>Давайте продолжим со вторым вариантом.</p>
+                <p>Результаты:</p>
+                <iframe style="height:20rem" src="getting-started/started163.html"></iframe>
+                <p>Как мы и ожидали, второй тест провалился. Естественно, наша функция всегда возвращает <code>8</code>,
+                  в
+                  то время как <code>assert</code> ожидает <code>27</code>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

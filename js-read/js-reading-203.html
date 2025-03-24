@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Улучшаем реализацию">
+              <h2 id="Улучшаем реализацию">Улучшаем реализацию</h2>
+              <div class="section-content">
+                <p>Давайте напишем что-то более похожее на функцию возведения в степень, чтобы заставить тесты
+                  проходить.
+                </p>
+                <pre><code class="language-js">function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}</code></pre>
+                <p>Чтобы убедиться, что эта реализация работает нормально, давайте протестируем её на большем количестве
+                  значений. Чтобы не писать вручную каждый блок <code>it</code>, мы можем генерировать их в цикле
+                  <code>for</code>:
+                </p>
+                <pre><code class="language-js">describe("pow", function() {
+
+  function makeTest(x) {
+    let expected = x * x * x;
+    it(`${x} в степени 3 будет ${expected}`, function() {
+      assert.equal(pow(x, 3), expected);
+    });
+  }
+
+  for (let x = 1; x &lt;= 5; x++) {
+    makeTest(x);
+  }
+
+});</code></pre>
+                <p>Результат:</p>
+                <iframe style="height:18rem" src="getting-started/started164.html"></iframe>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

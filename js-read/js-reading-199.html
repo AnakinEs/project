@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Процесс разработки">
+              <h2 id="Процесс разработки">Процесс разработки</h2>
+              <div class="section-content">
+                <p>Процесс разработки обычно выглядит следующим образом:</p>
+                <ol>
+                  <li>Пишется начальная спецификация с тестами, проверяющими основную функциональность.</li>
+                  <li>Создаётся начальная реализация.</li>
+                  <li>Для запуска тестов мы используем фреймворк <a href="https://mochajs.org/">Mocha</a> (подробнее о
+                    нём
+                    чуть позже). Пока функция не готова, будут ошибки. Вносим изменения до тех пор, пока всё не начнёт
+                    работать так, как нам нужно.</li>
+                  <li>Теперь у нас есть правильно работающая начальная реализация и тесты.</li>
+                  <li>Мы добавляем новые способы использования в спецификацию, возможно, ещё не реализованные в
+                    тестируемом коде. Тесты начинают «падать» (выдавать ошибки).</li>
+                  <li>Возвращаемся на шаг 3, дописываем реализацию до тех пор, пока тесты не начнут завершаться без
+                    ошибок.</li>
+                  <li>Повторяем шаги 3-6, пока требуемая функциональность не будет готова.</li>
+                </ol>
+                <p>Таким образом, разработка проходит <em>итеративно</em>. Мы пишем спецификацию, реализуем её,
+                  проверяем,
+                  что тесты выполняются без ошибок, пишем ещё тесты, снова проверяем, что они проходят и т.д.</p>
+                <p>Давайте посмотрим этот поток разработки на нашем примере.</p>
+                <p>Первый шаг уже завершён. У нас есть спецификация для функции <code>pow</code>. Теперь, перед тем, как
+                  писать реализацию, давайте подключим библиотеки для пробного запуска тестов, просто чтобы убедиться,
+                  что
+                  тесты работают (разумеется, они завершатся ошибками).</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

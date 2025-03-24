@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Вложенные блоки describe">
+              <h2 id="Вложенные блоки describe">Вложенные блоки describe</h2>
+              <div class="section-content">
+                <p>Мы собираемся добавить больше тестов. Однако, перед этим стоит сгруппировать вспомогательную функцию
+                  <code>makeTest</code> и цикл <code>for</code>. Нам не нужна функция <code>makeTest</code> в других
+                  тестах, она нужна только в цикле <code>for</code>. Её предназначение – проверить, что <code>pow</code>
+                  правильно возводит число в заданную степень.
+                </p>
+                <p>Группировка производится вложенными блоками <code>describe</code>:</p>
+                <pre><code class="language-js">describe("pow", function() {
+
+  describe("возводит x в степень 3", function() {
+
+    function makeTest(x) {
+      let expected = x * x * x;
+      it(`${x} в степени 3 будет ${expected}`, function() {
+        assert.equal(pow(x, 3), expected);
+      });
+    }
+
+    for (let x = 1; x &lt;= 5; x++) {
+      makeTest(x);
+    }
+
+  });
+
+  // ... другие тесты. Можно писать и describe, и it блоки.
+});</code></pre>
+                <p>Вложенные <code>describe</code> образуют новую подгруппу тестов. В результатах мы можем видеть
+                  дополнительные отступы в названиях.</p>
+                <iframe style="height:20rem" src="getting-started/started165.html"></iframe>
+                <p>В будущем мы можем написать новые <code>it</code> и <code>describe</code> блоки на верхнем уровне со
+                  своими собственными вспомогательными функциями. Им не будет доступна функция <code>makeTest</code> из
+                  примера выше.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type"><code>before/after</code> и <code>beforeEach/afterEach</code></div>
+                  <p>Мы можем задать <code>before/after</code> функции, которые будут выполняться до/после тестов, а
+                    также
+                    функции <code>beforeEach/afterEach</code>, выполняемые до/после каждого <code>it</code>.</p>
+                  <p>Например:</p>
+                  <pre><code class="language-js">describe("тест", function() {
+
+  before(() =&gt; alert("Тестирование началось – перед тестами"));
+  after(() =&gt; alert("Тестирование закончилось – после всех тестов"));
+
+  beforeEach(() =&gt; alert("Перед тестом – начинаем выполнять тест"));
+  afterEach(() =&gt; alert("После теста – заканчиваем выполнение теста"));
+
+  it('тест 1', () =&gt; alert(1));
+  it('тест 2', () =&gt; alert(2));
+
+});</code></pre>
+                  <p>Порядок выполнения будет таким:</p>
+                  <pre><code class="language-js">Тестирование началось – перед тестами (before)
+Перед тестом – начинаем выполнять тест (beforeEach)
+1
+После теста – заканчиваем выполнение теста (afterEach)
+Перед тестом – начинаем выполнять тест (beforeEach)
+2
+После теста – заканчиваем выполнение теста (afterEach)
+Тестирование закончилось – после всех тестов (after)</code></pre>
+                  <p><a href="Открыть пример в песочнице.">Открыть пример в песочнице.</a></p>
+                  <p>Обычно <code>beforeEach/afterEach</code> и <code>before/after</code> используются для
+                    инициализации,
+                    обнуления счётчиков или чего-нибудь ещё между тестами (или группами тестов).</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>

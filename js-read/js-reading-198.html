@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+                    <section aria-labelledby="Разработка функции возведения в степень — «pow»: спецификация">
+              <h2 id="Разработка функции возведения в степень — «pow»: спецификация">Разработка функции возведения в
+                степень — «pow»: спецификация</h2>
+              <div class="section-content">
+                <p>Допустим, мы хотим написать функцию <code>pow(x, n)</code>, которая возводит <code>x</code> в
+                  целочисленную степень <code>n</code>. Мы предполагаем, что <code>n≥0</code>.</p>
+                <p>Эта задача взята в качестве примера. В JavaScript есть оператор <code>**</code>, который служит для
+                  возведения в степень. Мы сосредоточимся на процессе разработки, который также можно применять и для
+                  более сложных задач.</p>
+                <p>Перед тем, как начать писать код функции <code>pow</code>, мы можем представить себе, что она должна
+                  делать, и описать её.</p>
+                <p>Такое описание называется <em>спецификацией</em> (specification). Она содержит описания различных
+                  способов использования и тесты для них, например:</p>
+                <pre><code class="language-js">describe("pow", function() {
+
+  it("возводит в степень n", function() {
+    assert.equal(pow(2, 3), 8);
+  });
+
+});</code></pre>
+                <p>Спецификация состоит из трёх основных блоков:</p>
+                <dl>
+                  <dt><code>describe("заголовок", function() { ... })</code></dt>
+                  <dd>Какую функциональность мы описываем. В нашем случае мы описываем функцию <code>pow</code>.
+                    Используется для группировки рабочих лошадок – блоков <code>it</code>.</dd>
+
+                  <dt><code>it("описание", function() { ... })</code></dt>
+                  <dd>В первом аргументе блока <code>it</code> мы <em>человеческим языком</em> описываем конкретный
+                    способ
+                    использования функции, а во втором – пишем функцию, которая тестирует данный случай.</dd>
+
+                  <dt><code>assert.equal(value1, value2)</code></dt>
+                  <dd>
+                    <p>Код внутри блока <code>it</code>, если функция работает верно, должен выполняться без ошибок.</p>
+                    <p>Функции вида <code>assert.*</code> используются для проверки того, что функция <code>pow</code>
+                      работает так, как мы ожидаем. В этом примере мы используем одну из них –
+                      <code>assert.equal</code>,
+                      которая сравнивает переданные значения и выбрасывает ошибку, если они не равны друг другу.
+                      Существуют и другие типы сравнений и проверок, которые мы добавим позже.
+                    </p>
+                  </dd>
+                </dl>
+                <p>Спецификация может быть запущена, и при этом будет выполнена проверка, указанная в блоке
+                  <code>it</code>, мы увидим это позднее.
+                </p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+</body>
