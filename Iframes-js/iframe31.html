@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="highlight-demo">
+
+  </div>
+  <script>
+    let demoElem = document.getElementById('highlight-demo');
+
+    // динамически вставить содержимое как фрагменты кода
+    demoElem.innerHTML = `Фрагмент кода ниже:
+  <pre class="language-javascript"><code> let hello = "world!"; </code></pre>
+  <div>Ещё один:</div>
+  <div>
+    <pre class="language-css"><code>.class { margin: 5px; } </code></pre>
+  </div>
+`;
+  </script>
+</body>
+
+</html>

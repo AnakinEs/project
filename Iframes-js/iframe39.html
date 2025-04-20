@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="p">Выдели меня: <i>курсив</i> и <b>жирный</b></p>
+
+  <script>
+    let range = new Range();
+    range.selectNodeContents(p); // или selectNode(p), чтобы выделить и тег <p>
+
+    document.getSelection().removeAllRanges(); // очистить текущее выделение, если оно существует
+    document.getSelection().addRange(range);
+  </script>
+</body>
+
+</html>

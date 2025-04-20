@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = '<h1>Hello, world!</h1>';
+    let regexp = /<(.*?)>/g;
+
+    let matchAll = str.matchAll(regexp);
+
+    alert(matchAll); // [object RegExp String Iterator], не массив, а перебираемый объект
+
+    matchAll = Array.from(matchAll); // теперь массив
+
+    let firstMatch = matchAll[0];
+    alert(firstMatch[0]);  // <h1>
+    alert(firstMatch[1]);  // h1
+    alert(firstMatch.index);  // 0
+    alert(firstMatch.input);  // <h1>Hello, world!</h1>
+  </script>
+</body>
+
+</html>

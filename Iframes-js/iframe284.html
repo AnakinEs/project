@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let regexp = /люблю/gi;
+
+    let str = "Я люблю JavaScript";
+
+    // начать поиск с 10-й позиции:
+    regexp.lastIndex = 10;
+    alert(regexp.test(str)); // false (совпадений нет)
+  </script>
+</body>
+
+</html>

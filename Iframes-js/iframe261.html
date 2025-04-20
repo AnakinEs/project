@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'let varName = "value"';
+
+    let regexp = /\w+/g; // без флага g свойство lastIndex игнорируется
+
+    regexp.lastIndex = 4;
+
+    let word = regexp.exec(str);
+    alert(word); // varName
+  </script>
+</body>
+
+</html>

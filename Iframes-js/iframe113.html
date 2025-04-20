@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    customElements.define('user-card', class extends HTMLElement {
+      connectedCallback() {
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `
+        <div>Имя:
+          <slot name="username"></slot>
+        </div>
+        <div>Дата рождения:
+          <slot name="birthday"></slot>
+        </div>
+        <fieldset>
+          <legend>Другая информация</legend>
+          <slot></slot>
+        </fieldset>
+        `;
+      }
+    });
+  </script>
+
+  <user-card>
+    <div>Я люблю плавать.</div>
+    <span slot="username">Иван Иванов</span>
+    <span slot="birthday">01.01.2001</span>
+    <div>...И играть в волейбол!</div>
+  </user-card>
+</body>
+
+</html>

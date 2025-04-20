@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="p">Выдели меня: <i>курсив</i> и <b>жирный</b></p>
+
+  От <input id="from" disabled> – До <input id="to" disabled>
+  <script>
+    document.onselectionchange = function () {
+      let { anchorNode, anchorOffset, focusNode, focusOffset } = document.getSelection();
+
+      from.value = `${anchorNode && anchorNode.data}:${anchorOffset}`;
+      to.value = `${focusNode && focusNode.data}:${focusOffset}`;
+    };
+  </script>
+</body>
+
+</html>

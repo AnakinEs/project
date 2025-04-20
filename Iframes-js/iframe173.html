@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let regexp = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
+
+    let str = `Hi 你好 12`;
+
+    // найдены все буквы и цифры
+    alert(str.match(regexp)); // H,i,你,好,1,2
+  </script>
+</body>
+
+</html>

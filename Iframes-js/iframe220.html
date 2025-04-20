@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let results = '<h1> <h2>'.matchAll(/<(.*?)>/gi);
+
+    // results - не массив, а перебираемый объект
+    alert(results); // [object RegExp String Iterator]
+
+    alert(results[0]); // undefined (*)
+
+    results = Array.from(results); // превращаем в массив
+
+    alert(results[0]); // <h1>,h1 (первый тег)
+    alert(results[1]); // <h2>,h2 (второй тег)
+  </script>
+</body>
+
+</html>

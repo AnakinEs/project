@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- download атрибут указывает браузеру делать загрузку вместо навигации -->
+  <a download="hello.txt" href='#' id="link">Загрузить</a>
+
+  <script>
+    let blob = new Blob(["Hello, world!"], { type: 'text/plain' });
+
+    link.href = URL.createObjectURL(blob);
+  </script>
+</body>
+
+</html>

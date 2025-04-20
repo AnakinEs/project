@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let results = '<h1> <h2>'.matchAll(/<(.*?)>/gi);
+
+    for (let result of results) {
+      alert(result);
+      // первый вывод: <h1>,h1
+      // второй: <h2>,h2
+    }
+  </script>
+</body>
+
+</html>

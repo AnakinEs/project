@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'Hello, world!';
+
+    let regexp = /\w+/g; // без флага g свойство lastIndex игнорируется
+    regexp.lastIndex = 5; // ищем с 5-й позиции (т.е с запятой и далее)
+
+    alert(regexp.exec(str)); // world
+  </script>
+</body>
+
+</html>

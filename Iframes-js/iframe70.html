@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    async function f() {
+      let response = await fetch('https://resources.whatwg.org/logo-fetch.svg');
+
+      let blob = await response.blob(); // скачиваем как Blob-объект
+
+      // создаём <img>
+      let img = document.createElement('img');
+      img.style = 'position:fixed;top:10px;left:10px;width:100px';
+      document.body.append(img);
+
+      // выводим на экран
+      img.src = URL.createObjectURL(blob);
+
+      setTimeout(() => { // прячем через три секунды
+        img.remove();
+        URL.revokeObjectURL(img.src);
+      }, 3000);
+    }
+
+    f();
+  </script>
+</body>
+
+</html>

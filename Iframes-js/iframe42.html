@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="input" style="width:200px" value="Select here and click the button">
+<button id="button">Обернуть выделение звёздочками  *...*</button>
+
+<script>
+button.onclick = () => {
+  if (input.selectionStart == input.selectionEnd) {
+    return; // ничего не выделено
+  }
+
+  let selected = input.value.slice(input.selectionStart, input.selectionEnd);
+  input.setRangeText(`*${selected}*`);
+};
+</script>
+</body>
+</html>

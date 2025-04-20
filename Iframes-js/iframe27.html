@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let script = document.createElement('script');
+
+    // мы можем загрузить любой скрипт с любого домена
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"
+    document.head.append(script);
+
+    script.onload = function () {
+      // в скрипте создаётся вспомогательная переменная с именем "_"
+      alert(_.VERSION); // отображает версию библиотеки
+    };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'let varName';
+
+    let regexp = /\w+/g;
+    alert(regexp.lastIndex); // 0 (при создании lastIndex=0)
+
+    let word1 = regexp.exec(str);
+    alert(word1[0]); // let (первое слово)
+    alert(regexp.lastIndex); // 3 (позиция за первым совпадением)
+
+    let word2 = regexp.exec(str);
+    alert(word2[0]); // varName (второе слово)
+    alert(regexp.lastIndex); // 11 (позиция за вторым совпадением)
+
+    let word3 = regexp.exec(str);
+    alert(word3); // null (больше совпадений нет)
+    alert(regexp.lastIndex); // 0 (сбрасывается по окончании поиска)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let regexp = /^(\w+\s?)*$/;
+    let str = "An input string that takes a long time or even makes this regexp to hang!";
+
+    // этот поиск будет выполняться очень, очень долго
+    alert(regexp.test(str));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let regStr = "\\d\\.\\d";
+    alert(regStr); // \d\.\d (теперь правильно)
+
+    let regexp = new RegExp(regStr);
+
+    alert("Глава 5.1".match(regexp)); // 5.1
+  </script>
+</body>
+
+</html>

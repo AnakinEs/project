@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <user-card id="userCard">
+    <span slot="username">John Smith</span>
+  </user-card>
+
+  <script>
+    customElements.define('user-card', class extends HTMLElement {
+      connectedCallback() {
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `<div>
+        <b>Имя:</b> <slot name="username"></slot>
+      </div>`;
+
+        this.shadowRoot.firstElementChild.onclick =
+          e => alert("Внутренний целевой элемент: " + e.target.tagName);
+      }
+    });
+
+    userCard.onclick = e => alert(`Внешний целевой элемент: ${e.target.tagName}`);
+  </script>
+</body>
+
+</html>

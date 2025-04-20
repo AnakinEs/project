@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let regexp = /^(\d+)*$/;
+
+    let str = "012345678901234567890123456789!";
+
+    // этот поиск будет выполняться очень, очень долго
+    alert(regexp.test(str));
+  </script>
+</body>
+
+</html>

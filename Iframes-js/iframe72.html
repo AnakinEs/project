@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let user = {
+      name: 'John',
+      surname: 'Smith'
+    };
+
+    async function f() {
+      let response = await fetch('/article/fetch/post/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(user)
+      });
+
+      let result = await response.json();
+      alert(result.message);
+    }
+    f();
+  </script>
+</body>
+
+</html>

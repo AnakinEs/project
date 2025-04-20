@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = "Любо, братцы, любо!";
+
+    let result = str.match(/любо/i); // без флага g
+
+    alert(result[0]);     // Любо (первое совпадение)
+    alert(result.length); // 1
+
+    // Дополнительная информация:
+    alert(result.index);  // 0 (позиция совпадения)
+    alert(result.input);  // Любо, братцы, любо! (исходная строка)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript часть 1</title>
+    <link rel="stylesheet" href="../css/project-test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet">
+    <script src="../js/prism.js"></script>
+    <script src="../js/project.js"></script>
+  </head>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru">
+        <article aria-labelledby="">
+          <p><span class="hint" data-tooltip="Нету примеров">Мы можем получить срез Blob</span>, используя:</p>
+            <pre><code class="language-js">blob.slice([byteStart], [byteEnd], [contentType]);</code></pre>
+            <ul>
+              <li><strong><code>byteStart</code></strong> – стартовая позиция байта, по умолчанию 0.</li>
+              <li><strong><code>byteEnd</code></strong> – последний байт, по умолчанию до конца.</li>
+              <li><strong><code>contentType</code></strong> – тип <code>type</code> создаваемого Blob-объекта, по умолчанию такой же, как и исходный.</li>
+            </ul>
+            <p>Аргументы – как в <code>array.slice</code>, отрицательные числа также разрешены.</p>
+        </article>
+      </article>
+    </main>
+  </div>
+</body>
+
+</html>

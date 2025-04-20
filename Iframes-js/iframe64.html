@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="file" onchange="showFile(this)">
+
+  <script>
+    function showFile(input) {
+      let file = input.files[0];
+
+      alert(`File name: ${file.name}`); // например, my.png
+      alert(`Last modified: ${file.lastModified}`); // например, 1552830408824
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let img = document.createElement('img');
+    img.src = "https://js.cx/clipart/train.gif"; // (*)
+
+    img.onload = function () {
+      alert(`Изображение загружено, размеры ${img.width}x${img.height}`);
+    };
+
+    img.onerror = function () {
+      alert("Ошибка во время загрузки изображения");
+    };
+  </script>
+</body>
+
+</html>

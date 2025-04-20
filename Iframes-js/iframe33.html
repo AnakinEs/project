@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="p">Example: <i>italic</i> and <b>bold</b></p>
+
+  <script>
+    let range = new Range();
+
+    range.setStart(p, 0);
+    range.setEnd(p, 2);
+
+    // toString, вызванный у экземпляра Range, возвращает его содержимое в виде текста (без тегов)
+    alert(range); // Example: italic
+
+    // применим этот диапазон к выделению документа (объясняется далее)
+    document.getSelection().addRange(range);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    async function f(params) {
+      try {
+        await fetch('http://example.com');
+      } catch (err) {
+        alert(err); // Failed to fetch
+      }
+    }
+    f();
+  </script>
+</body>
+
+</html>

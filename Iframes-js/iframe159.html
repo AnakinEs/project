@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    alert("Hello, Java!".match(/\bHello\b/)); // Hello
+    alert("Hello, Java!".match(/\bJava\b/));  // Java
+    alert("Hello, Java!".match(/\bHell\b/));  // null (нет совпадения)
+    alert("Hello, Java!".match(/\bJava!\b/)); // null (нет совпадения)
+  </script>
+</body>
+
+</html>

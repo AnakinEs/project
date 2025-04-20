@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let regexp = /\p{sc=Han}/gu; // вернёт китайские иероглифы
+
+    let str = `Hello Привет 你好 123_456`;
+
+    alert(str.match(regexp)); // 你,好
+  </script>
+</body>
+
+</html>

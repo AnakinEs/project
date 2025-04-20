@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let match = 'ac'.match(/a(z)?(c)?/)
+
+    alert(match.length); // 3
+    alert(match[0]); // ac (всё совпадение)
+    alert(match[1]); // undefined, потому что для (z)? ничего нет
+    alert(match[2]); // c
+  </script>
+</body>
+
+</html>

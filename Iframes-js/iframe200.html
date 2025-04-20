@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // цвет
+    alert("#123456".match(/#[a-f0-9]{6}\b/gi)); // #123456
+
+    // не цвет
+    alert("#12345678".match(/#[a-f0-9]{6}\b/gi)); // null
+  </script>
+</body>
+
+</html>

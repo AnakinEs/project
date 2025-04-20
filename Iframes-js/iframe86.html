@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let music = encodeURIComponent('Rock&Roll');
+
+    let url = `https://google.com/search?q=${music}`;
+    alert(url); // https://google.com/search?q=Rock%26Roll
+  </script>
+</body>
+
+</html>

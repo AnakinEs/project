@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  .div:before {
+    color: #d07a00;
+    content: ">";
+    margin-right: 8px;
+    font-size: 1.1rem;
+    font-family: "Consolas";
+  }
+  </style>
+</head>
+
+
+
+<body>
+  <div class="div">["1", "2", "3"]</div>
+  <script>
+    let str = `1е место: Винни
+2е место: Пятачок
+3е место: Слонопотам`;
+
+    console.log(str.match(/^\d/gm)); // 1, 2, 3
+
+  </script>
+</body>
+
+</html>

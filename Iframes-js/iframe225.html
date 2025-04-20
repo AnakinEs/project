@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = "John Bull";
+    let regexp = /(\w+) (\w+)/;
+
+    alert(str.replace(regexp, '$2, $1')); // Bull, John
+  </script>
+</body>
+
+</html>

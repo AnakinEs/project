@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = "I love JavaScript";
+
+    let result = str.match(/Java(Script)/);
+
+    alert(result[0]);     // JavaScript (всё совпадение)
+    alert(result[1]);     // Script (первые скобки)
+    alert(result.length); // 2
+
+    // Дополнительная информация:
+    alert(result.index);  // 7 (позиция совпадения)
+    alert(result.input);  // I love JavaScript (исходная строка)
+  </script>
+</body>
+
+</html>

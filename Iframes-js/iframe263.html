@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'let varName = "value"';
+
+    let regexp = /\w+/y;
+
+    regexp.lastIndex = 3;
+    alert(regexp.exec(str)); // null (на позиции 3 пробел, а не слово)
+
+    regexp.lastIndex = 4;
+    alert(regexp.exec(str)); // varName (слово на позиции 4)
+  </script>
+</body>
+
+</html>

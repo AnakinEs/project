@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Кликните первый пункт в списке и нажмите Tab. Продолжайте следить за порядком. Обратите внимание, что много последовательных нажатий Tab могут вывести фокус из iframe с примером.
+<ul>
+  <li tabindex="1">Один</li>
+  <li tabindex="0">Ноль</li>
+  <li tabindex="2">Два</li>
+  <li tabindex="-1">Минус один</li>
+</ul>
+
+<style>
+  li { cursor: pointer; }
+  :focus { outline: 1px dashed green; }
+</style>
+</body>
+</html>

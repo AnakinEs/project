@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'Больше о JavaScript на https://javascript.info';
+    let regexp = /javascript/ig;
+
+    let result;
+
+    while (result = regexp.exec(str)) {
+      alert(`Найдено ${result[0]} на позиции ${result.index}`);
+      // Найдено JavaScript на позиции 9, затем
+      // Найдено javascript на позиции 31
+    }
+  </script>
+</body>
+
+</html>

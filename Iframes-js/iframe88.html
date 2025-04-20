@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // допустимый URL-адрес IPv6
+    let url = 'http://[2607:f8b0:4005:802::1007]/';
+
+    alert(encodeURI(url)); // http://%5B2607:f8b0:4005:802::1007%5D/
+    alert(new URL(url)); // http://[2607:f8b0:4005:802::1007]/
+  </script>
+</body>
+
+</html>

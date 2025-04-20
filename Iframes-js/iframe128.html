@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    try {
+      let matches = "JavaScript".match(/HTML/); // = null
+
+      if (!matches.length) { // Ошибка: у null нет свойства length
+        alert("Ошибка в строке выше");
+      }
+    } catch (error) {
+     alert(error);
+    }
+    
+  </script>
+</body>
+
+</html>

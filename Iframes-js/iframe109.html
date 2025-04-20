@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    /* стили документа не применятся в теневом дереве внутри #elem (1) */
+    p {
+      color: red;
+    }
+  </style>
+
+  <div id="elem"></div>
+
+  <script>
+    elem.attachShadow({ mode: 'open' });
+    // у теневого дерева свои стили (2)
+    elem.shadowRoot.innerHTML = `
+      <style> p { font-weight: bold; } </style>
+      <p>Hello, John!</p>
+    `;
+
+    // <p> виден только запросам внутри теневого дерева (3)
+    alert(document.querySelectorAll('p').length); // 0
+    alert(elem.shadowRoot.querySelectorAll('p').length); // 1
+  </script>
+</body>
+
+</html>

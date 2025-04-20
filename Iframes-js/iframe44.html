@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="input" style="width:200px" value="Текст Текст Текст Текст Текст">
+  <button id="button">Вставить "ПРИВЕТ" на месте курсора</button>
+
+  <script>
+    button.onclick = () => {
+      input.setRangeText("ПРИВЕТ", input.selectionStart, input.selectionEnd, "end");
+      input.focus();
+    };
+  </script>
+</body>
+
+</html>

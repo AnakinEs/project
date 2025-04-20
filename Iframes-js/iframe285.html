@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let regexp = /javascript/g;  // (regexp только что создан: regexp.lastIndex=0)
+
+    alert(regexp.test("javascript")); // true (теперь regexp.lastIndex=10)
+    alert(regexp.test("javascript")); // false
+  </script>
+</body>
+
+</html>

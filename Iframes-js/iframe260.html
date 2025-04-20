@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'let varName';
+    let regexp = /\w+/g;
+
+    let result;
+
+    while (result = regexp.exec(str)) {
+      alert(`Найдено ${result[0]} на позиции ${result.index}`);
+      // Найдено let на позиции 0, затем
+      // Найдено varName на позиции 4
+    }
+  </script>
+</body>
+
+</html>

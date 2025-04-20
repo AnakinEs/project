@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = `He said: "She's the one!".`;
+
+    let regexp = /['"](.*?)['"]/g;
+
+    // Результат - не тот, который хотелось бы
+    alert(str.match(regexp)); // "She'
+  </script>
+</body>
+
+</html>

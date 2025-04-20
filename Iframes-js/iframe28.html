@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://example.com/404.js"; // такого файла не существует
+    document.head.append(script);
+
+    script.onerror = function () {
+      alert("Ошибка загрузки " + this.src); // Ошибка загрузки https://example.com/404.js
+    };
+  </script>
+</body>
+
+</html>
