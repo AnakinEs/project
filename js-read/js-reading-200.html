@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Объекты">
+              <h1 id="Объекты">Объекты</h1>
+              <div class="section-content">
+                <p>Как мы знаем из главы <a href="https://learn.javascript.ru/types">Типы данных</a>, в JavaScript
+                  существует 8 типов данных. Семь из них называются «примитивными», так как содержат только одно
+                  значение
+                  (будь то строка, число или что-то другое).</p>
+                <p>Объекты же используются для хранения коллекций различных значений и более сложных сущностей. В
+                  JavaScript объекты используются очень часто, это одна из основ языка. Поэтому мы должны понять их,
+                  прежде чем углубляться куда-либо ещё.</p>
+                <p>Объект может быть создан с помощью фигурных скобок <code>{…}</code> с необязательным списком свойств.
+                  Свойство – это пара «ключ: значение», где <code>ключ</code> – это строка (также называемая «именем
+                  свойства»), а <code>значение</code> может быть чем угодно.</p>
+                <p>Мы можем представить объект в виде ящика с подписанными папками. Каждый элемент данных хранится в
+                  своей
+                  папке, на которой написан ключ. По ключу папку легко найти, удалить или добавить в неё что-либо.</p>
+                <img class="svg" src="../svg/object.svg">
+                <p>Пустой объект («пустой ящик») можно создать, используя один из двух вариантов синтаксиса:</p>
+                <pre><code class="language-js">let user = new Object(); // синтаксис "конструктор объекта"
+let user = {};  // синтаксис "литерал объекта"</code></pre>
+                <img class="svg" style="width:20rem" src="../svg/object-user-empty.svg">
+                <p>Обычно используют вариант с фигурными скобками <code>{...}</code>. Такое объявление называют
+                  литералом
+                  объекта или <em>литеральной нотацией</em>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-200.html"></iframe>

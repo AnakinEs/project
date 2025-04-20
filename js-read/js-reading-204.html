@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Свойство из переменной">
+              <h2 id="Свойство из переменной">Свойство из переменной</h2>
+              <div class="section-content">
+                <p>В реальном коде часто нам необходимо использовать существующие переменные как значения для свойств с
+                  тем же именем.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">function makeUser(name, age) {
+  return {
+    name: name,
+    age: age
+    // ...другие свойства
+  };
+}
+
+let user = makeUser("John", 30);
+alert(user.name); // John</code></pre>
+                <p>В примере выше название свойств <code>name</code> и <code>age</code> совпадают с названиями
+                  переменных,
+                  которые мы подставляем в качестве значений этих свойств. Такой подход настолько распространён, что
+                  существуют специальные <em>короткие свойства</em> для упрощения этой записи.</p>
+                <p>Вместо <code>name:name</code> мы можем написать просто <code>name</code>:</p>
+                <pre><code class="language-js">function makeUser(name, age) {
+  return {
+    name, // то же самое, что и name: name
+    age   // то же самое, что и age: age
+    // ...
+  };
+}</code></pre>
+                <p>Мы можем использовать как обычные свойства, так и короткие в одном и том же объекте:</p>
+                <pre><code class="language-js">let user = {
+  name,  // тоже самое, что и name:name
+  age: 30
+};</code></pre>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-204.html"></iframe>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Ограничения на имена свойств">
+              <h2 id="Ограничения на имена свойств">Ограничения на имена свойств</h2>
+              <div class="section-content">
+                <p>Как мы уже знаем, имя переменной не может совпадать с зарезервированными словами, такими как «for»,
+                  «let», «return» и т.д.</p>
+                <p>Но для свойств объекта такого ограничения нет:</p>
+                <pre><code class="language-js">// эти имена свойств допустимы
+let obj = {
+  for: 1,
+  let: 2,
+  return: 3
+};
+
+alert( obj.for + obj.let + obj.return );  // 6</code></pre>
+                <p>Иными словами, нет никаких ограничений к именам свойств. Они могут быть в виде строк или символов
+                  (специальный тип для идентификаторов, который будет рассмотрен позже).</p>
+                <p>Все другие типы данных будут автоматически преобразованы к строке.</p>
+                <p>Например, если использовать число <code>0</code> в качестве ключа, то оно превратится в строку
+                  <code>"0"</code>:
+                </p>
+                <pre><code class="language-js">let obj = {
+  0: "Тест" // то же самое что и "0": "Тест"
+};
+
+// обе функции alert выведут одно и то же свойство (число 0 преобразуется в строку "0")
+alert( obj["0"] ); // Тест
+alert( obj[0] ); // Тест (то же свойство)</code></pre>
+                <p>Есть небольшой подводный камень, связанный со специальным свойством <code>__proto__</code>. Мы не
+                  можем
+                  установить его в необъектное значение:</p>
+                <pre><code class="language-js">let obj = {};
+obj.__proto__ = 5; // присвоим число
+alert(obj.__proto__); // [object Object], значение - это объект, т.е. не то, что мы ожидали</code></pre>
+                <p>Как мы видим, присвоение примитивного значения <code>5</code> игнорируется.</p>
+                <p>Мы более подробно исследуем особенности свойства <code>__proto__</code> в следующих главах <a
+                    href="https://learn.javascript.ru/prototype-inheritance">Прототипное наследование</a>, а также
+                  предложим <a href="https://learn.javascript.ru/prototype-methods">способы исправления</a> такого
+                  поведения.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-205.html"></iframe>

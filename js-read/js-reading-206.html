@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Проверка существования свойства, оператор «in»">
+              <h2 id="Проверка существования свойства, оператор «in»">Проверка существования свойства, оператор «in»
+              </h2>
+              <div class="section-content">
+                <p>В отличие от многих других языков, особенность JavaScript-объектов в том, что можно получить доступ к
+                  любому свойству. Даже если свойства не существует – ошибки не будет!</p>
+                <p>При обращении к свойству, которого нет, возвращается <code>undefined</code>. Это позволяет просто
+                  проверить существование свойства:</p>
+                <pre><code class="language-js">let user = {};
+
+alert( user.noSuchProperty === undefined ); // true означает "свойства нет"</code></pre>
+                <p>Также существует специальный оператор <code>"in"</code> для проверки существования свойства в
+                  объекте.
+                </p>
+                <p>Синтаксис оператора:</p>
+                <pre><code class="language-js">"key" in object</code></pre>
+                <p>Пример:</p>
+                <pre><code class="language-js">let user = { name: "John", age: 30 };
+
+alert( "age" in user ); // true, user.age существует
+alert( "blabla" in user ); // false, user.blabla не существует</code></pre>
+                <p>Обратите внимание, что слева от оператора <code>in</code> должно быть <em>имя свойства</em>. Обычно
+                  это
+                  строка в кавычках.</p>
+                <p>Если мы опускаем кавычки, это значит, что мы указываем переменную, в которой находится имя свойства.
+                  Например:</p>
+                <pre><code class="language-js">let user = { age: 30 };
+
+let key = "age";
+alert( key in user ); // true, имя свойства было взято из переменной key</code></pre>
+                <p>Для чего вообще нужен оператор <code>in</code>? Разве недостаточно сравнения с
+                  <code>undefined</code>?
+                </p>
+                <p>В большинстве случаев прекрасно сработает сравнение с <code>undefined</code>. Но есть особый случай,
+                  когда оно не подходит, и нужно использовать <code>"in"</code>.</p>
+                <p>Это когда свойство существует, но содержит значение <code>undefined</code>:</p>
+                <pre><code class="language-js">let obj = {
+  test: undefined
+};
+
+alert( obj.test ); //  выведет undefined, значит свойство не существует?
+alert( "test" in obj ); // true, свойство существует!</code></pre>
+                <p>В примере выше свойство <code>obj.test</code> технически существует в объекте. Оператор
+                  <code>in</code>
+                  сработал правильно.
+                </p>
+                <p>Подобные ситуации случаются очень редко, так как <code>undefined</code> обычно явно не присваивается.
+                  Для «неизвестных» или «пустых» свойств мы используем значение <code>null</code>. Таким образом,
+                  оператор
+                  <code>in</code> является экзотическим гостем в коде.
+                </p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-206.html"></iframe>

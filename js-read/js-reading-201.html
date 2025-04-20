@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Литералы и свойства">
+              <h2 id="Литералы и свойства">Литералы и свойства</h2>
+              <div class="section-content">
+                <p>При использовании литерального синтаксиса <code>{...}</code> мы сразу можем поместить в объект
+                  несколько свойств в виде пар «ключ: значение»:</p>
+                <pre><code class="language-js">let user = {     // объект
+  name: "John",  // под ключом "name" хранится значение "John"
+  age: 30        // под ключом "age" хранится значение 30
+};</code></pre>
+                <p>У каждого свойства есть ключ (также называемый «имя» или «идентификатор»). После имени свойства
+                  следует
+                  двоеточие <code>":"</code>, и затем указывается значение свойства. Если в объекте несколько свойств,
+                  то
+                  они перечисляются через запятую.</p>
+                <p>В объекте <code>user</code> сейчас находятся два свойства:</p>
+                <ol>
+                  <li>Первое свойство с именем <code>"name"</code> и значением <code>"John"</code>.</li>
+                  <li>Второе свойство с именем <code>"age"</code> и значением <code>30</code>.</li>
+                </ol>
+                <p>Можно сказать, что наш объект <code>user</code> – это ящик с двумя папками, подписанными «name» и
+                  «age».</p>
+                <img class="svg" style="width:20rem" src="../svg/object-user.svg">
+                <p>Мы можем в любой момент добавить в него новые папки, удалить папки или прочитать содержимое любой
+                  папки.</p>
+                <p>Для обращения к свойствам используется запись «через точку»:</p>
+                <pre><code class="language-js">// получаем свойства объекта:
+alert( user.name ); // John
+alert( user.age ); // 30</code></pre>
+                <p>Значение может быть любого типа. Давайте добавим свойство с логическим значением:</p>
+                <pre><code class="language-js">user.isAdmin = true;</code></pre>
+                <img class="svg" style="width:20rem" src="../svg/object-user-isadmin.svg">
+                <p>Для удаления свойства мы можем использовать оператор <code>delete</code>:</p>
+                <pre><code class="language-js">delete user.age;</code></pre>
+                <img class="svg" style="width:20rem" src="../svg/object-user-delete.svg">
+                <p>Имя свойства может состоять из нескольких слов, но тогда оно должно быть заключено в кавычки:</p>
+                <pre><code class="language-js">let user = {
+  name: "John",
+  age: 30,
+  "likes birds": true  // имя свойства из нескольких слов должно быть в кавычках
+};</code></pre>
+                <img class="svg" style="width:20rem" src="../svg/object-user-props.svg">
+                <p>Последнее свойство объекта может заканчиваться запятой:</p>
+                <pre><code class="language-js">let user = {
+  name: "John",
+  age: 30,
+}</code></pre>
+                <p><span id="hint25" ; class="hint" data-tooltip="Не понял.">Это называется «висячая запятая». Такой
+                    подход упрощает
+                    добавление, удаление и перемещение свойств, так как все строки объекта становятся
+                    одинаковыми.</span>
+                </p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Объект, объявленный как константа, может быть изменён</div>
+                  <p>Объект, объявленный через <code>const</code>, <em>может</em> быть изменён.</p>
+                  <p>Например:</p>
+                  <pre><code class="language-js">const user = {
+  name: "John"
+};
+
+user.name = "Pete"; // (*)
+
+alert(user.name); // Pete</code></pre>
+                  <p>Может показаться, что строка <code>(*)</code> должна вызвать ошибку, но нет, здесь всё в порядке.
+                    Дело в том, что объявление <code>const</code> защищает от изменений только саму переменную
+                    <code>user</code>, а не её содержимое.
+                  </p>
+                  <p>Определение <code>const</code> выдаст ошибку только если мы присвоим переменной другое значение:
+                    <code>user=...</code>.
+                  </p>
+                  <p>Есть ещё один способ сделать константами свойства объекта, который мы рассмотрим в главе <a
+                      href="https://learn.javascript.ru/property-descriptors">Флаги и дескрипторы свойств</a>.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-201.html"></iframe>

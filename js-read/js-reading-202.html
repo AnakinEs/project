@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Квадратные скобки">
+              <h2 id="Квадратные скобки">Квадратные скобки</h2>
+              <div class="section-content">
+                <p>Для свойств, имена которых состоят из нескольких слов, доступ к значению «через точку» не работает:
+                </p>
+                <pre><code class="language-js">// это вызовет синтаксическую ошибку
+user.likes birds = true</code></pre>
+                <p>JavaScript видит, что мы обращаемся к свойству <code>user.likes</code>, а затем идёт непонятное слово
+                  <code>birds</code>. В итоге синтаксическая ошибка.
+                </p>
+                <p>Точка требует, чтобы ключ был именован по правилам именования переменных. То есть не имел пробелов,
+                  не
+                  начинался с цифры и не содержал специальные символы, кроме <code>$</code> и <code>_</code>.</p>
+                <p>Для таких случаев существует альтернативный способ доступа к свойствам через квадратные скобки. Такой
+                  способ сработает с любым именем свойства:</p>
+                <pre><code class="language-js">let user = {};
+
+// присваивание значения свойству
+user["likes birds"] = true;
+
+// получение значения свойства
+alert(user["likes birds"]); // true
+
+// удаление свойства
+delete user["likes birds"];</code></pre>
+                <p>Сейчас всё в порядке. Обратите внимание, что строка в квадратных скобках заключена в кавычки
+                  (подойдёт
+                  любой тип кавычек).</p>
+                <p>Квадратные скобки также позволяют обратиться к свойству, имя которого может быть результатом
+                  выражения.
+                  Например, имя свойства может храниться в переменной:</p>
+                <pre><code class="language-js">let key = "likes birds";
+
+// то же самое, что и user["likes birds"] = true;
+user[key] = true;</code></pre>
+                <p>Здесь переменная <code>key</code> может быть вычислена во время выполнения кода или зависеть от
+                  пользовательского ввода. После этого мы используем её для доступа к свойству. Это даёт нам большую
+                  гибкость.</p>
+                <p>Пример:</p>
+                <pre><code class="language-js">let user = {
+  name: "John",
+  age: 30
+};
+
+let key = prompt("Что вы хотите узнать о пользователе?", "name");
+
+// доступ к свойству через переменную
+alert( user[key] ); // John (если ввели "name")</code></pre>
+                <p>Запись «через точку» такого не позволяет:</p>
+                <pre><code class="language-js">let user = {
+  name: "John",
+  age: 30
+};
+
+let key = "name";
+alert( user.key ); // undefined</code></pre>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-202.html"></iframe>

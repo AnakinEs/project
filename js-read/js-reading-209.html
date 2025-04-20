@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Итого19">
+              <h2 id="Итого19">Итого</h2>
+              <div class="section-content">
+                <p>Объекты – это ассоциативные массивы с рядом дополнительных возможностей.</p>
+                <p>Они хранят свойства (пары ключ-значение), где:</p>
+                <ul>
+                  <li>Ключи свойств должны быть строками или символами (обычно строками).</li>
+                  <li>Значения могут быть любого типа.</li>
+                </ul>
+                <p>Чтобы получить доступ к свойству, мы можем использовать:</p>
+                <ul>
+                  <li>Запись через точку: <code>obj.property</code>.</li>
+                  <li>Квадратные скобки <code>obj["property"]</code>. Квадратные скобки позволяют взять ключ из
+                    переменной, например, <code>obj[varWithKey]</code>.</li>
+                </ul>
+                <p>Дополнительные операторы:</p>
+                <ul>
+                  <li>Удаление свойства: <code>delete obj.prop</code>.</li>
+                  <li>Проверка существования свойства: <code>"key" in obj</code>.</li>
+                  <li>Перебор свойств объекта: цикл for <code>for (let key in obj)</code>.</li>
+                </ul>
+                <p>То, что мы изучали в этой главе, называется «простым объектом» («plain object») или просто
+                  <code>Object</code>.
+                </p>
+                <p>В JavaScript есть много других типов объектов:</p>
+                <ul>
+                  <li><code>Array</code> для хранения упорядоченных коллекций данных,</li>
+                  <li><code>Date</code> для хранения информации о дате и времени,</li>
+                  <li><code>Error</code> для хранения информации об ошибке.</li>
+                  <li>… и так далее.</li>
+                </ul>
+                <p>У них есть свои особенности, которые мы изучим позже. Иногда люди говорят что-то вроде «тип данных
+                  Array» или «тип данных Date», но формально они не являются отдельными типами, а относятся к типу
+                  данных
+                  <code>Object</code>. Они лишь расширяют его различными способами.
+                </p>
+                <p>Объекты в JavaScript очень мощные. Здесь мы только немного углубились в действительно огромную тему.
+                  Мы
+                  будем плотно работать с объектами и узнаем о них больше в следующих частях учебника.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-209.html"></iframe>

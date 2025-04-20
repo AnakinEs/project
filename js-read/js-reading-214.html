@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Умножаем все числовые свойства на 2">
+                <h3 id="Умножаем все числовые свойства на 2">Умножаем все числовые свойства на 2</h3>
+                <div class="section-content">
+                  <p>Создайте функцию <code>multiplyNumeric(obj)</code>, которая умножает все числовые свойства объекта
+                    <code>obj</code> на <code>2</code>.
+                  </p>
+                  <p>Например:</p>
+                  <pre><code class="language-js">// до вызова функции
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+// после вызова функции
+menu = {
+  width: 400,
+  height: 600,
+  title: "My menu"
+};</code></pre>
+                  <p>Обратите внимание, что <code>multiplyNumeric</code> не нужно ничего возвращать. Следует напрямую
+                    изменять объект.</p>
+                  <p>P.S. Используйте <code>typeof</code> для проверки, что значение свойства числовое.</p>
+                  <p><a href="https://plnkr.co/edit/VWlTbBvMdftsUB7E?p=preview">Открыть песочницу с тестами для
+                      задачи.</a></p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == 'number') {
+      obj[key] *= 2;
+    }
+  }
+}</code></pre>
+                      <p><a href="https://plnkr.co/edit/Z9crZY5omI3AwcR9?p=preview">Открыть решение с тестами в
+                          песочнице.</a></p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-214.html"></iframe>

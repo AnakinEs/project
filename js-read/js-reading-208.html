@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Упорядочение свойств объекта">
+              <h2 id="Упорядочение свойств объекта">Упорядочение свойств объекта</h2>
+              <div class="section-content">
+                <p>Упорядочены ли свойства объекта? Другими словами, если мы будем в цикле перебирать все свойства
+                  объекта, получим ли мы их в том же порядке, в котором мы их добавляли? Можем ли мы на это
+                  рассчитывать?
+                </p>
+                <p>Короткий ответ: свойства упорядочены особым образом: свойства с целочисленными ключами сортируются по
+                  возрастанию, остальные располагаются в порядке создания. Разберёмся подробнее.</p>
+                <p>В качестве примера рассмотрим объект с телефонными кодами:</p>
+                <pre><code class="language-js">let codes = {
+  "49": "Германия",
+  "41": "Швейцария",
+  "44": "Великобритания",
+  // ..,
+  "1": "США"
+};
+
+for (let code in codes) {
+  alert(code); // 1, 41, 44, 49
+}</code></pre>
+                <p>Если мы делаем сайт для немецкой аудитории, то, вероятно, мы хотим, чтобы код <code>49</code> был
+                  первым.</p>
+                <p>Но если мы запустим код, мы увидим совершенно другую картину:</p>
+                <ul>
+                  <li>США (1) идёт первым</li>
+                  <li>затем Швейцария (41) и так далее.</li>
+                </ul>
+                <p>Телефонные коды идут в порядке возрастания, потому что они являются целыми числами:
+                  <code>1, 41, 44, 49</code>.
+                </p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Целочисленные свойства? Это что?</div>
+                  <p>Термин «целочисленное свойство» означает строку, которая может быть преобразована в целое число и
+                    обратно без изменений.</p>
+                  <p>То есть, <code>"49"</code> – это целочисленное имя свойства, потому что если его преобразовать в
+                    целое число, а затем обратно в строку, то оно не изменится. А вот свойства <code>"+49"</code> или
+                    <code>"1.2"</code> таковыми не являются:
+                  </p>
+                  <pre><code class="language-js">// Math.trunc - встроенная функция, которая удаляет десятичную часть
+alert( String(Math.trunc(Number("49"))) ); // "49", то же самое ⇒ свойство целочисленное
+alert( String(Math.trunc(Number("+49"))) ); // "49", не то же самое, что "+49" ⇒ свойство не целочисленное
+alert( String(Math.trunc(Number("1.2"))) ); // "1", не то же самое, что "1.2" ⇒ свойство не целочисленное</code></pre>
+                  <p>…С другой стороны, если ключи не целочисленные, то они перебираются в порядке создания, например:
+                  </p>
+                  <pre><code class="language-js">let user = {
+  name: "John",
+  surname: "Smith"
+};
+user.age = 25; // добавим ещё одно свойство
+
+// не целочисленные свойства перечислены в порядке создания
+for (let prop in user) {
+  alert( prop ); // name, surname, age
+}</code></pre>
+                  <p>Таким образом, чтобы решить нашу проблему с телефонными кодами, мы можем схитрить, сделав коды не
+                    целочисленными свойствами. Добавления знака <code>"+"</code> перед каждым кодом будет достаточно.
+                  </p>
+                  <p>Пример:</p>
+                  <pre><code class="language-js">let codes = {
+  "+49": "Германия",
+  "+41": "Швейцария",
+  "+44": "Великобритания",
+  // ..,
+  "+1": "США"
+};
+
+for (let code in codes) {
+  alert( +code ); // 49, 41, 44, 1
+}</code></pre>
+                  <p>Теперь код работает так, как мы задумывали.</p>
+                </div>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-208.html"></iframe>

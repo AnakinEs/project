@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Цикл «for…in»">
+              <h2 id="Цикл «for…in»">Цикл «for…in»</h2>
+              <div class="section-content">
+                <p>Для перебора всех свойств объекта используется цикл <code>for..in</code>. Этот цикл отличается от
+                  изученного ранее цикла <code>for(;;)</code>.</p>
+                <p>Синтаксис:</p>
+                <pre><code class="language-js">for (key in object) {
+  // тело цикла выполняется для каждого свойства объекта
+}</code></pre>
+                <p>К примеру, давайте выведем все свойства объекта <code>user</code>:</p>
+                <pre><code class="language-js">let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  // ключи
+  alert( key );  // name, age, isAdmin
+  // значения ключей
+  alert( user[key] ); // John, 30, true
+}</code></pre>
+                <p>Обратите внимание, что все конструкции «for» позволяют нам объявлять переменную внутри цикла, как,
+                  например, <code>let key</code> здесь.</p>
+                <p>Кроме того, мы могли бы использовать другое имя переменной. Например, часто используется вариант
+                  <code>"for (let prop in obj)"</code>.
+                </p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-207.html"></iframe>
