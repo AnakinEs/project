@@ -85,7 +85,7 @@
               <h2 id="Примеры в учебнике">Примеры в учебнике</h2>
               <div class="section-content">
                 <p>Большинство примеров можно запустить «на месте», как этот:</p>
-                <pre><button onclick="show('<iframe style=&quot;height:6rem; display:none&quot; src=&quot;Iframes-js/iframe292.html&quot;></iframe>', this)" class="show">►</button><code class="language-js">alert('Нажмите кнопку "Play" в крайнем правом углу, чтобы запустить пример');</code></pre>
+                <pre><button onclick="show('<iframe style=&quot;height:6rem; display:none&quot; src=&quot;../Iframes-js/iframe292.html&quot;></iframe>', this)" class="show">►</button><code class="language-js">alert('Нажмите кнопку "Play" в крайнем правом углу, чтобы запустить пример');</code></pre>
                 <p>Примеры, в которых используются современные возможности JS, будут работать, если ваш браузер их
                   поддерживает.</p>
                 <p>Google Chrome обычно поддерживает современные функции, можно запускать новейшие примеры без
@@ -96,4 +96,28 @@
       </article>
     </main>
   </div>
+  <script>
+    function show(param) {
+      if((event.target.parentElement.tagName=="PRE") && (event.target.parentElement.nextElementSibling.tagName=="IFRAME")){
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }else if((event.target.parentElement.tagName=="PRE") && !(event.target.parentElement.nextElementSibling.tagName=="IFRAME")){
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } 
+     }
+  </script>
+
+  <script>
+    content.onclick = function(event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+
+
 </body>

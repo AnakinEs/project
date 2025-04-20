@@ -206,8 +206,21 @@ section section h3 { // зачем я это правило сдесь зада�
 /* ............................................................................................................................................................................*/
 
 /* Основное содержание */
+.show {
+  position: absolute;
+  right:0;
+  top: 0;
+  width: 2.5em;
+  border: none;
+  background-color: #908e8d;
+  color: #f7f4f3;
+  height: 1.25em;
+}
 
-@media screen and (max-width: 719px) { /* 200px или меньше */
+.show:active {
+	background-color: #706e6d;
+}
+@media screen and (max-width: 719px) { /* 719px или меньше */
   
   .main_content p, 
   .main_content dl { 
@@ -787,6 +800,7 @@ ol pre {
 pre {
   border-radius: 0.25rem;
   border: 0.1rem solid #cdcdcd;
+  position:relative;
 }
 
 .meaning-pre{

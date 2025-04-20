@@ -10,16 +10,16 @@
         if(!stat) {
           if(event.target.closest('.hint')){
             hint = event.target.closest('.hint');
-            hint.style.backgroundColor = "#fcc934"; // темно-желтый
+            hint.style.backgroundColor = 'rgb(255, 221, 127)'; // темно-желтый "#fcc934" убрал, сделал прозрачный
           }else if(event.target.closest('.meaning')){
             meaning = event.target.closest('.meaning'); 
-            meaning.style.backgroundColor = "#e3baff"; // темно-фиолетовый
+            meaning.style.backgroundColor = '#ebccff'; // темно-фиолетовый "#e3baff" убрал, сделал прозрачный
           }
           func();
         } else {
           if(hint){
             tooltipElem.remove();
-            hint.style.backgroundColor = "#fee9ae"; // светло-желтый
+            hint.style.backgroundColor = "rgb(255, 237, 186)"; // светло-желтый
           }else if(meaning){
             tooltipElem.remove();
             meaning.style.backgroundColor = "#f2deff"; // светло-фиолетовый
@@ -27,10 +27,10 @@
           
           if(event.target.closest('.hint')){
             hint = event.target.closest('.hint');
-            hint.style.backgroundColor = "#fcc934"; // темно-желтый
+            hint.style.backgroundColor = 'rgb(255, 221, 127)'; // темно-желтый 
           }else if(event.target.closest('.meaning')){
             meaning = event.target.closest('.meaning');
-            meaning.style.backgroundColor = "#e3baff"; // темно-фиолетовый
+            meaning.style.backgroundColor = '#ebccff'; // темно-фиолетовый "#e3baff" убрал, сделал прозрачный
           }
           
           func(); 
@@ -40,7 +40,7 @@
           tooltipElem.remove();
           stat = false;
           if(hint){
-            hint.style.backgroundColor = "#fee9ae";
+            hint.style.backgroundColor = "rgb(255, 237, 186)"; // светло-желтый
             hint = null;
           }else if(meaning){
             meaning.style.backgroundColor = "#f2deff";
@@ -72,9 +72,9 @@
         if (left < 0) left = 0; // не заезжать за левый край окна
         if (tooltipElem.right == 0) left = (elem.offsetWidth - tooltipElem.offsetWidth)-8; // не заезжать за правый край окна
   
-        let top = coords.top - tooltipElem.offsetHeight - 5;
+        let top = coords.top - tooltipElem.offsetHeight - 20;
         if (top < 0) { // если подсказка не помещается сверху, то отображать её снизу
-          top = coords.top + target.offsetHeight + 5;
+          top = coords.top + target.offsetHeight + 20;
         }
         
         tooltipElem.style.left = left + 'px';
