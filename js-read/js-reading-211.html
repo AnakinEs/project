@@ -43,13 +43,13 @@ alert( isEmpty(schedule) ); // false</code></pre>
                       <p>Просто в цикле перебираем свойства объекта и возвращаем <code>false</code>, как только
                         встречаем
                         свойство.</p>
-                      <pre><code class="language-js"></code>function isEmpty(obj) {
+                      <pre><code class="language-js">function isEmpty(obj) {
   for (let key in obj) {
     // если тело цикла начнет выполняться - значит в объекте есть свойства
-    <span id="hint26"; class="hint" data-tooltip="false возвращается для каждого свойства? return false получается возвращает результат для функции а не для fo">return false;</span>
+    return false;
   }
   return true;
-}</pre>
+}</code></pre>
                       <p><a href="https://plnkr.co/edit/Umv4Ose668TsSqop?p=preview">Открыть решение с тестами в
                           песочнице.</a></p>
                     </div>
