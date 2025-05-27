@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Итого20">
+              <h2 id="Итого20">Итого</h2>
+              <div class="section-content">
+                <p>Объекты присваиваются и копируются по ссылке. Другими словами, переменная хранит не «значение
+                  объекта»,
+                  а «ссылку» (адрес в памяти) на это значение. Поэтому копирование такой переменной или передача её в
+                  качестве аргумента функции приводит к копированию этой ссылки, а не самого объекта.</p>
+                <p>Все операции с использованием скопированных ссылок (например, добавление или удаление свойств)
+                  выполняются с одним и тем же объектом.</p>
+                <p>Для «простого клонирования» объекта можно использовать <code>Object.assign</code>. Необходимо
+                  помнить,
+                  что <code>Object.assign</code> не делает глубокое клонирование объекта. Если внутри копируемого
+                  объекта
+                  есть свойство, значение которого не является примитивом, оно будет передано по ссылке. Для создания
+                  «настоящей копии» (полного клона объекта) можно воспользоваться методом из сторонней
+                  JavaScript-библиотеки <a href="https://lodash.com/docs/4.17.15#cloneDeep">_.cloneDeep(obj)</a>.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Копирование объектов и ссылки">
+              <h1 id="Копирование объектов и ссылки">Копирование объектов и ссылки</h1>
+              <div class="section-content">
+                <p>Одним из фундаментальных отличий объектов от примитивных типов данных является то, что они хранятся и
+                  копируются «по ссылке».</p>
+                <p>Примитивные типы: строки, числа, логические значения – присваиваются и копируются «по значению».</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let message = "Привет!";
+let phrase = message;</code></pre>
+                <p>В результате мы имеем две независимые переменные, каждая из которых хранит строку
+                  <code>"Привет!"</code>.
+                </p>
+                <img style="width:25rem" src="../svg/variable-copy-value.svg">
+                <p>Объекты ведут себя иначе.</p>
+                <p><strong>Переменная хранит не сам объект, а его «адрес в памяти», другими словами «ссылку» на
+                    него.</strong></p>
+                <p>Проиллюстрируем это:</p>
+                <pre><code class="language-js">let user = {
+  name: "Иван"
+};</code></pre>
+                <img style="width:25rem" src="../svg/variable-contains-reference.svg">
+                <p>Сам объект хранится где-то в памяти. А в переменной <code>user</code> лежит «ссылка» на эту область
+                  памяти.</p>
+                <p><strong>Когда переменная объекта копируется – копируется ссылка, сам же объект не
+                    дублируется.</strong>
+                </p>
+                <p>Если мы представляем объект как ящик, то переменная – это ключ к нему. Копирование переменной
+                  дублирует
+                  ключ, но не сам ящик.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let user = { name: "Иван" };
+
+let admin = user; // копируется ссылка</code></pre>
+                <p>Теперь у нас есть две переменные, каждая из которых содержит ссылку на один и тот же объект:</p>
+                <img style="width:35rem" src="../svg/variable-copy-reference.svg">
+                <p>Мы можем использовать любую из переменных для доступа к ящику и изменения его содержимого:</p>
+                <pre><code class="language-js">let user = { name: 'Иван' };
+
+let admin = user;
+
+admin.name = 'Петя'; // изменено по ссылке из переменной "admin"
+
+alert(user.name); // 'Петя', изменения видны по ссылке из переменной "user"</code></pre>
+                <p>Приведённый выше пример демонстрирует, что объект только один. Как если бы у нас был один ящик с
+                  двумя
+                  ключами и мы использовали один из них (<code>admin</code>), чтобы войти в него и что-то изменить, а
+                  затем, открыв ящик другим ключом (<code>user</code>), мы бы увидели эти изменения.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
