@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Внутренние алгоритмы">
+              <h2 id="Внутренние алгоритмы">Внутренние алгоритмы</h2>
+              <div class="section-content">
+                <p>Основной алгоритм сборки мусора называется «алгоритм пометок» (от англ. «mark-and-sweep»).</p>
+                <p>Согласно этому алгоритму, сборщик мусора регулярно выполняет следующие шаги:</p>
+                <ul>
+                  <li>Сборщик мусора «помечает» (запоминает) все корневые объекты.</li>
+                  <li>Затем он идёт по ним и «помечает» все ссылки из них.</li>
+                  <li>Затем он идёт по отмеченным объектам и отмечает их ссылки. Все посещённые объекты запоминаются,
+                    чтобы в будущем не посещать один и тот же объект дважды.</li>
+                  <li>…И так далее, пока не будут посещены все достижимые (из корней) ссылки.</li>
+                  <li>Все непомеченные объекты удаляются.</li>
+                </ul>
+                <p>Например, пусть наша структура объектов выглядит так:</p>
+                <img style="width:35rem" src="../svg/garbage-collection-1.svg">
+                <p>Мы ясно видим «недостижимый остров» справа. Теперь давайте посмотрим, как будет работать «алгоритм
+                  пометок» сборщика мусора.</p>
+                <p>На первом шаге помечаются корни:</p>
+                <img style="width:35rem" src="../svg/garbage-collection-2.svg">
+                <p>Затем помечаются объекты по их ссылкам:</p>
+                <img style="width:35rem" src="../svg/garbage-collection-3.svg">
+                <p>…А затем объекты по их ссылкам и так далее, пока это возможно:</p>
+                <img style="width:35rem" src="../svg/garbage-collection-4.svg">
+                <p>Теперь объекты, которые не удалось посетить в процессе, считаются недостижимыми и будут удалены:</p>
+                <img style="width:35rem" src="../svg/garbage-collection-5.svg">
+                <p>Мы также можем представить себе этот процесс как выливание огромного ведра краски из корней, которая
+                  течёт по всем ссылкам и отмечает все достижимые объекты. Затем непомеченные удаляются.</p>
+                <p>Это концепция того, как работает сборка мусора. Движки JavaScript применяют множество оптимизаций,
+                  чтобы она работала быстрее и не задерживала выполнение кода.</p>
+                <p>Вот некоторые из оптимизаций:</p>
+                <ul>
+                  <li><strong>Сборка по поколениям (Generational collection)</strong> – объекты делятся на два набора:
+                    «новые» и «старые». В типичном коде многие объекты имеют короткую жизнь: они появляются, выполняют
+                    свою работу и быстро умирают, так что имеет смысл отслеживать новые объекты и, если это так, быстро
+                    очищать от них память. Те, которые выживают достаточно долго, становятся «старыми» и проверяются
+                    реже.
+                  </li>
+                  <li><strong><span id="hint28" ; class="hint" data-tooltip="Не совсем понял">Инкрементальная сборка
+                        (Incremental
+                        collection)</span></strong> – если объектов много, и мы пытаемся обойти и пометить весь набор
+                    объектов сразу, это может занять некоторое время и привести к видимым задержкам в выполнения
+                    скрипта.
+                    Так что движок делит всё множество объектов на части, и далее очищает их одну за другой. Получается
+                    несколько небольших сборок мусора вместо одной всеобщей. Это требует дополнительного учёта для
+                    отслеживания изменений между частями, но зато получается много крошечных задержек вместо одной
+                    большой.</li>
+                  <li><strong>Сборка в свободное время (Idle-time collection)</strong> – чтобы уменьшить возможное
+                    влияние
+                    на производительность, сборщик мусора старается работать только во время простоя процессора.</li>
+                </ul>
+                <p>Существуют и другие способы оптимизации и разновидности алгоритмов сборки мусора. Но как бы мне ни
+                  хотелось описать их здесь, я должен воздержаться, потому что разные движки реализуют разные хитрости и
+                  методы. И, что ещё более важно, все меняется по мере развития движков, поэтому изучать тему глубоко
+                  «заранее», без реальной необходимости, вероятно, не стоит. Если, конечно, это не вопрос чистого
+                  интереса, тогда для вас будет несколько ссылок ниже.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-222.html"></iframe>

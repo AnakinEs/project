@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Итого21">
+              <h2 id="Итого21">Итого</h2>
+              <div class="section-content">
+                <p>Главное, что нужно знать:</p>
+                <ul>
+                  <li>Сборка мусора выполняется автоматически. Мы не можем ускорить или предотвратить её.</li>
+                  <li>Объекты сохраняются в памяти, пока они достижимы.</li>
+                  <li>Если на объект есть ссылка – вовсе не факт, что он является достижимым (из корня): набор
+                    взаимосвязанных объектов может стать недоступен в целом, как мы видели в примере выше.</li>
+                </ul>
+                <p>Современные движки реализуют разные продвинутые алгоритмы сборки мусора.</p>
+                <p>О многих из них рассказано в прекрасной книге о сборке мусора «The Garbage Collection Handbook: The
+                  Art
+                  of Automatic Memory Management» (R. Jones и др.).</p>
+                <p>Если вы знакомы с низкоуровневым программированием, то более подробная информация о сборщике мусора
+                  V8
+                  находится в статье <a href="https://jayconrod.com/posts/55/a-tour-of-v8-garbage-collection">A tour of
+                    V8: Garbage Collection</a>.</p>
+                <p>Также в <a href="https://v8.dev/">блоге V8</a> время от времени публикуются статьи об изменениях в
+                  управлении памятью. Разумеется, чтобы изучить сборку мусора, вам лучше подготовиться, узнав о том как
+                  устроен движок V8 внутри в целом и почитав блог <a href="https://mrale.ph/">Вячеслава Егорова</a>,
+                  одного из инженеров, разрабатывавших V8. Я говорю про «V8», потому что он лучше всего освещается в
+                  статьях в Интернете. Для других движков многие подходы схожи, но сборка мусора отличается во многих
+                  аспектах.</p>
+                <p>Глубокое понимание работы движков полезно, когда вам нужна низкоуровневая оптимизация. Было бы
+                  разумно
+                  запланировать их изучение как следующий шаг после того, как вы познакомитесь с языком.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-223.html"></iframe>
