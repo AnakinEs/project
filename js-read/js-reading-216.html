@@ -99,6 +99,46 @@ let admin = user;</code></pre>
                   памяти. Если бы мы также перезаписали <code>admin</code>, то John был бы удалён.</p>
               </div>
             </section>
+            <section aria-labelledby="Взаимосвязанные объекты">
+              <h2 id="Взаимосвязанные объекты">Взаимосвязанные объекты</h2>
+              <div class="section-content">
+                <p>Теперь более сложный пример. Семья:</p>
+                <pre><code class="language-js">function marry(man, woman) {
+  woman.husband = man;
+  man.wife = woman;
+
+  return {
+    father: man,
+    mother: woman
+  }
+}
+
+let family = marry({
+  name: "John"
+}, {
+  name: "Ann"
+});</code></pre>
+                <p>Функция <code>marry</code> «женит» два объекта, давая им ссылки друг на друга, и возвращает новый
+                  объект, содержащий ссылки на два предыдущих.</p>
+                <p>В результате получаем такую структуру памяти:</p>
+                <img style="width:25rem" src="../svg/family.svg">
+                <p>На данный момент все объекты достижимы.</p>
+                <p>Теперь удалим две ссылки:</p>
+                <pre><code class="language-js">delete family.father;
+delete family.mother.husband;</code></pre>
+                <img style="width:27rem" src="../svg/family-delete-refs.svg">
+                <p>Недостаточно удалить только одну из этих двух ссылок, потому что все объекты останутся достижимыми.
+                </p>
+                <p>Но если мы удалим обе, то увидим, что у объекта John больше нет входящих ссылок:</p>
+                <img style="width:30rem" src="../svg/family-no-father.svg">
+                <p>Исходящие ссылки не имеют значения. Только входящие ссылки могут сделать объект достижимым. Объект
+                  John
+                  теперь недостижим и будет удалён из памяти со всеми своими данными, которые также стали недоступны.
+                </p>
+                <p>После сборки мусора:</p>
+                <img style="width:13rem" src="../svg/family-no-father-2.svg">
+              </div>
+            </section>
       </article>
     </main>
   </div>
