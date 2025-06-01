@@ -60,6 +60,27 @@
                     мусора</a>. Он отслеживает все объекты и удаляет те, которые стали недоступными.</p>
               </div>
             </section>
+            <section aria-labelledby="Простой пример">
+              <h2 id="Простой пример">Простой пример</h2>
+              <div class="section-content">
+                <p>Вот самый простой пример:</p>
+                <pre><code class="language-js">// в user находится ссылка на объект
+let user = {
+  name: "John"
+};</code></pre>
+                <img style="width:13rem" src="../svg/memory-user-john.svg">
+                <p>Здесь стрелка обозначает ссылку на объект. Глобальная переменная <code>user</code> ссылается на
+                  объект
+                  <code>{name: "John"}</code> (мы будем называть его просто «John» для краткости). В свойстве
+                  <code>"name"</code> объекта John хранится примитив, поэтому оно нарисовано внутри объекта.
+                </p>
+                <p>Если перезаписать значение <code>user</code>, то ссылка потеряется:</p>
+                <pre><code class="language-js">user = null;</code></pre>
+                <img style="width:20rem" src="../svg/memory-user-john-lost.svg">
+                <p>Теперь объект John становится недостижимым. К нему нет доступа, на него нет ссылок. Сборщик мусора
+                  удалит эти данные и освободит память.</p>
+              </div>
+            </section>
       </article>
     </main>
   </div>
