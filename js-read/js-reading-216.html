@@ -81,6 +81,24 @@ let user = {
                   удалит эти данные и освободит память.</p>
               </div>
             </section>
+            <section aria-labelledby="Две ссылки">
+              <h2 id="Две ссылки">Две ссылки</h2>
+              <div class="section-content">
+                <p>Представим, что мы скопировали ссылку из <code>user</code> в <code>admin</code>:</p>
+                <pre><code class="language-js">// в user находится ссылка на объект
+let user = {
+  name: "John"
+};
+
+let admin = user;</code></pre>
+                <img style="width:13rem" src="../svg/memory-user-john-admin.svg">
+                <p>Теперь, если мы сделаем то же самое:</p>
+                <pre><code class="language-js">user = null;</code></pre>
+                <p>…то объект John всё ещё достижим через глобальную переменную <code>admin</code>, поэтому он находится
+                  в
+                  памяти. Если бы мы также перезаписали <code>admin</code>, то John был бы удалён.</p>
+              </div>
+            </section>
       </article>
     </main>
   </div>
