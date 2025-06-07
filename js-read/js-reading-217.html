@@ -393,6 +393,316 @@ user.sayHi(); // Илья</code></pre>
                   внутри стрелочной функции обращаются к <code>this</code>, то его значение берётся снаружи.</p>
               </div>
             </section>
+
+            <section aria-labelledby="Задачи16">
+              <h2 id="Задачи16">Задачи</h2>
+              <div class="section-content">
+              </div>
+
+
+              <section aria-labelledby="Проверка синтаксиса">
+                <h3 id="Проверка синтаксиса">Проверка синтаксиса</h3>
+                <div class="section-content">
+                  <p>Каким будет результат выполнения этого кода?</p>
+                  <pre><code class="language-js">let user = {
+  name: "Джон",
+  go: function() { alert(this.name) }
+}
+
+(user.go)()</code></pre>
+                  <p>P.S. Здесь есть подвох :)</p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p><strong>Ошибка!</strong></p>
+                      <p>Попробуйте запустить:</p>
+                      <pre><code class="language-js">let user = {
+  name: "Джон",
+  go: function() { alert(this.name) }
+}
+
+(user.go)() // ошибка!</code></pre>
+                      <p>Сообщение об ошибке в большинстве браузеров не даёт понимания, что же пошло не так.</p>
+                      <p><strong>Ошибка появляется, потому что точка с запятой пропущена после
+                          <code>user = {...}</code>.</strong></p>
+                      <p>JavaScript не вставляет автоматически точку с запятой перед круглой скобкой
+                        <code>(user.go)()</code>, поэтому читает этот код так:
+                      </p>
+                      <pre><code class="language-js">let user = { go:... }(user.go)()</code></pre>
+                      <p><span id="hint29" ; class="hint"
+                          data-tooltip="Чет не понял. Вроде объект пытаемся вызывать как функцию, только вместо названии функции у нас объект.">Теперь
+                          мы тоже можем увидеть, что такое объединённое выражение синтаксически является вызовом объекта
+                          <code>{ go: ... }</code> как функции с аргументом <code>(user.go)</code>. И это происходит в
+                          той
+                          же строчке с объявлением переменной <code>let user</code>, т.е. объект <code>user</code> ещё
+                          даже не определён, поэтому получается ошибка.</span></p>
+                      <p>Если мы вставим точку с запятой – всё заработает:</p>
+                      <pre><code class="language-js">let user = {
+  name: "Джон",
+  go: function() { alert(this.name) }
+};
+
+(user.go)() // Джон</code></pre>
+                      <p>Обратите внимание, что круглые скобки вокруг <code>(user.go)</code> ничего не значат. Обычно
+                        они
+                        определяют последовательность операций (оператор группировки), но здесь вызов метода через точку
+                        <code>.</code> срабатывает первым в любом случае, поэтому группировка ни на что не влияет.
+                        Только
+                        точка с запятой имеет значение.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+
+              <section aria-labelledby='Объясните значение "this"'>
+                <h3 id='Объясните значение "this"'>Объясните значение "this"</h3>
+                <div class="section-content">
+                  <p>В представленном ниже коде мы намерены вызвать <code>obj.go()</code> метод 4 раза подряд.</p>
+                  <p>Но вызовы <code>(1)</code> и <code>(2)</code> работают иначе, чем <code>(3)</code> и
+                    <code>(4)</code>. Почему?
+                  </p>
+                  <pre><code class="language-js">let obj, method;
+
+obj = {
+  go: function() { alert(this); }
+};
+
+obj.go();               // (1) [object Object]
+
+(obj.go)();             // (2) [object Object]
+
+(method = obj.go)();    // (3) undefined
+
+(obj.go || obj.stop)(); // (4) undefined</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Вот как это объясняется.</p>
+                      <ol>
+                        <li>
+                          <p>Это обычный вызов метода объекта через точку <code>.</code>, и <code>this</code> ссылается
+                            на
+                            объект перед точкой.</p>
+                        </li>
+                        <li>
+                          <p>Здесь то же самое. Круглые скобки (оператор группировки) тут не изменяют порядок выполнения
+                            операций – доступ к методу через точку в любом случае срабатывает первым.</p>
+                        </li>
+                        <li>
+                          <p>Здесь мы имеем более сложный вызов <code>(expression).method()</code>. Такой вызов
+                            работает,
+                            как если бы он был разделён на 2 строчки:</p>
+                          <pre><code class="language-js">f = obj.go; // вычисляется выражение (переменная f ссылается на код функции)
+f();        // вызов функции, на которую ссылается f</code></pre>
+                          <p>Здесь <code>f()</code> выполняется как функция, без передачи значения <code>this</code>.
+                          </p>
+                        </li>
+                        <li>
+                          <p>Тут похожая ситуация на случай <code>(3)</code> – идёт потеря значения <code>this</code>.
+                          </p>
+                        </li>
+                      </ol>
+                      <p>Чтобы объяснить поведение в примерах <code>(3)</code> и <code>(4)</code>, нам нужно помнить,
+                        что
+                        доступ к свойству (через точку или квадратные скобки) возвращает специальное значение ссылочного
+                        типа (Reference Type).</p>
+                      <p>За исключением вызова метода, любая другая операция (подобно операции присваивания
+                        <code>=</code>
+                        или сравнения через логические операторы, например <code>||</code>) превращает это значение в
+                        обычное, которое не несёт информации, позволяющей установить <code>this</code>.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+
+              <section aria-labelledby='Использование "this" в литерале объекта'>
+                <h3 id='Использование "this" в литерале объекта'>Использование "this" в литерале объекта</h3>
+                <div class="section-content">
+                  <p>Здесь функция <code>makeUser</code> возвращает объект.</p>
+                  <p>Каким будет результат при обращении к свойству объекта <code>ref</code>? Почему?</p>
+                  <pre><code class="language-js">function makeUser() {
+  return {
+    name: "Джон",
+    ref: this
+  };
+};
+
+let user = makeUser();
+
+alert( user.ref.name ); // Каким будет результат?</code></pre>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p><strong>Ответ: ошибка.</strong></p>
+                      <p>Проверьте:</p>
+                      <pre><code class="language-js">function makeUser() {
+  return {
+    name: "Джон",
+    ref: this
+  };
+};
+
+let user = makeUser();
+
+alert( user.ref.name ); // Error: Cannot read property 'name' of undefined</code></pre>
+                      <p>Это потому, что правила, которые определяют значение <code>this</code>, никак не смотрят на
+                        объявление объекта. Важен лишь момент вызова метода.</p>
+                      <p>Здесь значение <code>this</code> внутри <code>makeUser()</code> является
+                        <code>undefined</code>,
+                        потому что <code>makeUser()</code> вызвана как функция, не через «точку» как метод.
+                      </p>
+                      <p>Литерал объекта сам по себе не влияет на <code>this</code>. Значение <code>this</code> одно для
+                        всей функции и блоков кода в ней, литеральные объекты не меняют его.</p>
+                      <p>Таким образом, при создании объекта <code>ref: this</code> берёт текущее значение
+                        <code>this</code> функции <code>makeUser()</code>.
+                      </p>
+                      <p>А вот противоположный случай:</p>
+                      <pre><code class="language-js">function makeUser() {
+  return {
+    name: "Джон",
+    ref() {
+      return this;
+    }
+  };
+};
+
+let user = makeUser();
+
+alert( user.ref().name ); // Джон</code></pre>
+                      <p>Теперь это работает, поскольку <code>user.ref()</code> вызывается как метод. И значением
+                        <code>this</code> становится объект перед точкой <code>.</code>.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+
+              <section aria-labelledby="Создайте калькулятор">
+                <h3 id="Создайте калькулятор">Создайте калькулятор</h3>
+                <div class="section-content">
+                  <p>Создайте объект <code>calculator</code> (калькулятор) с тремя методами:</p>
+                  <ul>
+                    <li><code>read()</code> (читать) запрашивает два значения и сохраняет их как свойства объекта.</li>
+                    <li><code>sum()</code> (суммировать) возвращает сумму сохранённых значений.</li>
+                    <li><code>mul()</code> (умножить) перемножает сохранённые значения и возвращает результат.</li>
+                  </ul>
+                  <pre><code class="language-js">let calculator = {
+  // ... ваш код ...
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );</code></pre>
+                  <p><span id="hint30" ; class="hint" data-tooltip="Не знаю как сделать">Запустить демо</span></p>
+                  <p><a href="https://plnkr.co/edit/8dD0zQy1BDTcwoJ3?p=preview&preview"><span id="hint31" ; class="hint"
+                        data-tooltip="Там в этой песочнице может быть нужно к себе добавить все решения, что-бы не потерять, и отправлять ссылки уже к ним.">Открыть
+                        песочницу с тестами для задачи.</span></a></p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">let calculator = {
+  sum() {
+    return this.a + this.b;
+  },
+
+  mul() {
+    return this.a * this.b;
+  },
+
+  read() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  }
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );</code></pre>
+                      <p><a href="https://plnkr.co/edit/I3ydIMbBjuef0x20?p=preview">Открыть решение с тестами в
+                          песочнице.</a></p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+
+              <section aria-labelledby="Цепь вызовов">
+                <h3 id="Цепь вызовов">Цепь вызовов</h3>
+                <div class="section-content">
+                  <p>Это <code>ladder</code> (лестница) – объект, который позволяет подниматься вверх и спускаться:</p>
+                  <pre><code class="language-js">let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+  },
+  down() {
+    this.step--;
+  },
+  showStep: function() { // показывает текущую ступеньку
+    alert( this.step );
+  }
+};</code></pre>
+                  <p>Теперь, если нам нужно сделать несколько последовательных вызовов, мы можем выполнить это так:</p>
+                  <pre><code class="language-js">ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); // 1</code></pre>
+                  <p>Измените код методов <code>up</code>, <code>down</code> и <code>showStep</code> таким образом,
+                    чтобы
+                    их вызов можно было сделать по цепочке, например так:</p>
+                  <pre><code class="language-js">ladder.up().up().down().showStep(); // 1</code></pre>
+                  <p>Такой подход широко используется в библиотеках JavaScript.</p>
+                  <p><a href="https://plnkr.co/edit/Sse3bVrdDrHjqFfE?p=preview">Открыть песочницу с тестами для
+                      задачи.</a></p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p>Решением является возврат самого объекта в каждом методе.</p>
+                      <pre><code class="language-js">let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+}
+
+ladder.up().up().down().up().down().showStep(); // 1</code></pre>
+                      <p>Мы также можем писать один вызов на одной строке. Для длинной цепи вызовов это более
+                        читабельно:
+                      </p>
+                      <pre><code class="language-js">ladder
+  .up()
+  .up()
+  .down()
+  .up()
+  .down()
+  .showStep(); // 1</code></pre>
+                      <p><a href="https://plnkr.co/edit/pj54fHmZO3hS0dUs?p=preview">Открыть решение с тестами в
+                          песочнице.</a></p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+            </section>
       </article>
     </main>
   </div>
