@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Проверка синтаксиса">
+                <h3 id="Проверка синтаксиса">Проверка синтаксиса</h3>
+                <div class="section-content">
+                  <p>Каким будет результат выполнения этого кода?</p>
+                  <pre><code class="language-js">let user = {
+  name: "Джон",
+  go: function() { alert(this.name) }
+}
+
+(user.go)()</code></pre>
+                  <p>P.S. Здесь есть подвох :)</p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <p><strong>Ошибка!</strong></p>
+                      <p>Попробуйте запустить:</p>
+                      <pre><code class="language-js">let user = {
+  name: "Джон",
+  go: function() { alert(this.name) }
+}
+
+(user.go)() // ошибка!</code></pre>
+                      <p>Сообщение об ошибке в большинстве браузеров не даёт понимания, что же пошло не так.</p>
+                      <p><strong>Ошибка появляется, потому что точка с запятой пропущена после
+                          <code>user = {...}</code>.</strong></p>
+                      <p>JavaScript не вставляет автоматически точку с запятой перед круглой скобкой
+                        <code>(user.go)()</code>, поэтому читает этот код так:
+                      </p>
+                      <pre><code class="language-js">let user = { go:... }(user.go)()</code></pre>
+                      <p><span id="hint29" ; class="hint"
+                          data-tooltip="Чет не понял. Но видимо там код как если бы вообще не было никаких кучерявых скобок.">Теперь
+                          мы тоже можем увидеть, что такое объединённое выражение синтаксически является вызовом объекта
+                          <code>{ go: ... }</code> как функции с аргументом <code>(user.go)</code>. И это происходит в
+                          той
+                          же строчке с объявлением переменной <code>let user</code>, т.е. объект <code>user</code> ещё
+                          даже не определён, поэтому получается ошибка.</span></p>
+                      <p>Если мы вставим точку с запятой – всё заработает:</p>
+                      <pre><code class="language-js">let user = {
+  name: "Джон",
+  go: function() { alert(this.name) }
+};
+
+(user.go)() // Джон</code></pre>
+                      <p>Обратите внимание, что круглые скобки вокруг <code>(user.go)</code> ничего не значат. Обычно
+                        они
+                        определяют последовательность операций (оператор группировки), но здесь вызов метода через точку
+                        <code>.</code> срабатывает первым в любом случае, поэтому группировка ни на что не влияет.
+                        Только
+                        точка с запятой имеет значение.
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+

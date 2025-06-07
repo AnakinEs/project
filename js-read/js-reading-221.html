@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby="Создайте калькулятор">
+                <h3 id="Создайте калькулятор">Создайте калькулятор</h3>
+                <div class="section-content">
+                  <p>Создайте объект <code>calculator</code> (калькулятор) с тремя методами:</p>
+                  <ul>
+                    <li><code>read()</code> (читать) запрашивает два значения и сохраняет их как свойства объекта.</li>
+                    <li><code>sum()</code> (суммировать) возвращает сумму сохранённых значений.</li>
+                    <li><code>mul()</code> (умножить) перемножает сохранённые значения и возвращает результат.</li>
+                  </ul>
+                  <pre><code class="language-js">let calculator = {
+  // ... ваш код ...
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );</code></pre>
+                  <p><span id="hint30" ; class="hint" data-tooltip="Не знаю как сделать">Запустить демо</span></p>
+                  <p><a href="https://plnkr.co/edit/8dD0zQy1BDTcwoJ3?p=preview&preview"><span id="hint31" ; class="hint"
+                        data-tooltip="Там в этой песочнице может быть нужно к себе добавить все решения, что-бы не потерять, и отправлять ссылки уже к ним.">Открыть
+                        песочницу с тестами для задачи.</span></a></p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">let calculator = {
+  sum() {
+    return this.a + this.b;
+  },
+
+  mul() {
+    return this.a * this.b;
+  },
+
+  read() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  }
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );</code></pre>
+                      <p><a href="https://plnkr.co/edit/I3ydIMbBjuef0x20?p=preview">Открыть решение с тестами в
+                          песочнице.</a></p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+

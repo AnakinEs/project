@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby='Методы объекта, "this"'>
+              <h1 id='Методы объекта, "this"'>Методы объекта, "this"</h1>
+              <div class="section-content">
+                <p>Объекты обычно создаются, чтобы представлять сущности реального мира, будь то пользователи, заказы и
+                  так далее:</p>
+                <pre><code class="language-js">// Объект пользователя
+let user = {
+  name: "Джон",
+  age: 30
+};</code></pre>
+                <p>И так же, как и в реальном мире, пользователь может <em>совершать действия</em>: выбирать что-то из
+                  корзины покупок, авторизовываться, выходить из системы, оплачивать и т.п.</p>
+                <p>Такие действия в JavaScript представлены свойствами-функциями объекта.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Примеры методов">
+              <h2 id="Примеры методов">Примеры методов</h2>
+              <div class="section-content">
+                <p>Для начала давайте научим нашего пользователя <code>user</code> здороваться:</p>
+                <pre><code class="language-js">let user = {
+  name: "Джон",
+  age: 30
+};
+
+user.sayHi = function() {
+  alert("Привет!");
+};
+
+user.sayHi(); // Привет!</code></pre>
+                <p>Здесь мы просто использовали Function Expression (функциональное выражение), чтобы создать функцию
+                  для
+                  приветствия, и присвоили её свойству <code>user.sayHi</code> нашего объекта.</p>
+                <p>Затем мы вызвали её. Теперь пользователь может говорить!</p>
+                <p>Функцию, которая является свойством объекта, называют <em>методом</em> этого объекта.</p>
+                <p>Итак, мы получили метод <code>sayHi</code> объекта <code>user</code>.</p>
+                <p>Конечно, мы могли бы заранее объявить функцию и использовать её в качестве метода, примерно так:</p>
+                <pre><code class="language-js">let user = {
+  // ...
+};
+
+// сначала объявляем
+function sayHi() {
+  alert("Привет!");
+}
+
+// затем добавляем в качестве метода
+user.sayHi = sayHi;
+
+user.sayHi(); // Привет!</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Объектно-ориентированное программирование</div>
+                  <p>Когда мы пишем наш код, используя объекты для представления сущностей реального мира, – это
+                    называется <a
+                      href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">объектно-ориентированное
+                      программирование</a> или сокращённо: «ООП».</p>
+                  <p>ООП является большой предметной областью и интересной наукой само по себе. Как выбрать правильные
+                    сущности? Как организовать взаимодействие между ними? Это – создание архитектуры, и есть хорошие
+                    книги
+                    по этой теме, такие как «Приёмы объектно-ориентированного проектирования. Паттерны проектирования»
+                    авторов Эрих Гамма, Ричард Хелм, Ральф Джонсон, Джон Влиссидес или «Объектно-ориентированный анализ
+                    и
+                    проектирование с примерами приложений» Гради Буча, а также ещё множество других книг.</p>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Сокращённая запись метода">
+              <h2 id="Сокращённая запись метода">Сокращённая запись метода</h2>
+              <div class="section-content">
+                <p>Существует более короткий синтаксис для методов в литерале объекта:</p>
+                <pre><code class="language-js">// эти объекты делают одно и то же (одинаковые методы)
+
+user = {
+  sayHi: function() {
+    alert("Привет");
+  }
+};
+
+// сокращённая запись выглядит лучше, не так ли?
+user = {
+  sayHi() { // то же самое, что и "sayHi: function()"
+    alert("Привет");
+  }
+};</code></pre>
+                <p>Как было показано, мы можем пропустить ключевое слово <code>"function"</code> и просто написать
+                  <code>sayHi()</code>.
+                </p>
+                <p>Нужно отметить, что эти две записи не полностью эквивалентны. Есть тонкие различия, связанные с
+                  наследованием объектов (что будет рассмотрено позже), но на данном этапе изучения это неважно. В
+                  большинстве случаев сокращённый синтаксис предпочтителен.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Ключевое слово «this» в методах">
+              <h2 id="Ключевое слово «this» в методах">Ключевое слово «this» в методах</h2>
+              <div class="section-content">
+                <p>Как правило, методу объекта необходим доступ к информации, которая хранится в объекте, чтобы
+                  выполнить
+                  с ней какие-либо действия (в соответствии с назначением метода).</p>
+                <p>Например, коду внутри <code>user.sayHi()</code> может понадобиться имя пользователя, которое хранится
+                  в
+                  объекте <code>user</code>.</p>
+                <p><strong>Для доступа к информации внутри объекта метод может использовать ключевое слово
+                    <code>this</code>.</strong></p>
+                <p>Значение <code>this</code> – это объект «перед точкой», который использовался для вызова метода.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let user = {
+  name: "Джон",
+  age: 30,
+
+  sayHi() {
+    // this - это "текущий объект"
+    alert(this.name);
+  }
+
+};
+
+user.sayHi(); // Джон</code></pre>
+                <p>Здесь во время выполнения кода <code>user.sayHi()</code> значением <code>this</code> будет являться
+                  <code>user</code> (ссылка на объект <code>user</code>).
+                </p>
+                <p>Технически также возможно получить доступ к объекту без ключевого слова <code>this</code>, ссылаясь
+                  на
+                  него через внешнюю переменную (в которой хранится ссылка на этот объект):</p>
+                <pre><code class="language-js">let user = {
+  name: "Джон",
+  age: 30,
+
+  sayHi() {
+    alert(user.name); // используем переменную "user" вместо ключевого слова "this"
+  }
+
+};</code></pre>
+                <p>…Но такой код будет ненадёжным. Если мы решим скопировать ссылку на объект <code>user</code> в другую
+                  переменную, например, <code>admin = user</code>, и перезапишем переменную <code>user</code> чем-то
+                  другим, тогда будет осуществлён доступ к неправильному объекту при вызове метода из
+                  <code>admin</code>.
+                </p>
+                <p>Это показано ниже:</p>
+                <pre><code class="language-js">let user = {
+  name: "Джон",
+  age: 30,
+
+  sayHi() {
+    alert( user.name ); // приведёт к ошибке
+  }
+
+};
+
+
+let admin = user;
+user = null; // обнулим переменную для наглядности, теперь она не хранит ссылку на объект.
+
+admin.sayHi(); // Ошибка! Внутри sayHi() используется user, которая больше не ссылается на объект!</code></pre>
+                <p>Если мы используем <code>this.name</code> вместо <code>user.name</code> внутри <code>alert</code>,
+                  тогда этот код будет работать.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="«this» не является фиксированным">
+              <h2 id="«this» не является фиксированным">«this» не является фиксированным</h2>
+              <div class="section-content">
+                <p>В JavaScript ключевое слово «this» ведёт себя иначе, чем в большинстве других языков
+                  программирования.
+                  Оно может использоваться в любой функции.</p>
+                <p>В этом коде нет синтаксической ошибки:</p>
+                <pre><code class="language-js">function sayHi() {
+  alert( this.name );
+}</code></pre>
+                <p>Значение <code>this</code> вычисляется во время выполнения кода и зависит от контекста.</p>
+                <p>Например, здесь одна и та же функция назначена двум разным объектам и имеет различное значение «this»
+                  при вызовах:</p>
+                <pre><code class="language-js">let user = { name: "Джон" };
+let admin = { name: "Админ" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+// используем одну и ту же функцию в двух объектах
+user.f = sayHi;
+admin.f = sayHi;
+
+// вызовы функции, приведённые ниже, имеют разное значение this
+// "this" внутри функции является ссылкой на объект, который указан "перед точкой"
+user.f(); // Джон  (this == user)
+admin.f(); // Админ  (this == admin)
+
+admin['f'](); // Админ (неважен способ доступа к методу - через точку или квадратные скобки)</code></pre>
+                <p>Правило простое: при вызове <code>obj.f()</code> значение <code>this</code> внутри <code>f</code>
+                  равно
+                  <code>obj</code>. Так что, в приведённом примере это <code>user</code> или <code>admin</code>.
+                </p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Вызов без объекта: <code>this == undefined</code></div>
+                  <p>Мы даже можем вызвать функцию вовсе без использования объекта:</p>
+                  <pre><code class="language-js">function sayHi() {
+  alert(this);
+}
+
+sayHi(); // undefined</code></pre>
+                  <p>В строгом режиме (<code>"use strict"</code>) в таком коде значением <code>this</code> будет
+                    являться
+                    <code>undefined</code>. Если мы попытаемся получить доступ к <code>name</code>, используя
+                    <code>this.name</code> – это вызовет ошибку.
+                  </p>
+                  <p>В нестрогом режиме значением <code>this</code> в таком случае будет <em>глобальный объект</em>
+                    (<code>window</code> для браузера, мы вернёмся к этому позже в главе <a
+                      href="https://learn.javascript.ru/global-object">Глобальный объект</a>). Это – исторически
+                    сложившееся поведение <code>this</code>, которое исправляется использованием строгого режима
+                    (<code>"use strict"</code>).</p>
+                  <p>Обычно подобный вызов является ошибкой программирования. Если внутри функции используется
+                    <code>this</code>, тогда ожидается, что она будет вызываться в контексте какого-либо объекта.
+                  </p>
+                </div>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Последствия свободного <code>this</code></div>
+                  <p>Если вы до этого изучали другие языки программирования, тогда вы, скорее всего, привыкли к идее
+                    "фиксированного <code>this</code>" – когда методы, определённые внутри объекта, всегда сохраняют в
+                    качестве значения <code>this</code> ссылку на свой объект (в котором был определён метод).</p>
+                  <p>В JavaScript <code>this</code> является «свободным», его значение вычисляется в момент вызова
+                    метода
+                    и не зависит от того, где этот метод был объявлен, а зависит от того, какой объект вызывает метод
+                    (какой объект стоит «перед точкой»).</p>
+                  <p>Эта идея вычисления <code>this</code> в момент исполнения имеет как свои плюсы, так и минусы. С
+                    одной
+                    стороны, функция может быть повторно использована в качестве метода у различных объектов (что
+                    повышает
+                    гибкость). С другой стороны, большая гибкость увеличивает вероятность ошибок.</p>
+                  <p>Здесь мы не будем судить о том, является ли это решение в языке хорошим или плохим. Мы должны
+                    понимать, как с этим работать, чтобы получать выгоды и избегать проблем.</p>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Внутренняя реализация: Ссылочный тип">
+              <h2 id="Внутренняя реализация: Ссылочный тип">Внутренняя реализация: Ссылочный тип</h2>
+              <div class="section-content">
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Внутренняя реализация: Ссылочный тип</div>
+                  <p>Этот раздел объясняет сложную тему, чтобы лучше понимать некоторые запутанные случаи.</p>
+                  <p>Если вы хотите продвигаться быстрее, его можно пропустить или отложить.</p>
+                </div>
+                <p>Некоторые хитрые способы вызова метода приводят к потере значения <code>this</code>, например:</p>
+                <pre><code class="language-js">let user = {
+  name: "Джон",
+  hi() { alert(this.name); },
+  bye() { alert("Пока"); }
+};
+
+user.hi(); // Джон (простой вызов метода работает хорошо)
+
+// теперь давайте попробуем вызывать user.hi или user.bye
+// в зависимости от имени пользователя user.name
+(user.name == "Джон" ? user.hi : user.bye)(); // Ошибка!</code></pre>
+                <p>В последней строчке кода используется условный оператор <code>?</code>, который определяет, какой
+                  будет
+                  вызван метод (<code>user.hi</code> или <code>user.bye</code>) в зависимости от выполнения условия. В
+                  данном случае будет выбран <code>user.hi</code>.</p>
+                <p>Затем метод тут же вызывается с помощью скобок <code>()</code>. Но вызов не работает как положено!
+                </p>
+                <p>Вы можете видеть, что при вызове будет ошибка, потому что значением <code>"this"</code> внутри
+                  функции
+                  становится <code>undefined</code> (полагаем, что у нас строгий режим).</p>
+                <p>Так работает (доступ к методу объекта через точку):</p>
+                <pre><code class="language-js">user.hi();</code></pre>
+                <p>Так уже не работает (вызываемый метод вычисляется):</p>
+                <pre><code class="language-js">(user.name == "Джон" ? user.hi : user.bye)(); // Ошибка!</code></pre>
+                <p>Почему? Если мы хотим понять, почему так происходит, давайте разберёмся (заглянем под капот), как
+                  работает вызов методов (<code>obj.method()</code>).</p>
+                <p>Присмотревшись поближе, в выражении <code>obj.method()</code> можно заметить две операции:</p>
+                <ol>
+                  <li>Сначала оператор точка <code>'.'</code> возвращает свойство объекта – его метод
+                    (<code>obj.method</code>).</li>
+                  <li>Затем скобки <code>()</code> вызывают этот метод (исполняется код метода).</li>
+                </ol>
+                <p>Итак, каким же образом информация о <code>this</code> передаётся из первой части во вторую?</p>
+                <p>Если мы поместим эти операции в отдельные строки, то значение <code>this</code>, естественно, будет
+                  потеряно:</p>
+                <pre><code class="language-js">let user = {
+  name: "Джон",
+  hi() { alert(this.name); }
+};
+
+// разделим получение метода объекта и его вызов в разных строках
+let hi = user.hi;
+hi(); // Ошибка, потому что значением this является undefined</code></pre>
+                <p>Здесь <code>hi = user.hi</code> сохраняет функцию в переменной, и далее в последней строке она
+                  вызывается полностью сама по себе, без объекта, так что нет <code>this</code>.</p>
+                <p><strong>Для работы вызовов типа <code>user.hi()</code>, JavaScript использует трюк – точка
+                    <code>'.'</code> возвращает не саму функцию, а специальное значение «ссылочного типа», называемого
+                    <a href="https://tc39.es/ecma262/#sec-reference-specification-type">Reference Type</a>.</strong></p>
+                <p>Этот ссылочный тип (Reference Type) является внутренним типом. Мы не можем явно использовать его, но
+                  он
+                  используется внутри языка.</p>
+                <p>Значение ссылочного типа – это «триплет»: комбинация из трёх значений
+                  (<code>base, name, strict</code>), где:</p>
+                <ul>
+                  <li><code>base</code> – это объект.</li>
+                  <li><code>name</code> – это имя свойства объекта.</li>
+                  <li><code>strict</code> – это режим исполнения. Является true, если действует строгий режим
+                    (<code>use strict</code>).</li>
+                </ul>
+                <p>Результатом доступа к свойству <code>user.hi</code> является не функция, а значение ссылочного типа.
+                  Для <code>user.hi</code> в строгом режиме оно будет таким:</p>
+                <pre><code class="language-js">// значение ссылочного типа (Reference Type)
+(user, "hi", true)</code></pre>
+                <p>Когда скобки <code>()</code> применяются к значению ссылочного типа (происходит вызов), то они
+                  получают
+                  полную информацию об объекте и его методе, и могут поставить правильный <code>this</code>
+                  (<code>=user</code> в данном случае, по <code>base</code>).</p>
+                <p>Ссылочный тип – исключительно внутренний, промежуточный, используемый, чтобы передать информацию от
+                  точки <code>.</code> до вызывающих скобок <code>()</code>.</p>
+                <p>При любой другой операции, например, присваивании <code>hi = user.hi</code>, ссылочный тип заменяется
+                  на собственно значение <code>user.hi</code> (функцию), и дальше работа уже идёт только с ней. Поэтому
+                  дальнейший вызов происходит уже без <code>this</code>.</p>
+                <p>Таким образом, значение <code>this</code> передаётся правильно, только если функция вызывается
+                  напрямую
+                  с использованием синтаксиса точки <code>obj.method()</code> или квадратных скобок
+                  <code>obj['method']()</code> (они делают то же самое). Позднее в этом учебнике мы изучим различные
+                  варианты решения проблемы потери значения <code>this</code>. Например, такие как
+                  <code><a href="https://learn.javascript.ru/bind#solution-2-bind">func.bind()</a></code>.
+                </p>
+              </div>
+            </section>
+
+            <section aria-labelledby="У стрелочных функций нет «this»">
+              <h2 id="У стрелочных функций нет «this»">У стрелочных функций нет «this»</h2>
+              <div class="section-content">
+                <p>Стрелочные функции особенные: у них нет своего «собственного» <code>this</code>. Если мы используем
+                  <code>this</code> внутри стрелочной функции, то его значение берётся из внешней «нормальной» функции.
+                </p>
+                <p>Например, здесь <code>arrow()</code> использует значение <code>this</code> из внешнего метода
+                  <code>user.sayHi()</code>:
+                </p>
+                <pre><code class="language-js">let user = {
+  firstName: "Илья",
+  sayHi() {
+    let arrow = () =&gt; alert(this.firstName);
+    arrow();
+  }
+};
+
+user.sayHi(); // Илья</code></pre>
+                <p>Это является особенностью стрелочных функций. Они полезны, когда мы на самом деле не хотим иметь
+                  отдельное значение <code>this</code>, а хотим брать его из внешнего контекста. Позднее в главе <a
+                    href="https://learn.javascript.ru/arrow-functions">Повторяем стрелочные функции</a> мы увидим больше
+                  примеров на эту тему.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Итого22">
+              <h2 id="Итого22">Итого</h2>
+              <div class="section-content">
+                <ul>
+                  <li>Функции, которые находятся в объекте в качестве его свойств, называются «методами».</li>
+                  <li>Методы позволяют объектам «действовать»: <code>object.doSomething()</code>.</li>
+                  <li>Методы могут ссылаться на объект через <code>this</code>.</li>
+                </ul>
+                <p>Значение <code>this</code> определяется во время исполнения кода.</p>
+                <ul>
+                  <li>При объявлении любой функции в ней можно использовать <code>this</code>, но этот <code>this</code>
+                    не имеет значения до тех пор, пока функция не будет вызвана.</li>
+                  <li>Эта функция может быть скопирована между объектами (из одного объекта в другой).</li>
+                  <li>Когда функция вызывается синтаксисом «метода» – <code>object.method()</code>, значением
+                    <code>this</code> во время вызова является объект перед точкой.
+                  </li>
+                </ul>
+                <p>Также ещё раз заметим, что стрелочные функции являются особенными – у них нет <code>this</code>.
+                  Когда
+                  внутри стрелочной функции обращаются к <code>this</code>, то его значение берётся снаружи.</p>
+              </div>
+            </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
