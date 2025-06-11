@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+<section aria-labelledby='Конструкторы, создание объектов через "new"'>
+            <section aria-labelledby='Конструкторы, создание объектов через "new"'>
+              <h1 id='Конструкторы, создание объектов через "new"'>Конструкторы, создание объектов через "new"</h1>
+              <div class="section-content">
+                <p>Обычный синтаксис <code>{...}</code> позволяет создать только один объект. Но зачастую нам нужно
+                  создать множество однотипных объектов, таких как пользователи, элементы меню и т.д.</p>
+                <p>Это можно сделать при помощи функции-конструктора и оператора <code>"new"</code>.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Функция-конструктор">
+              <h2 id="Функция-конструктор">Функция-конструктор</h2>
+              <div class="section-content">
+                <p>Функции-конструкторы являются обычными функциями. Но есть два соглашения:</p>
+                <ol>
+                  <li>Имя функции-конструктора должно начинаться с большой буквы.</li>
+                  <li>Функция-конструктор должна вызываться при помощи оператора <code>"new"</code>.</li>
+                </ol>
+                <p>Например:</p>
+                <pre><code class="language-js">function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("Вася");
+
+alert(user.name); // Вася
+alert(user.isAdmin); // false</code></pre>
+                <p>Когда функция вызывается как <code>new User(...)</code>, происходит следующее:</p>
+                <ol>
+                  <li>Создаётся новый пустой объект, и он присваивается <code>this</code>.</li>
+                  <li>Выполняется код функции. Обычно он модифицирует <code>this</code>, добавляет туда новые свойства.
+                  </li>
+                  <li>Возвращается значение <code>this</code>.</li>
+                </ol>
+                <p>Другими словами, вызов <code>new User(...)</code> делает примерно вот что:</p>
+                <pre><code class="language-js">function User(name) {
+  // this = {};  (неявно)
+
+  // добавляет свойства к this
+  this.name = name;
+  this.isAdmin = false;
+
+  // return this;  (неявно)
+}</code></pre>
+                <p>То есть, результат вызова <code>let user = new User("Вася")</code> – это тот же объект, что и:</p>
+                <pre><code class="language-js">let user = {
+  name: "Вася",
+  isAdmin: false
+};</code></pre>
+                <p>Теперь, когда нам необходимо будет создать других пользователей, мы можем использовать
+                  <code>new User("Маша")</code>, <code>new User("Даша")</code> и т.д. Данная конструкция гораздо удобнее
+                  и
+                  читабельнее, чем каждый раз создавать литерал объекта. Это и является основной целью конструкторов –
+                  удобное повторное <span class="meaning" data-tooltip="Это будут разные объекты, они не будут ссылаться на один объект.">создание однотипных объектов</span>.
+                </p>
+                <p>Ещё раз заметим: технически любая функция может быть использована как конструктор. То есть, каждая
+                  функция может быть вызвана при помощи оператора <code>new</code>, и выполнится алгоритм, указанный
+                  выше
+                  в примере. Заглавная буква в названии функции является всеобщим соглашением по именованию, она как бы
+                  подсказывает разработчику, что данная функция является функцией-конструктором, и её нужно вызывать
+                  через
+                  <code>new</code>.
+                </p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">new function() { … }</div>
+                  <p>Если в нашем коде большое количество строк, создающих один сложный объект, мы можем обернуть их в
+                    функцию-конструктор следующим образом:</p>
+                  <pre><code class="language-js">let user = new function() {
+  this.name = "Вася";
+  this.isAdmin = false;
+
+  // ...другой код для создания пользователя
+  // возможна любая сложная логика и выражения
+  // локальные переменные и т. д.
+};</code></pre>
+                  <p>Такой конструктор не может быть вызван дважды, так как он нигде не сохраняется, просто создаётся и
+                    тут же вызывается. Таким образом, такой метод создания позволяет <span class="meaning"
+                      data-tooltip="В объектно-ориентированном программировании сокрытие внутренней структуры данных и реализации методов объекта от остальной программы">инкапсулировать</span>
+                    код, который создаёт отдельный объект, но без возможности его повторного использования.</p>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Проверка на вызов в режиме конструктора: new.target">
+              <h2 id="Проверка на вызов в режиме конструктора: new.target">Проверка на вызов в режиме конструктора:
+                new.target</h2>
+              <div class="section-content">
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Продвинутая возможность</div>
+                  <p>Данный метод используется очень редко. Вы можете пропустить эту секцию, если не хотите углубляться
+                    в
+                    детали языка.</p>
+                </div>
+                <p>Используя специальное свойство <code>new.target</code> внутри функции, мы можем проверить, вызвана ли
+                  функция при помощи оператора <code>new</code> или без него.</p>
+                <p>В случае, если функция вызвана при помощи <code>new</code>, то в <code>new.target</code> будет сама
+                  функция, в противном случае <code>undefined</code>.</p>
+                <pre><code class="language-js">function User() {
+  alert(new.target);
+}
+
+// без "new":
+User(); // undefined
+
+// с "new":
+new User(); // function User { ... }</code></pre>
+                <p>Это можно использовать, чтобы отличить обычный вызов от вызова «в режиме конструктора». В частности,
+                  вот так можно сделать, чтобы функцию можно было вызывать как с, так и без <code>new</code>:</p>
+                <pre><code class="language-js">function User(name) {
+  if (!new.target) { // в случае, если вы вызвали без оператора new
+    return new User(name); // ...добавим оператор new за вас
+  }
+
+  this.name = name;
+}
+
+let vasya = User("Вася"); // переадресовывает вызовы на new User
+alert(vasya.name); // Вася</code></pre>
+                <p>Такой подход иногда используется в библиотеках для создания более гибкого синтаксиса, который
+                  позволяет
+                  разработчикам вызывать функции при помощи оператора <code>new</code> или без него.</p>
+                <p>Впрочем, это не очень хорошая практика, так как отсутствие <code>new</code> может ввести разработчика
+                  в
+                  заблуждение. С оператором <code>new</code> мы точно знаем, что в итоге будет создан новый объект.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Возврат значения из конструктора return">
+              <h2 id="Возврат значения из конструктора return">Возврат значения из конструктора return</h2>
+              <div class="section-content">
+                <p>Обычно конструкторы ничего не возвращают явно. Их задача – записать все необходимое в
+                  <code>this</code>, который в итоге станет результатом.
+                </p>
+                <p>Но если <code>return</code> всё же есть, то применяется простое правило:</p>
+                <ul>
+                  <li>При вызове <code>return</code> с объектом, будет возвращён объект, а не <code>this</code>.</li>
+                  <li>При вызове <code>return</code> с примитивным значением, примитивное значение будет отброшено.</li>
+                </ul>
+                <p>Другими словами, <code>return</code> с объектом возвращает объект, в любом другом случае конструктор
+                  вернёт <code>this</code>.</p>
+                <p>В примере ниже <code>return</code> возвращает объект вместо <code>this</code>:</p>
+                <pre><code class="language-js">function BigUser() {
+
+  this.name = "Вася";
+
+  return { name: "Godzilla" };  // &lt;-- возвращает этот объект
+}
+
+alert( new BigUser().name );  // Godzilla, получили этот объект</code></pre>
+                <p>А вот пример с пустым <code>return</code> (или мы могли бы поставить примитив после
+                  <code>return</code>, неважно)
+                </p>
+                <pre><code class="language-js">function SmallUser() {
+
+  this.name = "Вася";
+
+  return; // &lt;-- возвращает this
+}
+
+alert( new SmallUser().name );  // Вася</code></pre>
+                <p>Обычно у конструкторов отсутствует <code>return</code>. В данном блоке мы упомянули особое поведение
+                  с
+                  возвращаемыми объектами, чтобы не оставлять пробелов в изучении языка.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Отсутствие скобок</div>
+                  <p>Кстати, мы можем не ставить скобки после <code>new</code>, если вызов конструктора идёт без
+                    аргументов.</p>
+                  <pre><code class="language-js">let user = new User; // &lt;-- без скобок
+// то же, что и
+let user = new User();</code></pre>
+                  <p>Пропуск скобок считается плохой практикой, но синтаксис языка такое позволяет.</p>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Создание методов в конструкторе">
+              <h2 id="Создание методов в конструкторе">Создание методов в конструкторе</h2>
+              <div class="section-content">
+                <p>Использование конструкторов для создания объектов даёт большую гибкость. Можно передавать
+                  конструктору
+                  параметры, определяющие, как создавать объект, и что в него записывать.</p>
+                <p>В <code>this</code> мы можем добавлять не только свойства, но и методы.</p>
+                <p>Например, в примере ниже, <code>new User(name)</code> создаёт объект с данным именем
+                  <code>name</code>
+                  и методом <code>sayHi</code>:
+                </p>
+                <pre><code class="language-js">function User(name) {
+  this.name = name;
+
+  this.sayHi = function() {
+    alert( "Меня зовут: " + this.name );
+  };
+}
+
+let vasya = new User("Вася");
+
+vasya.sayHi(); // Меня зовут: Вася
+
+/*
+vasya = {
+   name: "Вася",
+   sayHi: function() { ... }
+}
+*/</code></pre>
+                <p>Для создания сложных объектов есть и более «продвинутый» синтаксис – <a
+                    href="https://learn.javascript.ru/classes">классы</a>, которые мы разберём позже.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Итого23">
+              <h2 id="Итого23">Итого</h2>
+              <div class="section-content">
+                <ul>
+                  <li>Функции-конструкторы или просто конструкторы являются обычными функциями, именовать которые
+                    следует
+                    с заглавной буквы.</li>
+                  <li>Конструкторы следует вызывать при помощи оператора <code>new</code>. Такой вызов создаёт пустой
+                    <code>this</code> в начале выполнения и возвращает заполненный в конце.
+                  </li>
+                </ul>
+                <p>Мы можем использовать конструкторы для создания множества похожих объектов.</p>
+                <p>JavaScript предоставляет функции-конструкторы для множества встроенных объектов языка: например,
+                  <code>Date</code>, <code>Set</code> и других, которые нам ещё предстоит изучить.
+                </p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Объекты, мы к ним ещё вернёмся!</div>
+                  <p>В этой главе мы рассмотрели базовые принципы объектов и конструкторов. Данная информация необходима
+                    нам для дальнейшего изучения типов данных и функций. Как только мы с ними разберёмся, мы вернёмся к
+                    объектам для более детального изучения в главах <a
+                      href="https://learn.javascript.ru/prototypes">Прототипы, наследование</a> и <a
+                      href="https://learn.javascript.ru/classes">Классы</a>.</p>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Задачи17">
+              <h2 id="Задачи17">Задачи</h2>
+              <div class="section-content">
+              </div>
+
+              <section aria-labelledby="Две функции - один объект">
+                <h3 id="Две функции - один объект">Две функции - один объект</h3>
+                <div class="section-content">
+                  <p>Возможно ли создать функции <code>A</code> и <code>B</code> в примере ниже, где объекты равны
+                    <code>new A()==new B()?</code>
+                  </p>
+                  <pre><code class="language-js">function A() { ... }
+function B() { ... }
+
+let a = new A;
+let b = new B;
+
+alert( a == b ); // true</code></pre>
+                  <p>Если да – приведите пример вашего кода.</p>
+                </div>
+                <details>
+                  <summary class="solution">
+                    <li class="task__solution" type="button">решение</li>
+                  </summary>
+                  <div>
+                    <p>Да, возможно.</p>
+                    <p>Если функция возвращает объект, то вместо <code>this</code> будет возвращён этот объект.</p>
+                    <p>Например, они могут вернуть один и тот же объект <code>obj</code>, определённый снаружи:</p>
+                    <pre><code class="language-js">let obj = {};
+
+function A() { return obj; }
+function B() { return obj; }
+
+alert( new A() == new B() ); // true</code></pre>
+                  </div>
+                </details>
+              </section>
+
+              <section aria-labelledby="Создание калькулятора при помощи конструктора">
+                <h3 id="Создание калькулятора при помощи конструктора">Создание калькулятора при помощи конструктора
+                </h3>
+                <div class="section-content">
+                  <p>Создайте функцию-конструктор <code>Calculator</code>, который создаёт объекты с тремя методами:</p>
+                  <ul>
+                    <li><code>read()</code> запрашивает два значения при помощи <code>prompt</code> и сохраняет их
+                      значение в свойствах объекта.</li>
+                    <li><code>sum()</code> возвращает сумму введённых свойств.</li>
+                    <li><code>mul()</code> возвращает произведение введённых свойств.</li>
+                  </ul>
+                  <p>Например:</p>
+                  <pre><code class="language-js">let calculator = new Calculator();
+calculator.read();
+
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );</code></pre>
+                  <p><a onclick=" event.preventDefault(); CalculatorForOnclick()" href="#">Запустить демо</a></p>
+                  <script>
+                    function CalculatorForOnclick(){
+                      function Calculator() {
+
+                        this.read = function() {
+                          this.a = +prompt('a?', 0);
+                          this.b = +prompt('b?', 0);
+                        };
+                      
+                        this.sum = function() {
+                          return this.a + this.b;
+                        };
+                      
+                        this.mul = function() {
+                          return this.a * this.b;
+                        };
+                      }
+                      
+                      let calculator = new Calculator();
+                      calculator.read();
+                      
+                      alert( "Sum=" + calculator.sum() );
+                      alert( "Mul=" + calculator.mul() );
+                    }
+                  </script>
+                  
+                  <p><a href="https://plnkr.co/edit/37ttQ6dAaKUpycA0?p=preview">Открыть песочницу с тестами для
+                      задачи.</a></p>
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">function Calculator() {
+
+  this.read = function() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  };
+
+  this.sum = function() {
+    return this.a + this.b;
+  };
+
+  this.mul = function() {
+    return this.a * this.b;
+  };
+}
+
+let calculator = new Calculator();
+calculator.read();
+
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );</code></pre>
+                      <p><a href="https://plnkr.co/edit/Uq57xdTu0D2KCZc0?p=preview">Открыть решение с тестами в
+                          песочнице.</a></p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+
+              <section aria-labelledby="Создаём Accumulator">
+                <h3 id="Создаём Accumulator">Создаём Accumulator</h3>
+                <div class="section-content">
+                  <p>Напишите функцию-конструктор <code>Accumulator(startingValue)</code>.</p>
+                  <p>Объект, который она создаёт, должен уметь следующее:</p>
+                  <ul>
+                    <li>Хранить «текущее значение» в свойстве <code>value</code>. Начальное значение устанавливается в
+                      аргументе конструктора <code>startingValue</code>.</li>
+                    <li>Метод <code>read()</code> использует <code>prompt</code> для получения числа и прибавляет его к
+                      свойству <code>value</code>.</li>
+                  </ul>
+                  <p>Таким образом, свойство <code>value</code> является текущей суммой всего, что ввёл пользователь при
+                    вызовах метода <code>read()</code>, с учётом начального значения <code>startingValue</code>.</p>
+                  <p>Ниже вы можете посмотреть работу кода:</p>
+                  <pre><code class="language-js">let accumulator = new Accumulator(1); // начальное значение 1
+
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+
+alert(accumulator.value); // выведет сумму этих значений</code></pre>
+                  <p><a onclick=" event.preventDefault(); AccumulatorForOnclick()" href="#">Запустить демо</a></p>
+                  <script>
+                    function AccumulatorForOnclick(){
+                      function Accumulator(startingValue) {
+                        this.value = startingValue;
+                      
+                        this.read = function() {
+                          this.value += +prompt('Сколько нужно добавить?', 0);
+                        };
+                      
+                      }
+                      
+                      let accumulator = new Accumulator(1);
+                      accumulator.read();
+                      accumulator.read();
+                      alert(accumulator.value);
+                    }
+                  </script>
+
+                  <p><a href="https://plnkr.co/edit/bLTAo1oy8DV0Pp1q?p=preview">Открыть песочницу с тестами для
+                      задачи.</a></p>
+
+                  <details>
+                    <summary class="solution">
+                      <li class="task__solution" type="button">решение</li>
+                    </summary>
+                    <div>
+                      <pre><code class="language-js">function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('Сколько нужно добавить?', 0);
+  };
+
+}
+
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+alert(accumulator.value);</code></pre>
+                      <p><a href="https://plnkr.co/edit/sKi5708Sby8BS5sF?p=preview">Открыть решение с тестами в
+                          песочнице.</a></p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+            </section>
+          </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
