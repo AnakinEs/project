@@ -22,9 +22,14 @@
         <section aria-labelledby="Атрибут formnovalidate">
           <h2 id="Атрибут formnovalidate">Атрибут formnovalidate</h2>
           <div class="section-content">
-            <p>Атрибут <code>formnovalidate</code> переопределяет атрибут <code><span class="meaning" data-tooltip='При наличии, <code>unvalidate</code> указывает, что данные формы не должны проверяться при отправке. Указыватся вроде непосредственно в самой форме: <code>&amp;lt;form action="/action_page.php" novalidate&amp;gt;</code>'>unvalidate</span></code> элемента <code>&lt;form&gt;</code>.</p>
+            <p>Атрибут <code>formnovalidate</code> переопределяет атрибут <code><span class="meaning" data-tooltip='<code>novalidate</code> отключает автоматическую проверку данных формы, которую браузер выполняет при отправке формы. Указыватся непосредственно в самой форме: <code>&amp;lt;form action="/action_page.php" novalidate&amp;gt;</code>'>unvalidate</span></code> элемента <code>&lt;form&gt;</code>.</p>
             <p>Атрибут <code>formnovalidate</code> можно использовать с <code>type="submit"</code>.</p>
-            <p>Форма с двумя кнопками отправки (с проверкой и <span id="hint15" class="hint" data-tooltip="Первая кнопка без проверки я так понял, но ведь атрибут unvalidate не указан. По умолчанию может быть стоит. Или забыли указать в качестве примера.">без проверки</span>):</p>
+            <p>Форма с двумя кнопками отправки (с проверкой и без проверки):</p>
+            <div class="note notecard" id="transparent-js">
+              <div class="important_type">Свои дополнения</div>
+              <p>Атрибут <code>formnovalidate</code> используется для отмены встроенной проверки данных формы при отправке на сервер. Он применяется к кнопке отправки (тег <code>&lt;button&gt;</code>) и позволяет обойти стандартную проверку браузером данных, введенных пользователем в форме, при нажатии на эту кнопку. Это означает, что даже если в форме есть обязательные поля (с атрибутом <code>required</code>) или поля с проверкой по шаблону (атрибут <code>pattern</code>), браузер не будет блокировать отправку формы, если она инициирована кнопкой с атрибутом <code>formnovalidate</code>.</p>
+              <p>Атрибут <code>novalidate</code> применяется к самой форме (тегу <code>&lt;form&gt;</code>) и отменяет проверку для всей формы. <code>formnovalidate</code> применяется к конкретной кнопке отправки и переопределяет <code>novalidate</code> для этой кнопки. Если указан и <code>novalidate</code> на форме и <code>formnovalidate</code> на кнопке, то приоритет у <code>formnovalidate</code> для этой кнопки.</p>
+            </div>
             <pre><code class="language-html">&lt;form action=&quot;/action_page.php&quot;&gt;
   E-mail: &lt;input type=&quot;email&quot; name=&quot;userid&quot;&gt;&lt;br&gt;
   &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;br&gt;
