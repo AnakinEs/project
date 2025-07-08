@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+          <section aria-labelledby="Опциональная цепочка '?.'">
+            <section aria-labelledby="Опциональная цепочка '?.'">
+              <h1 id="Опциональная цепочка '?.'">Опциональная цепочка '?.'</h1>
+              <div class="section-content">
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Новая возможность</div>
+                  <p>Эта возможность была добавлена в язык недавно. В старых браузерах может понадобиться <a
+                      href="https://learn.javascript.ru/polyfills">полифил</a>.</p>
+                </div>
+                <p>Опциональная цепочка <code>?</code>. — это безопасный способ доступа к свойствам вложенных объектов,
+                  даже если какое-либо из промежуточных свойств не существует.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Проблема «несуществующего свойства»">
+              <h2 id="Проблема «несуществующего свойства»">Проблема «несуществующего свойства»</h2>
+              <div class="section-content">
+                <p>Если вы только начали читать учебник и изучать JavaScript, то, возможно, проблема вас ещё не
+                  коснулась,
+                  но она довольно распространена.</p>
+                <p>В качестве примера предположим, что у нас есть объекты <code>user</code>, которые содержат информацию
+                  о
+                  наших пользователях.</p>
+                <p>У большинства наших пользователей есть адреса в свойстве <code>user.address</code> с улицей
+                  <code>user.address.street</code>, но некоторые из них их не указали.
+                </p>
+                <p>В таком случае, когда мы попытаемся получить <code>user.address.street</code>, а пользователь
+                  окажется
+                  без адреса, мы получим ошибку:</p>
+<pre class="language-js" tabindex="0"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// пользователь без свойства "address"</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="meaning" data-tooltip="<code>address</code> должен быть равен объекту, но равен undefined из которого пытаемся получить свойство.">address</span><span class="token punctuation">.</span>street<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Ошибка!</span></pre>
+                <p>Это ожидаемый результат. JavaScript работает следующим образом. Поскольку <code>user.address</code>
+                  имеет значение <code>undefined</code>, попытка получить <code>user.address.street</code> завершается
+                  ошибкой.</p>
+                <p>Во многих практических случаях мы бы предпочли получить здесь <code>undefined</code> вместо ошибки
+                  (что
+                  означало бы «улицы нет»).</p>
+                <p>…Или ещё один пример. В веб-разработке мы можем получить объект, соответствующий элементу
+                  веб-страницы,
+                  с помощью специального вызова метода, такого как <code>document.querySelector('.elem')</code>, и он
+                  возвращает <code>null</code>, когда такого элемента нет.</p>
+                <pre><code class="language-js">// document.querySelector('.elem') равен null, если элемента нет
+let html = document.querySelector('.elem').innerHTML; // ошибка, если он равен null</code></pre>
+                <p>Ещё раз, если элемент не существует, мы получим сообщение об ошибке доступа к свойству
+                  <code>.innerHTML</code> у <code>null</code>. И в некоторых случаях, когда отсутствие элемента является
+                  нормальным, мы хотели бы избежать ошибки и просто принять <code>html = null</code> в качестве
+                  результата.
+                </p>
+                <p>Как мы можем это сделать?</p>
+                <p>Очевидным решением было бы проверить значение с помощью <code>if</code> или условного оператора
+                  <code>?</code>, прежде чем обращаться к его свойству, вот так:
+                </p>
+                <pre><code class="language-js">let user = {};
+
+alert(user.address ? user.address.street : undefined);</code></pre>
+                <p>Это работает, тут нет ошибки… Но это довольно неэлегантно. Как вы можете видеть,
+                  <code>"user.address"</code> появляется в коде дважды.
+                </p>
+                <p>Вот как то же самое выглядело бы для <code>document.querySelector</code>:</p>
+                <pre><code class="language-js">let html = document.querySelector('.elem') ? document.querySelector('.elem').innerHTML : null;</code></pre>
+                <p>Как видно, поиск элемента <code>document.querySelector('.elem')</code> здесь вызывается дважды, что
+                  не
+                  очень хорошо.</p>
+                <p>Для более глубоко вложенных свойств это ещё менее красиво, поскольку потребуется больше повторений.
+                </p>
+                <p>К примеру, давайте аналогично вычислим <code>user.address.street.name</code>.</p>
+                <p>Нам нужно проверить как <code>user.address</code>, так и <code>user.address.street</code>:</p>
+<pre class="language-js" tabindex="0"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// у пользователя нет адреса</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="meaning" data-tooltip="Если <code>user.address</code> нету, возвращается последний <code>null</code>. Если <code>user.address</code> есть, возвращается <code>user.address.street</code> для которого будет проверка и выбор между <code>user.address.street.name</code> и вторым <code>null</code>.">address</span> <span class="token operator">?</span> user<span class="token punctuation">.</span>address<span class="token punctuation">.</span>street <span class="token operator">?</span> user<span class="token punctuation">.</span>address<span class="token punctuation">.</span>street<span class="token punctuation">.</span><span class="meaning" data-tooltip="Возвращается если есть и <code>user.address</code> и <code>user.address.street</code>.">name</span> <span class="token operator">:</span> <span class="token keyword"><span class="meaning" data-tooltip="Возвращается если нету <code>user.address.street</code>">null</span></span> <span class="token operator">:</span> <span class="token keyword"><span class="meaning" data-tooltip="Возвращается если нету <code>user.address</code>">null</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+                <p>Это просто ужасно, у кого-то могут даже возникнуть проблемы с пониманием такого кода.</p>
+                <p>Есть немного лучший способ написать это, используя оператор <code>&amp;&amp;</code>:</p>
+                <pre><code class="language-js">let user = {}; // пользователь без адреса
+
+alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.street.name ); // undefined (без ошибки)</code></pre>
+                <p>Проход при помощи логического оператора И <code>&amp;&amp;</code> через весь путь к свойству
+                  гарантирует, что все компоненты существуют (если нет, вычисление прекращается), но также не является
+                  идеальным.</p>
+                <p>Как вы можете видеть, имена свойств по-прежнему дублируются в коде. Например, в приведённом выше коде
+                  <code>user.address</code> появляется три раза.
+                </p>
+                <p>Вот почему в язык была добавлена опциональная цепочка <code>?.</code>. Чтобы решить эту проблему –
+                  раз
+                  и навсегда!</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Опциональная цепочка">
+              <h2 id="Опциональная цепочка">Опциональная цепочка</h2>
+              <div class="section-content">
+                <p>Опциональная цепочка <code>?.</code> останавливает вычисление и возвращает <code>undefined</code>,
+                  если
+                  значение перед <code>?.</code> равно <code>undefined</code> или <code>null</code>.</p>
+                <p><strong>Далее в этой статье, для краткости, мы будем говорить, что что-то «существует», если оно не
+                    является <code>null</code> и не <code>undefined</code>.</strong></p>
+                <p>Другими словами, <code>value?.prop</code>:</p>
+                <ul>
+                  <li>работает как <code>value.prop</code>, если значение <code>value</code> существует,</li>
+                  <li>в противном случае (когда <code>value</code> равно <code>undefined/null</code>) он возвращает
+                    <code>undefined</code>.
+                  </li>
+                </ul>
+                <p>Вот безопасный способ получить доступ к <code>user.address.street</code>, используя <code>?.</code>:
+                </p>
+
+<pre class="language-js" tabindex="0"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// пользователь без адреса</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span> user<span class="token operator">?.</span>address<span class="token operator"><span class="meaning" data-tooltip="<p>Если здесь нет <code>?.</code> то будет ошибка. Почему?</p><p>Здесь <code>user</code> равен объекту, а <code>address</code> равен <code>undefined</code>, поэтому до <code>street</code> выполнение не дойдет и возвратиться <code>undefined</code>.</p>Если после <code>address</code> нет знака <code>?.</code>, то <code>address</code> будет равен <code>undefined</code>, из которого пытаемся получить свойство <code>street</code>, без знака <code>?.</code>. Поэтому ошибка.</p>">?.</span></span>street <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// <span class="meaning" data-tooltip="Значение <code>address</code> равно <code>undefined</code>, поэтому выполнение выражения автоматически прекращается и возвращается <code>undefined</code>.">undefined</span> (без ошибки)</span></pre>
+
+                <p>Код лаконичный и понятный, в нем вообще нет дублирования.</p>
+                <p>А вот пример с <code>document.querySelector</code>:</p>
+                <pre><code class="language-js">let html = document.querySelector('.elem')?.innerHTML; // будет undefined, если элемента нет</code></pre>
+                <p>Считывание адреса с помощью <code>user?.address</code> работает, даже если объект <code>user</code>
+                  не
+                  существует:</p>
+                <pre><code class="language-js"><script type="text/plain">let user = null;
+
+alert( user?.address ); // undefined
+alert( user?.address.street ); // undefined</script></code></pre>
+                <p>Обратите внимание: синтаксис <code>?.</code> делает необязательным значение перед ним, но не
+                  какое-либо
+                  последующее.</p>
+                <p>Так например, в записи <code>user?.address.<span class="meaning" data-tooltip="Если <code>user</code> есть, а <code>address</code> равен <code>undefined</code> или <code>null</code>, то при чтении <code>address.street</code> будет ошибка. Чтобы ошибки небыло, нужен допольнительный <code>?.</code>: <code>user?.address?.street.</code>">street</span>.name</code> <code>?.</code> позволяет
+                  <code>user</code> безопасно быть <code>null/undefined</code> (и в этом случае возвращает
+                  <code>undefined</code>), но это так только для <code>user</code>. Доступ к последующим свойствам
+                  осуществляется обычным способом. Если мы хотим, чтобы некоторые из них были необязательными, тогда нам
+                  нужно будет заменить больше <code>.</code> на <code>?.</code>.
+                </p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Не злоупотребляйте опциональной цепочкой</div>
+                  <p>Нам следует использовать <code>?.</code> только там, где нормально, что чего-то не существует.</p>
+                  <p>К примеру, если, в соответствии с логикой нашего кода, объект <code>user</code> должен
+                    существовать,
+                    но <code>address</code> является необязательным, то нам следует писать
+                    <code>user.address?.street</code>,
+                    но не <code>user?.address?.street</code>.
+                  </p>
+                  <p>В этом случае, если вдруг <code>user</code> окажется <code>undefined</code>, мы увидим программную
+                    ошибку по этому поводу и исправим её. В противном случае, если слишком часто использовать
+                    <code>?.</code>, ошибки могут замалчиваться там, где это неуместно, и их будет сложнее отлаживать.
+                  </p>
+                </div>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Переменная перед <code>?.</code> должна быть объявлена</div>
+                  <p></p>
+                </div>
+                <p>Если переменной <code>user</code> вообще нет, то <code>user?.anything</code> приведёт к ошибке:</p>
+                <pre><code class="language-js">// ReferenceError: user is not defined
+user?.address;</code></pre>
+                <p>Переменная должна быть объявлена (к примеру, как <code>let/const/var user</code> или как параметр
+                  функции). Опциональная цепочка работает только с объявленными переменными.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Сокращённое вычисление">
+              <h2 id="Сокращённое вычисление">Сокращённое вычисление</h2>
+              <div class="section-content">
+                <p>Как было сказано ранее, <code>?.</code> немедленно останавливает вычисление, если левая часть не
+                  существует.</p>
+                <p>Так что если после <code>?.</code> есть какие-то вызовы функций или операции, то они не произойдут.
+                </p>
+                <p>Например:</p>
+                <pre><code class="language-js">let user = null;
+let x = 0;
+
+user?.sayHi(x++); // нет "user", поэтому выполнение не достигает вызова sayHi и x++
+
+alert(x); // 0, значение не увеличилось</code></pre>
+              </div>
+            </section>
+
+            <section aria-labelledby="Другие варианты применения: ?.(), ?.[]">
+              <h2 id="Другие варианты применения: ?.(), ?.[]">Другие варианты применения: ?.(), ?.[]</h2>
+              <div class="section-content">
+                <p>Опциональная цепочка <code>?.</code> — это не оператор, а специальная синтаксическая конструкция,
+                  которая также работает с функциями и квадратными скобками.</p>
+                <p>Например, <code>?.()</code> используется для вызова функции, которая может не существовать.</p>
+                <p>В приведённом ниже коде у некоторых наших пользователей есть метод <code>admin</code>, а у некоторых
+                  его нет:</p>
+<pre class="language-js" tabindex="0"><span class="token keyword">let</span> userAdmin <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">admin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Я админ"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> userGuest <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+userAdmin<span class="token punctuation">.</span>admin<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Я админ</span>
+
+userGuest<span class="token punctuation">.</span>admin<span class="token operator"><span class="meaning" data-tooltip="<code>admin</code> равен <code>undefined</code>, поэтому выполнение выражения автоматически прекращается и возвращается <code>undefined</code> которое ни где не используется, правая часть <code>()</code> выполнена не будет.">?.</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ничего не произойдет (такого метода нет)</span></pre>
+                <p>Здесь в обеих строках мы сначала используем точку (<code>userAdmin.admin</code>), чтобы получить
+                  свойство <code>admin</code>, потому что мы предполагаем, что объект <code>user</code> существует, так
+                  что читать из него безопасно.</p>
+                <p>Затем <code>?.()</code> проверяет левую часть: если функция <code>admin</code> существует, то она
+                  запускается (это так для <code>userAdmin</code>). В противном случае (для <code>userGuest</code>)
+                  вычисление остановится без ошибок.</p>
+                <p>Синтаксис <code>?.[]</code> также работает, если мы хотим использовать скобки <code>[]</code> для
+                  доступа к свойствам вместо точки <code>.</code>. Как и в предыдущих случаях, он позволяет безопасно
+                  считывать свойство из объекта, который может не существовать.</p>
+                <pre><code class="language-js">let key = "firstName";
+
+let user1 = {
+  firstName: "John"
+};
+
+let user2 = null;
+
+alert( user1?.[key] ); // John
+alert( user2?.[key] ); // undefined</code></pre>
+                <p>Также мы можем использовать <code>?.</code> с <code>delete</code>:</p>
+                <pre><code class="language-js">delete user?.name; // удаляет user.name если пользователь существует</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Мы можем использовать <code>?.</code> для безопасного чтения и удаления,
+                    но
+                    не для записи</div>
+                  <p>Опциональная цепочка <code>?.</code> не имеет смысла в левой части присваивания.</p>
+                  <p>Например:</p>
+
+<pre class="language-js" tabindex="0"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+user<span class="token operator">?.</span>name <span class="token operator">=</span> <span class="token string">"John"</span><span class="token punctuation">;</span> <span class="token comment">// <span class="meaning" data-tooltip="Ошибка будет в любом случае, есть объект <code>user</code> или нет его, есть свойство <code>name</code> или нет его. Будет пытаться производиться запись в какое либо значение. Если <code>let user = {}</code>, все равно будет ошибка, так как <code>?.</code> вернет объект <code>{}</code> а не ссылку на объект <code>user</code>. Наверное.">Ошибка</span>, не работает</span>
+<span class="token comment">// то же самое что написать undefined = "John"</span></pre>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Итого24">
+              <h2 id="Итого24">Итого</h2>
+              <div class="section-content">
+                <p>Синтаксис опциональной цепочки <code>?.</code> имеет три формы:</p>
+                <ol>
+                  <li><code>obj?.prop</code> – возвращает <code>obj.prop</code> если <code>obj</code> существует, в
+                    противном случае <code>undefined</code>.</li>
+                  <li><code>obj?.[prop]</code> – возвращает <code>obj[prop]</code> если <code>obj</code> существует, в
+                    противном случае <code>undefined</code>.</li>
+                  <li><code>obj.method?.()</code> – вызывает <code>obj.method()</code>, если <code>obj.method</code>
+                    существует, в противном случае возвращает <code>undefined</code>.</li>
+                </ol>
+                <p>Как мы видим, все они просты и понятны в использовании. <code>?.</code> проверяет левую часть на
+                  <code>null/undefined</code> и позволяет продолжить вычисление, если это не так.
+                </p>
+                <p>Цепочка <code>?.</code> позволяет безопасно получать доступ к вложенным свойствам.</p>
+                <p>Тем не менее, мы должны использовать <code>?.</code> осторожно, только там, где по логике кода
+                  допустимо, что левая часть не существует. Чтобы он не скрывал от нас ошибки программирования, если они
+                  возникнут.</p>
+              </div>
+            </section>
+          </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-219.html"></iframe>
