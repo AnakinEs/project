@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section aria-labelledby="Тип данных Symbol">
+            <section aria-labelledby="Тип данных Symbol">
+              <h1 id="Тип данных Symbol">Тип данных Symbol</h1>
+              <div class="section-content">
+                <p>По спецификации, в качестве ключей для свойств объекта могут использоваться только строки или
+                  символы.
+                  Ни числа, ни логические значения не подходят, разрешены только эти два типа данных.</p>
+                <p>До сих пор мы видели только строки. Теперь давайте разберём символы, увидим, что хорошего они нам
+                  дают.
+                </p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Символы">
+              <h2 id="Символы">Символы</h2>
+              <div class="section-content">
+                <p>«Символ» представляет собой уникальный идентификатор.</p>
+                <p>Создаются новые символы с помощью функции <code>Symbol()</code>:</p>
+                <pre><code class="language-js">// Создаём новый символ - id
+let id = Symbol();</code></pre>
+                <p>При создании, символу можно дать описание (также называемое имя), в основном использующееся для
+                  отладки
+                  кода:</p>
+                <pre><code class="language-js">// Создаём символ id с описанием (именем) "id"
+let id = Symbol("id");</code></pre>
+                <p>Символы гарантированно уникальны. Даже если мы создадим множество символов с одинаковым описанием,
+                  это
+                  всё равно будут разные символы. Описание – это просто метка, которая ни на что не влияет.</p>
+                <p>Например, вот два символа с одинаковым описанием – но они не равны:</p>
+                <pre><code class="language-js">let id1 = Symbol("id");
+let id2 = Symbol("id");
+
+alert(id1 == id2); // false</code></pre>
+                <p>Если вы знаете Ruby или какой-то другой язык программирования, в котором есть своего рода «символы» –
+                  пожалуйста, будьте внимательны. Символы в JavaScript имеют свои особенности, и не стоит думать о них,
+                  как о символах в Ruby или в других языках.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Символы не преобразуются автоматически в строки</div>
+                  <p>Большинство типов данных в JavaScript могут быть неявно преобразованы в строку. Например, функция
+                    <code>alert</code> принимает практически любое значение, автоматически преобразовывает его в строку,
+                    а
+                    затем выводит это значение, не сообщая об ошибке. Символы же особенные и не преобразуются
+                    автоматически.
+                  </p>
+                  <p>К примеру, <code>alert</code> ниже выдаст ошибку:</p>
+                  <pre><code class="language-js">let id = Symbol("id");
+alert(id); // TypeError: Cannot convert a Symbol value to a string</code></pre>
+                  <p>Это – языковая «защита» от путаницы, ведь строки и символы – принципиально разные типы данных и не
+                    должны неконтролируемо преобразовываться друг в друга.</p>
+                  <p>Если же мы действительно хотим вывести символ с помощью <code>alert</code>, то необходимо явно
+                    преобразовать его с помощью метода <code>.toString()</code>, вот так:</p>
+                  <pre><code class="language-js">let id = Symbol("id");
+alert(id.toString()); // Symbol(id), теперь работает</code></pre>
+                  <p>Или мы можем обратиться к свойству <code>symbol.description</code>, чтобы вывести только описание:
+                  </p>
+                  <pre><code class="language-js">let id = Symbol("id");
+alert(id.description); // id</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="«Скрытые» свойства">
+              <h2 id="«Скрытые» свойства">«Скрытые» свойства</h2>
+              <div class="section-content">
+                <p>Символы позволяют создавать «скрытые» свойства объектов, к которым нельзя нечаянно обратиться и
+                  перезаписать их из других частей программы.</p>
+                <p>Например, мы работаем с объектами <code>user</code>, которые принадлежат стороннему коду. Мы хотим
+                  добавить к ним идентификаторы.</p>
+                <p>Используем для этого символьный ключ:</p>
+                <pre><code class="language-js">let user = {
+  name: "Вася"
+};
+
+let id = Symbol("id");
+
+user[id] = 1;
+
+alert( user[id] ); // мы можем получить доступ к данным по ключу-символу</code></pre>
+                <p>Почему же лучше использовать <code>Symbol("id")</code>, а не строку <code>"id"</code>?</p>
+                <p>Так как объект <code>user</code> принадлежит стороннему коду, и этот код также работает с ним, то нам
+                  не следует добавлять к нему какие-либо поля. Это небезопасно. Но к символу сложно нечаянно обратиться,
+                  сторонний код вряд ли его вообще увидит, и, скорее всего, добавление поля к объекту не вызовет никаких
+                  проблем.</p>
+                <p>Кроме того, предположим, что другой скрипт для каких-то своих целей хочет записать собственный
+                  идентификатор в объект <code>user</code>. Этот скрипт может быть какой-то JavaScript-библиотекой,
+                  абсолютно не связанной с нашим скриптом.</p>
+                <p>Сторонний код может создать для этого свой символ <code>Symbol("id")</code>:</p>
+                <pre><code class="language-js">// ...
+let id = Symbol("id");
+
+user[id] = "Их идентификатор";</code></pre>
+                <p>Конфликта между их и нашим идентификатором не будет, так как символы всегда уникальны, даже если их
+                  имена совпадают.</p>
+                <p>А вот если бы мы использовали строку <code>"id"</code> вместо символа, то тогда был бы конфликт:</p>
+              
+                <pre><code class="language-js"><script type="text/plain">let user = { name: "Вася" };
+
+// Объявляем в нашем скрипте свойство "id"
+user.id = "Наш идентификатор";
+
+// ...другой скрипт тоже хочет свой идентификатор...
+
+user.id = "Их идентификатор"
+// Ой! Свойство перезаписано сторонней библиотекой!</script></code></pre>
+              </div>
+
+              <div class="note notecard" id="transparent-js">
+                <div class="important_type">Свои примеры</div>
+                <pre><code class="language-html">&lt;script&gt;
+
+  let user = { name: "Вася" };
+  let id = Symbol("id");
+
+  user[id] = 1;
+  
+  alert(user[id]); // 1
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+  // ...другой скрипт тоже хочет свой идентификатор...
+  user["id"] = "Их идентификатор";
+
+  // Чтобы получить доступ к "Их идентификатор", нужно обращаться через скобки user["id"]
+  alert(user[id]); // 1
+
+&lt;/script&gt;</code></pre>
+
+                 <pre class="language-html" tabindex="0"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+
+  <span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Вася"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> id <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  user<span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  
+  <span class="token function">alert</span><span class="token punctuation">(</span>user<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+
+  <span class="token comment">// ...другой скрипт тоже хочет свой идентификатор...</span>
+  <span class="meaning" data-tooltip="В таком случае <code>user[id]</code> будет перезаписано наше свойство <code>Symbol</code> со значения <code>1</code> на значение <code>'Их идентификатор'</code>">user</span><span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Их идентификатор"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Чтобы получить доступ к "Их идентификатор", нужно обращаться через скобки user["id"]</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span>user<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></pre>
+              </div>
+            </section>
+
+            <section aria-labelledby="Символы в литеральном объекте">
+              <h2 id="Символы в литеральном объекте">Символы в литеральном объекте</h2>
+              <div class="section-content">
+                <p>Если мы хотим использовать символ при литеральном объявлении объекта <code>{...}</code>, его
+                  необходимо
+                  заключить в квадратные скобки.</p>
+                <p>Вот так:</p>
+                <pre><code class="language-js">let id = Symbol("id");
+
+let user = {
+  name: "Вася",
+  [id]: 123 // просто "id: 123" не сработает
+};</code></pre>
+                <p>Это вызвано тем, что нам нужно использовать значение переменной <code>id</code> в качестве ключа, а
+                  не
+                  строку «id».</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Символы игнорируются циклом for…in">
+              <h2 id="Символы игнорируются циклом for…in">Символы игнорируются циклом for…in</h2>
+              <div class="section-content">
+                <p>Свойства, чьи ключи – символы, не перебираются циклом <code>for..in</code>.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let id = Symbol("id");
+let user = {
+  name: "Вася",
+  age: 30,
+  [id]: 123
+};
+
+for (let key in user) alert(key); // name, age (свойства с ключом-символом нет среди перечисленных)
+
+// хотя прямой доступ по символу работает
+alert( "Напрямую: " + user[id] );</code></pre>
+                <p>Это – часть общего принципа «сокрытия символьных свойств». Если другая библиотека или скрипт будут
+                  работать с нашим объектом, то при переборе они не получат ненароком наше символьное свойство.
+                  <code>Object.keys(user)</code> также игнорирует символы.
+                </p>
+                <p>А вот <a
+                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a>,
+                  в отличие от цикла <code>for..in</code>, копирует и строковые, и символьные свойства:</p>
+                <pre><code class="language-js"><script type="text/plain">let id = Symbol("id");
+let user = {
+  [id]: 123
+};
+
+let clone = Object.assign({}, user);
+
+alert( clone[id] ); // 123</script></code></pre>
+                <p>Здесь нет никакого парадокса или противоречия. Так и задумано. Идея заключается в том, что, когда мы
+                  клонируем или объединяем объекты, мы обычно хотим скопировать все свойства (включая такие свойства с
+                  ключами-символами, как, например, <code>id</code> в примере выше).</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Глобальные символы">
+              <h2 id="Глобальные символы">Глобальные символы</h2>
+              <div class="section-content">
+                <p>Итак, как мы видели, обычно все символы уникальны, даже если их имена совпадают. Но иногда мы
+                  наоборот
+                  хотим, чтобы символы с одинаковыми именами были одной сущностью. Например, разные части нашего
+                  приложения хотят получить доступ к символу <code>"id"</code>, подразумевая именно одно и то же
+                  свойство.
+                </p>
+                <p>Для этого существует <em>глобальный реестр символов</em>. Мы можем создавать в нём символы и
+                  обращаться
+                  к ним позже, и при каждом обращении нам гарантированно будет возвращаться один и тот же символ.</p>
+                <p>Для чтения (или, при отсутствии, создания) символа из реестра используется вызов
+                  <code>Symbol.for(key)</code>.
+                </p>
+                <p>Он проверяет глобальный реестр и, при наличии в нём символа с именем <code>key</code>, возвращает
+                  его,
+                  иначе же создаётся новый символ <code>Symbol(key)</code> и записывается в реестр под ключом
+                  <code>key</code>.
+                </p>
+                <p>Например:</p>
+                <pre><code class="language-js">// читаем символ из глобального реестра и записываем его в переменную
+let id = Symbol.for("id"); // если символа не существует, он будет создан
+
+// читаем его снова и записываем в другую переменную (возможно, из другого места кода)
+let idAgain = Symbol.for("id");
+
+// проверяем -- это один и тот же символ
+alert( id === idAgain ); // true</code></pre>
+                <p>Символы, содержащиеся в реестре, называются <em>глобальными символами</em>. Если вам нужен символ,
+                  доступный везде в коде – используйте глобальные символы.</p>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Похоже на Ruby</div>
+                  <p>В некоторых языках программирования, например, Ruby, на одно имя (описание) приходится один символ,
+                    и
+                    не могут существовать разные символы с одинаковым именем.</p>
+                  <p>В JavaScript, как мы видим, это утверждение верно только для глобальных символов.</p>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="Symbol.keyFor">
+              <h2 id="Symbol.keyFor">Symbol.keyFor</h2>
+              <div class="section-content">
+                <p>Для глобальных символов, кроме <code>Symbol.for(key)</code>, который ищет символ по имени, существует
+                  обратный метод: <code>Symbol.keyFor(sym)</code>, который, наоборот, принимает глобальный символ и
+                  возвращает его имя.</p>
+                <p>К примеру:</p>
+                <pre><code class="language-js">// получаем символ по имени
+let sym = Symbol.for("name");
+let sym2 = Symbol.for("id");
+
+// получаем имя по символу
+alert( Symbol.keyFor(sym) ); // name
+alert( Symbol.keyFor(sym2) ); // id</code></pre>
+                <p>Внутри метода <code>Symbol.keyFor</code> используется глобальный реестр символов для нахождения имени
+                  символа. Так что этот метод не будет работать для неглобальных символов. Если символ неглобальный,
+                  метод
+                  не сможет его найти и вернёт <code>undefined</code>.</p>
+                <p>Впрочем, для любых символов доступно свойство <code>description</code>.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let globalSymbol = Symbol.for("name");
+let localSymbol = Symbol("name");
+
+alert( Symbol.keyFor(globalSymbol) ); // name, глобальный символ
+alert( Symbol.keyFor(localSymbol) ); // undefined для неглобального символа
+
+alert( localSymbol.description ); // name</code></pre>
+              </div>
+            </section>
+
+            <section aria-labelledby="Системные символы">
+              <h2 id="Системные символы">Системные символы</h2>
+              <div class="section-content">
+                <p>Существует множество «системных» символов, использующихся внутри самого JavaScript, и мы можем
+                  использовать их, чтобы настраивать различные аспекты поведения объектов.</p>
+                <p>Эти символы перечислены в спецификации в таблице <a
+                    href="https://tc39.github.io/ecma262/#sec-well-known-symbols">Well-known symbols</a>:</p>
+                <ul>
+                  <li><code>Symbol.hasInstance</code></li>
+                  <li><code>Symbol.isConcatSpreadable</code></li>
+                  <li><code>Symbol.iterator</code></li>
+                  <li><code>Symbol.toPrimitive</code></li>
+                  <li>…и так далее.</li>
+                </ul>
+                <p>В частности, <code>Symbol.toPrimitive</code> позволяет описать правила для объекта, согласно которым
+                  он
+                  будет преобразовываться к примитиву. Мы скоро увидим его применение.</p>
+                <p>С другими системными символами мы тоже скоро познакомимся, когда будем изучать соответствующие
+                  возможности языка.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="Итого25">
+              <h2 id="Итого25">Итого</h2>
+              <div class="section-content">
+                <p>Символ (symbol) – примитивный тип данных, использующийся для создания уникальных идентификаторов.</p>
+                <p>Символы создаются вызовом функции <code>Symbol()</code>, в которую можно передать описание (имя)
+                  символа.</p>
+                <p>Даже если символы имеют одно и то же имя, это – разные символы. Если мы хотим, чтобы одноимённые
+                  символы были равны, то следует использовать глобальный реестр: вызов <code>Symbol.for(key)</code>
+                  возвращает (или создаёт) глобальный символ с <code>key</code> в качестве имени. Многократные вызовы
+                  команды <code>Symbol.for</code> с одним и тем же аргументом возвращают один и тот же символ.</p>
+                <p>Символы имеют два основных варианта использования:</p>
+                <ol>
+                  <li>
+                    <p>«Скрытые» свойства объектов.</p>
+                    <p>Если мы хотим добавить свойство в объект, который «принадлежит» другому скрипту или библиотеке,
+                      мы
+                      можем создать символ и использовать его в качестве ключа. Символьное свойство не появится в
+                      <code>for..in</code>, так что оно не будет нечаянно обработано вместе с другими. Также оно не
+                      будет
+                      модифицировано <span id="hint43" ; class="hint"
+                        data-tooltip="Прямое обращение это когда есть переменная с символом. И мы обращаемся к этой переменной чтобы получить символ. Но в стороннем коде мы не сможем обратится на прямую к этой переменной так как ее там нету. Наверное.">прямым
+                        обращением</span>, так как другой скрипт не знает о нашем символе. Таким образом, свойство будет
+                      защищено от случайной перезаписи или использования.
+                    </p>
+                    <p>Так что, используя символьные свойства, мы можем спрятать что-то нужное нам, но что другие видеть
+                      не должны.</p>
+                  </li>
+                  <li>
+                    <p>Существует множество системных символов, используемых внутри JavaScript, доступных как
+                      <code>Symbol.*</code>. Мы можем использовать их, чтобы изменять встроенное поведение ряда
+                      объектов.
+                      Например, в дальнейших главах мы будем использовать <code>Symbol.iterator</code> для <a
+                        href="https://learn.javascript.ru/iterable">итераторов</a>, <code>Symbol.toPrimitive</code> для
+                      настройки <a href="https://learn.javascript.ru/object-toprimitive">преобразования объектов в
+                        примитивы</a> и так далее.
+                    </p>
+                  </li>
+                </ol>
+                <p>Технически символы скрыты не на 100%. Существует встроенный метод <a
+                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols"><code>Object.getOwnPropertySymbols(obj)</code></a>
+                  – с его помощью можно получить все свойства объекта с ключами-символами. Также существует метод <a
+                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys"><code>Reflect.ownKeys(obj)</code></a>,
+                  который возвращает все ключи объекта, включая символьные. Так что они не совсем спрятаны. Но
+                  большинство
+                  библиотек, встроенных методов и синтаксических конструкций не используют эти методы.</p>
+              </div>
+            </section>
+          </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<h1>.</h1><iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/js-read/js-reading-2.html"></iframe>
