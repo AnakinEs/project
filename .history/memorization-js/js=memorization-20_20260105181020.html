@@ -20,32 +20,11 @@
     <main id="content" class="main_content" role="main">
       <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
         <section>
-          <p>Оператор <code>typeof</code> возвращает тип аргумента. Это полезно, когда мы хотим обрабатывать
-                  значения различных типов по-разному или просто хотим сделать проверку.</p>
-                <p>У него есть две синтаксические формы:</p>
-                <ol>
-                  <li>Синтаксис оператора: <code>typeof x</code>.</li>
-                  <li>Синтаксис функции: <code>typeof(x)</code>.</li>
-                </ol>
-                <p>Другими словами, он работает со скобками или без скобок. Результат одинаковый.</p>
-                <p>Вызов <code>typeof x</code> возвращает строку с именем типа:</p>
-                <pre><code class="language-js">typeof undefined // "undefined"
-
-typeof 0 // "number"
-
-typeof 10n // "bigint"
-
-typeof true // "boolean"
-
-typeof "foo" // "string"
-
-typeof Symbol("id") // "symbol"
-
-typeof Math // "object"  (1)
-
-typeof null // "object"  (2)
-
-typeof alert // "function"  (3)</code></pre>
+          <p>Результатом вызова <code>typeof null</code> является <code>"object"</code>. Это официально
+                    признанная ошибка в <code>typeof</code>, ведущая начало с времён создания JavaScript и сохранённая
+                    для
+                    совместимости. Конечно, <code>null</code> не является объектом. Это специальное значение с отдельным
+                    типом.</p>
         </section>
       </article>
     </main>
