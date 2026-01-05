@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Справочник</title>
+  <link rel="stylesheet" href="../css/project-test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  <script src="../js/prism.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <main id="content" class="main_content" role="main">
+      <article class="main-page-content" lang="ru"> <!-- lang="ru не совсем понял для чего-->
+        <section>
+          
+                <p>Функция <code>prompt</code> принимает два аргумента:</p>
+                <pre><code class="language-js">result = prompt(title, [default]);</code></pre>
+                <p>Этот код отобразит модальное окно с текстом, полем для ввода текста и кнопками OK/Отмена.</p>
+                <dl>
+                  <dt><strong><code>title</code></strong></dt>
+                  <dd>Текст для отображения в окне.</dt>
+                  <dt><strong><code>default</code></strong></dt>
+                  <dd>Необязательный второй параметр, который устанавливает начальное значение в поле для текста в окне.
+                    </dt>
+                </dl>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Квадратные скобки в синтаксисе <code>[...]</code></div>
+                  <p>Квадратные скобки вокруг <code>default</code> в описанном выше синтаксисе означают, что параметр
+                    факультативный, необязательный.</p>
+                </div>
+                <p>Пользователь может напечатать что-либо в поле ввода и нажать OK. Введённый текст будет присвоен
+                  переменной <code>result</code>. Пользователь также может отменить ввод нажатием на кнопку «Отмена» или
+                  нажав на клавишу <kbd>Esc</kbd>. В этом случае значением <code>result</code> станет <code>null</code>.
+                </p>
+                <p>Вызов <code>prompt</code> возвращает текст, указанный в поле для ввода, или <code>null</code>, если
+                  ввод отменён пользователем.</p>
+                <p>Например:</p>
+                <pre><code class="language-js">let age = prompt('Сколько тебе лет?', 100);
+
+alert(`Тебе ${age} лет!`); // Тебе 100 лет!</code></pre>
+                <div class="note notecard" id="transparent-js">
+                  <div class="important_type">Для IE: всегда устанавливайте значение по умолчанию</div>
+                  <p>Второй параметр является необязательным, но если не указать его, то Internet Explorer вставит
+                    строку
+                    <code>"undefined"</code> в поле для ввода.
+                  </p>
+                  <p>Запустите код в Internet Explorer и посмотрите на результат:</p>
+                  <pre><code class="language-js">let test = prompt("Test");</code></pre>
+                  <p>Чтобы <code>prompt</code> хорошо выглядел в IE, рекомендуется всегда указывать второй параметр:</p>
+                  <pre><code class="language-js">let test = prompt("Test", ''); // &lt;-- для IE</code></pre>
+                </div>
+              
+        </section>
+      </article>
+    </main>
+  </div>
+  <script>
+    function show(param) {
+      if ((event.target.parentElement.tagName == "PRE") && (event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.nextElementSibling.remove();
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      } else if ((event.target.parentElement.tagName == "PRE") && !(event.target.parentElement.nextElementSibling.tagName == "IFRAME")) {
+        event.target.parentElement.insertAdjacentHTML('afterend', param);
+        event.target.blur();
+      }
+    }
+  </script>
+
+  <script>
+    content.onclick = function (event) {
+      if (event.target.className != 'task__solution') return;
+      let decisionDiv = event.target.closest('.decision_div');
+      // let decisionDiv = document.querySelector('.decision_div');
+      let decisionContent = decisionDiv.querySelector('.decision_content');
+      decisionContent.classList.toggle('open');
+    }
+  </script>
+</body>
+
+<iframe style="height:1500px; width:100%; border: none;" src="https://anakines.github.io/project/memorization-js/js=memorization-23.html"></iframe>
